@@ -5,7 +5,7 @@ using Object = UnityEngine.Object;
 
 namespace Rescues
 {
-    public class LevelController : IInitializeController
+    public class LevelController : IInitializeController, ITearDownController
     {
 
         #region Fileds
@@ -19,16 +19,19 @@ namespace Rescues
         private GameContext _context;
         private Services _services;
         private GameObject _levelParent;
+        private GateController _gateController;
+        private DialogueBehaviour _dialogueManager;
 
         #endregion
 
-        
+
         #region Private
-        
+
         public LevelController(GameContext context, Services services)
         {
             _context = context;
             _services = services;
+            _gateController = new GateController(context);
         }
 
         public void Initialize()
@@ -42,12 +45,23 @@ namespace Rescues
             _defaultBootScreen.gameObject.SetActive(false);
             LoadLevel(_levelsData.GetGate);
         }
-        
+
         #endregion
 
-        
+
+        #region ITearDownController
+
+        public void TearDown()
+        {
+            _dialogueManager.OnQuestSet -= _context.notepad.AddQuest;
+            _dialogueManager.OnQuestRemove -= _context.notepad.RemoveQuest;
+        }
+
+        #endregion
+
+
         #region Methods
-        
+
         public void LoadLevel(IGate gate)
         {
             if (_locationController == null || _locationController.LevelName != gate.GoToLevelName)
@@ -82,19 +96,25 @@ namespace Rescues
                 
                 bootLocation.LoadLocation();
                 _levelsData.SetLastLevelGate = gate;
+                _context.activeLocation = bootLocation;
 
-                _context.ActiveLocation = bootLocation;
+                _dialogueManager = Object.FindObjectOfType<DialogueBehaviour>();
+                _dialogueManager.OnQuestSet += _context.notepad.AddQuest;
+                _dialogueManager.OnQuestRemove += _context.notepad.RemoveQuest;
+
                 _curveWayController = new CurveWayController(bootLocation.LocationInstance.СurveWays);
                 _activeCurveWay = _curveWayController.GetCurve(enterGate, WhoCanUseCurve.Character);
-                _context.Character.LocateCharacter(_activeCurveWay);
+                _context.character.LocateCharacter(_activeCurveWay);
             }
         }
-
+       
         private void LoadAndUnloadPrefabs(string loadLevelName)
         {
             _locationController?.UnloadData();
             _curveWayController?.UnloadData();
+            _gateController?.TearDown();
             _locationController = new LocationController(this, _context, loadLevelName, _levelParent.transform);
+            _gateController?.Initialize();
         }
         
         #endregion

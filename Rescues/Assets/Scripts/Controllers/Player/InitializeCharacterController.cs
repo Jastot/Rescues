@@ -32,7 +32,7 @@ namespace Rescues
             
             CharacterModel character = new CharacterModel(obj, playerData);
 
-            _context.Character = character;
+            _context.character = character;
         }
 
         #endregion

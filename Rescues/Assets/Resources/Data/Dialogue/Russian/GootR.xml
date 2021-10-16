@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<dialogue>
+  <node id="0" text="" leftImage="" rightImage="">
+    <answer quest="Выбраться из комнаты" send="1" equal="0" toNode="1">Ты стоишь перед дверью</answer>
+  </node>
+  <node id="1" text="" leftImage="" rightImage="">
+    <answer quest="Выбраться из комнаты" less="10" toNode="2">Попытаться открыть дверь</answer>
+    <answer quest="Выбраться из комнаты" greater="1" toNode="3">Осмотреть дверь</answer>
+  </node>
+  <node id="2" text="" leftImage="" rightImage="">
+    <answer quest="Выбраться из комнаты" send="4" less="3" toNode="1">Дверь не поддается. Похоже она заперта с наружи. </answer>
+    <answer quest="Выбраться из комнаты" less="5" greater="2" toNode="1">Это не вариант</answer>
+  </node>
+  <node id="3" text="" leftImage="" rightImage="">
+    <answer toNode="4">С виду обычная дверь. Из выступающих частей есть только петли, замочная скважина и ручка. </answer>
+  </node>
+  <node id="4" text="" leftImage="" rightImage="">
+    <answer toNode="5">Осмотреть петли</answer>
+    <answer toNode="6">Осмотреть замочную скважину</answer>
+    <answer toNode="7">Осмотреть ручку</answer>
+    <answer quest="Выбраться из комнаты" greater="4" exit="True">Отойти от двери</answer>
+  </node>
+  <node id="5" text="" leftImage="" rightImage="">
+    <answer quest="Выбраться из комнаты" less="5" toNode="4">Петли смазывали давно, но выглядят они крепкими, и снять их без специальных инструментов не выйдет. </answer>
+  </node>
+  <node id="6" text="" leftImage="" rightImage="">
+    <answer quest="Выбраться из комнаты" less="5" toNode="8">В замочной скважине опреледенно что-то есть. Возможно это ключ. </answer>
+  </node>
+  <node id="7" text="" leftImage="" rightImage="">
+    <answer quest="Выбраться из комнаты" less="5" toNode="4">Ручка служит просто опорой для открытия двери. С ней ничего не сделаешь. </answer>
+  </node>
+  <node id="8" text="" leftImage="" rightImage="">
+    <answer quest="Выбраться из комнаты" send="6" less="5" exit="True">Нужно как-то достать этот ключ</answer>
+  </node>
+</dialogue>

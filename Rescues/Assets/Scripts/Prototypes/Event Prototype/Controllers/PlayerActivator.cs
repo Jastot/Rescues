@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -8,25 +9,33 @@ namespace Rescues
         #region Properties
 
         public OntriggerEvent CurrentTrigger { get; private set; }
+        public List<OntriggerEvent> Triggers { get; private set; }
 
         #endregion
 
 
         #region UnityMethods
 
+        private void Awake()
+        {
+            Triggers = new List<OntriggerEvent>(2);
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("EditorOnly"))
+            var enteredObject = collision.GetComponent<OntriggerEvent>();
+            CurrentTrigger = enteredObject;
+            if (CurrentTrigger != null)
             {
-                var curEvent = collision.GetComponent<OntriggerEvent>();
-                CurrentTrigger = curEvent;
-                curEvent.ActivateTriggerEnterEvent();
+                Triggers.Add(CurrentTrigger);
+                CurrentTrigger.ActivateTriggerEnterEvent(); 
             }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
             var exitedObject = collision.GetComponent<OntriggerEvent>();
+            Triggers.Remove(exitedObject);
             if (CurrentTrigger == exitedObject && CurrentTrigger != null)
             {
                 CurrentTrigger.ActivateTriggerExitEvent();
@@ -35,5 +44,5 @@ namespace Rescues
         }
 
         #endregion
-    } 
+    }
 }

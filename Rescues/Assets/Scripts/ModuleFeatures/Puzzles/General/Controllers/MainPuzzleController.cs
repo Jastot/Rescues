@@ -8,6 +8,7 @@ namespace Rescues
         #region Fields
 
         private readonly GameContext _context;
+        private readonly PhysicalServices _physicalServices;
         private PuzzlesControllers _puzzleControllers;
 
         #endregion
@@ -18,6 +19,7 @@ namespace Rescues
         public MainPuzzleController(GameContext context, Services services)
         {
             _context = context;
+            _physicalServices = services.PhysicalServices;
             _puzzleControllers = new PuzzlesControllers();
         }      
 
@@ -46,6 +48,12 @@ namespace Rescues
                         
                         puzzleBehaviour.Puzzle = puzzleInstance;
                         somePuzzleController.Key.Initialize(puzzleInstance);
+                        puzzleInstance.Closed += puzzle => _physicalServices.UnPause();
+                        puzzleInstance.Activated += puzzle => _physicalServices.Pause();
+                        foreach (var customEvent in puzzleBehaviour.finishEvents)
+                        {
+                            puzzleInstance.Finished += puzzle => customEvent.Event.Invoke();
+                        }
                     }
                 }
             }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -12,7 +13,13 @@ namespace Rescues
 
         private readonly GameContext _context;
         private readonly CameraServices _cameraServices;
+        private readonly PhysicalServices _physicsService;
+        private PlayerStates _playerState;
+        private PlayerStates _lastState;
         private GameObject _interfaceWindow;
+        private Action _cancelState = () => { };
+        private Vector2 _inputAxis;
+        private bool _isStateLocked;
 
         #endregion
 
@@ -23,7 +30,7 @@ namespace Rescues
         {
             _context = context;
             _cameraServices = services.CameraServices;
-
+            _physicsService = services.PhysicalServices;
         }
 
         #endregion
@@ -32,214 +39,71 @@ namespace Rescues
         #region IExecuteController
 
         public void Execute()
-        {         
-            Vector2 inputAxis;
-            inputAxis.x = Input.GetAxis("Horizontal");
-            inputAxis.y = Input.GetAxis("Vertical");
-
-            _context.Character.AfterSceneLoad.Invoke();
-            
-            if (inputAxis.x != 0)
-            {
-                var direction = inputAxis.x > 0 ? 1 : -1;
-                _context.Character.StateMoving(direction);
-            }
-            else
-            {
-                _context.Character.StateMoving(0); 
-            }
-
-            if (Input.GetButtonUp("Vertical"))
-            {
-                var interactableObject = GetInteractableObject<Gate>(InteractableObjectType.Gate);
-                if (interactableObject != null)
-                {
-                    _context.Character.StateTeleporting(interactableObject);
-                }
-            }
-
-            if (Input.GetButtonUp("PickUp"))
-            {
-                var interactableObject = GetInteractableObject<ItemBehaviour>(InteractableObjectType.Item);
-                if (interactableObject != null)
-                {
-                    _context.Character.StatePickUpAnimation(interactableObject);
-                    Object.Destroy(interactableObject.GameObject);
-                }
-
-                var trapBehaviour = GetInteractableObject<TrapBehaviour>(InteractableObjectType.Trap);
-                if (trapBehaviour != null)
-                {
-                    if (_context.Inventory.Contains(trapBehaviour.TrapInfo.RequiredTrapItem))
-                    {
-                        _context.Character.StateCraftTrapAnimation(trapBehaviour);
-                    }
-                }
-            }
-
-            if (Input.GetButtonUp("Inventory"))
-            {
-                _context.Inventory.gameObject.SetActive(!_context.Inventory.gameObject.activeSelf);
-            }
-
-            if (Input.GetButtonUp("Use"))
-            {
-                var puzzleObject = GetInteractableObject<PuzzleBehaviour>(InteractableObjectType.Puzzle);
-                if (puzzleObject != null && !puzzleObject.Puzzle.IsFinished)
-                {
-                    puzzleObject.Puzzle.Activate();
-                    Time.timeScale = 0;
-                }
-
-                var hidingPlace = GetInteractableObject<HidingPlaceBehaviour>(InteractableObjectType.HidingPlace);
-
-                if (_context.Character.PlayerState == State.Hiding)
-                {
-                    _context.Character.StateHideAnimation(hidingPlace);
-                }
-
-                if (hidingPlace != null)
-                {
-                    _context.Character.StateHideAnimation(hidingPlace);
-                }
-
-                var stand = GetInteractableObject<StandBehaviour>(InteractableObjectType.Stand);
-                if (stand != null)
-                {
-                    OpenInterfaceWindow(stand.StandWindow.gameObject, stand.StandWindow.GetComponent<StandUI>().StandItemSlots[0].gameObject);
-                }
-            }
-
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                if (_interfaceWindow != null)
-                {
-                    var item = _interfaceWindow.GetComponent<StandUI>();
-                    if (item != null)
-                    {
-                        if (!item.IsItemOpened)
-                        {
-                            item.OpenStandItemWindow();
-                        }
-                        else if (item.Item != null && !_context.Inventory.Contains(item.Item) && item.IsMouseIn)
-                        {
-                            _context.Inventory.AddItem(item.Item);
-                            item.StandItemSlots[item.SlotNumber].gameObject.SetActive(false);
-                            item.StandItemSlots.RemoveAt(item.SlotNumber);
-                        }
-                        else if (item.Item == null)
-                        {
-                            item.PlayDontNeedItem();
-                        }
-                        if (!item.IsMouseIn && item.IsItemOpened)
-                        {
-                            item.CloseStandItemWindow();
-                        }
-                        else if (!item.IsMouseIn)
-                        {
-                            CloseInterfaceWindow();
-                        }
-                    }
-                }
-            }
-
-            if (Input.GetButtonUp("Submit"))
-            {
-                if (_interfaceWindow != null)
-                {
-                    var item = _interfaceWindow.GetComponent<StandUI>();
-                    if (item != null)
-                    {
-                        if (!item.IsItemOpened)
-                        {
-                            item.OpenStandItemWindow();
-                        }
-                        else if (item.Item != null && !_context.Inventory.Contains(item.Item))
-                        {
-                            _context.Inventory.AddItem(item.Item);
-                            item.StandItemSlots[item.SlotNumber].gameObject.SetActive(false);
-                            item.StandItemSlots.RemoveAt(item.SlotNumber);
-                        }
-                        else if (item.Item == null)
-                        {
-                            item.PlayDontNeedItem();
-                        }
-                    }
-                }
-            }
-
+        {
             if (Input.GetButtonUp("Cancel"))
             {
-                if (_interfaceWindow != null)
-                {
-                    var item = _interfaceWindow.GetComponent<StandUI>();
-                    if (item != null && item.IsItemOpened)
-                    {
-                        item.CloseStandItemWindow();
-                        EventSystem.current.SetSelectedGameObject(item.StandItemSlots[item.SlotNumber].gameObject);
-                    }
-                    else if (item != null)
-                    {
-                        CloseInterfaceWindow();
-                    }
-                }
-
                 var puzzleObject = GetInteractableObject<PuzzleBehaviour>(InteractableObjectType.Puzzle);
-                if (puzzleObject != null)
+                if (puzzleObject != null && puzzleObject.Puzzle.IsActive)
                 {
-                    puzzleObject.Puzzle.Close();                   
+                    puzzleObject.Puzzle.Close();
+                }
+                else
+                {
+                    _context.gameMenu.SwitchState();
                 }
             }
 
-            if (_context.Character.AnimationPlayTimer.IsEvent())
+            _inputAxis.x = Input.GetAxis("Horizontal");
+            _inputAxis.y = Input.GetAxis("Vertical");
+
+            if (_physicsService.IsPaused == false && _isStateLocked == false)
             {
-                switch (_context.Character.PlayerState)
+                _context.character.OnSceneLoad(_inputAxis.x);
+
+                if (Input.GetButtonUp("Vertical"))
                 {
-                    case State.HideAnimation:
-                        {
-                            _context.Character.StateHiding();
-                            break;
-                        }
-
-                    case State.PickUpAnimation:
-                        {
-                            var item = _context.Character.InteractableItem as ItemBehaviour;
-                            _context.Inventory.AddItem(item.ItemData);
-                            _context.Character.StateIdle();
-                            break;
-                        }
-
-                    case State.CraftTrapAnimation:
-                        {
-                            var trap = _context.Character.InteractableItem as TrapBehaviour;
-                            trap.CreateTrap();
-                            _context.Inventory.RemoveItem(trap.TrapInfo.RequiredTrapItem);
-                            _context.Character.StateIdle();
-                            break;
-                        }
-                    case State.GoByGateWay:
-                        {
-                            _context.Character.Gate.GoByGateWay();
-                            _context.Character.StateIdle();
-                            break;
-                        }
+                    _playerState = PlayerStates.GoByGateWay;
+                    SwitchState();                   
                 }
-            }
 
-            if (Input.GetButtonDown("Mouse ScrollPressed"))
-            {
-                _cameraServices.FreeCamera();
-            }
+                if (Input.GetButtonUp("PickUp"))
+                {
+                    _playerState = PlayerStates.PickUp;
+                    SwitchState();                  
+                }
 
-            if (Input.GetButton("Mouse ScrollPressed"))
-            {
-                _cameraServices.FreeCameraMovement();
-            }
+                if (Input.GetButtonUp("Inventory"))
+                {
+                    _playerState = PlayerStates.Inventory;
+                    SwitchState();                    
+                }
 
-            if (Input.GetButtonUp("Mouse ScrollPressed"))
-            {
-                _cameraServices.LockCamera();
+                if (Input.GetButtonUp("Notepad"))
+                {
+                    _playerState = PlayerStates.Notepad;
+                    SwitchState();                   
+                }
+
+                if (Input.GetButtonUp("Use"))
+                {
+                    _playerState = PlayerStates.Use;
+                    SwitchState();
+                }
+
+                if (Input.GetButtonDown("Mouse ScrollPressed"))
+                {
+                    _cameraServices.FreeCamera();
+                }
+
+                if (Input.GetButton("Mouse ScrollPressed"))
+                {
+                    _cameraServices.FreeCameraMovement();
+                }
+
+                if (Input.GetButtonUp("Mouse ScrollPressed"))
+                {
+                    _cameraServices.LockCamera();
+                }
             }
         }
 
@@ -265,20 +129,123 @@ namespace Rescues
             return behaviour;
         }
 
-        private void CloseInterfaceWindow()
+        private void SwitchState()
         {
-            _interfaceWindow.SetActive(false);
-            Time.timeScale = 1f;
-            _interfaceWindow = null;
-            EventSystem.current.SetSelectedGameObject(null);
-        }
+            _cancelState.Invoke();
 
-        private void OpenInterfaceWindow(GameObject interfaceWindow, GameObject selectedObject = null)
-        {
-            _interfaceWindow = interfaceWindow;
-            _interfaceWindow.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(selectedObject);
-            Time.timeScale = 0f;
+            if (_playerState != _lastState)
+            {
+                switch (_playerState)
+                {
+                    case PlayerStates.GoByGateWay:
+                        {
+                            var gate = GetInteractableObject<Gate>(InteractableObjectType.Gate);
+                            if (gate != null)
+                            {
+                                _isStateLocked = true;
+                                TimeRemainingExtensions.AddTimeRemaining(new TimeRemaining(() =>
+                                {
+                                    gate.GoByGateWay();
+                                    _isStateLocked = false;
+                                },
+                                gate.LocalTransferTime));
+                            }
+
+                            _cancelState = () => { };
+                        }
+                        break;
+
+                    case PlayerStates.PickUp:
+                        {
+                            var trap = GetInteractableObject<TrapBehaviour>(InteractableObjectType.Trap);
+                            if (trap != null)
+                            {
+                                if (_context.inventory.Contains(trap.TrapInfo.RequiredTrapItem))
+                                {
+                                    _isStateLocked = true;
+                                    TimeRemainingExtensions.AddTimeRemaining(new TimeRemaining(() =>
+                                    {
+                                        trap.CreateTrap();
+                                        _context.inventory.RemoveItem(trap.TrapInfo.RequiredTrapItem);
+                                        _isStateLocked = false;
+                                    },
+                                    trap.TrapInfo.BaseTrapData.CraftingTime));
+                                }
+                            }
+
+                            _cancelState = () => { };
+                        }
+                        break;
+
+                    case PlayerStates.Inventory:
+                        {
+                            _context.inventory.gameObject.SetActive(true);
+
+                            _cancelState = () =>
+                            {
+                                _context.inventory.gameObject.SetActive(false);
+                            };
+                        }
+                        break;
+
+                    case PlayerStates.Notepad:
+                        {
+                            _context.notepad.gameObject.SetActive(true);
+
+                            _cancelState = () =>
+                            {
+                                _context.notepad.gameObject.SetActive(false);
+                            };
+                        }
+                        break;
+
+                    case PlayerStates.Use:
+                        {
+                            var item = GetInteractableObject<ItemBehaviour>(InteractableObjectType.Item);
+                            if (item != null)
+                            {
+                                _isStateLocked = true;
+                                TimeRemainingExtensions.AddTimeRemaining(new TimeRemaining(() =>
+                                {
+                                    item.gameObject.SetActive(false);
+                                    _context.inventory.AddItem(item.ItemData);
+                                    _isStateLocked = false;
+                                },
+                                item.PickUpTime));
+                            }
+
+                            var puzzleObject = GetInteractableObject<PuzzleBehaviour>(InteractableObjectType.Puzzle);
+                            if (puzzleObject != null && !puzzleObject.Puzzle.IsFinished && !puzzleObject.Puzzle.IsActive)
+                            {
+                                puzzleObject.Puzzle.Activate();
+                            }
+
+                            var hidingPlace = GetInteractableObject<HidingPlaceBehaviour>(InteractableObjectType.HidingPlace);
+                            if (hidingPlace != null)
+                            {
+                                _context.character.StartHiding(hidingPlace);
+                            }
+
+                            _cancelState = () => { };
+
+                            var stand = GetInteractableObject<StandBehaviour>(InteractableObjectType.Stand);
+                            if (stand != null)
+                            {
+                                stand.StandWindow.SetActive(true);
+                                _cancelState = () =>
+                                {
+                                    stand.StandWindow.SetActive(false);
+                                };
+                            }                           
+                        }
+                        break; 
+                }
+                _lastState = _playerState;
+            }
+            else
+            {
+                _lastState = default;
+            }
         }
 
         #endregion

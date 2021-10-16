@@ -71,8 +71,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8878daab41a47a43bfbebbd02e9dae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delayAfterFinish: 1
+  _delayAfterFinish: 0
   IsFinished: 0
+  IsActive: 0
   WinCombination:
   - {fileID: 5326966221483008842}
   - {fileID: 6354850153349971794}

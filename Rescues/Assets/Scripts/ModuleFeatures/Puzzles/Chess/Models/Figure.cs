@@ -8,19 +8,11 @@ namespace Rescues
         #region Fields
 
         [SerializeField] private FigureStruct _figureStruct;
-
-        private Vector2 _currentPositon;
-        private bool _isMoving = false;
         public event Action<FigureStruct> OnPosition;
 
         #endregion
 
         #region UnityMethods
-
-        private void OnMouseDown()
-        {
-            _isMoving = true;
-        }
 
         private void OnMouseDrag()
         {
@@ -30,7 +22,6 @@ namespace Rescues
 
         private void OnMouseUp()
         {
-            _isMoving = false;
             OnPosition.Invoke(_figureStruct);
         }
         
@@ -43,7 +34,7 @@ namespace Rescues
             transform.position = newPosition;
         }
 
-        public ChessPuzzleFiguresTypes GetType()
+        public new ChessPuzzleFiguresTypes GetType()
         {
             return _figureStruct.IndexOfFigure;
         }

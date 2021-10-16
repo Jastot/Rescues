@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909c073486854737afecf0d2b2c734a6, type: 3}
   m_Name: Stick 1
   m_EditorClassIdentifier: 
-  Name: Stick
+  Name: "\u0422\u0440\u043E\u0441\u0442\u044C"
   Description: "\u0418\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E, \u0447\u044C\u044F
     \u044D\u0442\u043E \u0442\u0440\u043E\u0441\u0442\u044C? \u041D\u0435 \u0437\u0430\u043C\u0435\u0442\u0438\u043B,
     \u0447\u0442\u043E \u0431\u044B \u0445\u043E\u0437\u044F\u0438\u043D \u043E\u0442\u0435\u043B\u044F

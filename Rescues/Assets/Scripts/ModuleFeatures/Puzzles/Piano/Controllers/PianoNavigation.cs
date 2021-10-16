@@ -3,7 +3,7 @@
 
 namespace Rescues
 {
-    class PianoNavigation : IExecuteController
+    public class PianoNavigation : IExecuteController
     {
         #region Fields
 
@@ -33,7 +33,7 @@ namespace Rescues
             get => _index;
             set
             {
-                if (value >=0 && value < _pianoPuzzle.Buttons.Length)
+                if (value >= 0 && value < _pianoPuzzle.Buttons.Length)
                 {
                     _index = value;
                 }
@@ -47,7 +47,6 @@ namespace Rescues
 
         public void Execute()
         {
-            //TODO неплохо бы перегружать главный ипутконтроллер или вовсе паузить игру, но пока так
             if ((Input.GetKeyUp(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && _index < _pianoPuzzle.Buttons.Length - 1)
             {
                 SwitchButton(_right);
@@ -65,16 +64,14 @@ namespace Rescues
             {
                 _index += 1;
                 _pianoPuzzle.CurrentButton = _pianoPuzzle.Buttons[_index];
-                Debug.Log("index " + _index + " current button " + _pianoPuzzle.CurrentButton.name);
             }
             else
             {
                 _index -= 1;
                 _pianoPuzzle.CurrentButton = _pianoPuzzle.Buttons[_index];
-                Debug.Log("index " + _index + " current button " + _pianoPuzzle.CurrentButton.name);
             }
             _pianoPuzzle.CurrentButton.Outline.enabled = true;
-        } 
+        }
 
         #endregion
     }

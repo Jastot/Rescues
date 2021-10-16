@@ -1,9 +1,17 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Rescues
 {
     public sealed class PlayerBehaviour : MonoBehaviour
     {
+
+        #region Fields
+
+        public event Action Caught;
+
+        #endregion
+        
         #region Properties
         
         public Collider Collider { get; private set; }
@@ -19,5 +27,10 @@ namespace Rescues
         }
 
         #endregion
+
+        public void PlayerWasCaught()
+        {
+            Caught?.Invoke();
+        }
     }
 }

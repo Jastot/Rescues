@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Rescues.NPC.Models;
 using UnityEngine;
 
 
@@ -12,11 +13,11 @@ namespace Rescues
 
         [NonSerialized] public List<Gate> Gates;
         [NonSerialized] public string LevelName;
+        
         [SerializeField] private string _locationName;
         [SerializeField] private Location _locationPrefab;
         [SerializeField] private Color _backgroundColor;
-        [SerializeField] private CameraMode _cameraMode;
-        [SerializeField] private float _cameraSize;
+        [SerializeField] private CameraData _cameraData;
         [SerializeField, Tooltip("Будет использоватсья при загрузке этой локации. Необязательное поле")] 
         private BootScreen _customBootScreen;
 
@@ -28,7 +29,6 @@ namespace Rescues
         
         #region Properties
         
-        public float CameraSize => _cameraSize;
         public string LocationName => _locationName;
 
         public BootScreen CustomBootScreenInstance
@@ -52,7 +52,8 @@ namespace Rescues
         }
         public Location LocationPrefab => _locationPrefab;
         public Color BackgroundColor => _backgroundColor;
-        public CameraMode CameraMode => _cameraMode;
+        public CameraData CameraData => _cameraData;
+        
         
         #endregion
 

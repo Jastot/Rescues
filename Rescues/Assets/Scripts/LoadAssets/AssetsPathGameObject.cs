@@ -19,6 +19,8 @@ namespace Rescues
         public static readonly Dictionary<ScreenType, string> Screens = new Dictionary<ScreenType, string>()
         {
             {ScreenType.GameOver, "Prefabs/UI/Screen/Prefabs_UI_Screen_GameOver"},
+            {ScreenType.MainMenu, "Prefabs/UI/Screen/MainMenu"},
+            {ScreenType.GameMenu, "Prefabs/UI/Screen/GameMenu"}
         };
 
         #endregion

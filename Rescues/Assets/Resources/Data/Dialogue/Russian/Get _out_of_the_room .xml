@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<dialogue>
+  <node id="0" text="" leftImage="" rightImage="">
+    <answer quest="GootR" equal="0" toNode="1">Ты стоишь перед дверью</answer>
+  </node>
+  <node id="1" text="" leftImage="" rightImage="">
+    <answer quest="GootR" toNode="2">"Попытаться открыть дверь"</answer>
+    <answer quest="GootR" toNode="3">"Осмотреть дверь"</answer>
+  </node>
+  <node id="2" text="" leftImage="" rightImage="">
+    <answer quest="GootR" toNode="1">Дверь не поддается. Похоже она заперта с наружи. </answer>
+  </node>
+  <node id="3" text="" leftImage="" rightImage="">
+    <answer quest="GootR" toNode="4">С виду обычная дверь. Из выступающих частей есть только петли, замочная скважина и ручка. </answer>
+  </node>
+  <node id="4" text="" leftImage="" rightImage="">
+    <answer quest="GootR" toNode="5">Осмотреть петли</answer>
+    <answer quest="GootR" toNode="6">Осмотреть замочную скважину</answer>
+    <answer quest="GootR" toNode="7">Осмотреть ручку</answer>
+  </node>
+  <node id="5" text="" leftImage="" rightImage="">
+    <answer quest="GootR" toNode="8">Петли смазывали давно, но выглядят они крепкими, и снять их без специальных инструментов не выйдет. </answer>
+  </node>
+  <node id="6" text="" leftImage="" rightImage="">
+    <answer quest="GootR" toNode="9">В замочной скважине опреледенно что-то есть. Возможно это ключ. </answer>
+  </node>
+  <node id="7" text="" leftImage="" rightImage="">
+    <answer quest="GootR" toNode="10">Ручка служит просто опорой для открытия двери. С ней ничего не сделаешь. </answer>
+  </node>
+  <node id="8" text="" leftImage="" rightImage="">
+    <answer quest="GootR" toNode="4">Осмотреть элементы двери</answer>
+    <answer quest="GootR" exit="True">Отойти от двери</answer>
+  </node>
+  <node id="9" text="" leftImage="" rightImage="">
+    <answer quest="GootR" toNode="4">Осмотреть элементы двери</answer>
+    <answer quest="GootR" exit="True">Отойти от двери</answer>
+  </node>
+</dialogue>

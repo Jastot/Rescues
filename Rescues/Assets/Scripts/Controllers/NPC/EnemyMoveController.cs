@@ -27,20 +27,20 @@ namespace Rescues
         public void Execute()
         {
             //TODO bring all it method to EnemyBehavoiur into method Move()
-            if (_context.Enemy.EnemyData.StateEnemy == StateEnemy.Dead)
+            if (_context.enemy.EnemyData.StateEnemy == StateEnemy.Dead)
             {
                 // todo Unsubscribe enemy from executing
                 return;
             }
-            var enemy = _context.Enemy;
+            var enemy = _context.enemy;
             var wayPointInfo = enemy.RouteData.GetWayPoints();
             if (Vector3.Distance(enemy.transform.position, wayPointInfo[enemy.PatrolPointState].PointPosition) > 0.5)
             {
                 Vector3 movementDirection = Vector3.zero;
                 movementDirection.x = wayPointInfo[enemy.PatrolPointState].PointPosition.x - enemy.transform.position.x;
 
-                _context.Enemy.transform.position += movementDirection.normalized * enemy.EnemyData.Speed * Time.deltaTime;
-                _context.Enemy.SetVisionDirection(movementDirection);
+                _context.enemy.transform.position += movementDirection.normalized * enemy.EnemyData.Speed * Time.deltaTime;
+                _context.enemy.SetVisionDirection(movementDirection);
             }
             else
             {

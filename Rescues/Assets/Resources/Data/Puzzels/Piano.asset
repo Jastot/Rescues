@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909c073486854737afecf0d2b2c734a6, type: 3}
   m_Name: Piano
   m_EditorClassIdentifier: 
-  Name: 
-  Description: 
-  Icon: {fileID: 0}
+  Name: Piano puzzle
+  Description: Its is puzzle with piano.
+  Icon: {fileID: 21300000, guid: f20b0eeef51f846b09607b908783da6d, type: 3}
   IsDestructuble: 1

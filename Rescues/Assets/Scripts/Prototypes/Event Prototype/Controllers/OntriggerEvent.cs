@@ -18,8 +18,8 @@ namespace Rescues
         #region Methods
 
         public void ActivateTriggerEnterEvent()
-        {          
-            ActivateEvent(_onTriggerEnterEvents);            
+        {
+            ActivateEvent(_onTriggerEnterEvents);
         }
 
         public void ActivateTriggerExitEvent()
@@ -30,7 +30,7 @@ namespace Rescues
         public void ActivateButtonInTriggerEvent()
         {
             ActivateEvent(_onButtonInTriggerEvents);
-        }     
+        }
 
         public void ActivateEvent(List<EventData> events)
         {
@@ -41,5 +41,5 @@ namespace Rescues
         }
 
         #endregion
-    } 
+    }
 }

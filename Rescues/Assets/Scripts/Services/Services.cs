@@ -11,8 +11,8 @@
         
         #region Properties
         
-        public PhysicsService PhysicsService { get; private set; }
-        public UnityTimeService UnityTimeService { get; private set; }
+        public PhysicalServices PhysicalServices { get; private set; }
+        public UnityTimeServices UnityTimeServices { get; private set; }
         public CameraServices CameraServices { get; private set; }
         
         #endregion
@@ -22,8 +22,8 @@
         
         public void Initialize(Contexts contexts)
         {
-            PhysicsService = new PhysicsService(contexts);
-            UnityTimeService = new UnityTimeService(contexts);
+            PhysicalServices = new PhysicalServices(contexts);
+            UnityTimeServices = new UnityTimeServices(contexts);
             CameraServices = new CameraServices(contexts);
         }
         

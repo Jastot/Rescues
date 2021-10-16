@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<dialogue>
+  <node id="0" text="" leftImage="GGtestFaceShadow" rightImage="">
+    <answer toNode="1">Ты стоишь перед дверью</answer>
+  </node>
+  <node id="1" text="" leftImage="" rightImage="">
+    <answer toNode="2">"Попытаться открыть дверь"</answer>
+    <answer exit="True">"Осмотреть дверь"</answer>
+  </node>
+  <node id="2" text="" leftImage="" rightImage="">
+    <answer toNode="3">Не открывается</answer>
+  </node>
+  <node id="3" text="" leftImage="" rightImage="">
+    <answer exit="True">Попробовать выбить</answer>
+    <answer toNode="0">Осмотреть дверь</answer>
+  </node>
+</dialogue>

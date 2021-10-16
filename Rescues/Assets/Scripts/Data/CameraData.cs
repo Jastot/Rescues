@@ -1,10 +1,15 @@
-﻿using UnityEngine;
+﻿using System;
 
 
-[CreateAssetMenu(fileName = "CameraData", menuName = "Data/Camera/CameraData")]
-public class CameraData : ScriptableObject
-{
+[Serializable]
+public struct CameraData
+{   
+    public Rescues.CameraMode CameraMode;
+    public float CameraSize;
+    public float Position_Y_Offset;
+    public float Position_X_Offset;
+    public float MoveLeftXLimit;
+    public float MoveRightXLimit;
     public float CameraFreeMoveLimit;
     public int CameraDragSpeed;
-    public float Distance;
 }

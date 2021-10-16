@@ -9,13 +9,13 @@ namespace Rescues
         public int PatrolPointState;
         public RouteData RouteData;
 
-        private PhysicsService _physicsService;
+        private PhysicalServices _physicsService;
         private Vector3 _visionDirection;
         private Animator _animator;
 
         private void Awake()
         {
-            _physicsService = Services.SharedInstance.PhysicsService;
+            _physicsService = Services.SharedInstance.PhysicalServices;
             _timeRemaining = new TimeRemaining (ResetWaitState, 0.0f);
             _animator = GetComponent<Animator>();
             EnemyData.StateEnemy = StateEnemy.None;
@@ -65,12 +65,12 @@ namespace Rescues
 
         public void Vision()
         {
-            var hit = _physicsService.VisionDetectionPlayer(transform.position, _visionDirection, EnemyData.VisionDistance);
+            //var hit = _physicsService.VisionDetectionPlayer(transform.position, _visionDirection, EnemyData.VisionDistance);
 
-            if (hit)
-            {
-                ScreenInterface.GetInstance().Execute(ScreenType.GameOver);
-            }
+            // if (hit)
+            // {
+            //     ScreenInterface.GetInstance().Execute(ScreenType.GameOver);
+            // }
         }
 
         public void SetVisionDirection(Vector3 visionDirection)

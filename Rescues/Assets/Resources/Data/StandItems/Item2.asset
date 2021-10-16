@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1e0270b226e2c4796fd8eb33bb7a1d, type: 3}
   m_Name: Item2
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: 32d59e4eedb9c2b489bac1df1749a4e8, type: 3}
+  Sprite: {fileID: 21300000, guid: 8950fb9a195d86b46831a583c4d41389, type: 3}
   CanBeTaken: 0
   Item: {fileID: 0}

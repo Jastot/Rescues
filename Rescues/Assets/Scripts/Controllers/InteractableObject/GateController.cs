@@ -15,7 +15,7 @@ namespace Rescues
 
         #region ClassLifeCycles
         
-        public GateController(GameContext context, Services services)
+        public GateController(GameContext context)
         {
             _context = context;
         }

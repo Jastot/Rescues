@@ -12,7 +12,6 @@ namespace Rescues
 
         private Dictionary<ChessPuzzleFiguresTypes, GameObject> _availableGameObjectsDictionary;
         private readonly Transform _parent;
-        private int _indexOfMassive = 1;
         
         #endregion
         

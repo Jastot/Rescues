@@ -45,7 +45,6 @@ namespace Rescues
             {
                 _currentIndexInCombination += 1;
                 PlayerCombination.Add(button);
-                Debug.Log("Button added " + button.name + " current index " + _currentIndexInCombination);
                 CheckComplete();
             }
             else

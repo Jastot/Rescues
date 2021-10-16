@@ -1,6 +1,7 @@
-﻿using System.Linq;
+﻿using DG.Tweening;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using DG.Tweening;
 
 
 namespace Rescues
@@ -29,8 +30,7 @@ namespace Rescues
 
         public void Initialize()
         {
-            var items = _context.GetTriggers(InteractableObjectType.Item).ToList();
-            items.AddRange(_context.GetTriggers(InteractableObjectType.Trap));
+            var items = CollectItems();
             foreach (var trigger in items)
             {
                 var itemBehaviour = trigger as InteractableObjectBehavior;
@@ -47,8 +47,7 @@ namespace Rescues
 
         public void TearDown()
         {
-            var items = _context.GetTriggers(InteractableObjectType.Item).ToList();
-            items.AddRange(_context.GetTriggers(InteractableObjectType.Trap));
+            var items = CollectItems();
             foreach (var trigger in items)
             {
                 var itemBehaviour = trigger as InteractableObjectBehavior;
@@ -63,6 +62,13 @@ namespace Rescues
 
         #region Methods
         
+        private List<IInteractable> CollectItems()
+        {
+            var items = _context.GetTriggers(InteractableObjectType.Item).ToList();
+            items.AddRange(_context.GetTriggers(InteractableObjectType.Trap));
+            return items;
+        }
+
         private bool OnFilterHandler(Collider2D playerObject)
         {
             return playerObject.CompareTag(TagManager.PLAYER);

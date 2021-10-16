@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d409ed993d6459189d62e92620552be, type: 3}
+  m_Name: WhiteLady
+  m_EditorClassIdentifier: 
+  NpcStruct:
+    index: 0
+    Prefab: {fileID: 3868648507233925796, guid: 141c02eccf3bec141954c28ffa3d34d3,
+      type: 3}
+    PatrollingSpeed: 3
+    InRageSpeed: 5
+    NPCState: 1
+    NPCvision: 5
+    NPCcatch: 2

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+
 
 namespace Rescues
 {
@@ -12,8 +12,6 @@ namespace Rescues
         public bool CanBeTaken;
         public ItemData Item;
 
-
-        #endregion
-       
+        #endregion    
     }
 }

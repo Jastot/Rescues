@@ -1,4 +1,5 @@
-
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Rescues
 {
@@ -11,6 +12,7 @@ namespace Rescues
 
         public Puzzle Puzzle;
         public ItemData ItemData;
+        public List<EventData> finishEvents;
 
         #endregion
     }

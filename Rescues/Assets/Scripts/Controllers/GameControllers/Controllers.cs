@@ -6,17 +6,17 @@ namespace Rescues
     public abstract class Controllers : IInitializeController, IExecuteController, ICleanupController, ITearDownController
     {
         #region Fields
-        
+
         protected readonly List<IInitializeController> _initializeControllers;
         protected readonly List<IExecuteController> _executeControllers;
         protected readonly List<ICleanupController> _cleanupControllers;
         protected readonly List<ITearDownController> _tearDownControllers;
 
-        #endregion 
+        #endregion
 
 
         #region ClassLifeCycles
-        
+
         protected Controllers()
         {
             _initializeControllers = new List<IInitializeController>();
@@ -59,7 +59,7 @@ namespace Rescues
 
 
         #region IInitializeController
-        
+
         public virtual void Initialize()
         {
             for (var index = 0; index < _initializeControllers.Count; ++index)
@@ -72,7 +72,7 @@ namespace Rescues
 
 
         #region IExecuteController
-        
+
         public virtual void Execute()
         {
             for (var index = 0; index < _executeControllers.Count; ++index)
@@ -95,7 +95,7 @@ namespace Rescues
         }
 
         #endregion
-        
+
 
         #region ITearDownController
 

@@ -75,6 +75,7 @@ namespace DragonBones
         {
         }
 
+        [Obsolete]
         void OnEnable()
         {
             this._armatureComponent = target as UnityArmatureComponent;
@@ -513,6 +514,7 @@ namespace DragonBones
             }
         }
 
+        [Obsolete]
         private bool _IsPrefab()
         {
             return PrefabUtility.GetPrefabParent(_armatureComponent.gameObject) == null

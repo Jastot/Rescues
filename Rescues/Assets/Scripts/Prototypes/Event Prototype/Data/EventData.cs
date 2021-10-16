@@ -4,7 +4,8 @@ using UnityEngine.Events;
 
 namespace Rescues
 {
-    [Serializable]public struct EventData
+    [Serializable]
+    public struct EventData
     {
         #region Fields
 
@@ -21,7 +22,7 @@ namespace Rescues
         /// <summary>
         /// Event himself
         /// </summary>
-        public UnityEvent Event; 
+        public UnityEvent Event;
 
         #endregion
     }

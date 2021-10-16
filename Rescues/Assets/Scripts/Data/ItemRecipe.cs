@@ -22,19 +22,19 @@ namespace Rescues
             bool canCraft = false;
             if (ItemA == itemA && ItemB == itemB)
             {
-                canCraft = true;                
+                canCraft = true;
             }
-            else if(ItemA == itemB && ItemB == itemA)
+            else if (ItemA == itemB && ItemB == itemA)
             {
                 canCraft = true;
             }
             return canCraft;
         }
 
-        public ItemData Craft(Inventory inventory)
+        public ItemData Craft(InventoryBehaviour inventory)
         {
-            if(ItemA.IsDestructuble) inventory.RemoveItem(ItemA);
-            if(ItemB.IsDestructuble) inventory.RemoveItem(ItemB);                      
+            if (ItemA.IsDestructuble) inventory.RemoveItem(ItemA);
+            if (ItemB.IsDestructuble) inventory.RemoveItem(ItemB);
             return ItemResult;
         }
 

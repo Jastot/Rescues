@@ -16,7 +16,14 @@ MonoBehaviour:
   _locationPrefab: {fileID: 1489210437266686043, guid: e393a2398a0ac4e4da2abf65c1bf6d6d,
     type: 3}
   _backgroundColor: {r: 0.098039225, g: 0.098039225, b: 0.098039225, a: 0}
-  _cameraMode: 1
-  _cameraSize: 11
+  _cameraData:
+    CameraMode: 1
+    CameraSize: 11
+    Position_Y_Offset: 0
+    Position_X_Offset: 0
+    MoveLeftXLimit: 0
+    MoveRightXLimit: 0
+    CameraFreeMoveLimit: 50
+    CameraDragSpeed: 50
   _customBootScreen: {fileID: 5293078557666880198, guid: 350dbdcc61ef74de087b99c5df45793d,
     type: 3}

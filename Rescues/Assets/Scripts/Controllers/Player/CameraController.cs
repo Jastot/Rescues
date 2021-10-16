@@ -9,8 +9,7 @@ namespace Rescues
 
         private readonly GameContext _context;
         private readonly CameraServices _cameraServices;
-        private float _distance;
-        private bool _iSMoveableCameraMode = false;
+        private bool _iSMoveableCameraMode;
         private int _activeLocationHash = 0;
         
         #endregion
@@ -21,8 +20,7 @@ namespace Rescues
         public CameraController(GameContext context, Services services)
         {
             _context = context;
-            _cameraServices = services.CameraServices;
-            _distance = Data.CameraData.Distance;
+            _cameraServices = services.CameraServices;           
         }
 
         #endregion
@@ -32,7 +30,7 @@ namespace Rescues
 
         public void Execute()
         {
-            if ( _activeLocationHash != _context.ActiveLocation.GetHashCode())
+            if ( _activeLocationHash != _context.activeLocation.GetHashCode())
                 SetCamera();
             
             if (_iSMoveableCameraMode)
@@ -50,8 +48,8 @@ namespace Rescues
         private void SetCamera()
         {
             _iSMoveableCameraMode = false;
-            
-            switch (_context.ActiveLocation.CameraMode)
+
+            switch (_context.activeLocation.CameraData.CameraMode)
             {
                 case CameraMode.None:
                     return;
@@ -65,21 +63,33 @@ namespace Rescues
                     break;
             }
             
-            _cameraServices.CameraMain.backgroundColor = _context.ActiveLocation.BackgroundColor;
-            _activeLocationHash = _context.ActiveLocation.GetHashCode();
+            _cameraServices.CameraMain.backgroundColor = _context.activeLocation.BackgroundColor;
+            _activeLocationHash = _context.activeLocation.GetHashCode();
         }
 
         private void PlaceCameraOnLocation()
         {
-            var position = _context.ActiveLocation.LocationInstance.CameraPosition;
-            _cameraServices.CameraMain.transform.position = new Vector3(position.x, position.y, _cameraServices.CameraDepthConst);
-            _cameraServices.CameraMain.orthographicSize = _context.ActiveLocation.CameraSize;
+            var position = _context.activeLocation.LocationInstance.CameraPosition;
+            _cameraServices.CameraMain.transform.position = new Vector3(position.x, position.y,
+                _cameraServices.CameraDepthConst);
+            _cameraServices.CameraMain.orthographicSize = _context.activeLocation.CameraData.CameraSize;
         }
 
         private void MoveCameraToCharacter()
         {
-            _cameraServices.CameraMain.transform.position = new Vector3(_context.Character.Transform.position.x,
-                _context.Character.Transform.position.y, _context.Character.Transform.position.z - _distance);
+            var x = _context.character.Transform.position.x + _context.activeLocation.CameraData.Position_X_Offset;
+            if (x < _context.activeLocation.CameraData.MoveLeftXLimit)
+            {
+                x = _context.activeLocation.CameraData.MoveLeftXLimit;
+            }
+            else if (x > _context.activeLocation.CameraData.MoveRightXLimit)
+            {
+                x = _context.activeLocation.CameraData.MoveRightXLimit;
+            }
+        
+            var y = _context.activeLocation.CameraData.Position_Y_Offset;
+            _cameraServices.CameraMain.transform.position = new Vector3(x, y, _cameraServices.CameraDepthConst);
+            _cameraServices.CameraMain.orthographicSize = _context.activeLocation.CameraData.CameraSize;
         }
       
         #endregion Methods

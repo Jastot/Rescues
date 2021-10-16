@@ -1172,7 +1172,7 @@ MonoBehaviour:
   _timeScale: 1
   _sortingMode: 1
   _sortingLayerName: Default
-  _sortingOrder: 21
+  _sortingOrder: 28
   _zSpace: 0
   _flipX: 0
   _flipY: 0
@@ -1221,7 +1221,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 21
+  m_SortingOrder: 28
 --- !u!1 &5824519074991421543
 GameObject:
   m_ObjectHideFlags: 0

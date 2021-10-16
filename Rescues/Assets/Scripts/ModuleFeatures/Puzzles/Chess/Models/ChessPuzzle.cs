@@ -33,11 +33,6 @@ namespace Rescues
             _chessBoard.Loaded += BoardLoading;
             _chessBoard.FigurePlacedOnNewPosition += LookingAtSequence;
         }
-        private void OnDestroy()
-        {
-            _chessBoard.Loaded -= BoardLoading;
-            _chessBoard.FigurePlacedOnNewPosition -= LookingAtSequence;
-        }
 
         #endregion
 

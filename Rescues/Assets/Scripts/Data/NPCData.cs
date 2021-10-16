@@ -9,7 +9,6 @@ namespace Rescues
         #region Fields
         
         public NPCStruct NpcStruct;
-        // vision
 
         #endregion
     }

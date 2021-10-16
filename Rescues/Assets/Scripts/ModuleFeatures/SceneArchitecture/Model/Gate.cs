@@ -19,7 +19,7 @@ namespace Rescues
         private string _thisLevelName;
         private string _thisLocationName;
         [SerializeField] private int _thisGateId;
-        
+        [SerializeField] private bool _restartGate;
         [Header("Gate way")]
         [SerializeField] private string _goToLevelName = "Hotel";
         [SerializeField] private string _goToLocationName;
@@ -27,6 +27,7 @@ namespace Rescues
 
         [SerializeField] private CircleCollider2D _circleCollider;
         
+
         #endregion
 
         
@@ -62,6 +63,7 @@ namespace Rescues
         public string GoToLocationName => _goToLocationName;
         public int GoToGateId => _goToGateId;
 
+        public bool RestartGate => _restartGate;
         #endregion
         
 

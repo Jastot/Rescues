@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e64dc6b2a72ece438cca4fcaedd7668, type: 3}
+  m_Script: {fileID: 11500000, guid: 61d6f3809f2f7b34f8c8b8289db76ec8, type: 3}
   m_Name: ItemRecipe
   m_EditorClassIdentifier: 
-  ItemA: {fileID: 11400000, guid: 7594ee8e8ce903d4da98934f61cfe538, type: 2}
-  ItemB: {fileID: 11400000, guid: 5d382dc9bc786b948bd7b2275bb3887e, type: 2}
-  ItemResult: {fileID: 11400000, guid: 045f9b23b74fb564c954f147ce8d646d, type: 2}
+  ItemA: {fileID: 0}
+  ItemB: {fileID: 0}
+  ItemResult: {fileID: 0}

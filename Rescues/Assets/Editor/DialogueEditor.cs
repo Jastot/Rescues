@@ -159,12 +159,6 @@ namespace Rescues
                 if (EditorGUILayout.BeginFadeGroup(nodes[i].showFields.faded))
                 {
                     EditorGUI.indentLevel++;
-                    /*
-                    EditorGUILayout.LabelField("Текст НПС:", EditorStyles.boldLabel);
-                    EditorGUILayout.BeginHorizontal();
-                    nodes[i].text = EditorGUILayout.TextField(nodes[i].text, Style(TextAnchor.MiddleLeft, 20, EditorStyles.textField));
-                    EditorGUILayout.EndHorizontal();
-                    */
 
                     EditorGUILayout.BeginHorizontal();
                     EditorGUILayout.LabelField("Левое изображение:", EditorStyles.boldLabel);

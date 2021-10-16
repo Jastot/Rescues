@@ -5,5 +5,6 @@ namespace Rescues.NPC.Controllers
         None      = 0,
         Patrol    = 1,
         Pursuit   = 2,
+        Dead      = 3,
     }
 }

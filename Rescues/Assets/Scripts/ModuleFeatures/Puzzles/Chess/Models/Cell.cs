@@ -14,7 +14,6 @@ namespace Rescues
         private Figure _currentFigure;
 
         private Vector2 CorrectiveVector = new Vector2(1, 1);
-        private int _indexOfMassive = 1;
         //небольшой костыль. хотя в теории норм решение,но...ну такое,но хз как заменить нормально.
         private Figure _ifBlockedFigure;
 

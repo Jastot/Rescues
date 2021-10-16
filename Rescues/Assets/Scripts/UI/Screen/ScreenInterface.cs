@@ -35,7 +35,7 @@ namespace Rescues
 
         public static ScreenInterface GetInstance()
         {
-            return _instance ?? (_instance = new ScreenInterface());
+            return _instance ??= new ScreenInterface();
         }
 
         public void Execute(ScreenType screenType)

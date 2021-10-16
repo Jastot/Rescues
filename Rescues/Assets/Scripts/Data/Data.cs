@@ -18,7 +18,6 @@ namespace Rescues
         private static PlayerData _playerData;
         private static ItemData _itemData;
         private static HidingPlaceData _hidingPlaceData;            
-        private static CameraData _cameraData;
 
         #endregion
         
@@ -77,20 +76,6 @@ namespace Rescues
 
                 return _hidingPlaceData;
             }
-        }
-
-        public static CameraData CameraData
-        {
-            get
-            {
-                if(_cameraData == null)
-                {
-                    _cameraData = Load<CameraData>("Data/" + Instance._cameraDataPath);
-                }
-
-                return _cameraData;
-            }
-
         }
 
         #endregion

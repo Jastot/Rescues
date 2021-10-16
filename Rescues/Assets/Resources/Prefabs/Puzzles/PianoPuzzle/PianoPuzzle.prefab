@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35435140811359112}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.07, y: -3.55, z: 0}
   m_LocalScale: {x: 0.20830649, y: 0.43853998, z: 0.43853998}
   m_Children: []
@@ -73,3 +73,4 @@ MonoBehaviour:
   _type: 5
   Puzzle: {fileID: -3515586754854554822, guid: 368130554c8f7a94995a57324229c4d6, type: 3}
   ItemData: {fileID: 11400000, guid: 929c5b0c098f61244b9aaceb398d6ed9, type: 2}
+  finishEvents: []

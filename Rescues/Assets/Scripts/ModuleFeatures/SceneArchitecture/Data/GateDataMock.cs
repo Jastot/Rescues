@@ -7,6 +7,7 @@ namespace Rescues
         public string ThisLevelName { get; set; }
         public string ThisLocationName { get; set; }
         public int ThisGateId { get; }
+        public bool RestartGate { get; }
         public string GoToLevelName { get; }
         public string GoToLocationName { get; }
         public int GoToGateId { get; }

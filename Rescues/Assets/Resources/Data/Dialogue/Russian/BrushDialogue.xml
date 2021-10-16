@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<dialogue>
+  <node id="0" text="" leftImage="" rightImage="">
+    <answer quest="Выбраться из комнаты" less="4" exit="True">Чья-то старая щетка. Будет весьма не гигиенично её использовать. </answer>
+  </node>
+  <node id="1" text="" leftImage="" rightImage="">
+    <answer quest="Выбраться из комнаты" send="7" greater="4" exit="True">Думаю она сможет пролезть в замочную скважину</answer>
+  </node>
+</dialogue>

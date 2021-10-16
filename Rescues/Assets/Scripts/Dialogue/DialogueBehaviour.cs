@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -6,6 +7,9 @@ namespace Rescues
 {
     public class DialogueBehaviour : MonoBehaviour
     {
+        public event Action<string> OnQuestSet = (temp) => { };
+        public event Action<string> OnQuestRemove = (temp) => { };
+
         private string _quest = "";
         private int _value = 0;
         private List<GameObject> _gameObjectActive = new List<GameObject>();
@@ -21,7 +25,8 @@ namespace Rescues
 
         public void SetQuestion(string quest)
         {
-            _quest = quest;
+            _quest = quest;            
+            OnQuestSet.Invoke(quest);
         }
 
         public void SetValue(int value)
@@ -44,6 +49,7 @@ namespace Rescues
             if (!string.IsNullOrEmpty(_quest))
                 if (DialogueQuestManager.GetCurrentValue(_quest) == _value)
                 {
+                    OnQuestRemove.Invoke(_quest);
                     for (int i = 0; i < _gameObjectActive.Count; i++)
                         _gameObjectActive[i].SetActive(true);
                     for (int i = 0; i < _gameObjectDeactive.Count; i++)

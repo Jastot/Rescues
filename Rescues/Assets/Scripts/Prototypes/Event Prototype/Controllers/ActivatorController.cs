@@ -26,14 +26,14 @@ namespace Rescues
 
         public void Execute()
         {
-            if (Input.GetButtonUp("Use"))
+            if (Input.GetButtonUp("Use") && _playerActivator.Triggers.Count > 0)
             {
-                if (_playerActivator.CurrentTrigger != null)
+                foreach (var trigger in _playerActivator.Triggers)
                 {
-                    _playerActivator.CurrentTrigger.ActivateButtonInTriggerEvent();
+                    trigger.ActivateButtonInTriggerEvent();
                 }
             }
-        } 
+        }
 
         #endregion
     }

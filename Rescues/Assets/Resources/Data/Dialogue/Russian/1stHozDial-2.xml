@@ -38,7 +38,7 @@
     <answer toNode="12">Увы нет. И к сожалению, это единственный отель в нашем городе. </answer>
   </node>
   <node id="11" text="" leftImage="GGtestFace" rightImage="Hoz otelFaceShadow">
-    <answer quest="1stHozDial-2" send="4" exit="True">Благодарю вас.</answer>
+    <answer quest="Разговор с метроделем" send="1" exit="True">Благодарю вас.</answer>
   </node>
   <node id="12" text="" leftImage="GGtestFace" rightImage="Hoz otelFaceShadow">
     <answer toNode="9">Тогда мы возьмём эти два номера. </answer>

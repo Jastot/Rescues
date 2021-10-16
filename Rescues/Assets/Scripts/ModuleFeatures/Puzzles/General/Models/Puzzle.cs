@@ -30,22 +30,30 @@ namespace Rescues
         [ContextMenu("Activate puzzle")]
         public void Activate()
         {
-            //TODO сюда добавить команду на ограничение управления в игре, паузу итп.
+            if (IsFinished || IsActive) return;
             Activated.Invoke(this);
+            IsActive = true;
         }
 
         public void Close()
-        {
+        {        
             if (_delayAfterFinish > 0)
+            {
                 StartCoroutine(CloseWithDelay());
+            }
             else
-                Closed.Invoke(this);
-            Time.timeScale = 1;
+            {
+                gameObject.SetActive(false);
+            }
+
+            Closed.Invoke(this);
+            IsActive = false;
         }
 
         public void Finish()
         {
             Finished.Invoke(this);
+            IsFinished = true;
         }
 
         public void ResetValues()
@@ -58,15 +66,16 @@ namespace Rescues
             CheckCompleted.Invoke(this);
         }
 
+        public void ForceClose()
+        {
+            Closed.Invoke(this);
+            gameObject.SetActive(false);
+            IsActive = false;
+        }
+
         private IEnumerator CloseWithDelay()
         {
             yield return new WaitForSeconds(_delayAfterFinish);
-            Closed.Invoke(this);
-            gameObject.SetActive(false);
-        }
-
-        public void ForceClose()
-        {
             gameObject.SetActive(false);
         }
         

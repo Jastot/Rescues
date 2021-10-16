@@ -23,9 +23,7 @@ namespace Rescues
         }
 
         public void Activate(Puzzle puzzle)
-        {
-            if (puzzle.IsFinished) return;
-            
+        {            
             var puzzlePosition = Camera.main.transform.position;
             puzzlePosition.z = 0;
             puzzle.transform.position = puzzlePosition;
@@ -34,7 +32,7 @@ namespace Rescues
 
         public void Close(Puzzle puzzle)
         {
-            puzzle.Close();
+            
         }
 
         public void CheckComplete(Puzzle puzzle)
@@ -55,8 +53,7 @@ namespace Rescues
 
         public void Finish(Puzzle puzzle)
         {
-            puzzle.IsFinished = true;
-            Close(puzzle);
+            puzzle.Finish();
         }
 
         public void ResetValues(Puzzle puzzle)

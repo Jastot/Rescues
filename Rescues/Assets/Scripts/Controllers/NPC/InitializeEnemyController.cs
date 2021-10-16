@@ -30,9 +30,9 @@ namespace Rescues
             var enemyData = resources.EnemyData;
 
             var enemyObject = Object.Instantiate(resources, Vector3.zero, Quaternion.identity);
-            _context.Enemy = enemyObject;
+            _context.enemy = enemyObject;
 
-            var wayPoint = _context.Enemy.RouteData.GetWayPoints()[0];
+            var wayPoint = _context.enemy.RouteData.GetWayPoints()[0];
             enemyObject.transform.position = wayPoint.PointPosition;
         }
 

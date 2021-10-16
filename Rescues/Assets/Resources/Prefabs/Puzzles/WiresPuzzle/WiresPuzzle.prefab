@@ -149,8 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48162205c2ae43b79b62065f27af1c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delayAfterFinish: 1
+  _delayAfterFinish: 0
   IsFinished: 0
+  IsActive: 0
 --- !u!1 &3431157813145294840
 GameObject:
   m_ObjectHideFlags: 0
