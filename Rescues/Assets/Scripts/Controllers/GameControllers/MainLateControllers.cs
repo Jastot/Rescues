@@ -8,7 +8,7 @@
         {
             Add(new CameraController(context, services));
             Add(new InitializeGameMenuController(context, services));
-            //Add(new InitializeSaveLoadController(context, services));
+            Add(new InitializeSaveLoadController(context, services));
         }
 
         #endregion

@@ -44,7 +44,7 @@ namespace Rescues
             _defaultBootScreen = Object.Instantiate((BootScreen)_levelsData.BootScreen, _levelParent.transform);
             _defaultBootScreen.name = "DefaultBootScreen";
             _defaultBootScreen.gameObject.SetActive(false);
-            //_context.WorldGameData.RestartLevel += RestartLevel;
+            _context.WorldGameData.RestartLevel += RestartLevel;
             LoadLevel(_levelsData.GetGate);
         }
 

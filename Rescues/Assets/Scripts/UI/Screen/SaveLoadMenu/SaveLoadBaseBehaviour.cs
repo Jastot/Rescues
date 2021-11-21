@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -9,7 +10,7 @@ namespace Rescues
         #region Fields
 
         public InputField InputField;
-        public InputField.SubmitEvent se = new InputField.SubmitEvent();
+        [NonSerialized] public InputField.SubmitEvent se = new InputField.SubmitEvent();
 
         #endregion
 

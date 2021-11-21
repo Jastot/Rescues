@@ -32,7 +32,7 @@ namespace Rescues
 
         public void Initialize()
         {
-            _context.saveLoadBehaviour = Object.FindObjectOfType<SaveLoadBehaviour>();
+            _context.saveLoadBehaviour = Object.FindObjectOfType<SaveLoadBehaviour>(true);
             _context.saveLoadBehaviour.ReEnable += UpdateListOfSaves;
             _context.gameMenu.CalledSaveLoad += _context.saveLoadBehaviour.SetSaveLoad;
             _context.gameMenu.CalledSaveLoad += _context.saveLoadBehaviour.SwitchState;

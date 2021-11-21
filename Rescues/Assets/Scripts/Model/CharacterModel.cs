@@ -129,6 +129,15 @@ namespace Rescues
             _canMove = true;
         }
 
+        public void LoadCharacterPosition(Vector3 playersSavedPos)
+        {
+            Transform.position = _curveWay.StartCharacterPosition = playersSavedPos;
+            CorrectDistance();
+            SetScale();
+            _playerMesh.enabled = true;
+            _canMove = true;
+            ChangePosition(0);
+        }
         private void ChangePosition(float direction)
         {
             if (direction != 0)
