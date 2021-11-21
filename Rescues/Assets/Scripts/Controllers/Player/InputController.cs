@@ -170,6 +170,9 @@ namespace Rescues
                             {
                                 item.gameObject.SetActive(false);
                                 _context.inventory.AddItem(item.ItemData);
+                                _context.WorldGameData.SaveItem(new ItemListData()
+                                    {Name = item.ItemData.Name,
+                                        ItemCondition = (ItemCondition)2});
                                 _isStateLocked = false;
                             },
                             item.PickUpTime));

@@ -9,7 +9,6 @@ namespace Rescues
         //TODO: Saving NPC data
         public string LevelsName;
         public IGate LastGate;
-        public List<ItemListData> ItemBehaviours = new List<ItemListData>();
         public List<QuestListData> QuestListData = new List<QuestListData>();
         public List<PuzzleListData> PuzzleListData = new List<PuzzleListData>();
 

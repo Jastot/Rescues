@@ -16,6 +16,7 @@ namespace Rescues
         //TODO: set player's position
         private static string _playerPosition;
         private static PlayersProgress _playersProgress;
+        private static List<ItemListData> _itemBehaviours;
         private static List<LevelProgress> _levelsProgress;
         public Action RestartLevel = delegate {};
         
@@ -27,6 +28,7 @@ namespace Rescues
         public WorldGameData()
         {
             _playerPosition = null;
+            _itemBehaviours = new List<ItemListData>();
             _playersProgress = new PlayersProgress();
             _levelsProgress = new List<LevelProgress>();
         }
@@ -36,11 +38,16 @@ namespace Rescues
         
         #region Methods
 
-        public void SavePlayersPosition(Vector3 playersPosition)
+        public void SavePlayersPosition(Transform playersPosition)
         {
-            _playerPosition = ConvertVector3ToString(playersPosition);
+            _playerPosition = ConvertVector3ToString(playersPosition.position);
         }
 
+        public Vector3 LoadPlayerPosition()
+        {
+            return ConvertStringToVector3(_playerPosition);
+        }
+        
         public void SavePlayersProgress(int currentLevel)
         {
             _playersProgress.PlayerCurrentPositionInProgress = currentLevel;
@@ -53,20 +60,24 @@ namespace Rescues
 
         #region Items
 
-        public void AddInLevelProgressItem(int levelsIndex, ItemListData itemListData)
+        public void AddItem(ItemListData itemListData)
         {
-            _levelsProgress[levelsIndex].ItemBehaviours.Add(itemListData);
+            _itemBehaviours.Add(itemListData);
         }
 
-        public void SaveInfoInLevelProgressItem(int levelsIndex, string name, ItemListData itemListData)
+        public void SaveItem(ItemListData itemListData)
         {
-            var index = _levelsProgress[levelsIndex].ItemBehaviours.FindIndex(s => s.Name == name);
-            _levelsProgress[levelsIndex].ItemBehaviours.Insert(index, itemListData);
+            //TODO: переделать. 
+            var index = _itemBehaviours.FindIndex(s => s.Name == itemListData.Name);
+            if (index != -1)
+                _itemBehaviours.Insert(index, itemListData);
+            else
+                AddItem(itemListData);
         }
 
-        public void DeleteInfoInLevelProgressItem(int levelsIndex, ItemListData itemListData)
+        public void DeleteItem(ItemListData itemListData)
         {
-            _levelsProgress[levelsIndex].ItemBehaviours.Remove(itemListData);
+            _itemBehaviours.Remove(itemListData);
         }
 
 
@@ -117,14 +128,10 @@ namespace Rescues
 
         public byte[] Serialize()
         {
-
-            IEnumerable<byte> position = Encoding.ASCII.GetBytes(_playerPosition);
-            var playerProgress = ByteConverter.AddToStreamPlayersProgress(_playersProgress);
-            var levels = ByteConverter.AddToStreamLevelProgress(_levelsProgress);
-            IEnumerable<byte> total = Encoding.ASCII.GetBytes("[").Concat(position).Concat(Encoding.ASCII.GetBytes("]"))
-                .Concat(Encoding.ASCII.GetBytes("[")).Concat(playerProgress).Concat(Encoding.ASCII.GetBytes("]"))
-                .Concat(levels);
-
+            IEnumerable<byte> total = Encoding.ASCII.GetBytes("[").Concat((IEnumerable<byte>)Encoding.ASCII.GetBytes(_playerPosition)).Concat(Encoding.ASCII.GetBytes("]"))
+                .Concat(Encoding.ASCII.GetBytes("[")).Concat(ByteConverter.AddToStreamPlayersProgress(_playersProgress)).Concat(Encoding.ASCII.GetBytes("]")).
+                Concat(Encoding.ASCII.GetBytes("[")).Concat(ByteConverter.AddToStreamItems(_itemBehaviours)).Concat(Encoding.ASCII.GetBytes("]"))
+                .Concat(ByteConverter.AddToStreamLevelProgress(_levelsProgress));
             byte[] result = total.ToArray();
             return result;
         }
@@ -132,7 +139,7 @@ namespace Rescues
         public static void Deserialize(byte[] data)
         {
             var dataString = Encoding.ASCII.GetString(data);
-            ByteConverter.DataReader(dataString, out _playerPosition, out _playersProgress, out _levelsProgress);
+            ByteConverter.DataReader(dataString, out _playerPosition,out _itemBehaviours, out _playersProgress, out _levelsProgress);
         }
 
         public bool LookForLevelByNameBool(string name)
@@ -168,17 +175,15 @@ namespace Rescues
             });
             int correctIndex = _levelsProgress.Count - 1;
             foreach (Transform transform in location._items.transform)
-                AddInLevelProgressItem(correctIndex, new ItemListData()
+                AddItem(new ItemListData()
                 {
                     Name = transform.name,
-                    //TODO: Need implementation
                     ItemCondition = (ItemCondition) 1
                 });
             foreach (Transform transform in location._puzzles.transform)
                 AddInLevelProgressPuzzle(correctIndex, new PuzzleListData()
                 {
                     Name = transform.name,
-                    //TODO: Need implementation
                     PuzzleCondition = (PuzzleCondition) 1
                 });
         }
@@ -186,19 +191,19 @@ namespace Rescues
         public void OpenCurrentLocation(Location location)
         {
             var locationIndex = LookForLevelByNameInt(location.name);
-            foreach (var item in _levelsProgress[locationIndex].ItemBehaviours)
+            foreach (var item in _itemBehaviours)
             {
                 if ((item.ItemCondition == (ItemCondition)0)||(item.ItemCondition==(ItemCondition)2))
                     foreach (Transform realItem in location._items)
                         if (item.Name==realItem.gameObject.name)
-                            Object.Destroy(realItem.gameObject);
+                            realItem.gameObject.SetActive(false);
             }
             foreach (var puzzle in _levelsProgress[locationIndex].PuzzleListData)
             {
                 if ((puzzle.PuzzleCondition == (PuzzleCondition)1))
                     foreach (Transform realPuzzle in location._puzzles)
                         if (puzzle.Name == realPuzzle.gameObject.name)
-                            Object.Destroy(realPuzzle.gameObject);
+                            realPuzzle.gameObject.SetActive(false);
             }
         }
 
@@ -211,7 +216,11 @@ namespace Rescues
         {
             return vector3.x + "," + vector3.y + "," + vector3.z;
         }
-
+        public Vector3 ConvertStringToVector3(string str)
+        {
+            var mass = str.Split(',');
+            return new Vector3(Convert.ToInt32(mass[0]),Convert.ToInt32(mass[1]),0);
+        }
         #endregion
     }
 }

@@ -45,7 +45,7 @@ namespace Rescues
             if (!File.Exists(savePath) == false)
                 WorldGameData.Deserialize(File.ReadAllBytes(savePath));
             else
-                throw new Exception("Loading faild");
+                throw new Exception("Loading failed");
             
         }
 

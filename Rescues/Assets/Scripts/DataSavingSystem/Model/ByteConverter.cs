@@ -23,16 +23,32 @@ namespace Rescues
             return playersProgressBytes;
         }
 
+        public static IEnumerable<byte> AddToStreamItems(List<ItemListData> itemBehaviours)
+        {
+            int counter = 0;
+            IEnumerable<byte> LevelBytes = Encoding.ASCII.GetBytes("");
+            foreach (var item in itemBehaviours)
+            {
+                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("["));
+                ConvertInputs(item.Name, (int) item.ItemCondition, LevelBytes, out LevelBytes);
+                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("]"));
+                counter++;
+            }
+            return Encoding.ASCII.GetBytes("["). 
+                Concat(Encoding.ASCII.GetBytes(counter.ToString())).
+                Concat(Encoding.ASCII.GetBytes("]")).
+                Concat(LevelBytes);;
+        }
+
         public static IEnumerable<byte> AddToStreamLevelProgress(List<LevelProgress> levelProgresses)
         {
-            int[] counts = new int[3];
+            int[] counts = new int[2];
             int levelCounter = 0;
             IEnumerable<byte> AllLevelsBytes = Encoding.ASCII.GetBytes("");
             foreach (var levelProgress in levelProgresses)
             {
                 counts[0] = 0;
                 counts[1] = 0;
-                counts[2] = 0;
                 IEnumerable<byte> LevelBytes = Encoding.ASCII.GetBytes("[").Concat(Encoding.ASCII.GetBytes("[")).
                     Concat(Encoding.ASCII.GetBytes(levelProgress.LevelsName)).Concat(Encoding.ASCII.GetBytes("]"));
                 LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("[")).
@@ -41,21 +57,12 @@ namespace Rescues
                     Concat(Encoding.ASCII.GetBytes(levelProgress.LastGate.GoToGateId+"")).
                     Concat(Encoding.ASCII.GetBytes("]"));
                 LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("["));
-                foreach (var item in levelProgress.ItemBehaviours)
-                {
-                    LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("["));
-                    ConvertInputs(item.Name, (int) item.ItemCondition, LevelBytes, out LevelBytes);
-                    LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"]"));
-                    counts[0]++;
-                }
-                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("]"));
-                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"["));
                 foreach (var puzzle in levelProgress.PuzzleListData)
                 {
                     LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("["));
                     ConvertInputs(puzzle.Name, (int) puzzle.PuzzleCondition, LevelBytes, out LevelBytes);
                     LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"]"));
-                    counts[1]++;
+                    counts[0]++;
                 }
                 LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("]"));
                 LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"["));
@@ -64,13 +71,13 @@ namespace Rescues
                     LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("["));
                     ConvertInputs(quest.Name, (int) quest.QuestCondition, LevelBytes, out LevelBytes);
                     LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"]"));
-                    counts[2]++;
+                    counts[1]++;
                 }
                 LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("]"));
                 LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"]"));
                 AllLevelsBytes = AllLevelsBytes.
                     Concat(Encoding.ASCII.GetBytes("[")).
-                    Concat(Encoding.ASCII.GetBytes($"{counts[0]},{counts[1]},{counts[2]}").
+                    Concat(Encoding.ASCII.GetBytes($"{counts[0]},{counts[1]}").
                     Concat(Encoding.ASCII.GetBytes("]")).
                     Concat(LevelBytes));
                 levelCounter++;
@@ -88,6 +95,7 @@ namespace Rescues
         }
         public static void DataReader(string dataString,
             out string playerPosition,
+            out List<ItemListData> itemListData,
             out PlayersProgress playersProgress,
             out List<LevelProgress> levelsProgress)
         {
@@ -95,9 +103,18 @@ namespace Rescues
             string[] data = dataString.Split(separatingStrings,StringSplitOptions.RemoveEmptyEntries);
             playerPosition = data[0];
             playersProgress = new PlayersProgress(){PlayerCurrentPositionInProgress = Convert.ToInt32(data[1])};
+            int counterOfItems = 0;
+            itemListData = new List<ItemListData>();
+            for (int j = 0; j < Convert.ToInt32(data[2]); j++)
+            {
+                ConvertInputs(out var name,out var condition,data[3+counterOfItems]);
+                itemListData.Add(new ItemListData() 
+                    {Name = name, ItemCondition = (ItemCondition)condition});
+                counterOfItems++;
+            }
             levelsProgress = new List<LevelProgress>();
-            int countOfLevelsInfo = Convert.ToInt32(data[2]);
-            int offsetIndex = 3;
+            int countOfLevelsInfo = Convert.ToInt32(data[3+counterOfItems]);
+            int offsetIndex = 4+counterOfItems;
             int elemCounter = 0;
             for (int i = 0; i < countOfLevelsInfo; i++)
             {
@@ -111,24 +128,18 @@ namespace Rescues
                 levelsProgress[i].LastGate = 
                     GateDataMock.GetMock(levelLastGate[0], levelLastGate[1], Convert.ToInt32(levelLastGate[2]));
                 elemCounter++;
-                levelsProgress[i].ItemBehaviours = new List<ItemListData>();
+                
                 levelsProgress[i].PuzzleListData = new List<PuzzleListData>();
                 levelsProgress[i].QuestListData = new List<QuestListData>();
+                
                 for (int j = 0; j < Convert.ToInt32(levelCounters[0]); j++)
-                {
-                    ConvertInputs(out var name,out var condition,data[elemCounter+offsetIndex]);
-                    levelsProgress[i].ItemBehaviours.Add(new ItemListData() 
-                        {Name = name, ItemCondition = (ItemCondition)condition});
-                    elemCounter++;
-                }
-                for (int j = 0; j < Convert.ToInt32(levelCounters[1]); j++)
                 {
                     ConvertInputs(out var name,out var condition,data[elemCounter+offsetIndex]);
                     levelsProgress[i].PuzzleListData.Add(new PuzzleListData() 
                         {Name = name, PuzzleCondition = (PuzzleCondition)condition});
                     elemCounter++;
                 }
-                for (int j = 0; j < Convert.ToInt32(levelCounters[2]); j++)
+                for (int j = 0; j < Convert.ToInt32(levelCounters[1]); j++)
                 {
                     ConvertInputs(out var name,out var condition,data[elemCounter+offsetIndex]);
                     levelsProgress[i].QuestListData.Add(new QuestListData() 

@@ -21,6 +21,7 @@ namespace Rescues
         private Services _services;
         private GameObject _levelParent;
         private GateController _gateController;
+        private bool restartingFlag = false;
 
         #endregion
 
@@ -91,15 +92,23 @@ namespace Rescues
                 if (!_context.WorldGameData.LookForLevelByNameBool(bootLocation.LocationName))
                     _context.WorldGameData.AddNewLocation(bootLocation.LocationInstance,gate);
                 else
+                {
                     _context.WorldGameData.OpenCurrentLocation(bootLocation.LocationInstance);
+                }
                 _context.WorldGameData.SavePlayersProgress(
                     _context.WorldGameData.LookForLevelByNameInt(bootLocation.LocationName));
-                _context.WorldGameData.SavePlayersPosition(_context.character.Transform.position);
+                if (restartingFlag)
+                {
+                    _context.character.LoadCharacterPosition(_context.WorldGameData.LoadPlayerPosition());
+                    restartingFlag = false;
+                }
             }
         }
-       
+
+
         private void RestartLevel()
         {
+            restartingFlag = true;
             LoadLevel(_context.WorldGameData.GetLastGate());
         }
         

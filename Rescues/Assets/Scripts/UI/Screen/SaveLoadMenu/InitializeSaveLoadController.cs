@@ -55,6 +55,7 @@ namespace Rescues
 
         private void Saving(string name)
         {
+            _context.WorldGameData.SavePlayersPosition(_context.character.Transform);
             _gameSavingSerializer.Save(_context.WorldGameData,name);
         }
 

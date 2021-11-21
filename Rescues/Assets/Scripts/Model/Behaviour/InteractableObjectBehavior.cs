@@ -9,12 +9,12 @@ namespace Rescues
         #region Fields
 
         /// <summary>
-        /// Тип интерактивного объекта
+        /// РўРёРї РёРЅС‚РµСЂР°РєС‚РёРІРЅРѕРіРѕ РѕР±СЉРµРєС‚Р°
         /// </summary>
         [SerializeField] private InteractableObjectType _type;
 
         /// <summary>
-        /// Блокирует взаимодействие игрока с этим триггером
+        /// Р‘Р»РѕРєРёСЂСѓРµС‚ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёРµ РёРіСЂРѕРєР° СЃ СЌС‚РёРј С‚СЂРёРіРіРµСЂРѕРј
         /// </summary>
         [SerializeField] private bool _isInteractionLocked;
 
@@ -30,7 +30,7 @@ namespace Rescues
         public bool IsInteractable { get; set; }
 
         /// <summary>
-        /// Блокирует взаимодействие игрока с этим триггером
+        /// Р‘Р»РѕРєРёСЂСѓРµС‚ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёРµ РёРіСЂРѕРєР° СЃ СЌС‚РёРј С‚СЂРёРіРіРµСЂРѕРј
         /// </summary>
         public bool IsInteractionLocked
         {
