@@ -65,16 +65,26 @@ namespace Rescues
                     counts[0]++;
                 }
                 LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("]"));
-                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"["));
+                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("["));
                 foreach (var quest in levelProgress.QuestListData)
                 {
                     LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("["));
                     ConvertInputs(quest.Name, (int) quest.QuestCondition, LevelBytes, out LevelBytes);
-                    LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"]"));
+                    LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("]"));
                     counts[1]++;
                 }
                 LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("]"));
-                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes(@"]"));
+                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("["));
+                foreach (var intractable in levelProgress.ListOfInteractable)
+                {
+                    var beh = intractable;
+                    LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("["));
+                    ConvertInputs(beh.Name,  beh.IsInteractable? 1 : 0,beh.IsInteractionLocked? 1 : 0, LevelBytes, out LevelBytes);
+                    LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("]"));
+                    counts[1]++;
+                }
+                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("]"));
+                LevelBytes = LevelBytes.Concat(Encoding.ASCII.GetBytes("]"));
                 AllLevelsBytes = AllLevelsBytes.
                     Concat(Encoding.ASCII.GetBytes("[")).
                     Concat(Encoding.ASCII.GetBytes($"{counts[0]},{counts[1]}").
@@ -89,9 +99,14 @@ namespace Rescues
         }
         private static void ConvertInputs(string name, int condition,IEnumerable<byte> mass,out IEnumerable<byte> LevelBytes)
         {
-            var Name = Encoding.ASCII.GetBytes(name);
-            var Condition = AddToIntStream(condition);
-            LevelBytes = mass.Concat(Name).Concat(Encoding.ASCII.GetBytes("~")).Concat(Condition);
+            LevelBytes = mass.Concat(Encoding.ASCII.GetBytes(name)).
+                Concat(Encoding.ASCII.GetBytes("~")).Concat(AddToIntStream(condition));
+        }
+        private static void ConvertInputs(string name, int condition, int condition2,IEnumerable<byte> mass,out IEnumerable<byte> LevelBytes)
+        {
+            LevelBytes = mass.Concat(Encoding.ASCII.GetBytes(name)).
+                Concat(Encoding.ASCII.GetBytes("~")).Concat(AddToIntStream(condition)).
+                Concat(Encoding.ASCII.GetBytes("~")).Concat(AddToIntStream(condition2));
         }
         public static void DataReader(string dataString,
             out string playerPosition,
@@ -146,6 +161,13 @@ namespace Rescues
                         {Name = name, QuestCondition = (QuestCondition)condition});
                     elemCounter++; 
                 }
+                for (int j = 0; j < Convert.ToInt32(levelCounters[1]); j++)
+                {
+                    ConvertInputs(out var name,out var condition,out var condition2,data[elemCounter+offsetIndex]);
+                    levelsProgress[i].ListOfInteractable.Add(new InteractiveCondition()
+                        {Name = name,IsInteractable = condition,IsInteractionLocked = condition2});
+                    elemCounter++; 
+                }
             }
         }
         private static void ConvertInputs(out string name,out int condition, string part)
@@ -155,6 +177,13 @@ namespace Rescues
             condition = Convert.ToInt32(splitPart[1]);
         }
 
+        private static void ConvertInputs(out string name, out bool condition,out  bool condition2, string part)
+        {
+            var splitPart = part.Split('~');
+            name = splitPart[0];
+            condition = Convert.ToInt32(splitPart[1]) == 1 ? true : false;
+            condition2 = Convert.ToInt32(splitPart[1]) == 1 ? true : false;
+        }
         #endregion
     }
 }

@@ -39,11 +39,11 @@ namespace Rescues
             File.WriteAllBytes(savePath, data.Serialize());
         }
         
-        public void Load(string fileName)
+        public void Load(WorldGameData data,string fileName)
         {
             var savePath = $"{Serialization.path}/{Serialization.SAVING_PATH}/{fileName}{Serialization.DEFEND_EXTENSION}";
             if (!File.Exists(savePath) == false)
-                WorldGameData.Deserialize(File.ReadAllBytes(savePath));
+                data.Deserialize(File.ReadAllBytes(savePath));
             else
                 throw new Exception("Loading failed");
             

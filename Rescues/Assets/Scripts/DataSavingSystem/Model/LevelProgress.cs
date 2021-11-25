@@ -11,7 +11,8 @@ namespace Rescues
         public IGate LastGate;
         public List<QuestListData> QuestListData = new List<QuestListData>();
         public List<PuzzleListData> PuzzleListData = new List<PuzzleListData>();
-
+        public List<InteractiveCondition> ListOfInteractable = new List<InteractiveCondition>();
+        
         #endregion
     }
 }

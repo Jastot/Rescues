@@ -98,7 +98,7 @@ namespace Rescues
                     _context.WorldGameData.AddNewLocation(bootLocation.LocationInstance,gate);
                 else
                 {
-                    _context.WorldGameData.OpenCurrentLocation(bootLocation.LocationInstance);
+                    _context.WorldGameData.OpenCurrentLocation(bootLocation.LocationInstance,_context.GetTriggers(InteractableObjectType.EventSystem));
                 }
                 _context.WorldGameData.SavePlayersProgress(
                     _context.WorldGameData.LookForLevelByNameInt(bootLocation.LocationName));

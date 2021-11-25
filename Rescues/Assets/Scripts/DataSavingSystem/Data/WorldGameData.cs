@@ -13,11 +13,14 @@ namespace Rescues
     {
         #region Fields
         
-        //TODO: set player's position
         private static string _playerPosition;
         private static PlayersProgress _playersProgress;
         private static List<ItemListData> _itemBehaviours;
         private static List<LevelProgress> _levelsProgress;
+        private List<IInteractable> _listOfInteractable;
+        
+        public Action SaveStart = delegate {};
+        public Action LoadStart = delegate {};
         public Action RestartLevel = delegate {};
         
         #endregion
@@ -46,6 +49,12 @@ namespace Rescues
         public Vector3 LoadPlayerPosition()
         {
             return ConvertStringToVector3(_playerPosition);
+        }
+        
+        public void SetListOfInteractable(List<IInteractable> listOfInteractable)
+        {
+            _listOfInteractable = listOfInteractable;
+            PackagingByLevels();
         }
         
         public void SavePlayersProgress(int currentLevel)
@@ -105,6 +114,25 @@ namespace Rescues
 
         #endregion
 
+        #region IInteractable
+
+        private void PackagingByLevels()
+        {
+            foreach (var interactable in _listOfInteractable)
+            {
+                var beh = interactable as InteractableObjectBehavior;
+                var levelsName = beh.GameObject.transform.parent.parent.name;
+                _levelsProgress.FirstOrDefault(i => i.LevelsName == levelsName)?.ListOfInteractable.Add(
+                    new InteractiveCondition()
+                    {
+                        Name = beh.name,
+                        IsInteractable = beh.IsInteractable,
+                        IsInteractionLocked = beh.IsInteractionLocked
+                    });
+            }
+        }
+
+        #endregion
         
         #region Puzzles
 
@@ -128,6 +156,7 @@ namespace Rescues
 
         public byte[] Serialize()
         {
+            SaveStart.Invoke();
             IEnumerable<byte> total = Encoding.ASCII.GetBytes("[").Concat((IEnumerable<byte>)Encoding.ASCII.GetBytes(_playerPosition)).Concat(Encoding.ASCII.GetBytes("]"))
                 .Concat(Encoding.ASCII.GetBytes("[")).Concat(ByteConverter.AddToStreamPlayersProgress(_playersProgress)).Concat(Encoding.ASCII.GetBytes("]")).
                 Concat(Encoding.ASCII.GetBytes("[")).Concat(ByteConverter.AddToStreamItems(_itemBehaviours)).Concat(Encoding.ASCII.GetBytes("]"))
@@ -136,8 +165,9 @@ namespace Rescues
             return result;
         }
 
-        public static void Deserialize(byte[] data)
+        public void Deserialize(byte[] data)
         {
+            LoadStart.Invoke();
             var dataString = Encoding.ASCII.GetString(data);
             ByteConverter.DataReader(dataString, out _playerPosition,out _itemBehaviours, out _playersProgress, out _levelsProgress);
         }
@@ -188,7 +218,7 @@ namespace Rescues
                 });
         }
 
-        public void OpenCurrentLocation(Location location)
+        public void OpenCurrentLocation(Location location,List<IInteractable> interactables)
         {
             var locationIndex = LookForLevelByNameInt(location.name);
             foreach (var item in _itemBehaviours)
@@ -204,6 +234,22 @@ namespace Rescues
                     foreach (Transform realPuzzle in location._puzzles)
                         if (puzzle.Name == realPuzzle.gameObject.name)
                             realPuzzle.gameObject.SetActive(false);
+            }
+            foreach (var interactable in _levelsProgress[locationIndex].ListOfInteractable)
+            {
+                //TODO: Need Test!!!
+                var r = interactables.Where((p =>
+                {
+                    var a = p as InteractableObjectBehavior;
+                    a.name = interactable.Name;
+                    return a;
+                }))?.FirstOrDefault();
+                if (r != null)
+                {
+                    r.IsInteractable = interactable.IsInteractable;
+                    r.IsInteractionLocked = interactable.IsInteractionLocked;
+                    //setActive??? 
+                }
             }
         }
 
@@ -222,6 +268,8 @@ namespace Rescues
             return new Vector3(Convert.ToInt32(mass[0]),Convert.ToInt32(mass[1]),0);
         }
         #endregion
+
+        
     }
 }
     

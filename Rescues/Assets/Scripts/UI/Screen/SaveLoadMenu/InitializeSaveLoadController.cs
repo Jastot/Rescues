@@ -5,7 +5,7 @@ using Object = UnityEngine.Object;
 
 namespace Rescues
 {
-    public sealed class InitializeSaveLoadController : IInitializeController
+    public sealed class InitializeSaveLoadController : IInitializeController,ITearDownController
     {
         #region Fields
 
@@ -32,6 +32,7 @@ namespace Rescues
 
         public void Initialize()
         {
+            ReSetInteractable();
             _context.saveLoadBehaviour = Object.FindObjectOfType<SaveLoadBehaviour>(true);
             _context.saveLoadBehaviour.ReEnable += UpdateListOfSaves;
             _context.gameMenu.CalledSaveLoad += _context.saveLoadBehaviour.SetSaveLoad;
@@ -39,9 +40,19 @@ namespace Rescues
             _context.saveLoadBehaviour.BackAction += _context.saveLoadBehaviour.SwitchState;
             _context.saveLoadBehaviour.Saving += Saving;
             _context.saveLoadBehaviour.Loading += Loading;
-            _context.saveLoadBehaviour.gameObject.SetActive(false);
+            _context.WorldGameData.SaveStart += ReSetInteractable;
         }
         
+        
+        public void TearDown()
+        {
+            _context.saveLoadBehaviour.ReEnable -= UpdateListOfSaves;
+            _context.gameMenu.CalledSaveLoad -= _context.saveLoadBehaviour.SetSaveLoad;
+            _context.gameMenu.CalledSaveLoad -= _context.saveLoadBehaviour.SwitchState;
+            _context.saveLoadBehaviour.BackAction -= _context.saveLoadBehaviour.SwitchState;
+            _context.saveLoadBehaviour.Saving -= Saving;
+            _context.saveLoadBehaviour.Loading -= Loading;
+        }
         #endregion
 
         
@@ -49,7 +60,7 @@ namespace Rescues
 
         private void Loading(string obj)
         {
-            _gameSavingSerializer.Load(obj);
+            _gameSavingSerializer.Load(_context.WorldGameData,obj);
             _context.WorldGameData.RestartLevel.Invoke();
         }
 
@@ -64,6 +75,12 @@ namespace Rescues
             _context.saveLoadBehaviour.FileContexts = _gameSavingSerializer.GetAllSaves();
         }
 
+        private void ReSetInteractable()
+        {
+            _context.WorldGameData.SetListOfInteractable(_context.GetTriggers(InteractableObjectType.EventSystem));
+        }
+
         #endregion
+
     }
 }
