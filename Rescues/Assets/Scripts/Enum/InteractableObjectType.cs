@@ -8,7 +8,8 @@
         HidingPlace = 3,
         Trap = 4,
         Puzzle = 5,
-        Stand  = 6,
-        Dialogue
+        Stand = 6,
+        Dialogue = 7,
+        EventSystem = 8
     }
 }

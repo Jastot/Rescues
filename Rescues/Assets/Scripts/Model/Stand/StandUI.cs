@@ -57,6 +57,7 @@ namespace Rescues
         public void Awake()
         {
             _standItemImage = _standItemWindow.GetComponent<Image>();
+          
 
             if (_standItemSlots != null)
             {
@@ -70,7 +71,7 @@ namespace Rescues
 
         #endregion
 
-
+        
         #region Methods
 
         private void OpenStandItem(int number, StandItemData standItem)
@@ -86,13 +87,14 @@ namespace Rescues
             _slotNumber = number;
             _standItemImage.sprite = standItem.Sprite;
             _standItemWindow.SetActive(true);
+           
         }
 
         public void OpenStandItemWindow()
         {
             _isItemOpened = true;
             Debug.Log("опен итем");
-            _standItemWindow.SetActive(true);
+            
             for (int i = 0; i < _standItemSlots.Count; i++)
             {
                 _standItemSlots[i].gameObject.GetComponent<Image>().raycastTarget = false;

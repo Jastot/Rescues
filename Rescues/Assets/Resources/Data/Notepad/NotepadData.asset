@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 303d29a128a02424c93b9074d5d0ebb7, type: 3}
+  m_Name: NotepadData
+  m_EditorClassIdentifier: 
+  _quests: {fileID: 4900000, guid: 992015d5b4134cf4886ad53368a1ff8e, type: 3}
+  _dialogues: {fileID: 4900000, guid: cf6d9e64d2f4b864abc6ed84419e86a9, type: 3}
+  _characters: {fileID: 4900000, guid: 82093a2a7de5b9e45ad5dd6103600ce9, type: 3}
+  _lore: {fileID: 4900000, guid: 1e6e271e54555224782e159881005ae4, type: 3}

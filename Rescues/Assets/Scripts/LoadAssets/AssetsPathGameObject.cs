@@ -24,6 +24,13 @@ namespace Rescues
             {ScreenType.GameMenu, "Prefabs/UI/Screen/GameMenu"}
         };
 
+        public static readonly Dictionary<AudioDataType, string> AudioData = new Dictionary<AudioDataType, string>()
+        {
+            {AudioDataType.AudioMixer, "Data/Audio/AudioMixer"},
+            {AudioDataType.AudioControllerContext, "Data/Audio/AudioControllerContext"},
+            {AudioDataType.HotelMusicTheme, "Prefabs/Locations/Hotel/Current version/HotelMusicTheme"},
+        };
+
         #endregion
     }
 }

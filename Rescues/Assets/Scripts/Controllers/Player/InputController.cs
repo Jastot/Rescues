@@ -161,6 +161,12 @@ namespace Rescues
                             LockState();
                         }
 
+                        var eventSystem = GetInteractableObject<EventSystemBehaviour>(InteractableObjectType.EventSystem);
+                        if (eventSystem != null)
+                        {
+                            eventSystem.ActivateButtonInTriggerEvent();
+                        }
+
                         var item = GetInteractableObject<ItemBehaviour>(InteractableObjectType.Item);
                         if (item != null)
                         {
@@ -170,9 +176,6 @@ namespace Rescues
                             {
                                 item.gameObject.SetActive(false);
                                 _context.inventory.AddItem(item.ItemData);
-                                _context.WorldGameData.SaveItem(new ItemListData()
-                                    {Name = item.ItemData.Name,
-                                        ItemCondition = (ItemCondition)2});
                                 _isStateLocked = false;
                             },
                             item.PickUpTime));

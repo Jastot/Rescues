@@ -138,7 +138,7 @@ namespace Rescues
             VD.OnNodeChange += SetBackground;
             VD.OnNodeChange += SetStartNode;
             VD.OnNodeChange += SwitchNpcContainerState;
-            VD.OnNodeChange += ActivateInteractableObject;
+            VD.OnNodeChange += SwitchInteractionLock;
             VD.OnEnd += End;
 
             VD.BeginDialogue(dialogue);
@@ -154,7 +154,7 @@ namespace Rescues
             VD.OnNodeChange -= SetBackground;
             VD.OnNodeChange -= SetStartNode;
             VD.OnNodeChange -= SwitchNpcContainerState;
-            VD.OnNodeChange -= ActivateInteractableObject;
+            VD.OnNodeChange -= SwitchInteractionLock;
             VD.OnEnd -= End;
 
             _dialogueUI.npcText.text = "";
@@ -233,7 +233,7 @@ namespace Rescues
             }
         }
 
-        private void ActivateInteractableObject(VD.NodeData data)
+        private void SwitchInteractionLock(VD.NodeData data)
         {
             if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.ActivateObject]))
             {
@@ -243,7 +243,7 @@ namespace Rescues
                     if (interactable.Id.ToLower() == data.extraVars[DialogueCommandValue.Command[DialogueCommands.
                         ActivateObject]].ToString().ToLower())
                     {
-                        interactable.IsInteractionLocked = false;
+                        interactable.IsInteractionLocked = !interactable.IsInteractionLocked;
                         break;
                     }
                 }

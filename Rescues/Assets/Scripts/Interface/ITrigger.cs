@@ -11,6 +11,9 @@ namespace Rescues
         Action<ITrigger> OnTriggerExitHandler { get; set; }
         Action<ITrigger, InteractableObjectType> DestroyHandler { get; set; }
         GameObject GameObject { get; }
+        /// <summary>
+        /// Тип интерактивного объекта
+        /// </summary>
         InteractableObjectType Type { get; }
     }
 }

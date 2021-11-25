@@ -4,7 +4,7 @@
 namespace Rescues
 {
     [RequireComponent(typeof(VIDE_Assign))]
-    public class DialogueBehaviour: InteractableObjectBehavior
+    public sealed class DialogueBehaviour: InteractableObjectBehavior
     {
         #region Fields
 
