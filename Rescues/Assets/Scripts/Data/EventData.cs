@@ -6,31 +6,36 @@ using UnityEngine.Events;
 namespace Rescues
 {
     [Serializable]
-    public struct EventData : IInteractable
+    public sealed class EventData : IInteractable
     {
         #region Fields
 
+        [SerializeField] private bool _isInteractionLocked;
         /// <summary>
         /// Is event repeat after end?
         /// </summary>
         public bool IsRepeating;
-        [SerializeField] private bool isInteractionLocked;
 
         /// <summary>
         /// Time before invoke event
         /// </summary>
         public float TimeBeforeInvoke;
-        [SerializeField] private string id;
+        [SerializeField] private string _id = "-1";
 
         /// <summary>
         /// Event himself
         /// </summary>
         public UnityEvent Event;
 
+        #endregion
+
+
+        #region Properties
+
+        public string Id { get => _id; set => _id = value; }
         public bool IsInteractable { get; set; }
-        public bool IsInteractionLocked { get => isInteractionLocked; set => isInteractionLocked = value; }
+        public bool IsInteractionLocked { get => _isInteractionLocked; set => _isInteractionLocked = value; }
         public string Description { get; set; }
-        public string Id { get => id; set => id = value; }
 
         #endregion
     }

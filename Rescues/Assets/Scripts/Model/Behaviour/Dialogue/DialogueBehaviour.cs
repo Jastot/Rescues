@@ -17,6 +17,7 @@ namespace Rescues
 
         private void OnValidate()
         {
+            Type = InteractableObjectType.Dialogue;
             assignDialog = GetComponent<VIDE_Assign>();
         } 
 

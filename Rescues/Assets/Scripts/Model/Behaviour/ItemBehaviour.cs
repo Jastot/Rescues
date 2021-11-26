@@ -12,5 +12,14 @@ namespace Rescues
         public float PickUpTime = 0.5f;
 
         #endregion
+
+        #region UnityMethods
+
+        private void OnValidate()
+        {
+            Type = InteractableObjectType.Item;
+        }
+
+        #endregion
     }
 }

@@ -33,5 +33,14 @@ namespace Rescues
         }
 
         #endregion
+
+        #region UnityMethods
+
+        private void OnValidate()
+        {
+            Type = InteractableObjectType.EventSystem;
+        }
+
+        #endregion
     }
 }

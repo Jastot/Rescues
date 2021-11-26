@@ -69,18 +69,6 @@ namespace Rescues
 
         #region Methods
 
-        private void OnValidate()
-        {
-            if (gameObject.activeInHierarchy)
-                name = _thisGateId + " to " + _goToLevelName + "_" + _goToLocationName + "_" + _goToGateId;
-        }
-
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawSphere(gameObject.transform.position, _circleCollider.radius);
-        }
-
         [Button("Go by gate way")]
         public void GoByGateWay()
         {
@@ -98,9 +86,25 @@ namespace Rescues
             onLoadComplete.Invoke();
             
         }
-        
+
         #endregion
-       
-        
+
+
+        #region UnityMethods
+
+        private void OnValidate()
+        {
+            if (gameObject.activeInHierarchy)
+                name = _thisGateId + " to " + _goToLevelName + "_" + _goToLocationName + "_" + _goToGateId;
+            Type = InteractableObjectType.Gate;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawSphere(gameObject.transform.position, _circleCollider.radius);
+        }
+
+        #endregion
     }
 }

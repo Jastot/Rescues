@@ -7,7 +7,7 @@ namespace Rescues
     public class InteractableObjectBehavior : MonoBehaviour, ITrigger
     {
         #region Fields
-       
+
         [SerializeField] private InteractableObjectType _type;
 
         #endregion
@@ -20,11 +20,11 @@ namespace Rescues
         public Action<ITrigger> OnTriggerExitHandler { get; set; }
         public Action<ITrigger, InteractableObjectType> DestroyHandler { get; set; }
         public GameObject GameObject => gameObject;
-        public InteractableObjectType Type { get => _type; }
-        public bool IsInteractable { get; set; }       
+        public InteractableObjectType Type { get => _type; set => _type = value; }
+        public bool IsInteractable { get; set; }
         [field: SerializeField] public bool IsInteractionLocked { get; set; }
         public string Description { get; set; }
-        [field: SerializeField] public string Id { get; set; }
+        [field: SerializeField] public string Id { get; set; } = "-1";
 
         #endregion
 
@@ -33,7 +33,7 @@ namespace Rescues
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (OnFilterHandler?.Invoke(other) == true && IsInteractionLocked == false)
+            if (OnFilterHandler?.Invoke(other) == true)
             {
                 OnTriggerEnterHandler.Invoke(this);
             }
@@ -41,7 +41,7 @@ namespace Rescues
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (OnFilterHandler?.Invoke(other) == true && IsInteractionLocked == false)
+            if (OnFilterHandler?.Invoke(other) == true)
             {
                 OnTriggerExitHandler.Invoke(this);
             }
