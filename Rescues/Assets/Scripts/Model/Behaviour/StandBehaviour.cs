@@ -10,5 +10,15 @@ namespace Rescues
         public GameObject StandWindow;
 
         #endregion
+
+
+        #region UnityMethods
+
+        private void OnValidate()
+        {
+            Type = InteractableObjectType.Stand;
+        }
+
+        #endregion
     }
 }

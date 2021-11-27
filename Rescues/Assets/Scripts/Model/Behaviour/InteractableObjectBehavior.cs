@@ -4,19 +4,11 @@ using UnityEngine;
 
 namespace Rescues
 {
-    public abstract class InteractableObjectBehavior : MonoBehaviour, ITrigger
+    public class InteractableObjectBehavior : MonoBehaviour, ITrigger
     {
         #region Fields
 
-        /// <summary>
-        /// Тип интерактивного объекта
-        /// </summary>
         [SerializeField] private InteractableObjectType _type;
-
-        /// <summary>
-        /// Блокирует взаимодействие игрока с этим триггером
-        /// </summary>
-        [SerializeField] private bool _isInteractionLocked;
 
         #endregion
 
@@ -27,24 +19,12 @@ namespace Rescues
         public Action<ITrigger> OnTriggerEnterHandler { get; set; }
         public Action<ITrigger> OnTriggerExitHandler { get; set; }
         public Action<ITrigger, InteractableObjectType> DestroyHandler { get; set; }
-        public bool IsInteractable { get; set; }
-
-        /// <summary>
-        /// Блокирует взаимодействие игрока с этим триггером
-        /// </summary>
-        public bool IsInteractionLocked
-        {
-            get => _isInteractionLocked;
-            set
-            {
-                _isInteractionLocked = value;
-            }
-        }
-
-        public string Description { get; set; }
         public GameObject GameObject => gameObject;
-        public InteractableObjectType Type { get => _type; }
-        [field: SerializeField] public string Id { get; set; }
+        public InteractableObjectType Type { get => _type; set => _type = value; }
+        public bool IsInteractable { get; set; }
+        [field: SerializeField] public bool IsInteractionLocked { get; set; }
+        public string Description { get; set; }
+        [field: SerializeField] public string Id { get; set; } = "-1";
 
         #endregion
 
@@ -53,7 +33,7 @@ namespace Rescues
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (OnFilterHandler?.Invoke(other) == true && _isInteractionLocked == false)
+            if (OnFilterHandler?.Invoke(other) == true)
             {
                 OnTriggerEnterHandler.Invoke(this);
             }
@@ -61,7 +41,7 @@ namespace Rescues
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (OnFilterHandler?.Invoke(other) == true && _isInteractionLocked == false)
+            if (OnFilterHandler?.Invoke(other) == true)
             {
                 OnTriggerExitHandler.Invoke(this);
             }

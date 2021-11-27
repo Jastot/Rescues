@@ -11,5 +11,15 @@ namespace Rescues
         public SpriteRenderer HidedSprite;
 
         #endregion
+
+
+        #region UnityMethods
+
+        private void OnValidate()
+        {
+            Type = InteractableObjectType.HidingPlace;
+        }
+
+        #endregion
     }
 }

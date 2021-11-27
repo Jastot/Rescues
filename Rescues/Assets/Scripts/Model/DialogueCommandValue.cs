@@ -19,6 +19,7 @@ namespace Rescues
             { DialogueCommands.SetStartNode, "SetStartNode" },
             { DialogueCommands.SwitchNpcContainerState, "SwitchNpcContainerState" },
             { DialogueCommands.ActivateObject, "ActivateObject" },
+            { DialogueCommands.ActivateEvent, "ActivateEvent" },
         };
     }
 }

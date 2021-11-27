@@ -138,7 +138,8 @@ namespace Rescues
             VD.OnNodeChange += SetBackground;
             VD.OnNodeChange += SetStartNode;
             VD.OnNodeChange += SwitchNpcContainerState;
-            VD.OnNodeChange += ActivateInteractableObject;
+            VD.OnNodeChange += SwitchInteractionLock;
+            VD.OnNodeChange += SwitchEventLock;
             VD.OnEnd += End;
 
             VD.BeginDialogue(dialogue);
@@ -154,7 +155,8 @@ namespace Rescues
             VD.OnNodeChange -= SetBackground;
             VD.OnNodeChange -= SetStartNode;
             VD.OnNodeChange -= SwitchNpcContainerState;
-            VD.OnNodeChange -= ActivateInteractableObject;
+            VD.OnNodeChange -= SwitchInteractionLock;
+            VD.OnNodeChange -= SwitchEventLock;
             VD.OnEnd -= End;
 
             _dialogueUI.npcText.text = "";
@@ -233,19 +235,87 @@ namespace Rescues
             }
         }
 
-        private void ActivateInteractableObject(VD.NodeData data)
+        private void SwitchInteractionLock(VD.NodeData data)
         {
             if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.ActivateObject]))
             {
                 var tempCollection = _context.GetListInteractable();
-                foreach (InteractableObjectBehavior interactable in tempCollection)
+                var commandValues = VD.ToStringArray(data.extraVars[DialogueCommandValue.Command[DialogueCommands.
+                        ActivateObject]].ToString().ToLower());
+                for (int i = 0; i < commandValues.Length; i++)
                 {
-                    if (interactable.Id.ToLower() == data.extraVars[DialogueCommandValue.Command[DialogueCommands.
-                        ActivateObject]].ToString().ToLower())
+                    foreach (InteractableObjectBehavior interactable in tempCollection)
                     {
-                        interactable.IsInteractionLocked = false;
-                        break;
-                    }
+                        if (interactable.Id.ToLower() == commandValues[i])
+                        {
+                            interactable.IsInteractionLocked = !interactable.IsInteractionLocked;
+                            break;
+                        }
+                    } 
+                }
+            }
+        }
+
+        private void SwitchEventLock(VD.NodeData data)
+        {
+            if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.ActivateEvent]))
+            {
+                var tempCollection = _context.GetTriggers<EventSystemBehaviour>(InteractableObjectType.EventSystem);
+                var commandValues = VD.ToStringArray(data.extraVars[DialogueCommandValue.
+                            Command[DialogueCommands.ActivateEvent]].ToString().ToLower());
+                for (int j = 0; j < commandValues.Length; j++)
+                {
+                    var breakToken = false;
+                    foreach (EventSystemBehaviour eventSystem in tempCollection)
+                    {
+                        for (int i = 0; i < eventSystem.OnTriggerEnterEvents.Count; i++)
+                        {
+                            if (eventSystem.OnTriggerEnterEvents[i].Id.ToLower() == commandValues[j])
+                            {
+                                eventSystem.OnTriggerEnterEvents[i].IsInteractionLocked = !eventSystem.
+                                    OnTriggerEnterEvents[i].IsInteractionLocked;
+                                breakToken = true;
+                                break;
+                            }
+                        }
+
+                        if (breakToken)
+                        {
+                            break;
+                        }
+
+                        for (int i = 0; i < eventSystem.OnTriggerExitEvents.Count; i++)
+                        {
+                            if (eventSystem.OnTriggerExitEvents[i].Id.ToLower() == commandValues[j])
+                            {
+                                eventSystem.OnTriggerExitEvents[i].IsInteractionLocked = !eventSystem.
+                                    OnTriggerExitEvents[i].IsInteractionLocked;
+                                breakToken = true;
+                                break;
+                            }
+                        }
+
+                        if (breakToken)
+                        {
+                            break;
+                        }
+
+                        for (int i = 0; i < eventSystem.OnButtonInTriggerEvents.Count; i++)
+                        {
+                            if (eventSystem.OnButtonInTriggerEvents[i].Id.ToLower() == commandValues[j])
+                            {
+                                eventSystem.OnButtonInTriggerEvents[i].IsInteractionLocked = !eventSystem.
+                                    OnButtonInTriggerEvents[i].IsInteractionLocked;
+                                breakToken = true;
+                                break;
+                            }
+                        }
+
+                        if (breakToken)
+                        {
+                            break;
+                        }
+                    } 
                 }
             }
         }
@@ -347,14 +417,19 @@ namespace Rescues
         {
             if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.GiveItem]))
             {
-                foreach (ItemBehaviour item in _items)
+                var commandValues = VD.ToStringArray(data.
+                        extraVars[DialogueCommandValue.Command[DialogueCommands.GiveItem]].ToString().ToLower());
+                for (int i = 0; i < commandValues.Length; i++)
                 {
-                    if (item.ItemData?.Name.ToLower() == data.
-                        extraVars[DialogueCommandValue.Command[DialogueCommands.GiveItem]].ToString().ToLower())
+                    foreach (ItemBehaviour item in _items)
                     {
-                        item.gameObject.SetActive(false);
-                        _context.inventory.AddItem(item.ItemData);
-                    }
+                        if (item.Id.ToLower() == commandValues[i])
+                        {
+                            item.gameObject.SetActive(false);
+                            _context.inventory.AddItem(item.ItemData);
+                            break;
+                        }
+                    } 
                 }
             }
         }

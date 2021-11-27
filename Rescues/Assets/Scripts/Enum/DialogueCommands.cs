@@ -14,5 +14,6 @@
         SetStartNode = 9,
         SwitchNpcContainerState = 10,
         ActivateObject = 11,
+        ActivateEvent = 12,
     }
 }

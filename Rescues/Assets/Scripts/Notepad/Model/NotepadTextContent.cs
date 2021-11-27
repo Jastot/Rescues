@@ -19,7 +19,6 @@ namespace Rescues
         private const string UNDER_OPEN = "<u>";
         private const string UNDER_CLOSE = "</u>";
         private const string TAB = "    ";
-        
 
         #endregion
 

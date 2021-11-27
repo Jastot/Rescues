@@ -28,8 +28,8 @@ namespace Rescues
         public TimeRemaining(EventData data)
         {
             Method = () => data.Event.Invoke();
-            Time = data.Time;
-            CurrentTime = data.Time;
+            Time = data.TimeBeforeInvoke;
+            CurrentTime = data.TimeBeforeInvoke;
             IsRepeating = data.IsRepeating;
         }
         

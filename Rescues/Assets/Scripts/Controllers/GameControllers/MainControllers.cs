@@ -12,7 +12,7 @@
             Add(new ItemActiveController(context, services));
             Add(new MainPuzzleController(context, services));
             Add(new HidingPlaceController(context, services));
-            Add(new ActivatorController());
+            Add(new EventSystemController(context));
             Add(new DialogueUIController(context, services));
             Add(new InputController(context, services));
             Add(new InventoryController(context));
