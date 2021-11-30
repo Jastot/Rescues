@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &798547600877002727
+--- !u!114 &3859836045413712765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,15 +150,16 @@ GameObject:
   - component: {fileID: 4278204720713619901}
   - component: {fileID: 6667423842141647229}
   - component: {fileID: 8046546384543181364}
-  - component: {fileID: 2979474165170637626}
-  - component: {fileID: 8857400392393121042}
+  - component: {fileID: 8135223569939164582}
+  - component: {fileID: 1295820466273472005}
+  - component: {fileID: 2592465467771023553}
   m_Layer: 0
   m_Name: Ring
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2713127866492597433
 Transform:
   m_ObjectHideFlags: 0
@@ -167,7 +168,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146422744201183376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.01, y: 1.48, z: 21.610567}
+  m_LocalPosition: {x: -1.16, y: 1.48, z: 21.610567}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801062842662750211}
@@ -236,12 +237,143 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   OnTriggerEnterEvents: []
   OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
+  OnButtonInTriggerEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: -1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2440806988178800138}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 6615082887903989357}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1413652127720214474}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 627115493554568665}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _isInteractionLocked: 1
+    IsRepeating: 0
+    TimeBeforeInvoke: 0.3
+    _id: RHoz
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2668034248902124377}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - _isInteractionLocked: 1
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: RRingSound
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4999535505501303317}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - _isInteractionLocked: 1
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: RRingDialogue
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1295820466273472005}
+          m_TargetAssemblyTypeName: Rescues.InteractableObjectBehavior, Assembly-CSharp
+          m_MethodName: set_IsInteractionLocked
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _isInteractionLocked: 1
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: CallHoz
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6168885976161313263}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &8046546384543181364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -255,7 +387,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.12657547, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -266,9 +398,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 3}
+  m_Size: {x: 0.74684906, y: 3}
   m_EdgeRadius: 0
---- !u!114 &2979474165170637626
+--- !u!114 &8135223569939164582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,6 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diags:
+  - 123
   - 1stDialHoz
   - Charlie
   - CommentModifier
@@ -295,17 +428,21 @@ MonoBehaviour:
   - MyTestDialogue
   - NPCOnly
   - QuestChartDemo
+  - ReedDi
+  - RingQuest
   - Test_1
   - TriggeredDude
   - Witch
-  assignedIndex: 0
-  assignedID: 79672
-  assignedDialogue: 1stDialHoz
+  - WorkRing
+  assignedIndex: 16
+  assignedID: 9209
+  assignedDialogue: RingQuest
   interactionCount: 0
-  alias: 
+  alias: "\u0421\u043B\u043E\u043C\u0430\u043D\u044B\u0439 \u0437\u0432\u043E\u043D\u043E\u043A"
   overrideStartNode: -1
-  defaultNPCSprite: {fileID: 0}
-  defaultPlayerSprite: {fileID: 0}
+  defaultNPCSprite: {fileID: 21300000, guid: e2e18c90613c4fb49925b33827c3fcb1, type: 3}
+  defaultPlayerSprite: {fileID: 21300000, guid: 267b3798ce610bc449478556cda80e82,
+    type: 3}
   targetManager: {fileID: 0}
   preload: 1
   notuptodate: 0
@@ -315,9 +452,9 @@ MonoBehaviour:
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: "\u0414\u043E\u0431\u0440\u044B\u0439 \u0432\u0435\u0447\u0435\u0440!
-        \u0412\u044B \u0447\u0442\u043E-\u0442\u043E \u0445\u043E\u0442\u0435\u043B\u0438?"
-      extraData: 
+    - text: "\u041A\u0430\u0436\u0435\u0442\u0441\u044F \u0437\u0432\u043E\u043D\u043E\u043A
+        \u0441\u043B\u043E\u043C\u0430\u043D"
+      extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: 1
       outActionIndex: -1
@@ -327,50 +464,22 @@ MonoBehaviour:
     ID: 0
     pTag: 
     sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 4
+    vars:
+    - 
+    - RingAct
+    varKeys:
+    - SwitchNpcContainerState
+    - ActivateEvent
+    isPlayer: 1
+  - commentCount: 1
     s_comment:
-    - text: "\u0414\u043E\u0431\u0440\u044B\u0439 \u0432\u0435\u0447\u0435\u0440!
-        \u041C\u044B \u043E\u043A\u0430\u0437\u0430\u043B\u0438\u0441\u044C \u043F\u0440\u043E\u0435\u0437\u0434\u043E\u043C
-        \u0432 \u0432\u0430\u0448\u0435\u043C \u0433\u043E\u0440\u043E\u0434\u0435,
-        \u0438 \u0445\u043E\u0442\u0435\u043B\u0438 \u0431\u044B \u0441\u043D\u044F\u0442\u044C
-        \u043A\u043E\u043C\u043D\u0430\u0442\u0443 \u043D\u0430 \u043D\u043E\u0447\u044C."
-      extraData: 
-      inputSetIndex: 1
-      outputNodeIndex: 2
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: "\u0425\u043E\u0442\u0435\u043B, \u043D\u043E \u0443\u0432\u0438\u0434\u0435\u0432
-        \u0432 \u043A\u0430\u043A\u043E\u043C \u0437\u0434\u0435\u0441\u044C \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0438
-        \u0432\u0441\u0451 \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F,
-        \u0443\u0436\u0435 \u0434\u0430\u0436\u0435 \u043D\u0435 \u0437\u043D\u0430\u044E..."
-      extraData: 
-      inputSetIndex: 1
-      outputNodeIndex: 10
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: "\u0410 \u0443 \u0432\u0430\u0441 \u0442\u0443\u0442 \u0432\u0441\u0435\u0433\u0434\u0430
-        \u0442\u0430\u043A\u043E\u0435 \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u0435
-        \u043A \u043A\u043B\u0438\u0435\u043D\u0430\u0442\u0430\u043C?"
+    - text: "\u0414\u0443\u043C\u0430\u044E \u0435\u0433\u043E \u043C\u043E\u0436\u043D\u043E
+        \u043F\u043E\u0447\u0438\u043D\u0438\u0442\u044C, \u043D\u0430\u0434\u043E
+        \u0442\u043E\u043B\u044C\u043A\u043E \u043D\u0430\u0439\u0442\u0438 \u044F\u0437\u044B\u0447\u043E\u043A. "
       extraData: ExtraData
       inputSetIndex: 1
-      outputNodeIndex: 12
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: "\u0414\u0443\u043C\u0430\u044E \u043C\u044B \u043F\u0435\u0440\u0435\u043D\u043E\u0447\u0443\u0435\u043C
-        \u0432 \u0434\u0440\u0443\u0433\u043E\u043C \u043C\u0435\u0441\u0442\u0435."
-      extraData: ExtraData
-      inputSetIndex: 1
-      outputNodeIndex: 15
-      outActionIndex: -1
+      outputNodeIndex: -1
+      outActionIndex: 0
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -378,17 +487,14 @@ MonoBehaviour:
     pTag: 
     sprite: {fileID: 0}
     vars:
-    - 
+    - 0-56679
     varKeys:
-    - SwitchNpcContainerState
+    - SetStartNode
     isPlayer: 1
   - commentCount: 1
     s_comment:
-    - text: "\u0414\u0430, \u043A\u043E\u043D\u0435\u0447\u043D\u043E, \u0432 \u044D\u0442\u043E
-        \u0432\u0440\u0435\u043C\u044F \u0433\u043E\u0434\u0430 \u0443 \u043D\u0430\u0441
-        \u043D\u0435 \u0442\u0430\u043A \u043C\u043D\u043E\u0433\u043E \u0433\u043E\u0441\u0442\u0435\u0439,
-        \u0442\u0430\u043A \u0447\u0442\u043E \u0441\u0432\u043E\u0431\u043E\u0434\u043D\u044B\u0435
-        \u043A\u043E\u043C\u043D\u0430\u0442\u044B \u0435\u0441\u0442\u044C."
+    - text: "\u0422\u0430\u043A, \u043D\u0443\u0436\u043D\u043E \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C
+        \u044F\u0437\u044B\u0447\u043E\u043A \u043D\u0430 \u043C\u0435\u0441\u0442\u043E"
       extraData: ExtraData
       inputSetIndex: 2
       outputNodeIndex: 3
@@ -399,85 +505,39 @@ MonoBehaviour:
     ID: 2
     pTag: 
     sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: "\u041E\u0442\u043B\u0438\u0447\u043D\u043E. \u0421\u043E \u043C\u043D\u043E\u0439
-        \u0436\u0435\u043D\u0430 \u0438 \u0441\u044B\u043D, \u043E\u043D\u0438 \u0432
-        \u043C\u0430\u0448\u0438\u043D\u0435, \u0442\u0430\u043A \u0447\u0442\u043E
-        \u043D\u0430\u043C \u0445\u0432\u0430\u0442\u0438\u0442 \u043E\u0434\u043D\u043E\u0433\u043E
-        \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u043E\u0433\u043E
-        \u043D\u043E\u043C\u0435\u0440\u0430."
-      extraData: ExtraData
-      inputSetIndex: 3
-      outputNodeIndex: 4
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 3
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
+    vars:
+    - 
+    varKeys:
+    - SwitchNpcContainerState
     isPlayer: 1
   - commentCount: 1
     s_comment:
-    - text: "\u041F\u0440\u043E\u0448\u0443 \u043F\u0440\u043E\u0449\u0435\u043D\u0438\u044F,
-        \u043D\u043E \u0443 \u043D\u0430\u0441 \u043D\u0435\u0442 \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u044B\u0445
-        \u043D\u043E\u043C\u0435\u0440\u043E\u0432. \u041D\u043E \u043C\u043E\u0433\u0443
-        \u0432\u0430\u043C \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0438\u0442\u044C
-        \u0434\u0432\u0430 \u0441\u043C\u0435\u0436\u043D\u044B\u0445 \u043E\u0434\u043D\u043E\u043C\u0435\u0441\u0442\u043D\u044B\u0445.
-        \u0412\u0430\u0441 \u044D\u0442\u043E \u0443\u0441\u0442\u0440\u043E\u0438\u0442?"
+    - text: "\u0413\u043E\u0442\u043E\u0432\u043E! \u0422\u0435\u043F\u0435\u0440\u044C
+        \u043C\u043E\u0436\u043D\u043E \u043F\u043E\u0437\u0432\u043E\u043D\u0438\u0442\u044C
+        \u0432 \u0437\u0432\u043E\u043D\u043E\u043A."
       extraData: ExtraData
-      inputSetIndex: 4
-      outputNodeIndex: 5
-      outActionIndex: -1
+      inputSetIndex: 3
+      outputNodeIndex: -1
+      outActionIndex: 1
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     ID: 4
     pTag: 
     sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 2
-    s_comment:
-    - text: "\u041D\u0443 \u043F\u043E\u043B\u0430\u0433\u0430\u044E, \u0447\u0442\u043E
-        \u0434\u0430."
-      extraData: ExtraData
-      inputSetIndex: 5
-      outputNodeIndex: 6
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: "\u042D\u0442\u043E \u043D\u0435 \u0441\u043E\u0432\u0441\u0435\u043C
-        \u0443\u0434\u043E\u0431\u043D\u043E. \u0422\u043E\u0447\u043D\u043E \u0434\u0440\u0443\u0433\u0438\u0445
-        \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u043E\u0432 \u043D\u0435\u0442?"
-      extraData: ExtraData
-      inputSetIndex: 5
-      outputNodeIndex: 7
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 5
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
+    vars:
+    - RingDialogue
+    - RRingSound,RHoz,RRingDialogue,CallHoz
+    varKeys:
+    - ActivateObject
+    - ActivateEvent
     isPlayer: 1
   - commentCount: 1
     s_comment:
-    - text: "\u0422\u043E\u0433\u0434\u0430 \u0441\u0435\u0439\u0447\u0430\u0441
-        \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043B\u044E \u043A\u043B\u044E\u0447\u0438."
+    - text: "\u041D\u0443\u0436\u043D\u043E \u043D\u0430\u0439\u0442\u0438 \u044F\u0437\u044B\u0447\u0435\u043A. "
       extraData: ExtraData
-      inputSetIndex: 6
-      outputNodeIndex: 9
+      inputSetIndex: 4
+      outputNodeIndex: -1
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
@@ -485,33 +545,17 @@ MonoBehaviour:
     ID: 6
     pTag: 
     sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
+    vars:
+    - 
+    varKeys:
+    - SwitchNpcContainerState
+    isPlayer: 1
   - commentCount: 1
     s_comment:
-    - text: "\u0423\u0432\u044B \u043D\u0435\u0442. \u0418 \u043A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E,
-        \u044D\u0442\u043E \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
-        \u043E\u0442\u0435\u043B\u044C \u0432 \u043D\u0430\u0448\u0435\u043C \u0433\u043E\u0440\u043E\u0434\u0435."
-      extraData: ExtraData
-      inputSetIndex: 7
-      outputNodeIndex: 8
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 7
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: "\u0422\u043E\u0433\u0434\u0430 \u043C\u044B \u0432\u043E\u0437\u044C\u043C\u0451\u043C
-        \u044D\u0442\u0438 \u0434\u0432\u0430 \u043D\u043E\u043C\u0435\u0440\u0430."
-      extraData: ExtraData
-      inputSetIndex: 8
+    - text: "\u042F \u0443\u0436\u0435 \u0437\u0434\u0435\u0441\u044C, \u043C\u043E\u0436\u0435\u0442
+        \u043F\u0435\u0440\u0435\u0441\u0442\u0430\u043D\u0435\u0442\u0435 \u0437\u0432\u043E\u043D\u0438\u0442\u044C?"
+      extraData: 
+      inputSetIndex: 5
       outputNodeIndex: 6
       outActionIndex: -1
       sprites: {fileID: 0}
@@ -520,15 +564,27 @@ MonoBehaviour:
     ID: 8
     pTag: 
     sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  - commentCount: 1
+    vars:
+    - "\u0425\u043E\u0437\u044F\u0438\u043D \u043E\u0442\u0435\u043B\u044F"
+    - RHoz
+    varKeys:
+    - SetNpcName
+    - ActivateEvent
+    isPlayer: 0
+  - commentCount: 2
     s_comment:
-    - text: "\u0411\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044E \u0432\u0430\u0441."
+    - text: "\u041F\u0440\u043E\u0441\u0442\u0438\u0442\u0435, \u044F \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E."
       extraData: ExtraData
-      inputSetIndex: 9
+      inputSetIndex: 6
       outputNodeIndex: -1
+      outActionIndex: 2
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\u0417\u0430\u0445\u043E\u0447\u0443, \u0431\u0443\u0434\u0443 \u0437\u0432\u043E\u043D\u0438\u0442\u044C! "
+      extraData: 
+      inputSetIndex: 6
+      outputNodeIndex: 7
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
@@ -541,60 +597,11 @@ MonoBehaviour:
     isPlayer: 1
   - commentCount: 1
     s_comment:
-    - text: "\u041F\u0443\u0441\u0442\u044C \u0432\u0430\u0441 \u043D\u0435 \u0441\u043C\u0443\u0449\u0430\u0435\u0442
-        \u0432\u043D\u0435\u0448\u043D\u0438\u0439 \u0432\u0438\u0434! \u0423\u0432\u0435\u0440\u044F\u044E,
-        \u0432\u044B \u0431\u0443\u0434\u0435\u0442\u0435 \u0434\u043E\u0432\u043E\u043B\u044C\u043D\u044B
-        \u043D\u043E\u043C\u0435\u0440\u043E\u043C \u0438 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435\u043C."
+    - text: "\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430 \u043D\u0435
+        \u043D\u0430\u0434\u043E!"
       extraData: ExtraData
-      inputSetIndex: 10
-      outputNodeIndex: 16
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 10
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: "\u041D\u0443 \u0437\u043D\u0430\u0447\u0438\u0442 \u0432\u044B\u0431\u043E\u0440
-        \u043D\u0435\u0432\u0435\u043B\u0438\u043A. \u0425\u043E\u0440\u043E\u0448\u043E,
-        \u0441\u043E \u043C\u043D\u043E\u0439 \u0436\u0435\u043D\u0430 \u0438 \u0441\u044B\u043D,
-        \u0442\u0430\u043A \u0447\u0442\u043E \u043C\u044B \u0432\u043E\u0437\u044C\u043C\u0435\u043C
-        \u043E\u0434\u0438\u043D \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u044B\u0439
-        \u043D\u043E\u043C\u0435\u0440."
-      extraData: ExtraData
-      inputSetIndex: 11
-      outputNodeIndex: 4
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 11
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: "\u041F\u0440\u043E\u0448\u0443 \u043F\u0440\u043E\u0449\u0435\u043D\u0438\u044F!
-        \u041F\u0440\u043E\u0441\u0442\u043E \u0441\u0435\u0439\u0447\u0430\u0441
-        \u043D\u0435 \u0441\u0435\u0437\u043E\u043D \u0438 \u0432 \u044D\u0442\u043E\u043C
-        \u0432\u0440\u0435\u043C\u044F \u0433\u043E\u0434\u0430 \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432
-        \u043F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438 \u043D\u0435\u0442.
-        \u0422\u0430\u043A \u0447\u0442\u043E \u044F \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E
-        \u0440\u0430\u0441\u0441\u043B\u0430\u0431\u0438\u043B\u0441\u044F. \u041D\u043E
-        \u044F \u0431\u0443\u0434\u0443 \u0440\u0430\u0434 \u0437\u0430\u0433\u043B\u0430\u0434\u0438\u0442\u044C
-        \u0441\u0432\u043E\u044E \u0432\u0438\u043D\u0443 \u0438 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0438\u0442\u044C
-        \u0432\u0430\u043C \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0439
-        \u0437\u0430\u0432\u0442\u0440\u0430\u043A."
-      extraData: ExtraData
-      inputSetIndex: 12
-      outputNodeIndex: 13
+      inputSetIndex: 7
+      outputNodeIndex: 8
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
@@ -605,35 +612,17 @@ MonoBehaviour:
     vars: []
     varKeys: []
     isPlayer: 0
-  - commentCount: 2
+  - commentCount: 1
     s_comment:
-    - text: "\u0427\u0442\u043E-\u0436, \u0437\u0432\u0443\u0447\u0438\u0442 \u0437\u0430\u043C\u0430\u043D\u0447\u0438\u0432\u043E.
-        \u0422\u043E\u0433\u0434\u0430 \u044F \u0431\u044B \u0445\u043E\u0442\u0435\u043B
-        \u0441\u043D\u044F\u0442\u044C \u043E\u0434\u0438\u043D \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u044B\u0439
-        \u043D\u043E\u043C\u0435\u0440. \u0421\u043E \u043C\u043D\u043E\u0439 \u0436\u0435\u043D\u0430
-        \u0438 \u0441\u044B\u043D, \u043E\u043D\u0438 \u0441\u0435\u0439\u0447\u0430\u0441
-        \u0432 \u043C\u0430\u0448\u0438\u043D\u0435. "
+    - text: ...
       extraData: ExtraData
-      inputSetIndex: 13
-      outputNodeIndex: 4
-      outActionIndex: -1
+      inputSetIndex: 8
+      outputNodeIndex: -1
+      outActionIndex: 2
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    - text: "\u041E\u0441\u0442\u0430\u0432\u044C\u0442\u0435 \u0432\u0430\u0448\u0438
-        \u0436\u0430\u043B\u043A\u0438\u0435 \u043F\u043E\u0434\u0430\u0447\u043A\u0438
-        \u0441\u0435\u0431\u0435! \u042F \u043B\u0443\u0447\u044C\u0448\u0435 \u043F\u043E\u0438\u0449\u0443
-        \u0434\u0440\u0443\u0433\u043E\u0439 \u043E\u0442\u0435\u043B\u044C, \u0441
-        \u0431\u043E\u043B\u0435\u0435 \u043A\u043E\u043C\u043F\u0435\u0442\u0435\u043D\u0442\u043D\u044B\u043C
-        \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u043E\u043C. "
-      extraData: ExtraData
-      inputSetIndex: 13
-      outputNodeIndex: 14
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 13
+    ID: 10
     pTag: 
     sprite: {fileID: 0}
     vars: []
@@ -641,15 +630,37 @@ MonoBehaviour:
     isPlayer: 1
   - commentCount: 1
     s_comment:
-    - text: "\u0416\u0430\u043B\u044C \u0432\u0430\u0441 \u0440\u0430\u0437\u043E\u0447\u0430\u0440\u043E\u0432\u044B\u0432\u0430\u0442\u044C,
-        \u043D\u043E \u044D\u0442\u043E \u0435\u0434\u0438\u043D\u0442\u0441\u0432\u0435\u043D\u043D\u044B\u0439
-        \u043E\u0442\u0435\u043B\u044C \u0432 \u0433\u043E\u0440\u043E\u0434\u0435.
-        \u0414\u043E \u0434\u0440\u0443\u0433\u043E\u0433\u043E \u0431\u043B\u0438\u0436\u0430\u0439\u0448\u0435\u0433\u043E
-        \u043E\u043A\u043E\u043B\u043E \u0434\u0432\u0443\u0445 \u0441\u043E\u0442\u0435\u043D
-        \u043A\u0438\u043B\u043E\u043C\u0435\u0442\u0440\u043E\u0432. "
+    - text: "\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430,  \u043F\u0435\u0440\u0435\u043A\u0440\u0430\u0442\u0438\u0442\u0435
+        \u0437\u0432\u043E\u043D\u0438\u0442\u044C!"
+      extraData: 
+      inputSetIndex: 9
+      outputNodeIndex: 10
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 13
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - "\u0425\u043E\u0437\u044F\u0438\u043D \u043E\u0442\u0435\u043B\u044F"
+    varKeys:
+    - SetNpcName
+    isPlayer: 0
+  - commentCount: 2
+    s_comment:
+    - text: "\u041F\u0440\u043E\u0441\u0442\u0438\u0442\u0435, \u044F \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E."
       extraData: ExtraData
-      inputSetIndex: 14
-      outputNodeIndex: 11
+      inputSetIndex: 10
+      outputNodeIndex: 12
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\u0417\u0430\u0445\u043E\u0447\u0443, \u0431\u0443\u0434\u0443 \u0437\u0432\u043E\u043D\u0438\u0442\u044C! "
+      extraData: 
+      inputSetIndex: 10
+      outputNodeIndex: 13
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
@@ -659,13 +670,60 @@ MonoBehaviour:
     sprite: {fileID: 0}
     vars: []
     varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "[\u041F\u043E\u0441\u043B\u0435 \u0432\u0430\u0448\u0435\u0433\u043E
+        \u043E\u0447\u0435\u0440\u0435\u0434\u043D\u043E\u0433\u043E \u0437\u0432\u043E\u043D\u043A\u0430,
+        \u0445\u043E\u0437\u044F\u0438\u043D \u0432\u044B\u0440\u044B\u0432\u0430\u0435\u0442
+        \u044F\u0437\u044B\u0447\u0435\u043A, \u0438 \u0443\u0431\u0438\u0440\u0430\u0435\u0442
+        \u043A \u0441\u0435\u0431\u0435 \u0432 \u043A\u0430\u0440\u043C\u0430\u043D]"
+      extraData: 
+      inputSetIndex: 11
+      outputNodeIndex: 16
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 17
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - "\u0425\u043E\u0437\u044F\u0438\u043D \u043E\u0442\u0435\u043B\u044F"
+    varKeys:
+    - SetNpcName
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u041E\u0434\u0438\u043D \u0440\u0430\u0437 - \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u0441\u0442\u044C,
+        \u0434\u0432\u0430 \u0440\u0430\u0437\u0430 - \u0443\u043C\u044B\u0448\u043B\u0435\u043D\u043D\u043E!
+        \u041F\u0440\u043E\u0441\u0442\u043E \u043F\u0435\u0440\u0435\u0441\u0442\u0430\u043D\u044C\u0442\u0435!"
+      extraData: ExtraData
+      inputSetIndex: 12
+      outputNodeIndex: 14
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 18
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: Comment...
+    - text: "\u041A\u043E\u0433\u0434\u0430 \u0443 \u0432\u0430\u0441 \u0431\u0443\u0434\u0435\u0442
+        \u0441\u0432\u043E\u0439 \u043E\u0442\u0435\u043B\u044C, \u0438 \u0441\u0432\u043E\u0439
+        \u0437\u0432\u043E\u043D\u043E\u043A, \u0442\u043E\u0433\u0434\u0430 \u043E\u0431\u0437\u0432\u043E\u043D\u0438\u0442\u0435\u0441\u044C
+        \u0445\u043E\u0442\u044C \u0434\u043E \u043F\u043E\u0441\u0438\u043D\u0435\u043D\u0438\u044F!
+        \u0410 \u0432 \u043C\u043E\u0435\u043C \u0437\u0430\u0432\u0435\u0434\u0435\u043D\u0438\u0438
+        \u043F\u0440\u043E\u0448\u0443 \u0432\u0435\u0441\u0442\u0438 \u0441\u0435\u0431\u044F
+        \u043F\u0440\u0438\u043B\u0438\u0447\u043D\u043E, \u0438 \u043D\u0435 \u0437\u0432\u043E\u043D\u0438\u0442\u044C,
+        \u043A\u043E\u0433\u0434\u0430 \u044F \u0443\u0436\u0435 \u0437\u0434\u0435\u0441\u044C!"
       extraData: ExtraData
-      inputSetIndex: 15
-      outputNodeIndex: 14
+      inputSetIndex: 13
+      outputNodeIndex: 15
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
@@ -678,24 +736,123 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: "\u0414\u0430 \u0438 \u043A \u0442\u043E\u043C\u0443 \u0436\u0435, \u044D\u0442\u043E
-        \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
-        \u043E\u0442\u0435\u043B\u044C \u0432 \u0433\u043E\u0440\u043E\u0434\u0435."
+    - text: "\u0412\u044B \u043F\u0440\u0430\u0432\u044B, \u043F\u0440\u043E\u0441\u0442\u0438\u0442\u0435,
+        \u0431\u043E\u043B\u044C\u0448\u0435 \u043D\u0435 \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0441\u044F!"
       extraData: ExtraData
-      inputSetIndex: 16
-      outputNodeIndex: 11
-      outActionIndex: -1
+      inputSetIndex: 14
+      outputNodeIndex: -1
+      outActionIndex: 3
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    ID: 16
+    ID: 19
     pTag: 
     sprite: {fileID: 0}
     vars: []
     varKeys: []
-    isPlayer: 0
-  S_actionNodes: []
---- !u!114 &8857400392393121042
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0412\u043E\u0442-\u0432\u043E\u0442! \u041A\u043E\u0433\u0434\u0430
+        \u044F \u043E\u0442\u043A\u0440\u043E\u044E \u0441\u0432\u043E\u0439 \u043E\u0442\u0435\u043B\u044C,
+        \u0441 \u043F\u0440\u0435\u0444\u0435\u0440\u0430\u043D\u0441\u043E\u043C
+        \u0438 \u0441\u0443\u0444\u0440\u0430\u0436\u0438\u0441\u0442\u043A\u0430\u043C\u0438,
+        \u0432\u044B \u0442\u0430\u043C \u043D\u0435 \u0431\u0443\u0434\u0435\u0442\u0435
+        \u0436\u0435\u043B\u0430\u043D\u043D\u044B\u043C \u0433\u043E\u0441\u0442\u0435\u043C! "
+      extraData: ExtraData
+      inputSetIndex: 15
+      outputNodeIndex: -1
+      outActionIndex: 3
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 20
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0422\u0430\u043A \u0432\u043E\u0442 \u043A\u0430\u043A \u044D\u0442\u043E
+        \u043F\u0440\u043E\u0438\u0437\u043E\u0448\u043B\u043E..."
+      extraData: ExtraData
+      inputSetIndex: 16
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 21
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - RRingSound,RRingDialogue
+    - RingDialogue
+    - 
+    varKeys:
+    - ActivateEvent
+    - ActivateObject
+    - Key3
+    isPlayer: 1
+  S_actionNodes:
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 5
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 6
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 7
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 8
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 11
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 13
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 16
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 17
+    renameDialogue: 
+--- !u!114 &1295820466273472005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -709,8 +866,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 7
   <IsInteractionLocked>k__BackingField: 0
-  <Id>k__BackingField: 
-  assignDialog: {fileID: 2979474165170637626}
+  <Id>k__BackingField: RingDialogue
+  assignDialog: {fileID: 8135223569939164582}
+--- !u!114 &2592465467771023553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146422744201183376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd0fb566247d43e40a007c60cd0fbd9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDependsEvents:
+  - ItemData: {fileID: 11400000, guid: 8e2f62e3303b76c4b9c020b00a63b7ce, type: 2}
+    Events:
+    - _isInteractionLocked: 0
+      IsRepeating: 0
+      TimeBeforeInvoke: 0
+      _id: 
+      Event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 4999535505501303317}
+            m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+    - _isInteractionLocked: 0
+      IsRepeating: 0
+      TimeBeforeInvoke: 0.5
+      _id: 
+      Event:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 2668034248902124377}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
 --- !u!1 &584633333882608083
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,7 +1032,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801062842662750211}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8630902359832722595
 SpriteRenderer:
@@ -887,12 +1097,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   OnTriggerEnterEvents: []
   OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
+  OnButtonInTriggerEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: -1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6063077688882822833}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 5516275600817685478}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 2
+    _id: -1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6063077688882822833}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &7304787895164150799
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -919,7 +1179,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &745334942490973400
+--- !u!1 &699895003885141164
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -927,38 +1187,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5801060022205674443}
-  - component: {fileID: 4534753050618373788}
-  - component: {fileID: 7231358226699767967}
-  - component: {fileID: 6529071733760039619}
+  - component: {fileID: 4187669600861378653}
+  - component: {fileID: 3005639239358407920}
+  - component: {fileID: 7394702413906065300}
+  - component: {fileID: 3481687052634805363}
   m_Layer: 0
-  m_Name: Hoz
+  m_Name: Key_I
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &5801060022205674443
+--- !u!4 &4187669600861378653
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745334942490973400}
+  m_GameObject: {fileID: 699895003885141164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 11.55, y: -4.29, z: 21.610567}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6193194260934141491}
-  m_RootOrder: 0
+  m_Father: {fileID: 801062842662750211}
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4534753050618373788
+--- !u!212 &3005639239358407920
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745334942490973400}
+  m_GameObject: {fileID: 699895003885141164}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -991,227 +1251,100 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 21
-  m_Sprite: {fileID: 21300000, guid: be75e1d7fc905d147b3a6e931de50da4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f,
+    type: 3}
+  m_Color: {r: 0.8679245, g: 0.81720906, b: 0.12691349, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 94.490005, y: 118.14135}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7231358226699767967
+--- !u!114 &7394702413906065300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745334942490973400}
+  m_GameObject: {fileID: 699895003885141164}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
-  OnTriggerEnterEvents: []
+  OnTriggerEnterEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: 
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8748419240432026628}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 2
+    _id: 
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8748419240432026628}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   OnTriggerExitEvents: []
   OnButtonInTriggerEvents: []
---- !u!61 &6529071733760039619
+--- !u!61 &3481687052634805363
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745334942490973400}
+  m_GameObject: {fileID: 699895003885141164}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -10, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 94.490005, y: 118.14135}
-    newSize: {x: 94.490005, y: 118.14135}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 80, y: 120}
-  m_EdgeRadius: 0
---- !u!1 &773487621512963400
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6193194260934141491}
-  m_Layer: 0
-  m_Name: Hoz
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6193194260934141491
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 773487621512963400}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.92, y: -3.17, z: -21.693188}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 0.01}
-  m_Children:
-  - {fileID: 5801060022205674443}
-  - {fileID: 7548335203221078972}
-  - {fileID: 7958250764428201513}
-  - {fileID: 6616349314763149102}
-  - {fileID: 7028262110359662245}
-  - {fileID: 6603721919098830928}
-  - {fileID: 4004223464695529506}
-  - {fileID: 1106468678592977035}
-  m_Father: {fileID: 2132265067942336059}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &837434842879185855
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7548335203221078972}
-  - component: {fileID: 1416406554019265312}
-  - component: {fileID: 5002886406524909020}
-  - component: {fileID: 8918592438976660401}
-  m_Layer: 0
-  m_Name: Hoz (1)
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &7548335203221078972
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837434842879185855}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6193194260934141491}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1416406554019265312
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837434842879185855}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 21
-  m_Sprite: {fileID: 21300000, guid: be75e1d7fc905d147b3a6e931de50da4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 94.490005, y: 118.14135}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!114 &5002886406524909020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837434842879185855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 0
-  <IsInteractionLocked>k__BackingField: 0
-  <Id>k__BackingField: 
-  OnTriggerEnterEvents: []
-  OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
---- !u!61 &8918592438976660401
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837434842879185855}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -10, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 94.490005, y: 118.14135}
-    newSize: {x: 94.490005, y: 118.14135}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 80, y: 120}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &866824686838900978
 GameObject:
@@ -1244,7 +1377,7 @@ Transform:
   m_LocalScale: {x: 0.055, y: 0.055, z: 0.009999999}
   m_Children: []
   m_Father: {fileID: 801062842662750211}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8466483082747039268
 SpriteRenderer:
@@ -1309,7 +1442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   OnTriggerEnterEvents: []
@@ -1373,7 +1506,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801062842662750211}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1863604410033719661
 SpriteRenderer:
@@ -1438,7 +1571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   OnTriggerEnterEvents: []
@@ -1728,11 +1861,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118394703829469591}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.54, y: -3.22, z: 21.610567}
+  m_LocalPosition: {x: 14.54, y: -3.76, z: 21.610567}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801062842662750211}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1890538827826006637
 SpriteRenderer:
@@ -1798,10 +1931,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
-  OnTriggerEnterEvents: []
+  OnTriggerEnterEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: 
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 584633333882608083}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 2
+    _id: 
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 584633333882608083}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   OnTriggerExitEvents: []
   OnButtonInTriggerEvents: []
 --- !u!61 &6305094770879282870
@@ -1913,134 +2084,6 @@ MonoBehaviour:
     \u043C\u0430\u0448\u0438\u043D\u0435, \u0442\u0430\u043A \u0447\u0442\u043E \u043D\u0430\u043C
     \u0445\u0432\u0430\u0442\u0438\u0442 \u043E\u0434\u043D\u043E\u0433\u043E \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u043E\u0433\u043E
     \u043D\u043E\u043C\u0435\u0440\u0430. "
---- !u!1 &1351792131491958401
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7958250764428201513}
-  - component: {fileID: 5855646818024532078}
-  - component: {fileID: 4862902559128016476}
-  - component: {fileID: 1467776828884738306}
-  m_Layer: 0
-  m_Name: Hoz (2)
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &7958250764428201513
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351792131491958401}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6193194260934141491}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5855646818024532078
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351792131491958401}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 21
-  m_Sprite: {fileID: 21300000, guid: be75e1d7fc905d147b3a6e931de50da4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 94.490005, y: 118.14135}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!114 &4862902559128016476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351792131491958401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 0
-  <IsInteractionLocked>k__BackingField: 0
-  <Id>k__BackingField: 
-  OnTriggerEnterEvents: []
-  OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
---- !u!61 &1467776828884738306
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351792131491958401}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -10, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 94.490005, y: 118.14135}
-    newSize: {x: 94.490005, y: 118.14135}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 80, y: 120}
-  m_EdgeRadius: 0
 --- !u!1 &1413652127720214474
 GameObject:
   m_ObjectHideFlags: 0
@@ -2072,7 +2115,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801062842662750211}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4385090613813273504
 SpriteRenderer:
@@ -2137,12 +2180,112 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   OnTriggerEnterEvents: []
   OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
+  OnButtonInTriggerEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: -1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5516275600817685478}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 960548568780400993}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: -1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 627115493554568665}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1413652127720214474}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 2
+    _id: -1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5516275600817685478}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 2
+    _id: -1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1413652127720214474}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: 
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &1048805686216841508
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2266,134 +2409,6 @@ MonoBehaviour:
   - "\u043D\u0435 \u043D\u0443\u0436\u043D\u043E"
   _standItemWindow: {fileID: 3348956073461113521}
   _isItemOpened: 0
---- !u!1 &1976564576717757575
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6603721919098830928}
-  - component: {fileID: 361643127222640961}
-  - component: {fileID: 7482295416393134819}
-  - component: {fileID: 7892043182576342189}
-  m_Layer: 0
-  m_Name: Hoz (5)
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &6603721919098830928
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1976564576717757575}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6193194260934141491}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &361643127222640961
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1976564576717757575}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 21
-  m_Sprite: {fileID: 21300000, guid: be75e1d7fc905d147b3a6e931de50da4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 94.490005, y: 118.14135}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!114 &7482295416393134819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1976564576717757575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 0
-  <IsInteractionLocked>k__BackingField: 0
-  <Id>k__BackingField: 
-  OnTriggerEnterEvents: []
-  OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
---- !u!61 &7892043182576342189
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1976564576717757575}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -10, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 94.490005, y: 118.14135}
-    newSize: {x: 94.490005, y: 118.14135}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 80, y: 120}
-  m_EdgeRadius: 0
 --- !u!1 &2367738017033235514
 GameObject:
   m_ObjectHideFlags: 0
@@ -2425,7 +2440,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801062842662750211}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3888159816002272184
 SpriteRenderer:
@@ -2491,10 +2506,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
-  OnTriggerEnterEvents: []
+  OnTriggerEnterEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: 
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8748419240432026628}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 2
+    _id: 
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8748419240432026628}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   OnTriggerExitEvents: []
   OnButtonInTriggerEvents: []
 --- !u!61 &2525828488265345730
@@ -2523,82 +2576,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &2381548320170023840
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8756378662276471867}
-  - component: {fileID: 4581186437331292120}
-  - component: {fileID: 1178315042535472418}
-  m_Layer: 0
-  m_Name: Mimo1
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &8756378662276471867
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2381548320170023840}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 65.833336, y: -51.59999, z: 0.00019073486}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2273843930406153351}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &4581186437331292120
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2381548320170023840}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 25, y: 60}
-  m_EdgeRadius: 0
---- !u!114 &1178315042535472418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2381548320170023840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 0
-  <IsInteractionLocked>k__BackingField: 0
-  <Id>k__BackingField: 
-  OnTriggerEnterEvents: []
-  OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
 --- !u!1 &2404215891201947790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2695,6 +2672,8 @@ GameObject:
   - component: {fileID: 2455787168875056973}
   - component: {fileID: 4185378300112876710}
   - component: {fileID: 820631205039520125}
+  - component: {fileID: 7865879751003971283}
+  - component: {fileID: 4612417941586324737}
   m_Layer: 0
   m_Name: Reed
   m_TagString: EditorOnly
@@ -2714,7 +2693,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801062842662750211}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2455787168875056973
 SpriteRenderer:
@@ -2780,12 +2759,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   OnTriggerEnterEvents: []
   OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
+  OnButtonInTriggerEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: -1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 960548568780400993}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &820631205039520125
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2812,6 +2810,240 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &7865879751003971283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2440806988178800138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8b99d8a12e39e4b94d2d7162c7c978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diags:
+  - 123
+  - 1stDialHoz
+  - Charlie
+  - CommentModifier
+  - CrazyCap
+  - DEMO_Condition
+  - demo_Narration
+  - Example3Dialogue
+  - Example4_dialogue
+  - Item_LookUp
+  - Laura
+  - MrCube
+  - MyTestDialogue
+  - NPCOnly
+  - QuestChartDemo
+  - ReedDi
+  - RingQuest
+  - Test_1
+  - TriggeredDude
+  - Witch
+  - WorkRing
+  assignedIndex: 15
+  assignedID: 56679
+  assignedDialogue: ReedDi
+  interactionCount: 0
+  alias: 
+  overrideStartNode: 5
+  defaultNPCSprite: {fileID: 0}
+  defaultPlayerSprite: {fileID: 21300000, guid: 267b3798ce610bc449478556cda80e82,
+    type: 3}
+  targetManager: {fileID: 0}
+  preload: 1
+  notuptodate: 0
+  startp: 0
+  loadtag: 
+  langs: []
+  S_playerDiags:
+  - commentCount: 1
+    s_comment:
+    - text: "\u0412\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u0435\u0433\u043E
+        \u0432\u044B\u043A\u0438\u043D\u0443\u043B\u0438 \u0432 \u043C\u0443\u0441\u043E\u0440"
+      extraData: ExtraData
+      inputSetIndex: 0
+      outputNodeIndex: 2
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 0
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - 
+    varKeys:
+    - SwitchNpcContainerState
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0410 \u0432\u043E\u0442 \u0438 \u044F\u0437\u044B\u0447\u0435\u043A!
+        \u041E\u0442\u043B\u0438\u0447\u043D\u043E, \u0442\u0435\u043F\u0435\u0440\u044C
+        \u043C\u043E\u0436\u043D\u043E \u043F\u043E\u0447\u0438\u043D\u0438\u0442\u044C
+        \u0437\u0432\u043E\u043D\u043E\u043A. "
+      extraData: ExtraData
+      inputSetIndex: 1
+      outputNodeIndex: -1
+      outActionIndex: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 1
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - "\u042F\u0437\u044B\u0447\u0435\u043A"
+    - 2-9209
+    varKeys:
+    - GiveItem
+    - SetStartNode
+    isPlayer: 1
+  - commentCount: 2
+    s_comment:
+    - text: "[\u0418\u0441\u043A\u0430\u0442\u044C \u0432 \u043C\u0443\u0441\u043E\u0440\u0435]"
+      extraData: ExtraData
+      inputSetIndex: 2
+      outputNodeIndex: 1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\u041D\u0435 \u0445\u043E\u0447\u0443 \u043A\u043E\u043F\u0430\u0442\u044C\u0441\u044F
+        \u0432 \u043C\u0443\u0441\u043E\u0440\u0435. \u041C\u043E\u0436\u0435\u0442
+        \u0435\u0441\u0442\u044C \u0434\u0440\u0443\u0433\u043E\u0439 \u0441\u043F\u043E\u0441\u043E\u0431?"
+      extraData: ExtraData
+      inputSetIndex: 2
+      outputNodeIndex: -1
+      outActionIndex: 2
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 2
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0422\u0430\u043C \u0442\u043E\u043B\u044C\u043A\u043E \u043C\u0443\u0441\u043E\u0440"
+      extraData: ExtraData
+      inputSetIndex: 3
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 3
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - 
+    varKeys:
+    - SwitchNpcContainerState
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u041E\u0431\u044B\u0447\u043D\u0430\u044F \u0441\u0442\u0430\u0440\u0430\u044F
+        \u043C\u0443\u0441\u043E\u0440\u043A\u0430"
+      extraData: ExtraData
+      inputSetIndex: 4
+      outputNodeIndex: -1
+      outActionIndex: 1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 5
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - 
+    varKeys:
+    - SwitchNpcContainerState
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u042F \u043D\u0435 \u0441\u0442\u0430\u043D\u0443 \u0431\u0435\u0437
+        \u043F\u0440\u0438\u0447\u0438\u043D\u044B \u043A\u043E\u043F\u0430\u0442\u044C\u0441\u044F
+        \u0432 \u0447\u0443\u0436\u043E\u043C \u043C\u0443\u0441\u043E\u0440\u0435. "
+      extraData: ExtraData
+      inputSetIndex: 5
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 6
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - 
+    varKeys:
+    - SwitchNpcContainerState
+    isPlayer: 1
+  S_actionNodes:
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 4
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 3
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 7
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 6
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 8
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 2
+    renameDialogue: 
+--- !u!114 &4612417941586324737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2440806988178800138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7474e83aabceed745ac79fec3fc3aa40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 7
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: 
+  assignDialog: {fileID: 7865879751003971283}
 --- !u!1 &2576654967851967748
 GameObject:
   m_ObjectHideFlags: 0
@@ -2844,6 +3076,7 @@ Transform:
   - {fileID: 5536103472596458434}
   - {fileID: 533834849597746560}
   - {fileID: 2713127866492597433}
+  - {fileID: 8458752523967883738}
   - {fileID: 5861211635191127944}
   - {fileID: 5652132177338280116}
   - {fileID: 6235719410004408307}
@@ -2859,6 +3092,7 @@ Transform:
   - {fileID: 2674467607075207458}
   - {fileID: 3077453917593775142}
   - {fileID: 2134098671951471923}
+  - {fileID: 4187669600861378653}
   m_Father: {fileID: 2132265067942336059}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2874,6 +3108,8 @@ GameObject:
   - component: {fileID: 1002235933056973642}
   - component: {fileID: 2989617943708415398}
   - component: {fileID: 6070180465078884702}
+  - component: {fileID: 456338508118265324}
+  - component: {fileID: 1206724383164427841}
   m_Layer: 0
   m_Name: Hoz
   m_TagString: EditorOnly
@@ -2889,11 +3125,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2668034248902124377}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.41, y: -0.35, z: -0.08261871}
+  m_LocalPosition: {x: 4.39, y: -0.59, z: -0.08261871}
   m_LocalScale: {x: 0.06, y: 0.06, z: 0.009999999}
   m_Children: []
   m_Father: {fileID: 801062842662750211}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1002235933056973642
 SpriteRenderer:
@@ -2958,10 +3194,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
-  OnTriggerEnterEvents: []
+  OnTriggerEnterEvents:
+  - _isInteractionLocked: 1
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: Hoz1Act
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 866824686838900978}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 2668034248902124377}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   OnTriggerExitEvents: []
   OnButtonInTriggerEvents: []
 --- !u!61 &6070180465078884702
@@ -2990,6 +3257,479 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 80, y: 120}
   m_EdgeRadius: 0
+--- !u!114 &456338508118265324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668034248902124377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8b99d8a12e39e4b94d2d7162c7c978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diags:
+  - 123
+  - 1stDialHoz
+  - Charlie
+  - CommentModifier
+  - CrazyCap
+  - DEMO_Condition
+  - demo_Narration
+  - Example3Dialogue
+  - Example4_dialogue
+  - Item_LookUp
+  - Laura
+  - MrCube
+  - MyTestDialogue
+  - NPCOnly
+  - QuestChartDemo
+  - ReedDi
+  - RingQuest
+  - Test_1
+  - TriggeredDude
+  - Witch
+  - WorkRing
+  assignedIndex: 1
+  assignedID: 79672
+  assignedDialogue: 1stDialHoz
+  interactionCount: 0
+  alias: "\u0425\u043E\u0437\u044F\u0438\u043D \u043E\u0442\u0435\u043B\u044F"
+  overrideStartNode: -1
+  defaultNPCSprite: {fileID: 21300000, guid: e2e18c90613c4fb49925b33827c3fcb1, type: 3}
+  defaultPlayerSprite: {fileID: 21300000, guid: 267b3798ce610bc449478556cda80e82,
+    type: 3}
+  targetManager: {fileID: 0}
+  preload: 1
+  notuptodate: 0
+  startp: 0
+  loadtag: 
+  langs: []
+  S_playerDiags:
+  - commentCount: 1
+    s_comment:
+    - text: "\u0414\u043E\u0431\u0440\u044B\u0439 \u0432\u0435\u0447\u0435\u0440!
+        \u0412\u044B \u0447\u0442\u043E-\u0442\u043E \u0445\u043E\u0442\u0435\u043B\u0438?"
+      extraData: 
+      inputSetIndex: 0
+      outputNodeIndex: 1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 0
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - "\u0413\u0435\u043D\u0440\u0438"
+    - 8-9209
+    varKeys:
+    - SetPlayerName
+    - SetStartNode
+    isPlayer: 0
+  - commentCount: 4
+    s_comment:
+    - text: "\u0414\u043E\u0431\u0440\u044B\u0439 \u0432\u0435\u0447\u0435\u0440!
+        \u041C\u044B \u043E\u043A\u0430\u0437\u0430\u043B\u0438\u0441\u044C \u043F\u0440\u043E\u0435\u0437\u0434\u043E\u043C
+        \u0432 \u0432\u0430\u0448\u0435\u043C \u0433\u043E\u0440\u043E\u0434\u0435,
+        \u0438 \u0445\u043E\u0442\u0435\u043B\u0438 \u0431\u044B \u0441\u043D\u044F\u0442\u044C
+        \u043A\u043E\u043C\u043D\u0430\u0442\u0443 \u043D\u0430 \u043D\u043E\u0447\u044C."
+      extraData: 
+      inputSetIndex: 1
+      outputNodeIndex: 2
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\u0425\u043E\u0442\u0435\u043B, \u043D\u043E \u0443\u0432\u0438\u0434\u0435\u0432
+        \u0432 \u043A\u0430\u043A\u043E\u043C \u0437\u0434\u0435\u0441\u044C \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0438
+        \u0432\u0441\u0451 \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F,
+        \u0443\u0436\u0435 \u0434\u0430\u0436\u0435 \u043D\u0435 \u0437\u043D\u0430\u044E..."
+      extraData: 
+      inputSetIndex: 1
+      outputNodeIndex: 10
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\u0410 \u0443 \u0432\u0430\u0441 \u0442\u0443\u0442 \u0432\u0441\u0435\u0433\u0434\u0430
+        \u0442\u0430\u043A\u043E\u0435 \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u0435
+        \u043A \u043A\u043B\u0438\u0435\u043D\u0430\u0442\u0430\u043C?"
+      extraData: ExtraData
+      inputSetIndex: 1
+      outputNodeIndex: 12
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\u0414\u0443\u043C\u0430\u044E \u043C\u044B \u043F\u0435\u0440\u0435\u043D\u043E\u0447\u0443\u0435\u043C
+        \u0432 \u0434\u0440\u0443\u0433\u043E\u043C \u043C\u0435\u0441\u0442\u0435."
+      extraData: ExtraData
+      inputSetIndex: 1
+      outputNodeIndex: 14
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 1
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - "\u0425\u043E\u0437\u044F\u0438\u043D \u043E\u0442\u0435\u043B\u044F"
+    varKeys:
+    - SetNpcName
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0414\u0430, \u043A\u043E\u043D\u0435\u0447\u043D\u043E, \u0432 \u044D\u0442\u043E
+        \u0432\u0440\u0435\u043C\u044F \u0433\u043E\u0434\u0430 \u0443 \u043D\u0430\u0441
+        \u043D\u0435 \u0442\u0430\u043A \u043C\u043D\u043E\u0433\u043E \u0433\u043E\u0441\u0442\u0435\u0439,
+        \u0442\u0430\u043A \u0447\u0442\u043E \u0441\u0432\u043E\u0431\u043E\u0434\u043D\u044B\u0435
+        \u043A\u043E\u043C\u043D\u0430\u0442\u044B \u0435\u0441\u0442\u044C."
+      extraData: ExtraData
+      inputSetIndex: 2
+      outputNodeIndex: 3
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 2
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "\u041E\u0442\u043B\u0438\u0447\u043D\u043E. \u0421\u043E \u043C\u043D\u043E\u0439
+        \u0436\u0435\u043D\u0430 \u0438 \u0441\u044B\u043D, \u043E\u043D\u0438 \u0432
+        \u043C\u0430\u0448\u0438\u043D\u0435, \u0442\u0430\u043A \u0447\u0442\u043E
+        \u043D\u0430\u043C \u0445\u0432\u0430\u0442\u0438\u0442 \u043E\u0434\u043D\u043E\u0433\u043E
+        \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u043E\u0433\u043E
+        \u043D\u043E\u043C\u0435\u0440\u0430."
+      extraData: ExtraData
+      inputSetIndex: 3
+      outputNodeIndex: 4
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 3
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u041F\u0440\u043E\u0448\u0443 \u043F\u0440\u043E\u0449\u0435\u043D\u0438\u044F,
+        \u043D\u043E \u0443 \u043D\u0430\u0441 \u043D\u0435\u0442 \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u044B\u0445
+        \u043D\u043E\u043C\u0435\u0440\u043E\u0432. \u041D\u043E \u043C\u043E\u0433\u0443
+        \u0432\u0430\u043C \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0438\u0442\u044C
+        \u0434\u0432\u0430 \u0441\u043C\u0435\u0436\u043D\u044B\u0445 \u043E\u0434\u043D\u043E\u043C\u0435\u0441\u0442\u043D\u044B\u0445.
+        \u0412\u0430\u0441 \u044D\u0442\u043E \u0443\u0441\u0442\u0440\u043E\u0438\u0442?"
+      extraData: ExtraData
+      inputSetIndex: 4
+      outputNodeIndex: 5
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 4
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 2
+    s_comment:
+    - text: "\u041D\u0443 \u043F\u043E\u043B\u0430\u0433\u0430\u044E, \u0447\u0442\u043E
+        \u0434\u0430."
+      extraData: ExtraData
+      inputSetIndex: 5
+      outputNodeIndex: 6
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\u042D\u0442\u043E \u043D\u0435 \u0441\u043E\u0432\u0441\u0435\u043C
+        \u0443\u0434\u043E\u0431\u043D\u043E. \u0422\u043E\u0447\u043D\u043E \u0434\u0440\u0443\u0433\u0438\u0445
+        \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u043E\u0432 \u043D\u0435\u0442?"
+      extraData: ExtraData
+      inputSetIndex: 5
+      outputNodeIndex: 7
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 5
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0422\u043E\u0433\u0434\u0430 \u0441\u0435\u0439\u0447\u0430\u0441
+        \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043B\u044E \u043A\u043B\u044E\u0447\u0438."
+      extraData: ExtraData
+      inputSetIndex: 6
+      outputNodeIndex: 9
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 6
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - Hoz1Act
+    varKeys:
+    - ActivateEvent
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "\u0423\u0432\u044B \u043D\u0435\u0442. \u0418 \u043A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E,
+        \u044D\u0442\u043E \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
+        \u043E\u0442\u0435\u043B\u044C \u0432 \u043D\u0430\u0448\u0435\u043C \u0433\u043E\u0440\u043E\u0434\u0435."
+      extraData: ExtraData
+      inputSetIndex: 7
+      outputNodeIndex: 8
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 7
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "\u0422\u043E\u0433\u0434\u0430 \u043C\u044B \u0432\u043E\u0437\u044C\u043C\u0451\u043C
+        \u044D\u0442\u0438 \u0434\u0432\u0430 \u043D\u043E\u043C\u0435\u0440\u0430."
+      extraData: ExtraData
+      inputSetIndex: 8
+      outputNodeIndex: 6
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 8
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0411\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044E \u0432\u0430\u0441."
+      extraData: ExtraData
+      inputSetIndex: 9
+      outputNodeIndex: -1
+      outActionIndex: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 9
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - KeyRoom1
+    - GateR3S1
+    varKeys:
+    - GiveItem
+    - ActivateObject
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u041F\u0443\u0441\u0442\u044C \u0432\u0430\u0441 \u043D\u0435 \u0441\u043C\u0443\u0449\u0430\u0435\u0442
+        \u0432\u043D\u0435\u0448\u043D\u0438\u0439 \u0432\u0438\u0434! \u0423\u0432\u0435\u0440\u044F\u044E,
+        \u0432\u044B \u0431\u0443\u0434\u0435\u0442\u0435 \u0434\u043E\u0432\u043E\u043B\u044C\u043D\u044B
+        \u043D\u043E\u043C\u0435\u0440\u043E\u043C \u0438 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435\u043C.\n\u0414\u0430
+        \u0438 \u043A \u0442\u043E\u043C\u0443 \u0436\u0435, \u044D\u0442\u043E \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
+        \u043E\u0442\u0435\u043B\u044C \u0432 \u0433\u043E\u0440\u043E\u0434\u0435."
+      extraData: ExtraData
+      inputSetIndex: 10
+      outputNodeIndex: 11
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 10
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "\u041D\u0443 \u0437\u043D\u0430\u0447\u0438\u0442 \u0432\u044B\u0431\u043E\u0440
+        \u043D\u0435\u0432\u0435\u043B\u0438\u043A. \u0425\u043E\u0440\u043E\u0448\u043E,
+        \u0441\u043E \u043C\u043D\u043E\u0439 \u0436\u0435\u043D\u0430 \u0438 \u0441\u044B\u043D,
+        \u0442\u0430\u043A \u0447\u0442\u043E \u043C\u044B \u0432\u043E\u0437\u044C\u043C\u0435\u043C
+        \u043E\u0434\u0438\u043D \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u044B\u0439
+        \u043D\u043E\u043C\u0435\u0440."
+      extraData: ExtraData
+      inputSetIndex: 11
+      outputNodeIndex: 4
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 11
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u041F\u0440\u043E\u0448\u0443 \u043F\u0440\u043E\u0449\u0435\u043D\u0438\u044F!
+        \u041F\u0440\u043E\u0441\u0442\u043E \u0441\u0435\u0439\u0447\u0430\u0441
+        \u043D\u0435 \u0441\u0435\u0437\u043E\u043D \u0438 \u0432 \u044D\u0442\u043E\u043C
+        \u0432\u0440\u0435\u043C\u044F \u0433\u043E\u0434\u0430 \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432
+        \u043F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438 \u043D\u0435\u0442.
+        \u0422\u0430\u043A \u0447\u0442\u043E \u044F \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E
+        \u0440\u0430\u0441\u0441\u043B\u0430\u0431\u0438\u043B\u0441\u044F. \u041D\u043E
+        \u044F \u0431\u0443\u0434\u0443 \u0440\u0430\u0434 \u0437\u0430\u0433\u043B\u0430\u0434\u0438\u0442\u044C
+        \u0441\u0432\u043E\u044E \u0432\u0438\u043D\u0443 \u0438 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0438\u0442\u044C
+        \u0432\u0430\u043C \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0439
+        \u0437\u0430\u0432\u0442\u0440\u0430\u043A."
+      extraData: ExtraData
+      inputSetIndex: 12
+      outputNodeIndex: 13
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 12
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 2
+    s_comment:
+    - text: "\u0427\u0442\u043E-\u0436, \u0437\u0432\u0443\u0447\u0438\u0442 \u0437\u0430\u043C\u0430\u043D\u0447\u0438\u0432\u043E.
+        \u0422\u043E\u0433\u0434\u0430 \u044F \u0431\u044B \u0445\u043E\u0442\u0435\u043B
+        \u0441\u043D\u044F\u0442\u044C \u043E\u0434\u0438\u043D \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u044B\u0439
+        \u043D\u043E\u043C\u0435\u0440. \u0421\u043E \u043C\u043D\u043E\u0439 \u0436\u0435\u043D\u0430
+        \u0438 \u0441\u044B\u043D, \u043E\u043D\u0438 \u0441\u0435\u0439\u0447\u0430\u0441
+        \u0432 \u043C\u0430\u0448\u0438\u043D\u0435. "
+      extraData: ExtraData
+      inputSetIndex: 13
+      outputNodeIndex: 4
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\u041E\u0441\u0442\u0430\u0432\u044C\u0442\u0435 \u0432\u0430\u0448\u0438
+        \u0436\u0430\u043B\u043A\u0438\u0435 \u043F\u043E\u0434\u0430\u0447\u043A\u0438
+        \u0441\u0435\u0431\u0435! \u042F \u043B\u0443\u0447\u044C\u0448\u0435 \u043F\u043E\u0438\u0449\u0443
+        \u0434\u0440\u0443\u0433\u043E\u0439 \u043E\u0442\u0435\u043B\u044C, \u0441
+        \u0431\u043E\u043B\u0435\u0435 \u043A\u043E\u043C\u043F\u0435\u0442\u0435\u043D\u0442\u043D\u044B\u043C
+        \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u043E\u043C. "
+      extraData: ExtraData
+      inputSetIndex: 13
+      outputNodeIndex: 14
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 13
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0416\u0430\u043B\u044C \u0432\u0430\u0441 \u0440\u0430\u0437\u043E\u0447\u0430\u0440\u043E\u0432\u044B\u0432\u0430\u0442\u044C,
+        \u043D\u043E \u044D\u0442\u043E \u0435\u0434\u0438\u043D\u0442\u0441\u0432\u0435\u043D\u043D\u044B\u0439
+        \u043E\u0442\u0435\u043B\u044C \u0432 \u0433\u043E\u0440\u043E\u0434\u0435.
+        \u0414\u043E \u0434\u0440\u0443\u0433\u043E\u0433\u043E \u0431\u043B\u0438\u0436\u0430\u0439\u0448\u0435\u0433\u043E
+        \u043E\u043A\u043E\u043B\u043E \u0434\u0432\u0443\u0445 \u0441\u043E\u0442\u0435\u043D
+        \u043A\u0438\u043B\u043E\u043C\u0435\u0442\u0440\u043E\u0432. "
+      extraData: ExtraData
+      inputSetIndex: 14
+      outputNodeIndex: 11
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 14
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "\u042F \u0443\u0436\u0435 \u0432\u044B\u0434\u0430\u043B \u0432\u0430\u043C
+        \u043A\u043B\u044E\u0447. \u0414\u043E\u0431\u0440\u043E\u0439 \u043D\u043E\u0447\u0438!"
+      extraData: ExtraData
+      inputSetIndex: 15
+      outputNodeIndex: 16
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 17
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "\u0414\u043E\u0431\u0440\u043E\u0439 \u043D\u043E\u0447\u0438"
+      extraData: ExtraData
+      inputSetIndex: 16
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 18
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  S_actionNodes:
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 16
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 17
+    renameDialogue: 
+--- !u!114 &1206724383164427841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668034248902124377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7474e83aabceed745ac79fec3fc3aa40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 7
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: Hoz1
+  assignDialog: {fileID: 456338508118265324}
 --- !u!1 &2926875825446737903
 GameObject:
   m_ObjectHideFlags: 0
@@ -3096,13 +3836,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2976017106445019701}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.94, y: -0.74, z: 21.610567}
+  m_LocalRotation: {x: -0.185686, y: -0.35330102, z: 0.44895515, w: -0.79946136}
+  m_LocalPosition: {x: 12.74, y: -2.23, z: 21.27}
   m_LocalScale: {x: 0.10558647, y: 0.12453386, z: 1}
   m_Children: []
   m_Father: {fileID: 750451049117727287}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 37.889, y: 30.3, z: 311.984}
 --- !u!212 &8697362565418501517
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3229,7 +3969,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801062842662750211}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2763182780222486225
 SpriteRenderer:
@@ -3294,7 +4034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   OnTriggerEnterEvents: []
@@ -3445,26 +4185,7 @@ MonoBehaviour:
   _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
-  OnTriggerEnterEvents:
-  - IsRepeating: 0
-    isInteractionLocked: 0
-    TimeBeforeInvoke: 0
-    id: 
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3185578100954045379}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  OnTriggerEnterEvents: []
   OnTriggerExitEvents: []
   OnButtonInTriggerEvents: []
 --- !u!61 &6130973879890441080
@@ -3592,7 +4313,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\u0422\u043E\u0433\u0434\u0430 \u0441\u0435\u0439\u0447\u0430\u0441 \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043B\u044E
     \u043A\u043B\u044E\u0447\u0438."
---- !u!1 &3681474705457615883
+--- !u!1 &3541865355738932169
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3600,38 +4321,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6616349314763149102}
-  - component: {fileID: 1300228889789127247}
-  - component: {fileID: 1901682252367278003}
-  - component: {fileID: 1224304984071564311}
+  - component: {fileID: 8458752523967883738}
+  - component: {fileID: 2520483443747601259}
+  - component: {fileID: 8064304799629102051}
+  - component: {fileID: 7539164590895538012}
+  - component: {fileID: 8182878972458475795}
+  - component: {fileID: 8241461980156792297}
   m_Layer: 0
-  m_Name: Hoz (3)
+  m_Name: Work Ring
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &6616349314763149102
+--- !u!4 &8458752523967883738
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3681474705457615883}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 3541865355738932169}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.01, y: 1.48, z: 21.610567}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6193194260934141491}
-  m_RootOrder: 3
+  m_Father: {fileID: 801062842662750211}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1300228889789127247
+--- !u!212 &2520483443747601259
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3681474705457615883}
+  m_GameObject: {fileID: 3541865355738932169}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -3664,62 +4387,424 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 21
-  m_Sprite: {fileID: 21300000, guid: be75e1d7fc905d147b3a6e931de50da4, type: 3}
+  m_SortingOrder: 18
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 94.490005, y: 118.14135}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1901682252367278003
+--- !u!114 &8064304799629102051
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3681474705457615883}
+  m_GameObject: {fileID: 3541865355738932169}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   OnTriggerEnterEvents: []
   OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
---- !u!61 &1224304984071564311
+  OnButtonInTriggerEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: -1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2440806988178800138}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 6615082887903989357}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1413652127720214474}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 627115493554568665}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 2
+    _id: -1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2668034248902124377}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: -1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7310077089850454317}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+--- !u!61 &7539164590895538012
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3681474705457615883}
+  m_GameObject: {fileID: 3541865355738932169}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -10, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 94.490005, y: 118.14135}
-    newSize: {x: 94.490005, y: 118.14135}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 80, y: 120}
+  m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &8182878972458475795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3541865355738932169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8b99d8a12e39e4b94d2d7162c7c978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diags:
+  - 123
+  - 1stDialHoz
+  - Charlie
+  - CommentModifier
+  - CrazyCap
+  - DEMO_Condition
+  - demo_Narration
+  - Example3Dialogue
+  - Example4_dialogue
+  - Item_LookUp
+  - Laura
+  - MrCube
+  - MyTestDialogue
+  - NPCOnly
+  - QuestChartDemo
+  - ReedDi
+  - RingQuest
+  - Test_1
+  - TriggeredDude
+  - Witch
+  - WorkRing
+  assignedIndex: 16
+  assignedID: 9209
+  assignedDialogue: RingQuest
+  interactionCount: 0
+  alias: "\u0421\u043B\u043E\u043C\u0430\u043D\u044B\u0439 \u0437\u0432\u043E\u043D\u043E\u043A"
+  overrideStartNode: -1
+  defaultNPCSprite: {fileID: 21300000, guid: 233891b00b0038c4581e5ca165a1bfbf, type: 3}
+  defaultPlayerSprite: {fileID: 21300000, guid: 267b3798ce610bc449478556cda80e82,
+    type: 3}
+  targetManager: {fileID: 0}
+  preload: 1
+  notuptodate: 1
+  startp: 0
+  loadtag: 
+  langs: []
+  S_playerDiags:
+  - commentCount: 1
+    s_comment:
+    - text: "\u041A\u0430\u0436\u0435\u0442\u0441\u044F \u0437\u0432\u043E\u043D\u043E\u043A
+        \u0441\u043B\u043E\u043C\u0430\u043D"
+      extraData: ExtraData
+      inputSetIndex: 0
+      outputNodeIndex: 1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 0
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - 
+    varKeys:
+    - SwitchNpcContainerState
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0414\u0443\u043C\u0430\u044E \u0435\u0433\u043E \u043C\u043E\u0436\u043D\u043E
+        \u043F\u043E\u0447\u0438\u043D\u0438\u0442\u044C, \u043D\u0430\u0434\u043E
+        \u0442\u043E\u043B\u044C\u043A\u043E \u043D\u0430\u0439\u0442\u0438 \u044F\u0437\u044B\u0447\u043E\u043A. "
+      extraData: ExtraData
+      inputSetIndex: 1
+      outputNodeIndex: -1
+      outActionIndex: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 1
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - 0-56679
+    varKeys:
+    - SetStartNode
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0422\u0430\u043A, \u043D\u0443\u0436\u043D\u043E \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C
+        \u044F\u0437\u044B\u0447\u043E\u043A \u043D\u0430 \u043C\u0435\u0441\u0442\u043E"
+      extraData: ExtraData
+      inputSetIndex: 2
+      outputNodeIndex: 3
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 2
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - 
+    varKeys:
+    - SwitchNpcContainerState
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0413\u043E\u0442\u043E\u0432\u043E, \u0442\u0435\u043F\u0435\u0440\u044C
+        \u0434\u043E\u043B\u0436\u043D\u043E \u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C"
+      extraData: ExtraData
+      inputSetIndex: 3
+      outputNodeIndex: 4
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 3
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - RRing
+    varKeys:
+    - ActivateObject
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u0422\u0435\u043F\u0435\u0440\u044C \u043C\u043E\u0436\u043D\u043E
+        \u043F\u043E\u0437\u0432\u043E\u043D\u0438\u0442\u044C \u0432 \u0437\u0432\u043E\u043D\u043E\u043A."
+      extraData: ExtraData
+      inputSetIndex: 4
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 4
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - RHoz
+    varKeys:
+    - ActivateObject
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u041D\u0443\u0436\u043D\u043E \u043D\u0430\u0439\u0442\u0438 \u044F\u0437\u044B\u0447\u0435\u043A. "
+      extraData: ExtraData
+      inputSetIndex: 5
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 6
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - 
+    varKeys:
+    - SwitchNpcContainerState
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u042F \u0443\u0436\u0435 \u0437\u0434\u0435\u0441\u044C, \u043C\u043E\u0436\u0435\u0442
+        \u043F\u0435\u0440\u0435\u0441\u0442\u0430\u043D\u0435\u0442\u0435 \u0437\u0432\u043E\u043D\u0438\u0442\u044C?"
+      extraData: 
+      inputSetIndex: 6
+      outputNodeIndex: 7
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 8
+    pTag: 
+    sprite: {fileID: 0}
+    vars:
+    - "\u0425\u043E\u0437\u044F\u0438\u043D \u043E\u0442\u0435\u043B\u044F"
+    varKeys:
+    - SetNpcName
+    isPlayer: 0
+  - commentCount: 2
+    s_comment:
+    - text: "\u041F\u0440\u043E\u0441\u0442\u0438\u0442\u0435, \u044F \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E."
+      extraData: ExtraData
+      inputSetIndex: 7
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: "\u0417\u0430\u0445\u043E\u0447\u0443, \u0431\u0443\u0434\u0443 \u0437\u0432\u043E\u043D\u0438\u0442\u044C! "
+      extraData: 
+      inputSetIndex: 7
+      outputNodeIndex: 8
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 9
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: "\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430 \u043D\u0435
+        \u043D\u0430\u0434\u043E!"
+      extraData: ExtraData
+      inputSetIndex: 8
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 12
+    pTag: 
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  S_actionNodes:
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 5
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 6
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 7
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 8
+    renameDialogue: 
+--- !u!114 &8241461980156792297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3541865355738932169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7474e83aabceed745ac79fec3fc3aa40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 7
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: 
+  assignDialog: {fileID: 8182878972458475795}
 --- !u!1 &3920162249289549574
 GameObject:
   m_ObjectHideFlags: 0
@@ -3897,7 +4982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7790560638285950114
 Transform:
   m_ObjectHideFlags: 0
@@ -3921,9 +5006,10 @@ AudioSource:
   m_GameObject: {fileID: 4343169083435098453}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5045491820985921649, guid: 0cab80833250bf740a47af5bac954748,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 823619f42070b1e4798d6d80eb608660, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.407
   m_Pitch: 1
   Loop: 0
@@ -4086,11 +5172,9 @@ Transform:
   - {fileID: 3750012365122911261}
   - {fileID: 8184744183863143442}
   - {fileID: 2760280429252672861}
-  - {fileID: 6193194260934141491}
   - {fileID: 2712639778731219827}
   - {fileID: 2403485513553578817}
   - {fileID: 8557766744963092567}
-  - {fileID: 1904408177308566235}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4108,8 +5192,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cameraPosition: {fileID: 1825434204502899449}
   _levelNPC: []
-  _items: {fileID: 750451049117727287}
-  _puzzles: {fileID: 7699450335834157549}
+  _items: {fileID: 0}
+  _puzzles: {fileID: 0}
 --- !u!1 &4773672457513666626
 GameObject:
   m_ObjectHideFlags: 0
@@ -4611,7 +5695,6 @@ RectTransform:
   - {fileID: 5876867835030186775}
   - {fileID: 5387052835313640453}
   - {fileID: 3807231332432225084}
-  - {fileID: 2273843930406153351}
   m_Father: {fileID: 2132265067942336059}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4711,7 +5794,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2132265067942336059}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2657168965309719804
 MonoBehaviour:
@@ -4939,7 +6022,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801062842662750211}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3235109632774840723
 SpriteRenderer:
@@ -5005,12 +6088,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   OnTriggerEnterEvents: []
   OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
+  OnButtonInTriggerEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: 
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4288132170774010208}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 3060815145078252384}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 2
+    _id: 
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4288132170774010208}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &6769813673647280600
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5201,134 +6334,6 @@ MonoBehaviour:
     \u043D\u0435 \u0442\u0430\u043A \u043C\u043D\u043E\u0433\u043E \u0433\u043E\u0441\u0442\u0435\u0439,
     \u0442\u0430\u043A \u0447\u0442\u043E \u0441\u0432\u043E\u0431\u043E\u0434\u043D\u044B\u0435
     \u043A\u043E\u043C\u043D\u0430\u0442\u044B \u0435\u0441\u0442\u044C. "
---- !u!1 &6013899093714623772
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7028262110359662245}
-  - component: {fileID: 1338208158777931209}
-  - component: {fileID: 6477879234474096456}
-  - component: {fileID: 3210517264776849044}
-  m_Layer: 0
-  m_Name: Hoz (4)
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &7028262110359662245
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6013899093714623772}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6193194260934141491}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1338208158777931209
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6013899093714623772}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 21
-  m_Sprite: {fileID: 21300000, guid: be75e1d7fc905d147b3a6e931de50da4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 94.490005, y: 118.14135}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!114 &6477879234474096456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6013899093714623772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 0
-  <IsInteractionLocked>k__BackingField: 0
-  <Id>k__BackingField: 
-  OnTriggerEnterEvents: []
-  OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
---- !u!61 &3210517264776849044
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6013899093714623772}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -10, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 94.490005, y: 118.14135}
-    newSize: {x: 94.490005, y: 118.14135}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 80, y: 120}
-  m_EdgeRadius: 0
 --- !u!1 &6063077688882822833
 GameObject:
   m_ObjectHideFlags: 0
@@ -5422,8 +6427,6 @@ GameObject:
   - component: {fileID: 3390798163967340640}
   - component: {fileID: 888150360434452948}
   - component: {fileID: 5581237485430043769}
-  - component: {fileID: 8061272524338348864}
-  - component: {fileID: 6980917035662739657}
   m_Layer: 0
   m_Name: Door
   m_TagString: EditorOnly
@@ -5508,12 +6511,93 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
-  <Id>k__BackingField: 
+  <Id>k__BackingField: HozDoor
   OnTriggerEnterEvents: []
   OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
+  OnButtonInTriggerEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: -1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3185578100954045379}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2926875825446737903}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: RingAct
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6615082887903989357}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 146422744201183376}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 2
+    _id: -1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2926875825446737903}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!61 &5581237485430043769
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5540,449 +6624,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8061272524338348864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6168885976161313263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b8b99d8a12e39e4b94d2d7162c7c978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diags:
-  - 1stDialHoz
-  - Charlie
-  - CommentModifier
-  - CrazyCap
-  - DEMO_Condition
-  - demo_Narration
-  - Example3Dialogue
-  - Example4_dialogue
-  - Item_LookUp
-  - Laura
-  - MrCube
-  - MyTestDialogue
-  - NPCOnly
-  - QuestChartDemo
-  - Test_1
-  - TriggeredDude
-  - Witch
-  assignedIndex: 0
-  assignedID: 79672
-  assignedDialogue: 1stDialHoz
-  interactionCount: 0
-  alias: 
-  overrideStartNode: -1
-  defaultNPCSprite: {fileID: 0}
-  defaultPlayerSprite: {fileID: 0}
-  targetManager: {fileID: 0}
-  preload: 1
-  notuptodate: 0
-  startp: 0
-  loadtag: 
-  langs: []
-  S_playerDiags:
-  - commentCount: 1
-    s_comment:
-    - text: "\u0414\u043E\u0431\u0440\u044B\u0439 \u0432\u0435\u0447\u0435\u0440!
-        \u0412\u044B \u0447\u0442\u043E-\u0442\u043E \u0445\u043E\u0442\u0435\u043B\u0438?"
-      extraData: 
-      inputSetIndex: 0
-      outputNodeIndex: 1
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 0
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 4
-    s_comment:
-    - text: "\u0414\u043E\u0431\u0440\u044B\u0439 \u0432\u0435\u0447\u0435\u0440!
-        \u041C\u044B \u043E\u043A\u0430\u0437\u0430\u043B\u0438\u0441\u044C \u043F\u0440\u043E\u0435\u0437\u0434\u043E\u043C
-        \u0432 \u0432\u0430\u0448\u0435\u043C \u0433\u043E\u0440\u043E\u0434\u0435,
-        \u0438 \u0445\u043E\u0442\u0435\u043B\u0438 \u0431\u044B \u0441\u043D\u044F\u0442\u044C
-        \u043A\u043E\u043C\u043D\u0430\u0442\u0443 \u043D\u0430 \u043D\u043E\u0447\u044C."
-      extraData: 
-      inputSetIndex: 1
-      outputNodeIndex: 2
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: "\u0425\u043E\u0442\u0435\u043B, \u043D\u043E \u0443\u0432\u0438\u0434\u0435\u0432
-        \u0432 \u043A\u0430\u043A\u043E\u043C \u0437\u0434\u0435\u0441\u044C \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0438
-        \u0432\u0441\u0451 \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F,
-        \u0443\u0436\u0435 \u0434\u0430\u0436\u0435 \u043D\u0435 \u0437\u043D\u0430\u044E..."
-      extraData: 
-      inputSetIndex: 1
-      outputNodeIndex: 10
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: "\u0410 \u0443 \u0432\u0430\u0441 \u0442\u0443\u0442 \u0432\u0441\u0435\u0433\u0434\u0430
-        \u0442\u0430\u043A\u043E\u0435 \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u0435
-        \u043A \u043A\u043B\u0438\u0435\u043D\u0430\u0442\u0430\u043C?"
-      extraData: ExtraData
-      inputSetIndex: 1
-      outputNodeIndex: 12
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: "\u0414\u0443\u043C\u0430\u044E \u043C\u044B \u043F\u0435\u0440\u0435\u043D\u043E\u0447\u0443\u0435\u043C
-        \u0432 \u0434\u0440\u0443\u0433\u043E\u043C \u043C\u0435\u0441\u0442\u0435."
-      extraData: ExtraData
-      inputSetIndex: 1
-      outputNodeIndex: 15
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 1
-    pTag: 
-    sprite: {fileID: 0}
-    vars:
-    - 
-    varKeys:
-    - SwitchNpcContainerState
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: "\u0414\u0430, \u043A\u043E\u043D\u0435\u0447\u043D\u043E, \u0432 \u044D\u0442\u043E
-        \u0432\u0440\u0435\u043C\u044F \u0433\u043E\u0434\u0430 \u0443 \u043D\u0430\u0441
-        \u043D\u0435 \u0442\u0430\u043A \u043C\u043D\u043E\u0433\u043E \u0433\u043E\u0441\u0442\u0435\u0439,
-        \u0442\u0430\u043A \u0447\u0442\u043E \u0441\u0432\u043E\u0431\u043E\u0434\u043D\u044B\u0435
-        \u043A\u043E\u043C\u043D\u0430\u0442\u044B \u0435\u0441\u0442\u044C."
-      extraData: ExtraData
-      inputSetIndex: 2
-      outputNodeIndex: 3
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 2
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: "\u041E\u0442\u043B\u0438\u0447\u043D\u043E. \u0421\u043E \u043C\u043D\u043E\u0439
-        \u0436\u0435\u043D\u0430 \u0438 \u0441\u044B\u043D, \u043E\u043D\u0438 \u0432
-        \u043C\u0430\u0448\u0438\u043D\u0435, \u0442\u0430\u043A \u0447\u0442\u043E
-        \u043D\u0430\u043C \u0445\u0432\u0430\u0442\u0438\u0442 \u043E\u0434\u043D\u043E\u0433\u043E
-        \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u043E\u0433\u043E
-        \u043D\u043E\u043C\u0435\u0440\u0430."
-      extraData: ExtraData
-      inputSetIndex: 3
-      outputNodeIndex: 4
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 3
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: "\u041F\u0440\u043E\u0448\u0443 \u043F\u0440\u043E\u0449\u0435\u043D\u0438\u044F,
-        \u043D\u043E \u0443 \u043D\u0430\u0441 \u043D\u0435\u0442 \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u044B\u0445
-        \u043D\u043E\u043C\u0435\u0440\u043E\u0432. \u041D\u043E \u043C\u043E\u0433\u0443
-        \u0432\u0430\u043C \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0438\u0442\u044C
-        \u0434\u0432\u0430 \u0441\u043C\u0435\u0436\u043D\u044B\u0445 \u043E\u0434\u043D\u043E\u043C\u0435\u0441\u0442\u043D\u044B\u0445.
-        \u0412\u0430\u0441 \u044D\u0442\u043E \u0443\u0441\u0442\u0440\u043E\u0438\u0442?"
-      extraData: ExtraData
-      inputSetIndex: 4
-      outputNodeIndex: 5
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 4
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 2
-    s_comment:
-    - text: "\u041D\u0443 \u043F\u043E\u043B\u0430\u0433\u0430\u044E, \u0447\u0442\u043E
-        \u0434\u0430."
-      extraData: ExtraData
-      inputSetIndex: 5
-      outputNodeIndex: 6
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: "\u042D\u0442\u043E \u043D\u0435 \u0441\u043E\u0432\u0441\u0435\u043C
-        \u0443\u0434\u043E\u0431\u043D\u043E. \u0422\u043E\u0447\u043D\u043E \u0434\u0440\u0443\u0433\u0438\u0445
-        \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u043E\u0432 \u043D\u0435\u0442?"
-      extraData: ExtraData
-      inputSetIndex: 5
-      outputNodeIndex: 7
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 5
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: "\u0422\u043E\u0433\u0434\u0430 \u0441\u0435\u0439\u0447\u0430\u0441
-        \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043B\u044E \u043A\u043B\u044E\u0447\u0438."
-      extraData: ExtraData
-      inputSetIndex: 6
-      outputNodeIndex: 9
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 6
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: "\u0423\u0432\u044B \u043D\u0435\u0442. \u0418 \u043A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E,
-        \u044D\u0442\u043E \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
-        \u043E\u0442\u0435\u043B\u044C \u0432 \u043D\u0430\u0448\u0435\u043C \u0433\u043E\u0440\u043E\u0434\u0435."
-      extraData: ExtraData
-      inputSetIndex: 7
-      outputNodeIndex: 8
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 7
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: "\u0422\u043E\u0433\u0434\u0430 \u043C\u044B \u0432\u043E\u0437\u044C\u043C\u0451\u043C
-        \u044D\u0442\u0438 \u0434\u0432\u0430 \u043D\u043E\u043C\u0435\u0440\u0430."
-      extraData: ExtraData
-      inputSetIndex: 8
-      outputNodeIndex: 6
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 8
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: "\u0411\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044E \u0432\u0430\u0441."
-      extraData: ExtraData
-      inputSetIndex: 9
-      outputNodeIndex: -1
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 9
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: "\u041F\u0443\u0441\u0442\u044C \u0432\u0430\u0441 \u043D\u0435 \u0441\u043C\u0443\u0449\u0430\u0435\u0442
-        \u0432\u043D\u0435\u0448\u043D\u0438\u0439 \u0432\u0438\u0434! \u0423\u0432\u0435\u0440\u044F\u044E,
-        \u0432\u044B \u0431\u0443\u0434\u0435\u0442\u0435 \u0434\u043E\u0432\u043E\u043B\u044C\u043D\u044B
-        \u043D\u043E\u043C\u0435\u0440\u043E\u043C \u0438 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435\u043C."
-      extraData: ExtraData
-      inputSetIndex: 10
-      outputNodeIndex: 16
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 10
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: "\u041D\u0443 \u0437\u043D\u0430\u0447\u0438\u0442 \u0432\u044B\u0431\u043E\u0440
-        \u043D\u0435\u0432\u0435\u043B\u0438\u043A. \u0425\u043E\u0440\u043E\u0448\u043E,
-        \u0441\u043E \u043C\u043D\u043E\u0439 \u0436\u0435\u043D\u0430 \u0438 \u0441\u044B\u043D,
-        \u0442\u0430\u043A \u0447\u0442\u043E \u043C\u044B \u0432\u043E\u0437\u044C\u043C\u0435\u043C
-        \u043E\u0434\u0438\u043D \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u044B\u0439
-        \u043D\u043E\u043C\u0435\u0440."
-      extraData: ExtraData
-      inputSetIndex: 11
-      outputNodeIndex: 4
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 11
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: "\u041F\u0440\u043E\u0448\u0443 \u043F\u0440\u043E\u0449\u0435\u043D\u0438\u044F!
-        \u041F\u0440\u043E\u0441\u0442\u043E \u0441\u0435\u0439\u0447\u0430\u0441
-        \u043D\u0435 \u0441\u0435\u0437\u043E\u043D \u0438 \u0432 \u044D\u0442\u043E\u043C
-        \u0432\u0440\u0435\u043C\u044F \u0433\u043E\u0434\u0430 \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432
-        \u043F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438 \u043D\u0435\u0442.
-        \u0422\u0430\u043A \u0447\u0442\u043E \u044F \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E
-        \u0440\u0430\u0441\u0441\u043B\u0430\u0431\u0438\u043B\u0441\u044F. \u041D\u043E
-        \u044F \u0431\u0443\u0434\u0443 \u0440\u0430\u0434 \u0437\u0430\u0433\u043B\u0430\u0434\u0438\u0442\u044C
-        \u0441\u0432\u043E\u044E \u0432\u0438\u043D\u0443 \u0438 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0438\u0442\u044C
-        \u0432\u0430\u043C \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0439
-        \u0437\u0430\u0432\u0442\u0440\u0430\u043A."
-      extraData: ExtraData
-      inputSetIndex: 12
-      outputNodeIndex: 13
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 12
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 2
-    s_comment:
-    - text: "\u0427\u0442\u043E-\u0436, \u0437\u0432\u0443\u0447\u0438\u0442 \u0437\u0430\u043C\u0430\u043D\u0447\u0438\u0432\u043E.
-        \u0422\u043E\u0433\u0434\u0430 \u044F \u0431\u044B \u0445\u043E\u0442\u0435\u043B
-        \u0441\u043D\u044F\u0442\u044C \u043E\u0434\u0438\u043D \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u044B\u0439
-        \u043D\u043E\u043C\u0435\u0440. \u0421\u043E \u043C\u043D\u043E\u0439 \u0436\u0435\u043D\u0430
-        \u0438 \u0441\u044B\u043D, \u043E\u043D\u0438 \u0441\u0435\u0439\u0447\u0430\u0441
-        \u0432 \u043C\u0430\u0448\u0438\u043D\u0435. "
-      extraData: ExtraData
-      inputSetIndex: 13
-      outputNodeIndex: 4
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: "\u041E\u0441\u0442\u0430\u0432\u044C\u0442\u0435 \u0432\u0430\u0448\u0438
-        \u0436\u0430\u043B\u043A\u0438\u0435 \u043F\u043E\u0434\u0430\u0447\u043A\u0438
-        \u0441\u0435\u0431\u0435! \u042F \u043B\u0443\u0447\u044C\u0448\u0435 \u043F\u043E\u0438\u0449\u0443
-        \u0434\u0440\u0443\u0433\u043E\u0439 \u043E\u0442\u0435\u043B\u044C, \u0441
-        \u0431\u043E\u043B\u0435\u0435 \u043A\u043E\u043C\u043F\u0435\u0442\u0435\u043D\u0442\u043D\u044B\u043C
-        \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u043E\u043C. "
-      extraData: ExtraData
-      inputSetIndex: 13
-      outputNodeIndex: 14
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 13
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: "\u0416\u0430\u043B\u044C \u0432\u0430\u0441 \u0440\u0430\u0437\u043E\u0447\u0430\u0440\u043E\u0432\u044B\u0432\u0430\u0442\u044C,
-        \u043D\u043E \u044D\u0442\u043E \u0435\u0434\u0438\u043D\u0442\u0441\u0432\u0435\u043D\u043D\u044B\u0439
-        \u043E\u0442\u0435\u043B\u044C \u0432 \u0433\u043E\u0440\u043E\u0434\u0435.
-        \u0414\u043E \u0434\u0440\u0443\u0433\u043E\u0433\u043E \u0431\u043B\u0438\u0436\u0430\u0439\u0448\u0435\u0433\u043E
-        \u043E\u043A\u043E\u043B\u043E \u0434\u0432\u0443\u0445 \u0441\u043E\u0442\u0435\u043D
-        \u043A\u0438\u043B\u043E\u043C\u0435\u0442\u0440\u043E\u0432. "
-      extraData: ExtraData
-      inputSetIndex: 14
-      outputNodeIndex: 11
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 14
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: Comment...
-      extraData: ExtraData
-      inputSetIndex: 15
-      outputNodeIndex: 14
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 15
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: "\u0414\u0430 \u0438 \u043A \u0442\u043E\u043C\u0443 \u0436\u0435, \u044D\u0442\u043E
-        \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
-        \u043E\u0442\u0435\u043B\u044C \u0432 \u0433\u043E\u0440\u043E\u0434\u0435."
-      extraData: ExtraData
-      inputSetIndex: 16
-      outputNodeIndex: 11
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 16
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  S_actionNodes: []
---- !u!114 &6980917035662739657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6168885976161313263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7474e83aabceed745ac79fec3fc3aa40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 7
-  <IsInteractionLocked>k__BackingField: 0
-  <Id>k__BackingField: 
-  assignDialog: {fileID: 8061272524338348864}
 --- !u!1 &6279703785405383889
 GameObject:
   m_ObjectHideFlags: 0
@@ -6045,7 +6686,7 @@ Transform:
   - {fileID: 1960999800275073144}
   - {fileID: 7790560638285950114}
   m_Father: {fileID: 2132265067942336059}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6563563722184388999
 GameObject:
@@ -6120,8 +6761,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 21
-  m_Sprite: {fileID: 3625043607559282579, guid: 0d267bc78a0864eb48358689b29ed20a,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 03a124b3dbba3904b86c5542556d01bf, type: 3}
   m_Color: {r: 0.8396226, g: 0.08317016, b: 0.08317016, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -6149,7 +6789,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
+    oldSize: {x: 0.46, y: 0.62}
     newSize: {x: 1, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -6172,7 +6812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 2
   <IsInteractionLocked>k__BackingField: 0
-  <Id>k__BackingField: 
+  <Id>k__BackingField: ItemReed
   ItemData: {fileID: 11400000, guid: a074f039d3208c84e8b3c490bac913ea, type: 2}
   PickUpTime: 0.5
 --- !u!1 &6615082887903989357
@@ -6206,7 +6846,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801062842662750211}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3206555302323020234
 SpriteRenderer:
@@ -6483,7 +7123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 2
   <IsInteractionLocked>k__BackingField: 0
-  <Id>k__BackingField: 
+  <Id>k__BackingField: KeyRoom1
   ItemData: {fileID: 11400000, guid: 30095eaf594323b42beb2df57250c6d4, type: 2}
   PickUpTime: 0.5
 --- !u!114 &415659509285051064
@@ -6498,7 +7138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   OnTriggerEnterEvents: []
@@ -6530,82 +7170,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &7005924335067758457
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5617831250031724725}
-  - component: {fileID: 6010402700274536906}
-  - component: {fileID: 3114433571728894567}
-  m_Layer: 0
-  m_Name: Mimo2
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &5617831250031724725
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7005924335067758457}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 99.833336, y: -51.59999, z: 0.00019073486}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2273843930406153351}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &6010402700274536906
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7005924335067758457}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 25, y: 60}
-  m_EdgeRadius: 0
---- !u!114 &3114433571728894567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7005924335067758457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 0
-  <IsInteractionLocked>k__BackingField: 0
-  <Id>k__BackingField: 
-  OnTriggerEnterEvents: []
-  OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
 --- !u!1 &7112509066959186245
 GameObject:
   m_ObjectHideFlags: 0
@@ -6719,7 +7283,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801062842662750211}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8075184477657844788
 SpriteRenderer:
@@ -6785,10 +7349,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
-  OnTriggerEnterEvents: []
+  OnTriggerEnterEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: 
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3920162249289549574}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 7180171545536368319}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 3
+    _id: 
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3920162249289549574}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   OnTriggerExitEvents: []
   OnButtonInTriggerEvents: []
 --- !u!61 &439780042325917573
@@ -6908,12 +7522,12 @@ GameObject:
   - component: {fileID: 1960999800275073144}
   - component: {fileID: 4999535505501303317}
   m_Layer: 0
-  m_Name: Ring
+  m_Name: RingSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1960999800275073144
 Transform:
   m_ObjectHideFlags: 0
@@ -6937,9 +7551,10 @@ AudioSource:
   m_GameObject: {fileID: 7310077089850454317}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5045491820985921649, guid: 0cab80833250bf740a47af5bac954748,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: e112f401facf9f1408d8d9dc03ba0753, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -7107,38 +7722,6 @@ MonoBehaviour:
     \u0432 \u0432\u0430\u0448\u0435\u043C \u0433\u043E\u0440\u043E\u0434\u0435, \u0438
     \u0445\u043E\u0442\u0435\u043B\u0438 \u0431\u044B \u0441\u043D\u044F\u0442\u044C
     \u043A\u043E\u043C\u043D\u0430\u0442\u0443 \u043D\u0430 \u043D\u043E\u0447\u044C."
---- !u!1 &7572562853559886420
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2273843930406153351}
-  m_Layer: 0
-  m_Name: Dialog_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2273843930406153351
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7572562853559886420}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.197342, y: -92.78416, z: -634.94763}
-  m_LocalScale: {x: 1.7561669, y: 1.7561669, z: 0.29269448}
-  m_Children:
-  - {fileID: 8756378662276471867}
-  - {fileID: 5617831250031724725}
-  m_Father: {fileID: 2760280429252672861}
-  m_RootOrder: 21
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7669107032602838185
 GameObject:
   m_ObjectHideFlags: 0
@@ -7252,7 +7835,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801062842662750211}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1273360601024310744
 SpriteRenderer:
@@ -7318,10 +7901,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
-  OnTriggerEnterEvents: []
+  OnTriggerEnterEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: 
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5563564120884882613}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 3920162249289549574}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7774100767130435709}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 3
+    _id: 
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5563564120884882613}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   OnTriggerExitEvents: []
   OnButtonInTriggerEvents: []
 --- !u!61 &4502003740601665654
@@ -7368,7 +8013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2134098671951471923
 Transform:
   m_ObjectHideFlags: 0
@@ -7381,7 +8026,7 @@ Transform:
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 801062842662750211}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4968187911282079673
 SpriteRenderer:
@@ -7446,7 +8091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   OnTriggerEnterEvents: []
@@ -7477,134 +8122,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!1 &7904113792944674715
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4004223464695529506}
-  - component: {fileID: 8921115829944810553}
-  - component: {fileID: 8228631413351027160}
-  - component: {fileID: 6228622642101368073}
-  m_Layer: 0
-  m_Name: Hoz (6)
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &4004223464695529506
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7904113792944674715}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6193194260934141491}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8921115829944810553
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7904113792944674715}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 21
-  m_Sprite: {fileID: 21300000, guid: be75e1d7fc905d147b3a6e931de50da4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 94.490005, y: 118.14135}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!114 &8228631413351027160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7904113792944674715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 0
-  <IsInteractionLocked>k__BackingField: 0
-  <Id>k__BackingField: 
-  OnTriggerEnterEvents: []
-  OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
---- !u!61 &6228622642101368073
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7904113792944674715}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -10, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 94.490005, y: 118.14135}
-    newSize: {x: 94.490005, y: 118.14135}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 80, y: 120}
   m_EdgeRadius: 0
 --- !u!1 &7982679297650368183
 GameObject:
@@ -7861,12 +8378,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   OnTriggerEnterEvents: []
   OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
+  OnButtonInTriggerEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: -1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1045448089526975613}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 5231153321012499600}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 2
+    _id: -1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5231153321012499600}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: -1
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 82461972379826494}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!61 &6581811759253200241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8005,7 +8591,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 801062842662750211}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1370136709290333333
 SpriteRenderer:
@@ -8071,10 +8657,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
-  OnTriggerEnterEvents: []
+  OnTriggerEnterEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: 
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6497738800487274522}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   OnTriggerExitEvents: []
   OnButtonInTriggerEvents: []
 --- !u!61 &7764364790725569778
@@ -8102,134 +8707,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!1 &9097577720140787274
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1106468678592977035}
-  - component: {fileID: 7503921760058009573}
-  - component: {fileID: 733465612346240984}
-  - component: {fileID: 7801702366542782293}
-  m_Layer: 0
-  m_Name: Hoz (7)
-  m_TagString: EditorOnly
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1106468678592977035
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9097577720140787274}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6193194260934141491}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7503921760058009573
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9097577720140787274}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 21
-  m_Sprite: {fileID: 21300000, guid: be75e1d7fc905d147b3a6e931de50da4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 94.490005, y: 118.14135}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!114 &733465612346240984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9097577720140787274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 0
-  <IsInteractionLocked>k__BackingField: 0
-  <Id>k__BackingField: 
-  OnTriggerEnterEvents: []
-  OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
---- !u!61 &7801702366542782293
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9097577720140787274}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -10, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 94.490005, y: 118.14135}
-    newSize: {x: 94.490005, y: 118.14135}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 80, y: 120}
   m_EdgeRadius: 0
 --- !u!1 &9110399836751844220
 GameObject:
@@ -8506,6 +8983,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4826721140499636313, guid: a92e6ec87f5ad4c038229934453c278f,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: _goToGateId
@@ -8525,6 +9007,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _localTransferTime
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
+        type: 3}
+      propertyPath: <Id>k__BackingField
+      value: GateR3S1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
+        type: 3}
+      propertyPath: _isInteractionLocked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7149498112034572307, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -8664,7 +9156,7 @@ PrefabInstance:
     - target: {fileID: 3982195482189203848, guid: f01243d5917f8dd48afecb2b427b1ce6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3982195482189203848, guid: f01243d5917f8dd48afecb2b427b1ce6,
         type: 3}
@@ -8898,6 +9390,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01243d5917f8dd48afecb2b427b1ce6, type: 3}
+--- !u!1 &82461972379826494 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1423793387978271685, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1361954268274479867}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1123209695992716035 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2121427922097555960, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1361954268274479867}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2447833192819331355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3683611760846947296, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1361954268274479867}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &592498292535014297 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1936081914070884706, guid: f01243d5917f8dd48afecb2b427b1ce6,
@@ -8928,181 +9450,11 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1361954268274479867}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &82461972379826494 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1423793387978271685, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1361954268274479867}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2712639778731219827 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3982195482189203848, guid: f01243d5917f8dd48afecb2b427b1ce6,
     type: 3}
   m_PrefabInstance: {fileID: 1361954268274479867}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1123209695992716035 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2121427922097555960, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1361954268274479867}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2447833192819331355 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3683611760846947296, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1361954268274479867}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1001 &1591555841673964627
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2132265067942336059}
-    m_Modifications:
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 372.35672
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 190.26852
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -208.88689
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076660, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_Name
-      value: UIManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076660, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: assignedIndex
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.size
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[0]
-      value: 1stDialHoz
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[1]
-      value: Charlie
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[8]
-      value: Item_LookUp
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[9]
-      value: Laura
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[10]
-      value: MrCube
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[11]
-      value: NPCOnly
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[12]
-      value: QuestChartDemo
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[13]
-      value: Test_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[14]
-      value: TriggeredDude
-      objectReference: {fileID: 0}
-    - target: {fileID: 899460704229076663, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-        type: 3}
-      propertyPath: diags.Array.data[15]
-      value: Witch
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2, type: 3}
---- !u!4 &1904408177308566235 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 899460704229076616, guid: bd09bf2ae2bcdc64dbb4c7d989c4d8c2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1591555841673964627}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3225600468652466311
 PrefabInstance:

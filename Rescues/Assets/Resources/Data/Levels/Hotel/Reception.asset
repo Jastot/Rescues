@@ -19,11 +19,13 @@ MonoBehaviour:
   _cameraData:
     CameraMode: 1
     CameraSize: 11
+    CameraFreeMoveLimit: 50
+    CameraDragSpeed: 50
     Position_Y_Offset: 0
     Position_X_Offset: 0
     MoveLeftXLimit: 0
     MoveRightXLimit: 0
-    CameraFreeMoveLimit: 50
-    CameraDragSpeed: 50
+    CameraAccelerateStep: 0
+    DeadZone: 0
   _customBootScreen: {fileID: 5293078557666880198, guid: 350dbdcc61ef74de087b99c5df45793d,
     type: 3}

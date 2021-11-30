@@ -1,15 +1,23 @@
 ﻿using System;
+using UnityEngine;
 
 
-[Serializable]
-public struct CameraData
-{   
-    public Rescues.CameraMode CameraMode;
-    public float CameraSize;
-    public float Position_Y_Offset;
-    public float Position_X_Offset;
-    public float MoveLeftXLimit;
-    public float MoveRightXLimit;
-    public float CameraFreeMoveLimit;
-    public int CameraDragSpeed;
+namespace Rescues
+{
+    [Serializable]
+    public struct CameraData
+    {
+        [Header("General preferences")]
+        public CameraMode CameraMode;
+        public float CameraSize;
+        public float CameraFreeMoveLimit;
+        public int CameraDragSpeed;
+        [Header("Moveable camera preferences")]
+        public float Position_Y_Offset;
+        public float Position_X_Offset;
+        public float MoveLeftXLimit;
+        public float MoveRightXLimit;
+        public float CameraAccelerateStep;
+        public float DeadZone;
+    } 
 }

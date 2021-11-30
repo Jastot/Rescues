@@ -20,6 +20,7 @@ namespace Rescues
             { DialogueCommands.SwitchNpcContainerState, "SwitchNpcContainerState" },
             { DialogueCommands.ActivateObject, "ActivateObject" },
             { DialogueCommands.ActivateEvent, "ActivateEvent" },
+            { DialogueCommands.RemoveItem, "RemoveItem" },
         };
     }
 }
