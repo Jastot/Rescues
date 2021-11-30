@@ -1,8 +1,11 @@
+using System;
+
 namespace Rescues
 {
+    [Serializable]
     public sealed class InteractiveCondition
     {
-        public string Name;
+        public SavingStruct SavingStruct;
         public bool IsInteractable;
         public bool IsInteractionLocked;
     }

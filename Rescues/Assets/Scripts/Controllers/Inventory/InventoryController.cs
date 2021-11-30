@@ -149,8 +149,12 @@ namespace Rescues
                                 _context.WorldGameData.SaveItem(
                                     new ItemListData()
                                     {
-                                        Name = component.itemDependsEvents[i].ItemData.Name,
-                                        ItemCondition = 0
+                                       SavingStruct = new SavingStruct()
+                                       {
+                                         Id = component.itemDependsEvents[i].ItemData.Name,//????
+                                         Name = component.itemDependsEvents[i].ItemData.Name,
+                                       },
+                                       ItemCondition = 0
                                     });
                                 _inventory.RemoveItem(component.itemDependsEvents[i].ItemData);
                             }

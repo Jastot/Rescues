@@ -1,17 +1,19 @@
+using System;
 using System.Collections.Generic;
+using UnityEngine.Serialization;
 
 namespace Rescues
 {
+    [Serializable]
     public sealed class LevelProgress
     {
         #region Fields
 
         //TODO: Saving NPC data
-        public string LevelsName;
-        public IGate LastGate;
-        public List<QuestListData> QuestListData = new List<QuestListData>();
-        public List<PuzzleListData> PuzzleListData = new List<PuzzleListData>();
-        public List<InteractiveCondition> ListOfInteractable = new List<InteractiveCondition>();
+        public string levelsName;
+        public List<QuestListData> questListData = new List<QuestListData>();
+        public List<PuzzleListData> puzzleListData = new List<PuzzleListData>();
+        public List<InteractiveCondition> listOfInteractable = new List<InteractiveCondition>();
         
         #endregion
     }

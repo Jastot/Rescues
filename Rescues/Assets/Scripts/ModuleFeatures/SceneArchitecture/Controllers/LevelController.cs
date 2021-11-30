@@ -94,12 +94,11 @@ namespace Rescues
                 _curveWayController = new CurveWayController(bootLocation.LocationInstance.СurveWays);
                 _activeCurveWay = _curveWayController.GetCurve(enterGate, WhoCanUseCurve.Character);
                 _context.character.LocateCharacter(_activeCurveWay);
+                _context.WorldGameData.SetLastGate(gate);
                 if (!_context.WorldGameData.LookForLevelByNameBool(bootLocation.LocationName))
-                    _context.WorldGameData.AddNewLocation(bootLocation.LocationInstance,gate);
+                    _context.WorldGameData.AddNewLocation(bootLocation.LocationInstance);
                 else
-                {
                     _context.WorldGameData.OpenCurrentLocation(bootLocation.LocationInstance,_context.GetTriggers(InteractableObjectType.EventSystem));
-                }
                 _context.WorldGameData.SavePlayersProgress(
                     _context.WorldGameData.LookForLevelByNameInt(bootLocation.LocationName));
                 if (restartingFlag)

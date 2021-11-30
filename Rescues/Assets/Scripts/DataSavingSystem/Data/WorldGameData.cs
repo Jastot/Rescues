@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
-using Object = UnityEngine.Object;
-
 
 namespace Rescues
 {
@@ -12,11 +10,8 @@ namespace Rescues
     public sealed class WorldGameData
     {
         #region Fields
-        
-        private static string _playerPosition;
-        private static PlayersProgress _playersProgress;
-        private static List<ItemListData> _itemBehaviours;
-        private static List<LevelProgress> _levelsProgress;
+
+        private SavingPacked _savingPacked;
         private List<IInteractable> _listOfInteractable;
         
         public Action SaveStart = delegate {};
@@ -30,10 +25,13 @@ namespace Rescues
 
         public WorldGameData()
         {
-            _playerPosition = null;
-            _itemBehaviours = new List<ItemListData>();
-            _playersProgress = new PlayersProgress();
-            _levelsProgress = new List<LevelProgress>();
+            _savingPacked = new SavingPacked
+            {
+                PlayerPosition = null,
+                ItemBehaviours = new List<ItemListData>(),
+                PlayersProgress = new PlayersProgress(),
+                LevelsProgress = new List<LevelProgress>()
+            };
         }
 
         #endregion
@@ -43,12 +41,12 @@ namespace Rescues
 
         public void SavePlayersPosition(Transform playersPosition)
         {
-            _playerPosition = ConvertVector3ToString(playersPosition.position);
+            _savingPacked.PlayerPosition = ConvertVector3ToString(playersPosition.position);
         }
 
         public Vector3 LoadPlayerPosition()
         {
-            return ConvertStringToVector3(_playerPosition);
+            return ConvertStringToVector3(_savingPacked.PlayerPosition);
         }
         
         public void SetListOfInteractable(List<IInteractable> listOfInteractable)
@@ -59,34 +57,34 @@ namespace Rescues
         
         public void SavePlayersProgress(int currentLevel)
         {
-            _playersProgress.PlayerCurrentPositionInProgress = currentLevel;
+            _savingPacked.PlayersProgress.PlayerCurrentPositionInProgress = currentLevel;
         }
 
         private void AddNewLevelInfoToLevelsProgress(LevelProgress levelProgress)
         {
-            _levelsProgress.Add(levelProgress);
+            _savingPacked.LevelsProgress.Add(levelProgress);
         }
 
         #region Items
 
         public void AddItem(ItemListData itemListData)
         {
-            _itemBehaviours.Add(itemListData);
+            _savingPacked.ItemBehaviours.Add(itemListData);
         }
 
         public void SaveItem(ItemListData itemListData)
         {
             //TODO: переделать. 
-            var index = _itemBehaviours.FindIndex(s => s.Name == itemListData.Name);
+            var index = _savingPacked.ItemBehaviours.FindIndex(s => s.SavingStruct.Name == itemListData.SavingStruct.Name);
             if (index != -1)
-                _itemBehaviours.Insert(index, itemListData);
+                _savingPacked.ItemBehaviours.Insert(index, itemListData);
             else
                 AddItem(itemListData);
         }
 
         public void DeleteItem(ItemListData itemListData)
         {
-            _itemBehaviours.Remove(itemListData);
+            _savingPacked.ItemBehaviours.Remove(itemListData);
         }
 
 
@@ -97,18 +95,18 @@ namespace Rescues
 
         public void AddInLevelProgressQuest(int levelsIndex, QuestListData itemListData)
         {
-            _levelsProgress[levelsIndex].QuestListData.Add(itemListData);
+            _savingPacked.LevelsProgress[levelsIndex].questListData.Add(itemListData);
         }
 
         public void SaveInfoInLevelProgressQuest(int levelsIndex, string name, QuestListData itemListData)
         {
-            var index = _levelsProgress[levelsIndex].QuestListData.FindIndex(s => s.Name == name);
-            _levelsProgress[levelsIndex].QuestListData.Insert(index, itemListData);
+            var index = _savingPacked.LevelsProgress[levelsIndex].questListData.FindIndex(s => s.SavingStruct.Name == name);
+            _savingPacked.LevelsProgress[levelsIndex].questListData.Insert(index, itemListData);
         }
 
         public void DeleteInfoInLevelProgressQuest(int levelsIndex, QuestListData itemListData)
         {
-            _levelsProgress[levelsIndex].QuestListData.Remove(itemListData);
+            _savingPacked.LevelsProgress[levelsIndex].questListData.Remove(itemListData);
         }
 
 
@@ -122,13 +120,33 @@ namespace Rescues
             {
                 var beh = interactable as InteractableObjectBehavior;
                 var levelsName = beh.GameObject.transform.parent.parent.name;
-                _levelsProgress.FirstOrDefault(i => i.LevelsName == levelsName)?.ListOfInteractable.Add(
+                _savingPacked.LevelsProgress.FirstOrDefault(i => i.levelsName == levelsName)?.listOfInteractable.Add(
                     new InteractiveCondition()
                     {
-                        Name = beh.name,
+                        SavingStruct = new SavingStruct()
+                        {
+                            Id = beh.Id,
+                            Name = beh.name
+                        },
                         IsInteractable = beh.IsInteractable,
                         IsInteractionLocked = beh.IsInteractionLocked
                     });
+            }
+        }
+
+        private void UnPackagingByLevels()
+        {
+            foreach (var levelProgress in _savingPacked.LevelsProgress)
+            {
+                foreach (var interactive in levelProgress.listOfInteractable)
+                {
+                    var setting = _listOfInteractable.FirstOrDefault(i=> i.Id == interactive.SavingStruct.Id);
+                    if (setting != null)
+                    {
+                        setting.IsInteractable = interactive.IsInteractable;
+                        setting.IsInteractionLocked = interactive.IsInteractionLocked;
+                    }
+                }
             }
         }
 
@@ -138,18 +156,18 @@ namespace Rescues
 
         public void AddInLevelProgressPuzzle(int levelsIndex, PuzzleListData itemListData)
         {
-            _levelsProgress[levelsIndex].PuzzleListData.Add(itemListData);
+            _savingPacked.LevelsProgress[levelsIndex].puzzleListData.Add(itemListData);
         }
 
         public void SaveInfoInLevelProgressPuzzle(int levelsIndex, string name, PuzzleListData itemListData)
         {
-            var index = _levelsProgress[levelsIndex].PuzzleListData.FindIndex(s => s.Name == name);
-            _levelsProgress[levelsIndex].PuzzleListData.Insert(index, itemListData);
+            var index = _savingPacked.LevelsProgress[levelsIndex].puzzleListData.FindIndex(s => s.SavingStruct.Name == name);
+            _savingPacked.LevelsProgress[levelsIndex].puzzleListData.Insert(index, itemListData);
         }
 
         public void DeleteInfoInLevelProgressPuzzle(int levelsIndex, PuzzleListData itemListData)
         {
-            _levelsProgress[levelsIndex].PuzzleListData.Remove(itemListData);
+            _savingPacked.LevelsProgress[levelsIndex].puzzleListData.Remove(itemListData);
         }
         
         #endregion
@@ -157,10 +175,7 @@ namespace Rescues
         public byte[] Serialize()
         {
             SaveStart.Invoke();
-            IEnumerable<byte> total = Encoding.ASCII.GetBytes("[").Concat((IEnumerable<byte>)Encoding.ASCII.GetBytes(_playerPosition)).Concat(Encoding.ASCII.GetBytes("]"))
-                .Concat(Encoding.ASCII.GetBytes("[")).Concat(ByteConverter.AddToStreamPlayersProgress(_playersProgress)).Concat(Encoding.ASCII.GetBytes("]")).
-                Concat(Encoding.ASCII.GetBytes("[")).Concat(ByteConverter.AddToStreamItems(_itemBehaviours)).Concat(Encoding.ASCII.GetBytes("]"))
-                .Concat(ByteConverter.AddToStreamLevelProgress(_levelsProgress));
+            IEnumerable<byte> total = ByteConverter.AddToStreamAllPacked(_savingPacked);
             byte[] result = total.ToArray();
             return result;
         }
@@ -169,13 +184,13 @@ namespace Rescues
         {
             LoadStart.Invoke();
             var dataString = Encoding.ASCII.GetString(data);
-            ByteConverter.DataReader(dataString, out _playerPosition,out _itemBehaviours, out _playersProgress, out _levelsProgress);
+            ByteConverter.DataReader(dataString, out _savingPacked);
         }
 
         public bool LookForLevelByNameBool(string name)
         {
-            foreach (var levelProgress in _levelsProgress)
-                if (levelProgress.LevelsName == name)
+            foreach (var levelProgress in _savingPacked.LevelsProgress)
+                if (levelProgress.levelsName == name)
                     return true;
             return false;
         }
@@ -183,9 +198,9 @@ namespace Rescues
         public int LookForLevelByNameInt(string name)
         {
             int counter = 0;
-            foreach (var levelProgress in _levelsProgress)
+            foreach (var levelProgress in _savingPacked.LevelsProgress)
             {
-                if (levelProgress.LevelsName == name)
+                if (levelProgress.levelsName == name)
                 {
                     return counter;
                 }
@@ -196,24 +211,42 @@ namespace Rescues
             return -1;
         }
 
-        public void AddNewLocation(Location location,IGate gate)
+        public void SetLastGate(IGate gate)
+        {
+            _savingPacked.LastGate = new GateStruct()
+            {
+                goToLevelName = gate.GoToLevelName,
+                goToLocationName = gate.GoToLocationName,
+                goToGateId = gate.GoToGateId
+            };
+        }
+        
+        public void AddNewLocation(Location location)
         {
             AddNewLevelInfoToLevelsProgress(new LevelProgress()
             {
-                LevelsName = location.name,
-                LastGate = gate
+                levelsName = location.name
             });
-            int correctIndex = _levelsProgress.Count - 1;
+            int correctIndex = _savingPacked.LevelsProgress.Count - 1;
             foreach (Transform transform in location._items.transform)
                 AddItem(new ItemListData()
                 {
-                    Name = transform.name,
+                    SavingStruct = new SavingStruct()
+                    {
+                        Id = transform.name,//TODO: ID
+                        Name = transform.name
+                    },//TODO: ID
                     ItemCondition = (ItemCondition) 1
                 });
             foreach (Transform transform in location._puzzles.transform)
                 AddInLevelProgressPuzzle(correctIndex, new PuzzleListData()
                 {
-                    Name = transform.name,
+                    SavingStruct = new SavingStruct()
+                    {
+                        Id = transform.name,//TODO: ID
+                        Name = transform.name
+                    },
+     
                     PuzzleCondition = (PuzzleCondition) 1
                 });
         }
@@ -221,27 +254,28 @@ namespace Rescues
         public void OpenCurrentLocation(Location location,List<IInteractable> interactables)
         {
             var locationIndex = LookForLevelByNameInt(location.name);
-            foreach (var item in _itemBehaviours)
+            foreach (var item in _savingPacked.ItemBehaviours)
             {
                 if ((item.ItemCondition == (ItemCondition)0)||(item.ItemCondition==(ItemCondition)2))
                     foreach (Transform realItem in location._items)
-                        if (item.Name==realItem.gameObject.name)
+                        if (item.SavingStruct.Name==realItem.gameObject.name)//TODO: ID
                             realItem.gameObject.SetActive(false);
             }
-            foreach (var puzzle in _levelsProgress[locationIndex].PuzzleListData)
+            foreach (var puzzle in _savingPacked.LevelsProgress[locationIndex].puzzleListData)
             {
                 if ((puzzle.PuzzleCondition == (PuzzleCondition)1))
                     foreach (Transform realPuzzle in location._puzzles)
-                        if (puzzle.Name == realPuzzle.gameObject.name)
+                        if (puzzle.SavingStruct.Name == realPuzzle.gameObject.name)//TODO: ID
                             realPuzzle.gameObject.SetActive(false);
             }
-            foreach (var interactable in _levelsProgress[locationIndex].ListOfInteractable)
+            foreach (var interactable in _savingPacked.LevelsProgress[locationIndex].listOfInteractable)
             {
                 //TODO: Need Test!!!
                 var r = interactables.Where((p =>
                 {
                     var a = p as InteractableObjectBehavior;
-                    a.name = interactable.Name;
+                    a.Id = interactable.SavingStruct.Id;
+                    a.name = interactable.SavingStruct.Name;
                     return a;
                 }))?.FirstOrDefault();
                 if (r != null)
@@ -255,9 +289,13 @@ namespace Rescues
 
         public IGate GetLastGate()
         {
-            return _levelsProgress[_playersProgress.PlayerCurrentPositionInProgress].LastGate;
+            return GateDataMock.GetMock(
+                _savingPacked.LastGate.goToLevelName,
+                _savingPacked.LastGate.goToLocationName,
+                _savingPacked.LastGate.goToGateId);
         }
-
+        
+        
         public string ConvertVector3ToString(Vector3 vector3)
         {
             return vector3.x + "," + vector3.y + "," + vector3.z;

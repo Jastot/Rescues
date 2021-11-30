@@ -3,11 +3,11 @@ using System;
 namespace Rescues
 {
     [Serializable]
-    public struct ItemListData : ISavingStruct
+    public struct ItemListData
     {
         #region Fields
-
-        public string Name { get; set; }
+        
+        public SavingStruct SavingStruct;
         public ItemCondition ItemCondition { get; set; }
 
         #endregion
