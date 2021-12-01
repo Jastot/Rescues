@@ -229,26 +229,32 @@ namespace Rescues
             });
             int correctIndex = _savingPacked.LevelsProgress.Count - 1;
             foreach (Transform transform in location._items.transform)
+            {
+                var itemBehaviour = transform.GetComponentInChildren<ItemBehaviour>();
                 AddItem(new ItemListData()
                 {
                     SavingStruct = new SavingStruct()
                     {
-                        Id = transform.name,//TODO: ID
-                        Name = transform.name
-                    },//TODO: ID
+                        Id = itemBehaviour.Id,
+                        Name = itemBehaviour.name
+                    },
                     ItemCondition = (ItemCondition) 1
                 });
+            }
+
             foreach (Transform transform in location._puzzles.transform)
+            {
+                var itemBehaviour = transform.GetComponentInChildren<PuzzleBehaviour>();
                 AddInLevelProgressPuzzle(correctIndex, new PuzzleListData()
                 {
                     SavingStruct = new SavingStruct()
                     {
-                        Id = transform.name,//TODO: ID
-                        Name = transform.name
+                        Id = itemBehaviour.Id,
+                        Name = itemBehaviour.name
                     },
-     
                     PuzzleCondition = (PuzzleCondition) 1
                 });
+            }
         }
 
         public void OpenCurrentLocation(Location location,List<IInteractable> interactables)
@@ -282,7 +288,6 @@ namespace Rescues
                 {
                     r.IsInteractable = interactable.IsInteractable;
                     r.IsInteractionLocked = interactable.IsInteractionLocked;
-                    //setActive??? 
                 }
             }
         }
