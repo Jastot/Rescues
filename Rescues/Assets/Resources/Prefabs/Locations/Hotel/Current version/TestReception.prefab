@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -179,7 +179,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -224,50 +224,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents:
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2668034248902124377}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 146422744201183376}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 8711757594332164718}
-          m_TargetAssemblyTypeName: Rescues.NotepadTriggerBehaviour, Assembly-CSharp
-          m_MethodName: TriggerNotepadEntries
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &8046546384543181364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -447,7 +409,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -491,9 +453,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &6529071733760039619
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -572,7 +537,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -616,9 +581,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &8918592438976660401
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -697,7 +665,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -742,9 +710,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &2440225473477278548
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -821,7 +792,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -908,7 +879,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -979,7 +950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
-  _isInteractionLocked: 0
+  <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   ItemData: {fileID: 11400000, guid: 30095eaf594323b42beb2df57250c6d4, type: 2}
   PickUpTime: 0.5
@@ -1012,26 +983,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents:
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1209689559631535290}
-          m_TargetAssemblyTypeName: Rescues.NotepadTriggerBehaviour, Assembly-CSharp
-          m_MethodName: TriggerNotepadEntries
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!1 &1118394703829469591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1041,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1129,9 +1086,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &6305094770879282870
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1293,7 +1253,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1337,9 +1297,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &1467776828884738306
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1418,7 +1381,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1463,9 +1426,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &1048805686216841508
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1564,7 +1530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 6
-  _isInteractionLocked: 0
+  <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   StandWindow: {fileID: 82461972379826494}
 --- !u!114 &1677183718369130054
@@ -1641,7 +1607,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1685,9 +1651,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &7892043182576342189
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1784,9 +1753,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!1 &2404215891201947790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,7 +1895,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1968,9 +1940,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &820631205039520125
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2043,6 +2018,82 @@ Transform:
   m_Father: {fileID: 2132265067942336059}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2642231450317107118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3122619668819890584}
+  - component: {fileID: 2072593795749900410}
+  m_Layer: 0
+  m_Name: Freeform Light 2D (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3122619668819890584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2642231450317107118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.24, y: -0.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2534865912137342321}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2072593795749900410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2642231450317107118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 1
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 1
+  m_Color: {r: 0.9245283, g: 0.90352863, b: 0.6672303, a: 1}
+  m_Intensity: 0.5
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_PointLightDistance: 5
+  m_PointLightQuality: 0
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 1.29
+  m_ShapeLightFalloffOffset: {x: -8.09, y: -1.38}
+  m_ShapePath:
+  - {x: -15.706388, y: -4.944808, z: 0}
+  - {x: -15.983728, y: -5.138165, z: 0}
+  - {x: -16.117046, y: -5.4714622, z: 0}
+  - {x: -14.930509, y: -6.6180053, z: 0}
+  - {x: -14.783857, y: -6.218048, z: 0}
+  - {x: -14.508038, y: -5.9584556, z: 0}
+  - {x: -14.522396, y: 3.5564177, z: 0}
+  - {x: -15.607316, y: 3.1884332, z: 0}
 --- !u!1 &2668034248902124377
 GameObject:
   m_ObjectHideFlags: 0
@@ -2096,7 +2147,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2140,50 +2191,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents:
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6205702320795578580}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 2668034248902124377}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 511533114010379319}
-          m_TargetAssemblyTypeName: Rescues.NotepadTriggerBehaviour, Assembly-CSharp
-          m_MethodName: TriggerNotepadEntries
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &6070180465078884702
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2373,7 +2386,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2444,7 +2457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
-  _isInteractionLocked: 0
+  <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   ItemData: {fileID: 11400000, guid: 8e2f62e3303b76c4b9c020b00a63b7ce, type: 2}
   PickUpTime: 0.5
@@ -2485,50 +2498,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents:
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6205702320795578580}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 5035029922842190303}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 7377974524128488657}
-          m_TargetAssemblyTypeName: Rescues.NotepadTriggerBehaviour, Assembly-CSharp
-          m_MethodName: TriggerNotepadEntries
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!1 &3060815145078252384
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,7 +2556,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2626,9 +2601,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &821294668991617562
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2708,7 +2686,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2753,38 +2731,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents:
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1256132161044030140}
-          m_TargetAssemblyTypeName: Rescues.NotepadTriggerBehaviour, Assembly-CSharp
-          m_MethodName: TriggerNotepadEntries
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 3284445550602686121}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &2373674162096287682
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2908,6 +2860,39 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\u0422\u043E\u0433\u0434\u0430 \u0441\u0435\u0439\u0447\u0430\u0441 \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043B\u044E
     \u043A\u043B\u044E\u0447\u0438."
+--- !u!1 &3438157477417310414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2534865912137342321}
+  m_Layer: 0
+  m_Name: Lights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2534865912137342321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3438157477417310414}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1590848176193692655}
+  - {fileID: 7508427774486510261}
+  - {fileID: 3122619668819890584}
+  m_Father: {fileID: 2132265067942336059}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3681474705457615883
 GameObject:
   m_ObjectHideFlags: 0
@@ -2960,7 +2945,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3004,9 +2989,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &1224304984071564311
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3279,6 +3267,7 @@ Transform:
   - {fileID: 1106468678592977035}
   - {fileID: 2712639778731219827}
   - {fileID: 2403485513553578817}
+  - {fileID: 2534865912137342321}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3348,7 +3337,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3511,7 +3500,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3582,7 +3571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
-  _isInteractionLocked: 0
+  <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   ItemData: {fileID: 11400000, guid: 881618781bbba7d4881c1084c90e0772, type: 2}
   PickUpTime: 0.5
@@ -3639,7 +3628,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3683,50 +3672,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents:
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5035029922842190303}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1104346005935161961}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 6485664529859045564}
-          m_TargetAssemblyTypeName: Rescues.NotepadTriggerBehaviour, Assembly-CSharp
-          m_MethodName: TriggerNotepadEntries
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &5540468639037394754
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4339,7 +4290,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4384,9 +4335,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &6769813673647280600
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4607,6 +4561,94 @@ Transform:
   m_Father: {fileID: 3687792698990983659}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5904859870876458901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1590848176193692655}
+  - component: {fileID: 1305440803784969951}
+  m_Layer: 0
+  m_Name: Freeform Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1590848176193692655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5904859870876458901}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.37, y: 5.86, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2534865912137342321}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1305440803784969951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5904859870876458901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 1
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 1
+  m_Color: {r: 0.8867924, g: 0.79567397, b: 0.4141153, a: 1}
+  m_Intensity: 1
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 1
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0.3
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_PointLightDistance: 5
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -15.028658, y: -14.86356, z: 0}
+  - {x: 14.161891, y: -14.987383, z: 0}
+  - {x: 14.693564, y: -13.856176, z: 0}
+  - {x: 14.8256445, y: -8.554093, z: 0}
+  - {x: 14.806776, y: -5.497375, z: 0}
+  - {x: 14.712431, y: -1.5727015, z: 0}
+  - {x: 14.486, y: 0.3141613, z: 0}
+  - {x: 14.089759, y: 1.4085412, z: 0}
+  - {x: 13.841174, y: 1.9447556, z: 0}
+  - {x: 12.44845, y: 2.5532632, z: 0}
+  - {x: 10.983747, y: 3.0177503, z: 0}
+  - {x: -11.644141, y: 3.1002994, z: 0}
+  - {x: -13.02135, y: 2.8579545, z: 0}
+  - {x: -13.96596, y: 2.5347981, z: 0}
+  - {x: -14.736562, y: 1.8884869, z: 0}
+  - {x: -15.184009, y: 1.44104, z: 0}
+  - {x: -15.631455, y: -0.8707676, z: 0}
+  - {x: -15.780606, y: -3.6797376, z: 0}
+  - {x: -15.755755, y: -8.60165, z: 0}
+  - {x: -15.581743, y: -13.946154, z: 0}
 --- !u!1 &6013899093714623772
 GameObject:
   m_ObjectHideFlags: 0
@@ -4659,7 +4701,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4703,9 +4745,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &3210517264776849044
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4866,7 +4911,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4911,9 +4956,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &5581237485430043769
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4993,7 +5041,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5037,26 +5085,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents:
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2621142481366021411}
-          m_TargetAssemblyTypeName: Rescues.NotepadTriggerBehaviour, Assembly-CSharp
-          m_MethodName: TriggerNotepadEntries
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &1286901961942329819
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5192,7 +5226,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5264,7 +5298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
-  _isInteractionLocked: 0
+  <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   ItemData: {fileID: 11400000, guid: a074f039d3208c84e8b3c490bac913ea, type: 2}
   PickUpTime: 0.5
@@ -5400,7 +5434,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5445,9 +5479,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &3890620553974208480
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5544,9 +5581,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!1 &7112509066959186245
 GameObject:
   m_ObjectHideFlags: 0
@@ -5597,7 +5637,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5681,7 +5721,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5726,9 +5766,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &439780042325917573
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6002,7 +6045,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6047,9 +6090,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &3542663243935467301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6126,7 +6172,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6210,7 +6256,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6254,9 +6300,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &6228622642101368073
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6525,7 +6574,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6570,9 +6619,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &6581811759253200241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6599,6 +6651,74 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 6}
   m_EdgeRadius: 0
+--- !u!1 &8953048438762644601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7508427774486510261}
+  - component: {fileID: 1134425774076843097}
+  m_Layer: 0
+  m_Name: Global Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7508427774486510261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8953048438762644601}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2534865912137342321}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1134425774076843097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8953048438762644601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 4
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 0.9245283, g: 0.868787, b: 0.763172, a: 1}
+  m_Intensity: 1
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath: []
 --- !u!1 &9097577720140787274
 GameObject:
   m_ObjectHideFlags: 0
@@ -6651,7 +6771,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6695,9 +6815,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &7801702366542782293
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6776,7 +6899,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6847,7 +6970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 5
-  _isInteractionLocked: 0
+  <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   Puzzle: {fileID: 5235566011315741230, guid: d0950d6b9c26b469dbaac675321a4991, type: 3}
   ItemData: {fileID: 11400000, guid: 94bbec4b67b144a889865f5e8a89cd34, type: 2}
@@ -7211,6 +7334,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01243d5917f8dd48afecb2b427b1ce6, type: 3}
+--- !u!1 &82461972379826494 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1423793387978271685, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1361954268274479867}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2712639778731219827 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3982195482189203848, guid: f01243d5917f8dd48afecb2b427b1ce6,
@@ -7241,6 +7370,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &592498292535014297 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1936081914070884706, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1361954268274479867}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3261145141541282390 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4586713956279447725, guid: f01243d5917f8dd48afecb2b427b1ce6,
@@ -7256,24 +7397,6 @@ MonoBehaviour:
 --- !u!1 &3348956073461113521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4368284925260640330, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1361954268274479867}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &592498292535014297 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1936081914070884706, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1361954268274479867}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &82461972379826494 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1423793387978271685, guid: f01243d5917f8dd48afecb2b427b1ce6,
     type: 3}
   m_PrefabInstance: {fileID: 1361954268274479867}
   m_PrefabAsset: {fileID: 0}
