@@ -7,7 +7,8 @@ namespace Rescues
     public sealed class ItemData: ScriptableObject
     {
         #region Fields
-        
+
+        public string itemID;
         public string Name;
         [TextArea(5,5)] public string Description;
         public Sprite Icon;

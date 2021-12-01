@@ -10,21 +10,19 @@ namespace Rescues
     {
         #region Fields
 
+        [Tooltip("That's lock an iteraction")]
         [SerializeField] private bool _isInteractionLocked;
-        /// <summary>
-        /// Is event repeat after end?
-        /// </summary>
+
+        [Tooltip("Is event repeat after end?")]
         public bool IsRepeating;
 
-        /// <summary>
-        /// Time before invoke event
-        /// </summary>
+        [Tooltip("Time before invoke event")]
         public float TimeBeforeInvoke;
+
+        [Tooltip("ID of the event")]
         [SerializeField] private string _id = "-1";
 
-        /// <summary>
-        /// Event himself
-        /// </summary>
+        [Tooltip("Event himself")]
         public UnityEvent Event;
 
         #endregion

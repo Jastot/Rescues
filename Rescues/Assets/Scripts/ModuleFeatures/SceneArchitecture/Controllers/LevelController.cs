@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -10,7 +9,7 @@ namespace Rescues
     {
 
         #region Fileds
-        
+
         private LocationController _locationController;
         private CurveWayController _curveWayController;
         private CurveWay _activeCurveWay;
@@ -58,13 +57,13 @@ namespace Rescues
         {
             if (_locationController == null || _locationController.LevelName != gate.GoToLevelName)
                 LoadAndUnloadPrefabs(gate.GoToLevelName);
-            
+
             var bootLocation = _locationController.Locations.Find(l => l.LocationName == gate.GoToLocationName);
             if (!bootLocation)
                 throw new Exception(_locationController.LevelName + " не содержит локации с именем " + gate.GoToLocationName);
-            
+
             _customBootScreen = bootLocation.CustomBootScreenInstance;
-            
+
             if (gate.ThisLevelName != gate.GoToLevelName || gate.ThisLocationName != gate.GoToLocationName)
             {
                 var bootScreen = _customBootScreen == null ? _defaultBootScreen : _customBootScreen;
@@ -72,7 +71,7 @@ namespace Rescues
             }
             else
             {
-               gate.LoadWithTransferTime(LoadLevelPart);
+                gate.LoadWithTransferTime(LoadLevelPart);
             }
 
             void LoadLevelPart()
@@ -84,7 +83,7 @@ namespace Rescues
                 if (!enterGate)
                     throw new Exception("В " + gate.GoToLevelName + " - " + gate.GoToLocationName +
                                    " нет Gate c ID = " + gate.GoToGateId);
-                
+
                 bootLocation.LoadLocation();
                 _levelsData.SetLastLevelGate = gate;
                 _context.activeLocation = bootLocation;
@@ -92,7 +91,7 @@ namespace Rescues
                 _activeCurveWay = _curveWayController.GetCurve(enterGate, WhoCanUseCurve.Character);
                 _context.character.LocateCharacter(_activeCurveWay);
                 if (!_context.WorldGameData.LookForLevelByNameBool(bootLocation.LocationName))
-                    _context.WorldGameData.AddNewLocation(bootLocation.LocationInstance,gate);
+                    _context.WorldGameData.AddNewLocation(bootLocation.LocationInstance, gate);
                 else
                     _context.WorldGameData.OpenCurrentLocation(bootLocation.LocationInstance);
                 _context.WorldGameData.SavePlayersProgress(
@@ -100,12 +99,12 @@ namespace Rescues
                 _context.WorldGameData.SavePlayersPosition(_context.character.Transform.position);
             }
         }
-       
+
         private void RestartLevel()
         {
             LoadLevel(_context.WorldGameData.GetLastGate());
         }
-        
+
         private void LoadAndUnloadPrefabs(string loadLevelName)
         {
             _locationController?.UnloadData();

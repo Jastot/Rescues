@@ -42,6 +42,18 @@ namespace Rescues
                 }
             }
         }
+        
+        public void RemoveItem(string itemID)
+        {
+            for (int i = 0; i < itemSlots.Count; i++)
+            {
+                if (itemSlots[i].Item?.itemID.ToLower() == itemID)
+                {
+                    itemSlots[i].Item = null;
+                    break;
+                }
+            }
+        }
 
         public bool Contains(ItemData item)
         {

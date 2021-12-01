@@ -30,6 +30,8 @@ public class VIDE_Assign : MonoBehaviour, ISerializationCallbackReceiver
 
     public GameObject targetManager;
 
+    public int OverrideStartNode { get => overrideStartNode; set => overrideStartNode = value; }
+
     void OnEnable()
     {
         //Sends preloaded data

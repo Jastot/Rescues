@@ -11,6 +11,7 @@ namespace Rescues
         private float _distance;
         private float _speed;
         private bool _canMove;
+        private bool _isMoving;
 
         private DragonBones.UnityArmatureComponent _characterArmature;
         private DragonBones.Animation _characterAnimation;
@@ -27,6 +28,7 @@ namespace Rescues
         #region Properties
 
         public string Name { get; private set; }
+        public bool IsMoving { get => _isMoving; }
         public Transform Transform { get; }
         public AudioSource PlayerSound { get; }
 
@@ -75,6 +77,7 @@ namespace Rescues
                     FlipCharacter();
                 }
 
+                _isMoving = true;
                 ChangePosition(direction);
             }
         }
@@ -85,6 +88,8 @@ namespace Rescues
             {
                 _characterAnimation.FadeIn("Idle");               
             }
+
+            _isMoving = false;
         }
         
         public void ForceSetIdle()
@@ -94,6 +99,8 @@ namespace Rescues
                 _characterAnimation.Stop();
                 _characterAnimation.Play("Idle");               
             }
+
+            _isMoving = false;
         }
 
         public void StartHiding(HidingPlaceBehaviour hidingPlaceBehaviour)

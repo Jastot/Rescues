@@ -134,6 +134,7 @@ namespace Rescues
             VD.OnNodeChange += SetName;
             VD.OnNodeChange += PlayNodeSound;
             VD.OnNodeChange += GivePlayerItem;
+            VD.OnNodeChange += RemovePlayerItem;
             VD.OnNodeChange += CheckItemAndOverrideStartNode;
             VD.OnNodeChange += SetBackground;
             VD.OnNodeChange += SetStartNode;
@@ -151,6 +152,7 @@ namespace Rescues
             VD.OnNodeChange -= SetName;
             VD.OnNodeChange -= PlayNodeSound;
             VD.OnNodeChange -= GivePlayerItem;
+            VD.OnNodeChange -= RemovePlayerItem;
             VD.OnNodeChange -= CheckItemAndOverrideStartNode;
             VD.OnNodeChange -= SetBackground;
             VD.OnNodeChange -= SetStartNode;
@@ -251,7 +253,7 @@ namespace Rescues
                             interactable.IsInteractionLocked = !interactable.IsInteractionLocked;
                             break;
                         }
-                    } 
+                    }
                 }
             }
         }
@@ -315,7 +317,7 @@ namespace Rescues
                         {
                             break;
                         }
-                    } 
+                    }
                 }
             }
         }
@@ -429,7 +431,20 @@ namespace Rescues
                             _context.inventory.AddItem(item.ItemData);
                             break;
                         }
-                    } 
+                    }
+                }
+            }
+        }
+
+        private void RemovePlayerItem(VD.NodeData data)
+        {
+            if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.RemoveItem]))
+            {
+                var commandValues = VD.ToStringArray(data.
+                        extraVars[DialogueCommandValue.Command[DialogueCommands.RemoveItem]].ToString().ToLower());
+                for (int i = 0; i < commandValues.Length; i++)
+                {
+                    _context.inventory.RemoveItem(commandValues[i]);
                 }
             }
         }
