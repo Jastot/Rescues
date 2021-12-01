@@ -25,7 +25,7 @@ MonoBehaviour:
     Position_X_Offset: 0
     MoveLeftXLimit: -21
     MoveRightXLimit: 23
-    CameraAccelerateStep: 3
+    CameraAccelerateStep: 20
     DeadZone: 2
   _customBootScreen: {fileID: 5293078557666880198, guid: 350dbdcc61ef74de087b99c5df45793d,
     type: 3}

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909c073486854737afecf0d2b2c734a6, type: 3}
   m_Name: Key_Room_1
   m_EditorClassIdentifier: 
+  itemID: KeyRoom1
   Name: "\u041A\u043B\u044E\u0447 \u043E\u0442 \u043A\u043E\u043C\u043D\u0430\u0442\u044B"
   Description: "\u041A\u043B\u044E\u0447 \u043E\u0442 \u043D\u043E\u043C\u0435\u0440\u0430.
     \u0422\u0435\u043F\u0435\u0440\u044C \u043C\u043E\u0436\u043D\u043E \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u044F\u0442\u044C\u0441\u044F

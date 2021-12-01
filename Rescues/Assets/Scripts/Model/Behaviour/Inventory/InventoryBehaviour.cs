@@ -47,7 +47,7 @@ namespace Rescues
         {
             for (int i = 0; i < itemSlots.Count; i++)
             {
-                if (itemSlots[i].Item?.itemID == itemID)
+                if (itemSlots[i].Item?.itemID.ToLower() == itemID)
                 {
                     itemSlots[i].Item = null;
                     break;
