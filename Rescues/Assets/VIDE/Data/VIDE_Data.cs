@@ -362,7 +362,7 @@ namespace VIDE_Data
                 isEnd = false;
                 extraVars = new Dictionary<string, object>();
                 nodeID = -1;
-                commentIndex = 0;               
+                commentIndex = 0;
             }
 
             public NodeData(NodeData nd)
@@ -460,7 +460,7 @@ namespace VIDE_Data
             }
         }
 
-        public static VIDE_Localization.VLanguage dflset 
+        public static VIDE_Localization.VLanguage dflset
         {
             get
             {
@@ -1379,9 +1379,18 @@ namespace VIDE_Data
         /// <returns>The string array</returns>
         public static string[] ToStringArray(string stringToConvert)
         {
+            List<string> strings = new List<string>();
             char[] delimeters = { ',', '-', '_', ' ' };
-            string[] split = stringToConvert.Split(delimeters);
-            return split;
+            string[] split = stringToConvert.Split(delimeters);           
+            for (int i = 0; i < split.Length; i++)
+            {
+                if (string.IsNullOrEmpty(split[i]) == false)
+                {
+                    strings.Add(split[i]);
+                }
+            }
+
+            return strings.ToArray();
         }
 
         static AudioClip[] GetPlayerAudios(DialogueNode diagNode)
@@ -2252,6 +2261,7 @@ namespace VIDE_Data
                 {
                     currentPlayerStep = diags[currentDiag].playerNodes[i];
                     foundID = true;
+                    break;
                 }
             }
             if (!foundID)
@@ -2287,7 +2297,7 @@ namespace VIDE_Data
             /* Action end */
 
             nodeData = GetNodeDataForPlayer(currentPlayerStep);
-            if (OnNodeChange != null) OnNodeChange(nodeData);
+            OnNodeChange?.Invoke(nodeData);
             return nodeData;
 
         }
