@@ -11,13 +11,19 @@ namespace Rescues
         #region Fields
 
         private const string EXTRA_DATA_DEFAULT = "ExtraData";
+        private const string OVERRIDE_COMMAND = "override";
+        private const string GOTO_COMMAND = "goto";
         private const float DIMMING_FACTOR = 0.7f;
+
         private readonly GameContext _context;
-        private readonly Services _services;
+        private readonly UnityTimeServices _timeServices;
+
         private DialogueUI _dialogueUI;
         private float _timeForWriteChar;
+        private float _timeBeforeNextNode;
         private int _writeStep;
         private List<ITimeRemaining> _sequence;
+        private List<ITimeRemaining> _goNextTimeRemaining;
         private List<IInteractable> _items;
         private List<IInteractable> _dialogues;
 
@@ -29,7 +35,7 @@ namespace Rescues
         public DialogueUIController(GameContext context, Services services)
         {
             _context = context;
-            _services = services;
+            _timeServices = services.UnityTimeServices;
         }
 
         #endregion
@@ -55,7 +61,7 @@ namespace Rescues
             _dialogueUI.playerImage.color = _dialogueUI.playerImageNormalColor;
             //Возможно расширение возможности и добавление команды в ExtraVars для дополнительного вызова
             SetNameColor();
-            _timeForWriteChar = _services.UnityTimeServices.DeltaTime() * 10 / _dialogueUI.writeSpeed;
+            _timeForWriteChar = _timeServices.DeltaTime() * 10 / _dialogueUI.writeSpeed;
             _writeStep = _dialogueUI.writeStep;
             _sequence = new List<ITimeRemaining>();
             _context.dialogueUIController = this;
@@ -87,9 +93,9 @@ namespace Rescues
 
         public void Execute()
         {
-            if (VD.isActive && !VD.nodeData.isPlayer && _dialogueUI.npcText.text != "" && Input.GetButtonUp("Fire1"))
+            if (Input.GetButtonUp("Fire1") && VD.isActive && string.IsNullOrEmpty(_dialogueUI.npcText.text) == false)
             {
-                CallNext();
+                CutTextAnimation();
             }
 
             if (VD.isActive && VD.nodeData.isPlayer)
@@ -130,17 +136,18 @@ namespace Rescues
         {
             InitialPrefferences(dialogue);
 
-            VD.OnNodeChange += UpdateUI;
+            VD.OnNodeChange += SetStartNodeByDialogueID;
             VD.OnNodeChange += SetName;
             VD.OnNodeChange += PlayNodeSound;
             VD.OnNodeChange += GivePlayerItem;
             VD.OnNodeChange += RemovePlayerItem;
-            VD.OnNodeChange += CheckItemAndOverrideStartNode;
             VD.OnNodeChange += SetBackground;
-            VD.OnNodeChange += SetStartNode;
             VD.OnNodeChange += SwitchNpcContainerState;
             VD.OnNodeChange += SwitchInteractionLock;
             VD.OnNodeChange += SwitchEventLock;
+            VD.OnNodeChange += UpdateUI;
+            VD.OnNodeChange += CheckItemAndChangeNode;
+
             VD.OnEnd += End;
 
             VD.BeginDialogue(dialogue);
@@ -148,17 +155,18 @@ namespace Rescues
 
         public void End(VD.NodeData data)
         {
-            VD.OnNodeChange -= UpdateUI;
+            VD.OnNodeChange -= SetStartNodeByDialogueID;
             VD.OnNodeChange -= SetName;
             VD.OnNodeChange -= PlayNodeSound;
             VD.OnNodeChange -= GivePlayerItem;
             VD.OnNodeChange -= RemovePlayerItem;
-            VD.OnNodeChange -= CheckItemAndOverrideStartNode;
             VD.OnNodeChange -= SetBackground;
-            VD.OnNodeChange -= SetStartNode;
             VD.OnNodeChange -= SwitchNpcContainerState;
             VD.OnNodeChange -= SwitchInteractionLock;
             VD.OnNodeChange -= SwitchEventLock;
+            VD.OnNodeChange -= UpdateUI;
+            VD.OnNodeChange -= CheckItemAndChangeNode;
+
             VD.OnEnd -= End;
 
             _dialogueUI.npcText.text = "";
@@ -191,6 +199,7 @@ namespace Rescues
                 }
 
                 DrawText(data.comments[data.commentIndex], _timeForWriteChar);
+                AddAutoSkip();
             }
         }
 
@@ -208,19 +217,16 @@ namespace Rescues
             _dialogueUI.playerBackground.enabled = false;
         }
 
-        private void CallNext()
-        {
-            CutTextAnimation();
-            VD.Next();
-        }
-
         private void CutTextAnimation()
         {
-            _sequence.RemoveSequentialTimeRemaining();
-            _dialogueUI.npcText.text = VD.nodeData.comments[VD.nodeData.commentIndex];
+            if (VD.nodeData.isPlayer == false)
+            {
+                _sequence.RemoveSequentialTimeRemaining();
+                _dialogueUI.npcText.text = VD.nodeData.comments[VD.nodeData.commentIndex]; 
+            }
         }
 
-        private void SetStartNode(VD.NodeData data)
+        private void SetStartNodeByDialogueID(VD.NodeData data)
         {
             if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.SetStartNode]))
             {
@@ -322,29 +328,69 @@ namespace Rescues
             }
         }
 
-        private void CheckItemAndOverrideStartNode(VD.NodeData data)
+        private void CheckItemAndChangeNode(VD.NodeData data)
         {
-            if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.CheckItem]))
+            var command = DialogueCommandValue.Command[DialogueCommands.CheckItem];
+            if (data.extraVars.ContainsKey(command))
             {
-                if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.Yes]))
+                _goNextTimeRemaining.RemoveSequentialTimeRemaining();
+                var yesCommand = DialogueCommandValue.Command[DialogueCommands.Yes];
+                var noCommand = DialogueCommandValue.Command[DialogueCommands.No];
+                if (data.extraVars.ContainsKey(yesCommand))
                 {
+                    var yesStrings = VD.ToStringArray(data.extraVars[yesCommand].ToString().ToLower());
                     foreach (var itemSlot in _context.inventory.itemSlots)
                     {
-                        if (itemSlot.Item?.Name.ToLower() == data.
-                            extraVars[DialogueCommandValue.Command[DialogueCommands.CheckItem]].ToString().ToLower())
+                        if (itemSlot.Item?.itemID.ToLower() == data.extraVars[command].ToString().ToLower())
                         {
-                            VD.assigned.overrideStartNode =
-                                (int)data.extraVars[DialogueCommandValue.Command[DialogueCommands.Yes]];
+                            ChangeNode(yesStrings);
                             return;
                         }
                     }
                 }
 
-                if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.No]))
+                if (data.extraVars.ContainsKey(noCommand))
                 {
-                    VD.assigned.overrideStartNode = (int)data.extraVars[DialogueCommandValue.
-                        Command[DialogueCommands.No]];
+                    var noStrings = VD.ToStringArray(data.extraVars[noCommand].ToString().ToLower());
+                    ChangeNode(noStrings);
                 }
+            }
+        }
+
+        private void ChangeNode(string[] data)
+        {
+            switch (data[0])
+            {
+                case (OVERRIDE_COMMAND):
+                    {
+                        int.TryParse(data[1], out VD.assigned.overrideStartNode);
+                        break;
+                    }
+                case (GOTO_COMMAND):
+                    {
+                        int.TryParse(data[1], out int temp);
+                        if (VD.saved[VD.currentDiag].playerNodes[temp].isPlayer)
+                        {
+                            _timeBeforeNextNode = 0;
+                        }
+                        else
+                        {
+                            _timeBeforeNextNode = _dialogueUI.timeBeforeNextNode;
+                        }
+
+                        var goToTimeRemaining = new List<ITimeRemaining>(1)
+                        {
+                            new TimeRemaining(() => { VD.SetNode(temp); }, _timeBeforeNextNode)
+                        };
+                        goToTimeRemaining.AddSequentialTimeRemaining();
+
+                        break;
+                    }
+                default:
+                    {
+                        Debug.Log("Invalid checkItem mode");
+                        break;
+                    }
             }
         }
 
@@ -519,8 +565,25 @@ namespace Rescues
                 start += tempStep;
             }
 
-            _sequence.Add(new TimeRemaining(() => { VD.Next(); }, time));
-            TimeRemainingExtensions.AddSequentialTimeRemaining(_sequence);
+            _sequence.AddSequentialTimeRemaining();
+        }
+
+        private void AddAutoSkip()
+        {
+            if (VD.GetNext(false, false).isPlayer)
+            {
+                _timeBeforeNextNode = 0;
+            }
+            else
+            {
+                _timeBeforeNextNode = _dialogueUI.timeBeforeNextNode;
+            }
+
+            _goNextTimeRemaining = new List<ITimeRemaining>(1)
+            {
+                new TimeRemaining(() => { VD.Next(); }, _timeBeforeNextNode)
+            };
+            _goNextTimeRemaining.AddSequentialTimeRemaining();
         }
 
         #endregion

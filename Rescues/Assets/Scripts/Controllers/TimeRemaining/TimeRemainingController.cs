@@ -8,7 +8,7 @@ namespace Rescues
         #region Fields
 
         private readonly List<ITimeRemaining> _timeRemainings;
-        private readonly TimeRemainingSequences _timeRemainingSequences;
+        private readonly SequentialTimeRemainingsContainer _timeRemainingSequences;
         private readonly UnityTimeServices _timeService;
 
         #endregion
@@ -19,7 +19,7 @@ namespace Rescues
         public TimeRemainingController()
         {
             _timeRemainings = TimeRemainingExtensions.TimeRemainings;
-            _timeRemainingSequences = TimeRemainingExtensions.SequentialTimeRemainings;
+            _timeRemainingSequences = TimeRemainingExtensions.SequencesContainer;
             _timeService = Services.SharedInstance.UnityTimeServices;
         }
 

@@ -3,7 +3,7 @@
 
 namespace Rescues
 {
-    public class TimeRemainingSequences
+    public class SequentialTimeRemainingsContainer
     {
         #region Fields
 
@@ -15,7 +15,7 @@ namespace Rescues
 
         #region ClassLifeCycles
 
-        public TimeRemainingSequences()
+        public SequentialTimeRemainingsContainer()
         {
             sequentialTimeRemainings = new List<List<ITimeRemaining>>();
         }

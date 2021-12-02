@@ -9,6 +9,7 @@ namespace Rescues
     {
         #region Fields
 
+        [Space(10)]
         [Header("Npc")]
         public GameObject npcContainer;
         public TextMeshProUGUI npcLabel;
@@ -20,10 +21,11 @@ namespace Rescues
         public int writeStep;
         [Range(1, 10)]
         public int writeSpeed;
+        public float timeBeforeNextNode;
         public Image npcBackGround;
 
-        [Space]
-        [Header("Player"), Space(10)]
+        [Space(10)]
+        [Header("Player")]
         public GameObject playerContainer;
         public TextMeshProUGUI playerLabel;
         public PossibleAnswer[] playerTextChoices;
@@ -32,8 +34,8 @@ namespace Rescues
         public Color playerImageNormalColor;
         public Image playerBackground;
 
-        [Space]
-        [Header("Other"), Space(10)]
+        [Space(10)]
+        [Header("Other")]
         public GameObject dialogContainer;
         public Image background;
         public NodeSoundContainer nodeSoundContainer;
