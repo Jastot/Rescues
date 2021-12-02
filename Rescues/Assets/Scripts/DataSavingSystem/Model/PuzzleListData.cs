@@ -8,7 +8,7 @@ namespace Rescues
         #region Fields
 
         public SavingStruct SavingStruct;
-        public PuzzleCondition PuzzleCondition { get; set; }
+        public PuzzleCondition PuzzleCondition;
 
         #endregion
     }

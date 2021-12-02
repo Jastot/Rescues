@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DataSavingSystem;
 using UnityEngine;
 
 namespace Rescues
@@ -12,8 +13,8 @@ namespace Rescues
         #region Fields
 
         private SavingPacked _savingPacked;
-        private List<IInteractable> _listOfInteractable;
-        
+        private List<SavingElementBehaviour> _listOfSavingElementBehaviour;
+        public bool needUnPack = false;
         public Action SaveStart = delegate {};
         public Action LoadStart = delegate {};
         public Action RestartLevel = delegate {};
@@ -49,10 +50,13 @@ namespace Rescues
             return ConvertStringToVector3(_savingPacked.PlayerPosition);
         }
         
-        public void SetListOfInteractable(List<IInteractable> listOfInteractable)
+        public void SetListOfInteractable(List<SavingElementBehaviour> listOfSavingElementBehaviour)
         {
-            _listOfInteractable = listOfInteractable;
-            PackagingByLevels();
+            UnSubOnSavingBeh();
+            _listOfSavingElementBehaviour = listOfSavingElementBehaviour;
+            if (needUnPack)
+                UnPackagingByLevels();
+            SubOnSavingBeh();
         }
         
         public void SavePlayersProgress(int currentLevel)
@@ -72,14 +76,18 @@ namespace Rescues
             _savingPacked.ItemBehaviours.Add(itemListData);
         }
 
-        public void SaveItem(ItemListData itemListData)
+        public void SaveItem(ItemData itemData,ItemCondition itemCondition)
         {
-            //TODO: переделать. 
-            var index = _savingPacked.ItemBehaviours.FindIndex(s => s.SavingStruct.Name == itemListData.SavingStruct.Name);
-            if (index != -1)
-                _savingPacked.ItemBehaviours.Insert(index, itemListData);
-            else
-                AddItem(itemListData);
+            _savingPacked.ItemBehaviours.Insert(_savingPacked.ItemBehaviours.
+                FindIndex(s => s.SavingStruct.Id == itemData.itemID), new ItemListData()
+                {
+                    SavingStruct = new SavingStruct()
+                    {
+                        Id = itemData.itemID,
+                        Name = itemData.Name
+                    },
+                    ItemCondition = itemCondition
+                });
         }
 
         public void DeleteItem(ItemListData itemListData)
@@ -112,42 +120,55 @@ namespace Rescues
 
         #endregion
 
-        #region IInteractable
+        #region SavingElementBeh
 
-        private void PackagingByLevels()
+        private void SubOnSavingBeh()
         {
-            foreach (var interactable in _listOfInteractable)
+            foreach (var savingElementBehaviour in _listOfSavingElementBehaviour)
             {
-                var beh = interactable as InteractableObjectBehavior;
-                var levelsName = beh.GameObject.transform.parent.parent.name;
-                _savingPacked.LevelsProgress.FirstOrDefault(i => i.levelsName == levelsName)?.listOfInteractable.Add(
-                    new InteractiveCondition()
-                    {
-                        SavingStruct = new SavingStruct()
-                        {
-                            Id = beh.Id,
-                            Name = beh.name
-                        },
-                        IsInteractable = beh.IsInteractable,
-                        IsInteractionLocked = beh.IsInteractionLocked
-                    });
+                savingElementBehaviour.SaveSequence += PackagingByLevel;
             }
         }
-
+        private void UnSubOnSavingBeh()
+        {
+            if (_listOfSavingElementBehaviour!=null)
+            {
+                foreach (var savingElementBehaviour in _listOfSavingElementBehaviour)
+                {
+                    savingElementBehaviour.SaveSequence -= PackagingByLevel;
+                } 
+            }
+        }
+       
+        private void PackagingByLevel(EventSequence obj,string levelsName,int indexInSequence)
+        {
+            var LevelProgress = _savingPacked.LevelsProgress.FirstOrDefault(i => i.levelsName == levelsName);
+            if (!LevelProgress.eventSequenceData.Any(n=> n.savingStruct.Id == obj.savingStruct.Id))
+                LevelProgress.eventSequenceData.Add(obj);
+            
+        }
+        
         private void UnPackagingByLevels()
         {
             foreach (var levelProgress in _savingPacked.LevelsProgress)
             {
-                foreach (var interactive in levelProgress.listOfInteractable)
+                foreach (var eventSequence in levelProgress.eventSequenceData)
                 {
-                    var setting = _listOfInteractable.FirstOrDefault(i=> i.Id == interactive.SavingStruct.Id);
+                    var setting = _listOfSavingElementBehaviour.
+                        FirstOrDefault(s=>
+                        {
+                            s.GetPartInfo(eventSequence.indexInList,out var id, out var name);
+                            if (id == eventSequence.savingStruct.Id)
+                                return true;
+                            else
+                                return false;
+                        });
                     if (setting != null)
-                    {
-                        setting.IsInteractable = interactive.IsInteractable;
-                        setting.IsInteractionLocked = interactive.IsInteractionLocked;
-                    }
+                        setting.SetPartStateFalse(eventSequence.indexInList);
                 }
             }
+
+            needUnPack = false;
         }
 
         #endregion
@@ -182,7 +203,7 @@ namespace Rescues
 
         public void Deserialize(byte[] data)
         {
-            LoadStart.Invoke();
+            
             var dataString = Encoding.ASCII.GetString(data);
             ByteConverter.DataReader(dataString, out _savingPacked);
         }
@@ -228,7 +249,7 @@ namespace Rescues
                 levelsName = location.name
             });
             int correctIndex = _savingPacked.LevelsProgress.Count - 1;
-            foreach (Transform transform in location._items.transform)
+            foreach (Transform transform in location.items.transform)
             {
                 var itemBehaviour = transform.GetComponentInChildren<ItemBehaviour>();
                 AddItem(new ItemListData()
@@ -241,8 +262,8 @@ namespace Rescues
                     ItemCondition = (ItemCondition) 1
                 });
             }
-
-            foreach (Transform transform in location._puzzles.transform)
+            
+            foreach (Transform transform in location.puzzles.transform)
             {
                 var itemBehaviour = transform.GetComponentInChildren<PuzzleBehaviour>();
                 AddInLevelProgressPuzzle(correctIndex, new PuzzleListData()
@@ -257,38 +278,36 @@ namespace Rescues
             }
         }
 
-        public void OpenCurrentLocation(Location location,List<IInteractable> interactables)
+        public void OpenCurrentLocation(Location location,List<IInteractable> interactables,InventoryBehaviour inventoryBehaviour)
         {
+            LoadStart?.Invoke();
             var locationIndex = LookForLevelByNameInt(location.name);
+            
             foreach (var item in _savingPacked.ItemBehaviours)
             {
-                if ((item.ItemCondition == (ItemCondition)0)||(item.ItemCondition==(ItemCondition)2))
-                    foreach (Transform realItem in location._items)
-                        if (item.SavingStruct.Name==realItem.gameObject.name)//TODO: ID
+                if ((item.ItemCondition == (ItemCondition)0))
+                    foreach (Transform realItem in location.items)
+                        if (item.SavingStruct.Id==realItem.gameObject.GetComponent<ItemBehaviour>().Id)
                             realItem.gameObject.SetActive(false);
+                if (item.ItemCondition==(ItemCondition)2)
+                {
+                    foreach (Transform realItem in location.items)
+                    {
+                        var itemBehaviour = realItem.gameObject.GetComponent<ItemBehaviour>();
+                        if (item.SavingStruct.Id == itemBehaviour.Id)
+                        {
+                            inventoryBehaviour.AddItem(itemBehaviour.ItemData);
+                            realItem.gameObject.SetActive(false);
+                        }
+                    }
+                }
             }
             foreach (var puzzle in _savingPacked.LevelsProgress[locationIndex].puzzleListData)
             {
                 if ((puzzle.PuzzleCondition == (PuzzleCondition)1))
-                    foreach (Transform realPuzzle in location._puzzles)
-                        if (puzzle.SavingStruct.Name == realPuzzle.gameObject.name)//TODO: ID
+                    foreach (Transform realPuzzle in location.puzzles)
+                        if (puzzle.SavingStruct.Id == realPuzzle.gameObject.GetComponent<PuzzleBehaviour>().Id)
                             realPuzzle.gameObject.SetActive(false);
-            }
-            foreach (var interactable in _savingPacked.LevelsProgress[locationIndex].listOfInteractable)
-            {
-                //TODO: Need Test!!!
-                var r = interactables.Where((p =>
-                {
-                    var a = p as InteractableObjectBehavior;
-                    a.Id = interactable.SavingStruct.Id;
-                    a.name = interactable.SavingStruct.Name;
-                    return a;
-                }))?.FirstOrDefault();
-                if (r != null)
-                {
-                    r.IsInteractable = interactable.IsInteractable;
-                    r.IsInteractionLocked = interactable.IsInteractionLocked;
-                }
             }
         }
 

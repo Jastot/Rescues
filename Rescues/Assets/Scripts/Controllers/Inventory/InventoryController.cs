@@ -146,16 +146,7 @@ namespace Rescues
                             }
                             if (component.itemDependsEvents[i].ItemData.IsDestructuble)
                             {
-                                _context.WorldGameData.SaveItem(
-                                    new ItemListData()
-                                    {
-                                       SavingStruct = new SavingStruct()
-                                       {
-                                         Id = component.itemDependsEvents[i].ItemData.Name,//????
-                                         Name = component.itemDependsEvents[i].ItemData.Name,
-                                       },
-                                       ItemCondition = 0
-                                    });
+                                _context.WorldGameData.SaveItem(component.itemDependsEvents[i].ItemData,ItemCondition.NotInGame);
                                 _inventory.RemoveItem(component.itemDependsEvents[i].ItemData);
                             }
                         }

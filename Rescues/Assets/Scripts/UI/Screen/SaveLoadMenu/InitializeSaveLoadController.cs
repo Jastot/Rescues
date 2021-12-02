@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DataSavingSystem;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -41,6 +42,7 @@ namespace Rescues
             _context.saveLoadBehaviour.Saving += Saving;
             _context.saveLoadBehaviour.Loading += Loading;
             _context.WorldGameData.SaveStart += ReSetInteractable;
+            _context.WorldGameData.LoadStart += ReSetInteractable;
         }
         
         
@@ -52,6 +54,8 @@ namespace Rescues
             _context.saveLoadBehaviour.BackAction -= _context.saveLoadBehaviour.SwitchState;
             _context.saveLoadBehaviour.Saving -= Saving;
             _context.saveLoadBehaviour.Loading -= Loading;
+            _context.WorldGameData.SaveStart -= ReSetInteractable;
+            _context.WorldGameData.LoadStart -= ReSetInteractable;
         }
         #endregion
 
@@ -60,12 +64,14 @@ namespace Rescues
 
         private void Loading(string obj)
         {
+            _context.WorldGameData.needUnPack = true;
             _gameSavingSerializer.Load(_context.WorldGameData,obj);
             _context.WorldGameData.RestartLevel.Invoke();
         }
 
         private void Saving(string name)
         {
+            _context.WorldGameData.needUnPack = false;
             _context.WorldGameData.SavePlayersPosition(_context.character.Transform);
             _gameSavingSerializer.Save(_context.WorldGameData,name);
         }
@@ -77,7 +83,17 @@ namespace Rescues
 
         private void ReSetInteractable()
         {
-            _context.WorldGameData.SetListOfInteractable(_context.GetTriggers(InteractableObjectType.EventSystem));
+            var listOfInter = _context.GetTriggers(InteractableObjectType.EventSystem);
+            List<SavingElementBehaviour> savingElementBehaviours = new List<SavingElementBehaviour>();
+            foreach (var interactable in listOfInter)
+            {
+                var beh = interactable as InteractableObjectBehavior;
+                var savingElementBehaviour = beh.GetComponent<SavingElementBehaviour>();
+                if (savingElementBehaviour!=null)
+                    savingElementBehaviours.Add(savingElementBehaviour);
+            }
+            _context.WorldGameData.SetListOfInteractable(savingElementBehaviours);
+            savingElementBehaviours.Clear();
         }
 
         #endregion

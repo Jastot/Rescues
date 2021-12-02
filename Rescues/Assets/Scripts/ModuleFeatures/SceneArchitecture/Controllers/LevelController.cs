@@ -98,11 +98,16 @@ namespace Rescues
                     _context.WorldGameData.AddNewLocation(bootLocation.LocationInstance);
 
                 else
-                    _context.WorldGameData.OpenCurrentLocation(bootLocation.LocationInstance,_context.GetTriggers(InteractableObjectType.EventSystem));
+                    _context.WorldGameData.OpenCurrentLocation(
+                        bootLocation.LocationInstance,
+                        _context.GetTriggers(InteractableObjectType.EventSystem),
+                        _context.inventory);
                 _context.WorldGameData.SavePlayersProgress(
                     _context.WorldGameData.LookForLevelByNameInt(bootLocation.LocationName));
+                Debug.Log(restartingFlag);
                 if (restartingFlag)
                 {
+                    Debug.Log("Poss");
                     _context.character.LoadCharacterPosition(_context.WorldGameData.LoadPlayerPosition());
                     restartingFlag = false;
                 }

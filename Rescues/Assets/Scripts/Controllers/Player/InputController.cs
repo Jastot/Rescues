@@ -198,6 +198,7 @@ namespace Rescues
                             TimeRemainingExtensions.AddTimeRemaining(new TimeRemaining(() =>
                             {
                                 item.gameObject.SetActive(false);
+                                _context.WorldGameData.SaveItem(item.ItemData,ItemCondition.InInventory);
                                 _context.inventory.AddItem(item.ItemData);
                                 _isStateLocked = false;
                             },

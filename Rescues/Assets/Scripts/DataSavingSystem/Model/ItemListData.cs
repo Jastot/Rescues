@@ -8,7 +8,7 @@ namespace Rescues
         #region Fields
         
         public SavingStruct SavingStruct;
-        public ItemCondition ItemCondition { get; set; }
+        public ItemCondition ItemCondition;
 
         #endregion
     }

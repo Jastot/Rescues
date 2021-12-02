@@ -13,7 +13,7 @@ namespace Rescues
         public string levelsName;
         public List<QuestListData> questListData = new List<QuestListData>();
         public List<PuzzleListData> puzzleListData = new List<PuzzleListData>();
-        public List<InteractiveCondition> listOfInteractable = new List<InteractiveCondition>();
+        public List<EventSequence> eventSequenceData = new List<EventSequence>();
         
         #endregion
     }
