@@ -71,6 +71,11 @@ namespace Rescues
             _sequencesContainer.currentSeqElementIndex = 0;
         }
 
+        public static bool ContainsSequentialTimeRemaining(this List<ITimeRemaining> values)
+        {
+            return _sequencesContainer.sequentialTimeRemainings.Contains(values);
+        }
+
         #endregion
     }
 }
