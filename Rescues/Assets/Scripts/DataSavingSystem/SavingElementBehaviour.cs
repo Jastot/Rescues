@@ -8,7 +8,7 @@ namespace DataSavingSystem
     public sealed class SavingElementBehaviour : MonoBehaviour
     {
         [SerializeField] private List<EventSystemBehaviour> PreviousParts = new List<EventSystemBehaviour>();
-        public Action<EventSequence,string,int> SaveSequence = delegate { };
+        public Action<EventSequence,string> SaveSequence = delegate { };
         
         public void SavePreviousElement(int numberInList)
         {
@@ -21,14 +21,23 @@ namespace DataSavingSystem
                 },
                 indexInList = numberInList
             };
-            Debug.Log("INVOKE: id: "+part.savingStruct.Id+" name: "+part.savingStruct.Name+ " index: "+part.indexInList);
-            SaveSequence.Invoke(part,gameObject.transform.parent.parent.name,numberInList);
+            SaveSequence.Invoke(
+                part,
+                gameObject.transform.parent.parent.name);
         }
 
         public void GetPartInfo(int index,out string Id, out string Name)
         {
-            Id = PreviousParts[index].Id;
-            Name = PreviousParts[index].name;
+            if (index<PreviousParts.Count)
+            {
+                Id = PreviousParts[index].Id;
+                Name = PreviousParts[index].name;
+            }
+            else
+            {
+                Id = "";
+                Name = "";
+            }
         }
 
         public void SetPartStateFalse(int index)

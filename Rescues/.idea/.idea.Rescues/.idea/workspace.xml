@@ -70,23 +70,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34dae543-2f34-47cc-94c2-3245ae1fc3b4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/EventSequence.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/EventSequence.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/SavingElementBehaviour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/SavingElementBehaviour.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Locations/Hotel/Current version/Reception.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Locations/Hotel/Current version/Reception.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Inventory/InventoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Inventory/InventoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Player/InputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Player/InputController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player/Prefabs_Player_Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player/Prefabs_Player_Character.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HotelScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HotelScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ItemListData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ItemListData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/LevelProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/LevelProgress.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PuzzleListData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PuzzleListData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/SavingElementBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/SavingElementBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Controllers/LevelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Controllers/LevelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Model/Location.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Model/Location.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitializeSaveLoadController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitializeSaveLoadController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SavingPath/уааууа.def" beforeDir="false" afterPath="$PROJECT_DIR$/SavingPath/уааууа.def" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/Screen/GameMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Screen/GameMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,12 +235,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PuzzleListData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/LevelProgress.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Model/Location.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/EventSequence.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitializeSaveLoadController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ByteConverter.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Controllers/LevelController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/SavingElementBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/SavingElementBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/EventSequence.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1V9bGpai1gZ6Kn1FGeYyMAj5KRa" />
@@ -287,10 +281,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="42832">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14500">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="42832" />
+      <option name="pid" value="14500" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -361,6 +355,7 @@
       <workItem from="1638273427292" duration="8570000" />
       <workItem from="1638372647596" duration="12352000" />
       <workItem from="1638434013033" duration="21033000" />
+      <workItem from="1638951680209" duration="4543000" />
     </task>
     <servers />
   </component>
@@ -394,42 +389,16 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs</url>
-          <line>311</line>
-          <properties documentPath="D:\Unity-Storage\Rescue_MyCopy\Rescues\Rescues\Assets\Scripts\DataSavingSystem\Data\WorldGameData.cs" initialLine="311" containingFunctionPresentation="method 'OpenCurrentLocation'">
+          <line>286</line>
+          <properties documentPath="D:\Unity-Storage\Rescue_MyCopy\Rescues\Rescues\Assets\Scripts\DataSavingSystem\Data\WorldGameData.cs" initialLine="285" containingFunctionPresentation="method 'OpenCurrentLocation'">
             <startOffsets>
-              <option value="10880" />
+              <option value="9530" />
             </startOffsets>
             <endOffsets>
-              <option value="10881" />
+              <option value="9580" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs</url>
-          <line>304</line>
-          <properties documentPath="D:\Unity-Storage\Rescue_MyCopy\Rescues\Rescues\Assets\Scripts\DataSavingSystem\Data\WorldGameData.cs" initialLine="304" containingFunctionPresentation="method 'OpenCurrentLocation'">
-            <startOffsets>
-              <option value="10442" />
-            </startOffsets>
-            <endOffsets>
-              <option value="10524" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Controllers/LevelController.cs</url>
-          <line>100</line>
-          <properties documentPath="D:\Unity-Storage\Rescue_MyCopy\Rescues\Rescues\Assets\Scripts\ModuleFeatures\SceneArchitecture\Controllers\LevelController.cs" initialLine="100" containingFunctionPresentation="local function 'LoadLevelPart'">
-            <startOffsets>
-              <option value="4010" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4235" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="26" />
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

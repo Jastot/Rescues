@@ -140,12 +140,12 @@ namespace Rescues
             }
         }
        
-        private void PackagingByLevel(EventSequence obj,string levelsName,int indexInSequence)
+        private void PackagingByLevel(EventSequence obj,string levelsName)
         {
             var LevelProgress = _savingPacked.LevelsProgress.FirstOrDefault(i => i.levelsName == levelsName);
-            if (!LevelProgress.eventSequenceData.Any(n=> n.savingStruct.Id == obj.savingStruct.Id))
+            if (!LevelProgress.eventSequenceData.Any(n => n.savingStruct.Id == obj.savingStruct.Id))
                 LevelProgress.eventSequenceData.Add(obj);
-            
+
         }
         
         private void UnPackagingByLevels()
@@ -154,6 +154,7 @@ namespace Rescues
             {
                 foreach (var eventSequence in levelProgress.eventSequenceData)
                 {
+                    //неверный индекс
                     var setting = _listOfSavingElementBehaviour.
                         FirstOrDefault(s=>
                         {
@@ -263,19 +264,19 @@ namespace Rescues
                 });
             }
             
-            foreach (Transform transform in location.puzzles.transform)
-            {
-                var itemBehaviour = transform.GetComponentInChildren<PuzzleBehaviour>();
-                AddInLevelProgressPuzzle(correctIndex, new PuzzleListData()
-                {
-                    SavingStruct = new SavingStruct()
-                    {
-                        Id = itemBehaviour.Id,
-                        Name = itemBehaviour.name
-                    },
-                    PuzzleCondition = (PuzzleCondition) 1
-                });
-            }
+            // foreach (Transform transform in location.puzzles.transform)
+            // {
+            //     var itemBehaviour = transform.GetComponentInChildren<PuzzleBehaviour>();
+            //     AddInLevelProgressPuzzle(correctIndex, new PuzzleListData()
+            //     {
+            //         SavingStruct = new SavingStruct()
+            //         {
+            //             Id = itemBehaviour.Id,
+            //             Name = itemBehaviour.name
+            //         },
+            //         PuzzleCondition = (PuzzleCondition) 1
+            //     });
+            // }
         }
 
         public void OpenCurrentLocation(Location location,List<IInteractable> interactables,InventoryBehaviour inventoryBehaviour)
@@ -302,13 +303,13 @@ namespace Rescues
                     }
                 }
             }
-            foreach (var puzzle in _savingPacked.LevelsProgress[locationIndex].puzzleListData)
-            {
-                if ((puzzle.PuzzleCondition == (PuzzleCondition)1))
-                    foreach (Transform realPuzzle in location.puzzles)
-                        if (puzzle.SavingStruct.Id == realPuzzle.gameObject.GetComponent<PuzzleBehaviour>().Id)
-                            realPuzzle.gameObject.SetActive(false);
-            }
+            // foreach (var puzzle in _savingPacked.LevelsProgress[locationIndex].puzzleListData)
+            // {
+            //     if ((puzzle.PuzzleCondition == (PuzzleCondition)1))
+            //         foreach (Transform realPuzzle in location.puzzles)
+            //             if (puzzle.SavingStruct.Id == realPuzzle.gameObject.GetComponent<PuzzleBehaviour>().Id)
+            //                 realPuzzle.gameObject.SetActive(false);
+            // }
         }
 
         public IGate GetLastGate()

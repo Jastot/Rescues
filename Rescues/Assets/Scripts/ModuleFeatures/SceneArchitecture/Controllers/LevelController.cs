@@ -104,10 +104,8 @@ namespace Rescues
                         _context.inventory);
                 _context.WorldGameData.SavePlayersProgress(
                     _context.WorldGameData.LookForLevelByNameInt(bootLocation.LocationName));
-                Debug.Log(restartingFlag);
                 if (restartingFlag)
                 {
-                    Debug.Log("Poss");
                     _context.character.LoadCharacterPosition(_context.WorldGameData.LoadPlayerPosition());
                     restartingFlag = false;
                 }

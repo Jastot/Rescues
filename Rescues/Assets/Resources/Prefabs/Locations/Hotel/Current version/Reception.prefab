@@ -8360,7 +8360,7 @@ PrefabInstance:
     - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
         type: 3}
       propertyPath: editorData.vertexPathUpToDate
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9007248820626605526, guid: 0499ba983373972449f210a507f57ad7,
         type: 3}
