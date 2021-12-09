@@ -25,6 +25,9 @@ namespace Rescues
         [Tooltip("Event himself")]
         public UnityEvent Event;
 
+        [Tooltip("Special commands for advanced manipulations")]
+        public SerializableDictionary<EventSystemCommands, string> objectManipulations;
+
         #endregion
 
 

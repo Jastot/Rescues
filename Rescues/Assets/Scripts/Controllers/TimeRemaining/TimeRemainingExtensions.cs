@@ -8,7 +8,8 @@ namespace Rescues
         #region Fields
 
         private static readonly List<ITimeRemaining> _timeRemainings = new List<ITimeRemaining>(10);
-        private static readonly TimeRemainingSequences _timeRemainingSequences = new TimeRemainingSequences();
+        private static readonly SequentialTimeRemainingsContainer _sequencesContainer = 
+            new SequentialTimeRemainingsContainer();
 
         #endregion
 
@@ -16,7 +17,7 @@ namespace Rescues
         #region Properties
 
         public static List<ITimeRemaining> TimeRemainings => _timeRemainings;
-        public static TimeRemainingSequences SequentialTimeRemainings => _timeRemainingSequences;
+        public static SequentialTimeRemainingsContainer SequencesContainer => _sequencesContainer;
 
         #endregion
 
@@ -48,7 +49,7 @@ namespace Rescues
                 }
                 value.CurrentTime = value.Time;
             }
-            _timeRemainingSequences.sequentialTimeRemainings.Add(values);
+            _sequencesContainer.sequentialTimeRemainings.Add(values);
         }
 
         public static void RemoveTimeRemaining(this ITimeRemaining value)
@@ -62,12 +63,17 @@ namespace Rescues
 
         public static void RemoveSequentialTimeRemaining(this List<ITimeRemaining> values)
         {
-            if (!_timeRemainingSequences.sequentialTimeRemainings.Contains(values))
+            if (!_sequencesContainer.sequentialTimeRemainings.Contains(values))
             {
                 return;
             }
-            _timeRemainingSequences.sequentialTimeRemainings.Remove(values);
-            _timeRemainingSequences.currentSeqElementIndex = 0;
+            _sequencesContainer.sequentialTimeRemainings.Remove(values);
+            _sequencesContainer.currentSeqElementIndex = 0;
+        }
+
+        public static bool ContainsSequentialTimeRemaining(this List<ITimeRemaining> values)
+        {
+            return _sequencesContainer.sequentialTimeRemainings.Contains(values);
         }
 
         #endregion

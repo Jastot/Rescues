@@ -82,7 +82,10 @@ namespace Rescues
 
         private void Drop(ItemSlot dropSlot)
         {
-            if (_draggedSlot == null) return;
+            if (_draggedSlot == null)
+            {
+                return;
+            }
 
             ItemData draggedItem = _draggedSlot.Item;
             bool isSomethingCrafted = false;
@@ -130,10 +133,9 @@ namespace Rescues
         {
             Vector2 CurMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D[] hits = Physics2D.RaycastAll(CurMousePos, Vector2.zero);
-            InventoryDependsBehaviour component;
             for (int j = 0; j < hits.Length; j++)
             {
-                if (hits[j].collider.TryGetComponent(out component))
+                if (hits[j].collider.TryGetComponent(out InventoryDependsBehaviour component))
                 {
                     for (int i = 0; i < component.itemDependsEvents.Count; i++)
                     {
