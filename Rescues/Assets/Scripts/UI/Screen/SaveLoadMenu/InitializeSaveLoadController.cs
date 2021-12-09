@@ -92,7 +92,16 @@ namespace Rescues
                 if (savingElementBehaviour!=null)
                     savingElementBehaviours.Add(savingElementBehaviour);
             }
-            _context.WorldGameData.SetListOfInteractable(savingElementBehaviours);
+            var listOfDialogs = _context.GetTriggers(InteractableObjectType.Dialogue);
+            List<DialogueBehaviour> dialogueBehaviours = new List<DialogueBehaviour>();
+            foreach (var interactable in listOfDialogs)
+            {
+                var beh = interactable as InteractableObjectBehavior;
+                var savingDialogBehaviour = beh.GetComponent<DialogueBehaviour>();
+                if (savingDialogBehaviour!=null)
+                    dialogueBehaviours.Add(savingDialogBehaviour);
+            }
+            _context.WorldGameData.SetListOfInteractable(savingElementBehaviours,dialogueBehaviours);
             savingElementBehaviours.Clear();
         }
 

@@ -3,12 +3,12 @@ using System;
 namespace Rescues
 {
     [Serializable]
-    public struct QuestListData
+    public class SavedPuzzleUnit
     {
         #region Fields
-        
+        //TODO: Заменить на IInteractibleSaveStruct
         public SavingStruct SavingStruct;
-        public QuestCondition QuestCondition { get; set; }
+        public PuzzleCondition PuzzleCondition;
 
         #endregion
     }

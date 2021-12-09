@@ -8,11 +8,11 @@ namespace DataSavingSystem
     public sealed class SavingElementBehaviour : MonoBehaviour
     {
         [SerializeField] private List<EventSystemBehaviour> PreviousParts = new List<EventSystemBehaviour>();
-        public Action<EventSequence,string> SaveSequence = delegate { };
+        public Action<SavedEventSequenceUnit,string> SaveSequence = delegate { };
         
         public void SavePreviousElement(int numberInList)
         {
-            var part = new EventSequence
+            var part = new SavedEventSequenceUnit
             {
                 savingStruct = new SavingStruct()
                 {

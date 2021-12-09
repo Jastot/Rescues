@@ -8,8 +8,8 @@ namespace Rescues
     {
         public string PlayerPosition;
         public PlayersProgress PlayersProgress;
-        public GateStruct LastGate;
-        public List<ItemListData> ItemBehaviours;
+        public SavedGateUnit LastGate;
+        public List<SavedItemUnit> ItemBehaviours;
         public List<LevelProgress> LevelsProgress;
     }
 }

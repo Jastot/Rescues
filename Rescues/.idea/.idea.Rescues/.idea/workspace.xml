@@ -70,17 +70,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34dae543-2f34-47cc-94c2-3245ae1fc3b4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedDialogUnit.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedDialogUnit.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SavingPath/11111.def" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Locations/Hotel/Current version/Reception.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Locations/Hotel/Current version/Reception.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player/Prefabs_Player_Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player/Prefabs_Player_Character.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HotelScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HotelScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/EventSequence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedEventSequenceUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/EventSequence.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedEventSequenceUnit.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/GateStruct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedGateUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/GateStruct.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedGateUnit.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/InteractiveCondition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/InteractiveCondition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/InteractiveCondition.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/InteractiveCondition.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ItemListData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedItemUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ItemListData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedItemUnit.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/LevelProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/LevelProgress.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PuzzleListData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedPuzzleUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PuzzleListData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedPuzzleUnit.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/QuestListData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedQuestUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/QuestListData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedQuestUnit.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavingPacked.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavingPacked.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/SavingElementBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/SavingElementBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Controllers/LevelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Controllers/LevelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Screen/GameMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/Screen/GameMenu.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitializeSaveLoadController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitializeSaveLoadController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VIDE/Resources/EditorSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VIDE/Resources/EditorSettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +152,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Context/GameContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DBD3A770-660A-456E-8DB8-894556CF3CAD/42/8954e4ac/DOTween.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/DialogueCommandValue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/65/cda3fd9b/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Services/CameraService/CameraServices.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DBD3A770-660A-456E-8DB8-894556CF3CAD/cc/fbe1b6a8/Tween.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Services/Services.cs" root0="FORCE_HIGHLIGHTING" />
@@ -190,17 +203,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Enums/ItemCondition.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavingEnum.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Enums/QuestCondition.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/LoadBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitilizerSaveLoadMenuController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/SaveBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitializersSaveLoadmenuController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/ScreenInterface.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitializersSaveLoadController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/GameMenu/GameMenuBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SaveFileController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IInitializeController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Controllers/DataSavingController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/ScreenFactory.cs" />
@@ -220,27 +222,38 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/GameSavingSerializer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Enums/InteractiveCondition.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ISavingStruct.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/QuestListData.cs" />
       <option value="$USER_HOME$/OneDrive/Рабочий стол/Chat Sample/Assets/Scripts/Client.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/InteractiveCondition.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavingStruct.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Interface/IGate.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavingPacked.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Data/GateDataMock.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/GateStruct.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ItemListData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Player/InputController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Inventory/InventoryController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/EventSystem/EventSystemController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PuzzleListData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/LevelProgress.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Model/Location.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitializeSaveLoadController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ByteConverter.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Controllers/LevelController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/SavingElementBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Interfaces/InteractiveCondition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Interfaces/IInteractiveCondition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/IInteractiveCondition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/GateStruct.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ItemListData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PuzzleListData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/QuestListData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavingDialogUnit.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedQuestUnit.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedPuzzleUnit.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedItemUnit.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedGateUnit.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/EventSequence.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedEventSequenceUnit.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavingPacked.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/SavingElementBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/LevelProgress.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/SavedDialogUnit.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/InteractiveCondition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Model/Behaviour/Dialogue/DialogueBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/InitializeSaveLoadController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1V9bGpai1gZ6Kn1FGeYyMAj5KRa" />
@@ -281,10 +294,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14500">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11784">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="14500" />
+      <option name="pid" value="11784" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -356,6 +369,8 @@
       <workItem from="1638372647596" duration="12352000" />
       <workItem from="1638434013033" duration="21033000" />
       <workItem from="1638951680209" duration="4543000" />
+      <workItem from="1638959628757" duration="5964000" />
+      <workItem from="1638982830048" duration="3403000" />
     </task>
     <servers />
   </component>
@@ -378,6 +393,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Assets/Submodules" />
+    </ignored-roots>
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -389,16 +407,16 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs</url>
-          <line>286</line>
-          <properties documentPath="D:\Unity-Storage\Rescue_MyCopy\Rescues\Rescues\Assets\Scripts\DataSavingSystem\Data\WorldGameData.cs" initialLine="285" containingFunctionPresentation="method 'OpenCurrentLocation'">
+          <line>192</line>
+          <properties documentPath="D:\Unity-Storage\Rescue_MyCopy\Rescues\Rescues\Assets\Scripts\DataSavingSystem\Data\WorldGameData.cs" initialLine="180" containingFunctionPresentation="method 'PackagingDialogByLevel'">
             <startOffsets>
-              <option value="9530" />
+              <option value="6457" />
             </startOffsets>
             <endOffsets>
-              <option value="9580" />
+              <option value="6458" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="31" />
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

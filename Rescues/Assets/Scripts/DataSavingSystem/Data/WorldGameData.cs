@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using DataSavingSystem;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Rescues
 {
@@ -14,6 +15,8 @@ namespace Rescues
 
         private SavingPacked _savingPacked;
         private List<SavingElementBehaviour> _listOfSavingElementBehaviour;
+        private List<DialogueBehaviour> _listOfDialogueBehavioursBehaviour;
+        private bool _savingProcess;
         public bool needUnPack = false;
         public Action SaveStart = delegate {};
         public Action LoadStart = delegate {};
@@ -29,17 +32,22 @@ namespace Rescues
             _savingPacked = new SavingPacked
             {
                 PlayerPosition = null,
-                ItemBehaviours = new List<ItemListData>(),
+                ItemBehaviours = new List<SavedItemUnit>(),
                 PlayersProgress = new PlayersProgress(),
                 LevelsProgress = new List<LevelProgress>()
             };
+            SaveStart += SetSavingProgressFlag;
         }
-
+        
         #endregion
         
         
         #region Methods
-
+        
+        private void SetSavingProgressFlag()
+        {
+            _savingProcess = true;
+        }
         public void SavePlayersPosition(Transform playersPosition)
         {
             _savingPacked.PlayerPosition = ConvertVector3ToString(playersPosition.position);
@@ -49,13 +57,20 @@ namespace Rescues
         {
             return ConvertStringToVector3(_savingPacked.PlayerPosition);
         }
-        
-        public void SetListOfInteractable(List<SavingElementBehaviour> listOfSavingElementBehaviour)
+
+        public void SetListOfInteractable(List<SavingElementBehaviour> listOfSavingElementBehaviour,
+            List<DialogueBehaviour> dialogueBehaviours)
         {
             UnSubOnSavingBeh();
             _listOfSavingElementBehaviour = listOfSavingElementBehaviour;
+            _listOfDialogueBehavioursBehaviour = dialogueBehaviours;
             if (needUnPack)
-                UnPackagingByLevels();
+            {
+                UnPackagingDialogByLevel();
+                UnPackagingSavingElementsByLevels();
+            }
+            if (_savingProcess)
+                SearchingDialogsFrom(_listOfDialogueBehavioursBehaviour);
             SubOnSavingBeh();
         }
         
@@ -71,7 +86,7 @@ namespace Rescues
 
         #region Items
 
-        public void AddItem(ItemListData itemListData)
+        public void AddItem(SavedItemUnit itemListData)
         {
             _savingPacked.ItemBehaviours.Add(itemListData);
         }
@@ -79,7 +94,7 @@ namespace Rescues
         public void SaveItem(ItemData itemData,ItemCondition itemCondition)
         {
             _savingPacked.ItemBehaviours.Insert(_savingPacked.ItemBehaviours.
-                FindIndex(s => s.SavingStruct.Id == itemData.itemID), new ItemListData()
+                FindIndex(s => s.SavingStruct.Id == itemData.itemID), new SavedItemUnit()
                 {
                     SavingStruct = new SavingStruct()
                     {
@@ -90,7 +105,7 @@ namespace Rescues
                 });
         }
 
-        public void DeleteItem(ItemListData itemListData)
+        public void DeleteItem(SavedItemUnit itemListData)
         {
             _savingPacked.ItemBehaviours.Remove(itemListData);
         }
@@ -101,18 +116,18 @@ namespace Rescues
         
         #region Quests
 
-        public void AddInLevelProgressQuest(int levelsIndex, QuestListData itemListData)
+        public void AddInLevelProgressQuest(int levelsIndex, SavedQuestUnit itemListData)
         {
             _savingPacked.LevelsProgress[levelsIndex].questListData.Add(itemListData);
         }
 
-        public void SaveInfoInLevelProgressQuest(int levelsIndex, string name, QuestListData itemListData)
+        public void SaveInfoInLevelProgressQuest(int levelsIndex, string name, SavedQuestUnit itemListData)
         {
             var index = _savingPacked.LevelsProgress[levelsIndex].questListData.FindIndex(s => s.SavingStruct.Name == name);
             _savingPacked.LevelsProgress[levelsIndex].questListData.Insert(index, itemListData);
         }
 
-        public void DeleteInfoInLevelProgressQuest(int levelsIndex, QuestListData itemListData)
+        public void DeleteInfoInLevelProgressQuest(int levelsIndex, SavedQuestUnit itemListData)
         {
             _savingPacked.LevelsProgress[levelsIndex].questListData.Remove(itemListData);
         }
@@ -126,7 +141,7 @@ namespace Rescues
         {
             foreach (var savingElementBehaviour in _listOfSavingElementBehaviour)
             {
-                savingElementBehaviour.SaveSequence += PackagingByLevel;
+                savingElementBehaviour.SaveSequence += PackagingSavingElementsByLevel;
             }
         }
         private void UnSubOnSavingBeh()
@@ -135,12 +150,68 @@ namespace Rescues
             {
                 foreach (var savingElementBehaviour in _listOfSavingElementBehaviour)
                 {
-                    savingElementBehaviour.SaveSequence -= PackagingByLevel;
+                    savingElementBehaviour.SaveSequence -= PackagingSavingElementsByLevel;
                 } 
             }
         }
-       
-        private void PackagingByLevel(EventSequence obj,string levelsName)
+
+        private void SearchingDialogsFrom(List<DialogueBehaviour> dialogueBehaviours)
+        {
+            foreach (var dialogueBehaviour in dialogueBehaviours)
+            {
+                SavedDialogUnit savedDialogUnit = new SavedDialogUnit()
+                {
+                    SavingStruct = new SavingStruct()
+                    {
+                        Id = dialogueBehaviour.Id,
+                        Name = dialogueBehaviour.name
+                    },
+                    IsInteractable = dialogueBehaviour.IsInteractable,
+                    IsInteractionLocked = dialogueBehaviour.IsInteractionLocked,
+                    overrideStartNode = dialogueBehaviour.assignDialog.overrideStartNode
+                };
+                
+                PackagingDialogByLevel(savedDialogUnit,ExpensiveSearch(dialogueBehaviour.gameObject));
+            }
+        }
+
+        private string ExpensiveSearch(GameObject name)
+        {
+            var test = name.transform;
+            do
+            {
+                test = test.parent;
+            } while (test.parent.name != "Locations");
+            return test.name;
+        }
+        private void PackagingDialogByLevel(SavedDialogUnit obj,string levelsName)
+        {
+            var LevelProgress = _savingPacked.LevelsProgress.FirstOrDefault(i => i.levelsName == levelsName);
+            if (!LevelProgress.dialogListData.Any(n => n.SavingStruct.Id == obj.SavingStruct.Id))
+                LevelProgress.dialogListData.Add(obj);
+
+        }
+        
+        private void UnPackagingDialogByLevel()
+        {
+            foreach (var levelProgress in _savingPacked.LevelsProgress)
+            {
+                foreach (var savedDialogUnit in levelProgress.dialogListData)
+                {
+                    var setting = _listOfDialogueBehavioursBehaviour.
+                        FirstOrDefault(s=> s.Id == savedDialogUnit.SavingStruct.Id);
+                    if (setting != null)
+                    {
+                        setting.IsInteractable = savedDialogUnit.IsInteractable;
+                        setting.IsInteractionLocked = savedDialogUnit.IsInteractionLocked;
+                        setting.assignDialog.overrideStartNode = savedDialogUnit.overrideStartNode;
+                    }
+                }
+            }
+
+        }
+        
+        private void PackagingSavingElementsByLevel(SavedEventSequenceUnit obj,string levelsName)
         {
             var LevelProgress = _savingPacked.LevelsProgress.FirstOrDefault(i => i.levelsName == levelsName);
             if (!LevelProgress.eventSequenceData.Any(n => n.savingStruct.Id == obj.savingStruct.Id))
@@ -148,13 +219,12 @@ namespace Rescues
 
         }
         
-        private void UnPackagingByLevels()
+        private void UnPackagingSavingElementsByLevels()
         {
             foreach (var levelProgress in _savingPacked.LevelsProgress)
             {
                 foreach (var eventSequence in levelProgress.eventSequenceData)
                 {
-                    //неверный индекс
                     var setting = _listOfSavingElementBehaviour.
                         FirstOrDefault(s=>
                         {
@@ -176,29 +246,51 @@ namespace Rescues
         
         #region Puzzles
 
-        public void AddInLevelProgressPuzzle(int levelsIndex, PuzzleListData itemListData)
+        public void AddInLevelProgressPuzzle(int levelsIndex, SavedPuzzleUnit itemListData)
         {
             _savingPacked.LevelsProgress[levelsIndex].puzzleListData.Add(itemListData);
         }
 
-        public void SaveInfoInLevelProgressPuzzle(int levelsIndex, string name, PuzzleListData itemListData)
+        public void SaveInfoInLevelProgressPuzzle(int levelsIndex, string name, SavedPuzzleUnit itemListData)
         {
             var index = _savingPacked.LevelsProgress[levelsIndex].puzzleListData.FindIndex(s => s.SavingStruct.Name == name);
             _savingPacked.LevelsProgress[levelsIndex].puzzleListData.Insert(index, itemListData);
         }
 
-        public void DeleteInfoInLevelProgressPuzzle(int levelsIndex, PuzzleListData itemListData)
+        public void DeleteInfoInLevelProgressPuzzle(int levelsIndex, SavedPuzzleUnit itemListData)
         {
             _savingPacked.LevelsProgress[levelsIndex].puzzleListData.Remove(itemListData);
         }
         
         #endregion
 
+        #region Dialogs
+
+        public void AddInLevelProgressDialog(int levelsIndex, SavedDialogUnit dialogUnit)
+        {
+            _savingPacked.LevelsProgress[levelsIndex].dialogListData.Add(dialogUnit);
+        }
+
+        // public void SaveInfoInLevelProgressDialog(int levelsIndex, SavedDialogUnit dialogUnit)
+        // {
+        //     var index = _savingPacked.LevelsProgress[levelsIndex].dialogListData.
+        //         FindIndex(s => s.SavingStruct.Id == dialogUnit.SavingStruct.Id);
+        //     _savingPacked.LevelsProgress[levelsIndex].dialogListData.Insert(index, dialogUnit);
+        // }
+        //
+        // public void DeleteInfoInLevelProgressDialog(int levelsIndex, SavedDialogUnit dialogUnit)
+        // {
+        //     _savingPacked.LevelsProgress[levelsIndex].dialogListData.Remove(dialogUnit);
+        // }
+
+        #endregion
+        
         public byte[] Serialize()
         {
             SaveStart.Invoke();
             IEnumerable<byte> total = ByteConverter.AddToStreamAllPacked(_savingPacked);
             byte[] result = total.ToArray();
+            _savingProcess = false;
             return result;
         }
 
@@ -235,7 +327,7 @@ namespace Rescues
 
         public void SetLastGate(IGate gate)
         {
-            _savingPacked.LastGate = new GateStruct()
+            _savingPacked.LastGate = new SavedGateUnit()
             {
                 goToLevelName = gate.GoToLevelName,
                 goToLocationName = gate.GoToLocationName,
@@ -253,7 +345,7 @@ namespace Rescues
             foreach (Transform transform in location.items.transform)
             {
                 var itemBehaviour = transform.GetComponentInChildren<ItemBehaviour>();
-                AddItem(new ItemListData()
+                AddItem(new SavedItemUnit()
                 {
                     SavingStruct = new SavingStruct()
                     {

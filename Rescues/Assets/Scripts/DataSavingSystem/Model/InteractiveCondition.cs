@@ -3,10 +3,11 @@ using System;
 namespace Rescues
 {
     [Serializable]
-    public sealed class InteractiveCondition
+    public abstract class InteractiveCondition
     {
         public SavingStruct SavingStruct;
-        public bool IsInteractable;
+        //maybe need to add Type.
+        public bool IsInteractable; 
         public bool IsInteractionLocked;
     }
 }

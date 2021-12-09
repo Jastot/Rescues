@@ -11,10 +11,11 @@ namespace Rescues
 
         //TODO: Saving NPC data
         public string levelsName;
-        public List<QuestListData> questListData = new List<QuestListData>();
-        public List<PuzzleListData> puzzleListData = new List<PuzzleListData>();
-        public List<EventSequence> eventSequenceData = new List<EventSequence>();
-        
+        public List<SavedQuestUnit> questListData = new List<SavedQuestUnit>();
+        public List<SavedPuzzleUnit> puzzleListData = new List<SavedPuzzleUnit>();
+        public List<SavedEventSequenceUnit> eventSequenceData = new List<SavedEventSequenceUnit>();
+        public List<SavedDialogUnit> dialogListData = new List<SavedDialogUnit>();
+
         #endregion
     }
 }
