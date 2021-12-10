@@ -67,14 +67,14 @@ namespace Rescues
         {
             var eventSystem = enteredObject as EventSystemBehaviour;
             eventSystem.IsInteractable = true;
-            eventSystem.ActivateEvent(eventSystem.OnTriggerEnterEvents);
+            eventSystem.ActivateEventData(eventSystem.OnTriggerEnterEvents);
         }
 
         private void OnTriggerExitHandler(ITrigger enteredObject)
         {
             var eventSystem = enteredObject as EventSystemBehaviour;
             eventSystem.IsInteractable = false;
-            eventSystem.ActivateEvent(eventSystem.OnTriggerExitEvents);
+            eventSystem.ActivateEventData(eventSystem.OnTriggerExitEvents);
         }
 
         #endregion

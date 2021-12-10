@@ -9,16 +9,15 @@ namespace Rescues
         #region Fields
 
         private float _distance;
-        private float _speed;
+        private readonly float _speed;
         private bool _canMove;
         private bool _isMoving;
 
-        private DragonBones.UnityArmatureComponent _characterArmature;
-        private DragonBones.Animation _characterAnimation;
+        private readonly DragonBones.UnityArmatureComponent _characterArmature;
+        private readonly DragonBones.Animation _characterAnimation;
 
-        private CapsuleCollider2D _playerCollider;
-        private Rigidbody2D _playerRigidbody2D;
-        private MeshRenderer _playerMesh;
+        private readonly CapsuleCollider2D _playerCollider;
+        private readonly Rigidbody2D _playerRigidbody2D;
 
         private CurveWay _curveWay;
 
@@ -28,7 +27,7 @@ namespace Rescues
         #region Properties
 
         public string Name { get; private set; }
-        public bool IsMoving { get => _isMoving; }
+        public bool IsMoving => _isMoving;
         public Transform Transform { get; }
         public AudioSource PlayerSound { get; }
 
@@ -42,15 +41,12 @@ namespace Rescues
         {
             _speed = playerData.Speed;
             Name = playerData.Name;
-
             _characterArmature = transform.GetComponentInChildren<DragonBones.UnityArmatureComponent>();
             _characterAnimation = _characterArmature.animation;
-            _playerMesh = transform.GetComponentInChildren<MeshRenderer>();
-            _playerMesh.enabled = false;
-
             _playerCollider = transform.GetComponentInChildren<CapsuleCollider2D>();
             _playerRigidbody2D = transform.GetComponentInChildren<Rigidbody2D>();
             PlayerSound = transform.GetComponentInChildren<AudioSource>();
+            transform.gameObject.SetActive(false);
             Transform = transform;
         }
 
@@ -59,26 +55,11 @@ namespace Rescues
 
         #region StateMachine     
 
-        public void Move(float direction)
+        public void SetWalking()
         {
-            if (_canMove)
+            if (_characterAnimation.lastAnimationName != "Walking")
             {
-                if (_characterAnimation.lastAnimationName != "Walking")
-                {
-                    _characterAnimation.FadeIn("Walking");
-                }
-
-                if (direction > 0 && _characterArmature._armature.flipX)
-                {
-                    FlipCharacter();
-                }
-                else if (direction < 0 && !_characterArmature._armature.flipX)
-                {
-                    FlipCharacter();
-                }
-
-                _isMoving = true;
-                ChangePosition(direction);
+                _characterAnimation.FadeIn("Walking");
             }
         }
 
@@ -86,18 +67,23 @@ namespace Rescues
         {
             if (_characterAnimation.lastAnimationName != "Idle")
             {
-                _characterAnimation.FadeIn("Idle");               
+                _characterAnimation.FadeIn("Idle");
             }
 
             _isMoving = false;
         }
-        
+
+        public void SetPickUp(float time)
+        {
+            ScaleAndExecuteAimation("PickUp", time);
+        }
+
         public void ForceSetIdle()
         {
             if (_characterAnimation.lastAnimationName != "Idle")
             {
                 _characterAnimation.Stop();
-                _characterAnimation.Play("Idle");               
+                _characterAnimation.Play("Idle");
             }
 
             _isMoving = false;
@@ -111,13 +97,20 @@ namespace Rescues
             {
                 _playerRigidbody2D.bodyType = RigidbodyType2D.Static;
                 hidingPlaceBehaviour.HidedSprite.enabled = true; //чтобы спрайт хайдинг плейс бехевора включался только тогда, когда персонаж спрятался
-                _playerMesh.enabled = false; //чтобы спрайт выключался сразу, когда идет процесс пряток
             }
             else
             {
                 _playerRigidbody2D.bodyType = RigidbodyType2D.Dynamic;
                 hidingPlaceBehaviour.HidedSprite.enabled = false; //чтобы спрайт хайдинг плейс бехевора выключался сразу, когда персонаж начинает вылезать
-                _playerMesh.enabled = true; //чтобы спрайт выключался только тогда, когда персонаж уже вылез
+            }
+        }
+
+        private void ScaleAndExecuteAimation(string animation, float referenceTime)
+        {
+            if (_characterAnimation.lastAnimationName != animation)
+            {
+                DragonBones.AnimationState anim = _characterAnimation.FadeIn(animation, -1, 1);
+                anim.timeScale = anim.totalTime / referenceTime;
             }
         }
 
@@ -126,30 +119,43 @@ namespace Rescues
 
         #region Methods
 
+        public void Move(float direction)
+        {
+            if (_canMove)
+            {
+                SetWalking();
+                _isMoving = true;
+                RotateCharacter(direction);
+                direction = direction > 0 ? 1 : -1;
+                _distance = Mathf.Clamp(_distance + direction * _speed * Time.deltaTime, 0, _curveWay.PathCreator.path.length);
+                Transform.position = _curveWay.PathCreator.path.GetPointAtDistance(_distance, EndOfPathInstruction.Stop);
+                ScaleSize();
+            }
+        }
+
         public void LocateCharacter(CurveWay curveWay)
         {
             _curveWay = curveWay;
             Transform.position = curveWay.GetStartPointPosition;
             CorrectDistance();
-            SetScale();
-            _playerMesh.enabled = true;
+            ScaleSize();
+            Transform.gameObject.SetActive(true);
             _canMove = true;
         }
 
-        private void ChangePosition(float direction)
+        private void RotateCharacter(float direction)
         {
-            if (direction != 0)
+            if (direction > 0 && _characterArmature._armature.flipX)
             {
-                direction = direction > 0 ? 1 : -1;
+                FlipCharacter();
             }
-
-            _distance = Mathf.Clamp(_distance + direction * _speed * Time.deltaTime, 0, _curveWay.PathCreator.path.length);
-            Transform.position = _curveWay.PathCreator.path.GetPointAtDistance(_distance, EndOfPathInstruction.Stop);
-
-            SetScale();
+            else if (direction < 0 && !_characterArmature._armature.flipX)
+            {
+                FlipCharacter();
+            }
         }
 
-        private void SetScale()
+        private void ScaleSize()
         {
             Transform.localScale = _curveWay.GetScale(Transform.position);
         }

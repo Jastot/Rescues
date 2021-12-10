@@ -47,9 +47,9 @@ namespace Rescues
         {
             _items = _context.GetTriggers(InteractableObjectType.Item);
             _dialogues = _context.GetTriggers(InteractableObjectType.Dialogue);
-            foreach (var dialogue in _dialogues)
+            foreach (IInteractable dialogue in _dialogues)
             {
-                var dialogueBehaviour = dialogue as InteractableObjectBehavior;
+                InteractableObjectBehavior dialogueBehaviour = dialogue as InteractableObjectBehavior;
                 dialogueBehaviour.OnFilterHandler += OnFilterHandler;
                 dialogueBehaviour.OnTriggerEnterHandler += OnTriggerEnterHandler;
                 dialogueBehaviour.OnTriggerExitHandler += OnTriggerExitHandler;
@@ -76,10 +76,10 @@ namespace Rescues
 
         public void TearDown()
         {
-            var dialogues = _context.GetTriggers(InteractableObjectType.Dialogue);
-            foreach (var trigger in dialogues)
+            List<IInteractable> dialogues = _context.GetTriggers(InteractableObjectType.Dialogue);
+            foreach (IInteractable trigger in dialogues)
             {
-                var dialogueBehaviour = trigger as InteractableObjectBehavior;
+                InteractableObjectBehavior dialogueBehaviour = trigger as InteractableObjectBehavior;
                 dialogueBehaviour.OnFilterHandler -= OnFilterHandler;
                 dialogueBehaviour.OnTriggerEnterHandler -= OnTriggerEnterHandler;
                 dialogueBehaviour.OnTriggerExitHandler -= OnTriggerExitHandler;
@@ -93,36 +93,40 @@ namespace Rescues
 
         public void Execute()
         {
-            if (Input.GetButtonUp("Fire1") && VD.isActive && string.IsNullOrEmpty(_dialogueUI.npcText.text) == false)
+            if (VD.isActive)
             {
-                CutTextAnimation();
-            }
-
-            if (VD.isActive && VD.nodeData.isPlayer)
-            {
-                if (Input.GetKeyUp(KeyCode.Alpha1))
+                if (Input.GetButtonUp("Fire1") && _sequence.ContainsSequentialTimeRemaining() &&
+                    _dialogueUI.npcText.text != "")
                 {
-                    SetPlayerChoice(0);
+                    CutTextAnimation();
                 }
 
-                if (Input.GetKeyUp(KeyCode.Alpha2))
+                if (VD.nodeData.isPlayer)
                 {
-                    SetPlayerChoice(1);
-                }
+                    if (Input.GetKeyUp(KeyCode.Alpha1))
+                    {
+                        SetPlayerChoice(0);
+                    }
 
-                if (Input.GetKeyUp(KeyCode.Alpha3))
-                {
-                    SetPlayerChoice(2);
-                }
+                    if (Input.GetKeyUp(KeyCode.Alpha2))
+                    {
+                        SetPlayerChoice(1);
+                    }
 
-                if (Input.GetKeyUp(KeyCode.Alpha4))
-                {
-                    SetPlayerChoice(3);
-                }
+                    if (Input.GetKeyUp(KeyCode.Alpha3))
+                    {
+                        SetPlayerChoice(2);
+                    }
 
-                if (Input.GetKeyUp(KeyCode.Alpha5))
-                {
-                    SetPlayerChoice(4);
+                    if (Input.GetKeyUp(KeyCode.Alpha4))
+                    {
+                        SetPlayerChoice(3);
+                    }
+
+                    if (Input.GetKeyUp(KeyCode.Alpha5))
+                    {
+                        SetPlayerChoice(4);
+                    }
                 }
             }
         }
@@ -193,7 +197,7 @@ namespace Rescues
                     _dialogueUI.npcImage.color = _dialogueUI.npcImageNormalColor;
                 }
 
-                foreach (var choise in _dialogueUI.playerTextChoices)
+                foreach (PossibleAnswer choise in _dialogueUI.playerTextChoices)
                 {
                     choise.Disable();
                 }
@@ -222,7 +226,7 @@ namespace Rescues
             if (VD.nodeData.isPlayer == false)
             {
                 _sequence.RemoveSequentialTimeRemaining();
-                _dialogueUI.npcText.text = VD.nodeData.comments[VD.nodeData.commentIndex]; 
+                _dialogueUI.npcText.text = VD.nodeData.comments[VD.nodeData.commentIndex];
             }
         }
 
@@ -230,7 +234,7 @@ namespace Rescues
         {
             if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.SetStartNode]))
             {
-                var tempArray = VD.ToIntArray(data.extraVars[DialogueCommandValue.Command[DialogueCommands.
+                int[] tempArray = VD.ToIntArray(data.extraVars[DialogueCommandValue.Command[DialogueCommands.
                     SetStartNode]].ToString());
                 foreach (DialogueBehaviour dialogue in _dialogues)
                 {
@@ -247,14 +251,14 @@ namespace Rescues
         {
             if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.ActivateObject]))
             {
-                var tempCollection = _context.GetListInteractable();
-                var commandValues = VD.ToStringArray(data.extraVars[DialogueCommandValue.Command[DialogueCommands.
+                List<IInteractable> tempCollection = _context.GetListInteractable();
+                string[] commandValues = VD.ToStringArray(data.extraVars[DialogueCommandValue.Command[DialogueCommands.
                         ActivateObject]].ToString().ToLower());
                 for (int i = 0; i < commandValues.Length; i++)
                 {
                     foreach (InteractableObjectBehavior interactable in tempCollection)
                     {
-                        if (interactable.Id.ToLower() == commandValues[i])
+                        if (interactable.Id == commandValues[i])
                         {
                             interactable.IsInteractionLocked = !interactable.IsInteractionLocked;
                             break;
@@ -268,90 +272,45 @@ namespace Rescues
         {
             if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.ActivateEvent]))
             {
-                var tempCollection = _context.GetTriggers<EventSystemBehaviour>(InteractableObjectType.EventSystem);
-                var commandValues = VD.ToStringArray(data.extraVars[DialogueCommandValue.
+                List<EventSystemBehaviour> tempCollection = _context.GetTriggers<EventSystemBehaviour>
+                    (InteractableObjectType.EventSystem);
+                string[] commandValues = VD.ToStringArray(data.extraVars[DialogueCommandValue.
                             Command[DialogueCommands.ActivateEvent]].ToString().ToLower());
-                for (int j = 0; j < commandValues.Length; j++)
+                foreach (EventSystemBehaviour eventSystem in tempCollection)
                 {
-                    var breakToken = false;
-                    foreach (EventSystemBehaviour eventSystem in tempCollection)
-                    {
-                        for (int i = 0; i < eventSystem.OnTriggerEnterEvents.Count; i++)
-                        {
-                            if (eventSystem.OnTriggerEnterEvents[i].Id.ToLower() == commandValues[j])
-                            {
-                                eventSystem.OnTriggerEnterEvents[i].IsInteractionLocked = !eventSystem.
-                                    OnTriggerEnterEvents[i].IsInteractionLocked;
-                                breakToken = true;
-                                break;
-                            }
-                        }
-
-                        if (breakToken)
-                        {
-                            break;
-                        }
-
-                        for (int i = 0; i < eventSystem.OnTriggerExitEvents.Count; i++)
-                        {
-                            if (eventSystem.OnTriggerExitEvents[i].Id.ToLower() == commandValues[j])
-                            {
-                                eventSystem.OnTriggerExitEvents[i].IsInteractionLocked = !eventSystem.
-                                    OnTriggerExitEvents[i].IsInteractionLocked;
-                                breakToken = true;
-                                break;
-                            }
-                        }
-
-                        if (breakToken)
-                        {
-                            break;
-                        }
-
-                        for (int i = 0; i < eventSystem.OnButtonInTriggerEvents.Count; i++)
-                        {
-                            if (eventSystem.OnButtonInTriggerEvents[i].Id.ToLower() == commandValues[j])
-                            {
-                                eventSystem.OnButtonInTriggerEvents[i].IsInteractionLocked = !eventSystem.
-                                    OnButtonInTriggerEvents[i].IsInteractionLocked;
-                                breakToken = true;
-                                break;
-                            }
-                        }
-
-                        if (breakToken)
-                        {
-                            break;
-                        }
-                    }
+                    eventSystem.LockEventsByIDs(commandValues);
                 }
             }
         }
 
         private void CheckItemAndChangeNode(VD.NodeData data)
         {
-            var command = DialogueCommandValue.Command[DialogueCommands.CheckItem];
+            string command = DialogueCommandValue.Command[DialogueCommands.CheckItem];
             if (data.extraVars.ContainsKey(command))
             {
-                _goNextTimeRemaining.RemoveSequentialTimeRemaining();
-                var yesCommand = DialogueCommandValue.Command[DialogueCommands.Yes];
-                var noCommand = DialogueCommandValue.Command[DialogueCommands.No];
-                if (data.extraVars.ContainsKey(yesCommand))
+                bool isItemContains = false;
+                string yesCommand = DialogueCommandValue.Command[DialogueCommands.Yes];
+                string noCommand = DialogueCommandValue.Command[DialogueCommands.No];
+                foreach (ItemSlot itemSlot in _context.inventory.itemSlots)
                 {
-                    var yesStrings = VD.ToStringArray(data.extraVars[yesCommand].ToString().ToLower());
-                    foreach (var itemSlot in _context.inventory.itemSlots)
+                    if (itemSlot.Item?.itemID.ToLower() == data.extraVars[command].ToString().ToLower())
                     {
-                        if (itemSlot.Item?.itemID.ToLower() == data.extraVars[command].ToString().ToLower())
-                        {
-                            ChangeNode(yesStrings);
-                            return;
-                        }
+                        isItemContains = true;
+                        break;
                     }
                 }
 
-                if (data.extraVars.ContainsKey(noCommand))
+                if (data.extraVars.ContainsKey(yesCommand) && isItemContains)
                 {
-                    var noStrings = VD.ToStringArray(data.extraVars[noCommand].ToString().ToLower());
+                    string[] yesStrings = VD.ToStringArray(data.extraVars[yesCommand].ToString().ToLower());
+                    _goNextTimeRemaining.RemoveSequentialTimeRemaining();
+                    ChangeNode(yesStrings);
+                }
+
+                if (data.extraVars.ContainsKey(noCommand) && !isItemContains)
+                {
+                    string[] noStrings = VD.ToStringArray(data.extraVars[noCommand].ToString().ToLower());
+                    _goNextTimeRemaining.RemoveSequentialTimeRemaining();
                     ChangeNode(noStrings);
                 }
             }
@@ -368,19 +327,20 @@ namespace Rescues
                     }
                 case (GOTO_COMMAND):
                     {
-                        int.TryParse(data[1], out int temp);
-                        if (VD.saved[VD.currentDiag].playerNodes[temp].isPlayer)
+                        int.TryParse(data[1], out int nodeID);
+                        _timeBeforeNextNode = _dialogueUI.timeBeforeNextNode;
+                        foreach (var node in VD.saved[VD.currentDiag].playerNodes)
                         {
-                            _timeBeforeNextNode = 0;
-                        }
-                        else
-                        {
-                            _timeBeforeNextNode = _dialogueUI.timeBeforeNextNode;
+                            if (node.ID == nodeID && node.isPlayer)
+                            {
+                                _timeBeforeNextNode = 0;
+                                break;
+                            }
                         }
 
-                        var goToTimeRemaining = new List<ITimeRemaining>(1)
+                        List<ITimeRemaining> goToTimeRemaining = new List<ITimeRemaining>(1)
                         {
-                            new TimeRemaining(() => { VD.SetNode(temp); }, _timeBeforeNextNode)
+                            new TimeRemaining(() => { VD.SetNode(nodeID); }, _timeBeforeNextNode)
                         };
                         goToTimeRemaining.AddSequentialTimeRemaining();
 
@@ -396,7 +356,7 @@ namespace Rescues
 
         private void SetBackground(VD.NodeData data)
         {
-            var dataSprite = data.sprite;
+            Sprite dataSprite = data.sprite;
             if (dataSprite)
             {
                 _dialogueUI.background.sprite = dataSprite;
@@ -450,7 +410,7 @@ namespace Rescues
                 {
                     _dialogueUI.playerTextChoices[i].Enable();
                     _dialogueUI.playerTextChoices[i].Text = data.comments[i];
-                    var temp = i;
+                    int temp = i;
                     _dialogueUI.playerTextChoices[i].AddListener(() => SetPlayerChoice(temp));
                     _dialogueUI.playerTextChoices[i].AddListener(() => SetSprite(data, temp));
                 }
@@ -465,13 +425,13 @@ namespace Rescues
         {
             if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.GiveItem]))
             {
-                var commandValues = VD.ToStringArray(data.
+                string[] commandValues = VD.ToStringArray(data.
                         extraVars[DialogueCommandValue.Command[DialogueCommands.GiveItem]].ToString().ToLower());
                 for (int i = 0; i < commandValues.Length; i++)
                 {
                     foreach (ItemBehaviour item in _items)
                     {
-                        if (item.Id.ToLower() == commandValues[i])
+                        if (item.Id == commandValues[i])
                         {
                             item.gameObject.SetActive(false);
                             _context.inventory.AddItem(item.ItemData);
@@ -486,7 +446,7 @@ namespace Rescues
         {
             if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.RemoveItem]))
             {
-                var commandValues = VD.ToStringArray(data.
+                string[] commandValues = VD.ToStringArray(data.
                         extraVars[DialogueCommandValue.Command[DialogueCommands.RemoveItem]].ToString().ToLower());
                 for (int i = 0; i < commandValues.Length; i++)
                 {
@@ -535,7 +495,7 @@ namespace Rescues
         {
             if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.PlayMusic]))
             {
-                var path = ($"{AssetsPathGameObject.Object[GameObjectType.DialoguesComponents]}Audio/" +
+                string path = ($"{AssetsPathGameObject.Object[GameObjectType.DialoguesComponents]}Audio/" +
                     $"{data.extraVars[DialogueCommandValue.Command[DialogueCommands.PlayMusic]]}");
                 _dialogueUI.nodeSoundContainer.Initialization(Resources.Load<AudioClip>(path));
 
@@ -555,7 +515,7 @@ namespace Rescues
                     tempStep = text.Length - start;
                 }
 
-                var tempSubstring = text.Substring(start, tempStep);
+                string tempSubstring = text.Substring(start, tempStep);
                 _sequence.Add(new TimeRemaining(() =>
                 {
                     _dialogueUI.npcText.text += tempSubstring;
@@ -599,17 +559,23 @@ namespace Rescues
         private void OnTriggerEnterHandler(ITrigger enteredObject)
         {
             enteredObject.IsInteractable = true;
-            var materialColor = enteredObject.GameObject.GetComponent<SpriteRenderer>().color;
-            enteredObject.GameObject.GetComponent<SpriteRenderer>().DOColor(new Color(materialColor.r,
-                materialColor.g * 1.2f, materialColor.b, 1f), 1.0f);
+            if (enteredObject.GameObject.TryGetComponent(out SpriteRenderer spriteRenderer))
+            {
+                Color materialColor = spriteRenderer.color;
+                enteredObject.GameObject.GetComponent<SpriteRenderer>().DOColor(new Color(materialColor.r,
+                    materialColor.g * 1.2f, materialColor.b, 1f), 1.0f);
+            }
         }
 
         private void OnTriggerExitHandler(ITrigger enteredObject)
         {
             enteredObject.IsInteractable = false;
-            var materialColor = enteredObject.GameObject.GetComponent<SpriteRenderer>().color;
-            enteredObject.GameObject.GetComponent<SpriteRenderer>().DOColor(new Color(materialColor.r,
-                materialColor.g, materialColor.b, 1.0f), 1.0f);
+            if (enteredObject.GameObject.TryGetComponent(out SpriteRenderer spriteRenderer))
+            {
+                Color materialColor = spriteRenderer.color;
+                enteredObject.GameObject.GetComponent<SpriteRenderer>().DOColor(new Color(materialColor.r,
+                    materialColor.g, materialColor.b, 1.0f), 1.0f);
+            }
         }
 
         #endregion

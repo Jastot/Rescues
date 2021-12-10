@@ -16,11 +16,11 @@ namespace Rescues
         private LevelsData _levelsData;
         private BootScreen _defaultBootScreen;
         private BootScreen _customBootScreen;
-        private GameContext _context;
-        private Services _services;
+        private readonly GameContext _context;
+        private readonly Services _services;
         private GameObject _levelParent;
-        private GateController _gateController;
-        private AudioController _audioController;
+        private readonly GateController _gateController;
+        private readonly AudioController _audioController;
 
         #endregion
 
@@ -38,8 +38,8 @@ namespace Rescues
         public void Initialize()
         {
             _levelParent = new GameObject("Locations");
-            var path = AssetsPathGameObject.Object[GameObjectType.Levels];
-            var levelsData = Resources.LoadAll<LevelsData>(path);
+            string path = AssetsPathGameObject.Object[GameObjectType.Levels];
+            LevelsData[] levelsData = Resources.LoadAll<LevelsData>(path);
             _levelsData = levelsData[0];
             _defaultBootScreen = Object.Instantiate((BootScreen)_levelsData.BootScreen, _levelParent.transform);
             _defaultBootScreen.name = "DefaultBootScreen";
@@ -56,17 +56,21 @@ namespace Rescues
         public void LoadLevel(IGate gate)
         {
             if (_locationController == null || _locationController.LevelName != gate.GoToLevelName)
+            {
                 LoadAndUnloadPrefabs(gate.GoToLevelName);
+            }
 
-            var bootLocation = _locationController.Locations.Find(l => l.LocationName == gate.GoToLocationName);
+            LocationData bootLocation = _locationController.Locations.Find(l => l.LocationName == gate.GoToLocationName);
             if (!bootLocation)
+            {
                 throw new Exception(_locationController.LevelName + " не содержит локации с именем " + gate.GoToLocationName);
+            }
 
             _customBootScreen = bootLocation.CustomBootScreenInstance;
 
             if (gate.ThisLevelName != gate.GoToLevelName || gate.ThisLocationName != gate.GoToLocationName)
             {
-                var bootScreen = _customBootScreen == null ? _defaultBootScreen : _customBootScreen;
+                BootScreen bootScreen = _customBootScreen == null ? _defaultBootScreen : _customBootScreen;
                 bootScreen.ShowBootScreen(_services, LoadLevelPart);
             }
             else
@@ -76,13 +80,18 @@ namespace Rescues
 
             void LoadLevelPart()
             {
-                var activeLocation = _locationController.Locations.Find(l => l.LocationActiveSelf);
+                LocationData activeLocation = _locationController.Locations.Find(l => l.LocationActiveSelf);
                 if (activeLocation)
+                {
                     activeLocation.DisableOnScene();
-                var enterGate = bootLocation.Gates.Find(g => g.ThisGateId == gate.GoToGateId);
+                }
+
+                Gate enterGate = bootLocation.Gates.Find(g => g.ThisGateId == gate.GoToGateId);
                 if (!enterGate)
+                {
                     throw new Exception("В " + gate.GoToLevelName + " - " + gate.GoToLocationName +
                                    " нет Gate c ID = " + gate.GoToGateId);
+                }
 
                 bootLocation.LoadLocation();
                 _levelsData.SetLastLevelGate = gate;
@@ -91,9 +100,14 @@ namespace Rescues
                 _activeCurveWay = _curveWayController.GetCurve(enterGate, WhoCanUseCurve.Character);
                 _context.character.LocateCharacter(_activeCurveWay);
                 if (!_context.WorldGameData.LookForLevelByNameBool(bootLocation.LocationName))
+                {
                     _context.WorldGameData.AddNewLocation(bootLocation.LocationInstance, gate);
+                }
                 else
+                {
                     _context.WorldGameData.OpenCurrentLocation(bootLocation.LocationInstance);
+                }
+
                 _context.WorldGameData.SavePlayersProgress(
                     _context.WorldGameData.LookForLevelByNameInt(bootLocation.LocationName));
                 _context.WorldGameData.SavePlayersPosition(_context.character.Transform.position);

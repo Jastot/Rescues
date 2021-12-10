@@ -194,9 +194,9 @@ namespace Rescues
                         if (item != null && !item.IsInteractionLocked)
                         {
                             LockState();
-                            //TODO Need animation for this
+                            _context.character.SetPickUp(item.PickUpTime);
                             TimeRemainingExtensions.AddTimeRemaining(new TimeRemaining(() =>
-                            {
+                            {                               
                                 item.gameObject.SetActive(false);
                                 _context.inventory.AddItem(item.ItemData);
                                 _isStateLocked = false;
