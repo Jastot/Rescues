@@ -42,6 +42,10 @@ namespace Rescues
                     if (OnTriggerEnterEvents[i].Id == commandValues[j])
                     {
                         OnTriggerEnterEvents[i].IsInteractionLocked = !OnTriggerEnterEvents[i].IsInteractionLocked;
+                        if (OnTriggerEnterEvents[i].IsInteractionLocked == false)
+                        {
+                            OnTriggerEnterEvents[i].Event.Invoke();
+                        }
                         break;
                     }
                 }
