@@ -66,15 +66,21 @@ namespace Rescues
         private void OnTriggerEnterHandler(ITrigger enteredObject)
         {
             var eventSystem = enteredObject as EventSystemBehaviour;
-            eventSystem.IsInteractable = true;
-            eventSystem.ActivateEventData(eventSystem.OnTriggerEnterEvents);
+            if (eventSystem.IsInteractionLocked == false)
+            {
+                eventSystem.IsInteractable = true;
+                eventSystem.ActivateEventData(eventSystem.OnTriggerEnterEvents); 
+            }
         }
 
         private void OnTriggerExitHandler(ITrigger enteredObject)
         {
             var eventSystem = enteredObject as EventSystemBehaviour;
-            eventSystem.IsInteractable = false;
-            eventSystem.ActivateEventData(eventSystem.OnTriggerExitEvents);
+            if (eventSystem.IsInteractionLocked == false)
+            {
+                eventSystem.IsInteractable = false;
+                eventSystem.ActivateEventData(eventSystem.OnTriggerExitEvents); 
+            }
         }
 
         #endregion
