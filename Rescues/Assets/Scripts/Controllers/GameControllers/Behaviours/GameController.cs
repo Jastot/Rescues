@@ -31,25 +31,25 @@ namespace Rescues
 
         private void FixedUpdate()
         {
-            _activeController.Execute(UpdateType.Fixed);
-            _activeController.Cleanup(UpdateType.Fixed);
+            _activeController?.Execute(UpdateType.Fixed);
+            _activeController?.Cleanup(UpdateType.Fixed);
         }
 
         private void Update()
         {
-            _activeController.Execute(UpdateType.Update);
-            _activeController.Cleanup(UpdateType.Update);
+            _activeController?.Execute(UpdateType.Update);
+            _activeController?.Cleanup(UpdateType.Update);
         }
 
         private void LateUpdate()
         {
-            _activeController.Execute(UpdateType.Late);
-            _activeController.Cleanup(UpdateType.Update);
+            _activeController?.Execute(UpdateType.Late);
+            _activeController?.Cleanup(UpdateType.Update);
         }
 
         private void OnDestroy()
         {
-            _activeController.TearDown();
+            _activeController?.TearDown();
         }
 
 #if UNITY_EDITOR
@@ -60,8 +60,8 @@ namespace Rescues
             {
                 return;
             }
-            _activeController.Execute(UpdateType.Gizmos);
-            _activeController.Cleanup(UpdateType.Gizmos);
+            _activeController?.Execute(UpdateType.Gizmos);
+            _activeController?.Cleanup(UpdateType.Gizmos);
         }
 
 #endif
