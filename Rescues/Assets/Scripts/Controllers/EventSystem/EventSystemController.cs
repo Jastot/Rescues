@@ -69,7 +69,7 @@ namespace Rescues
             if (eventSystem.IsInteractionLocked == false)
             {
                 eventSystem.IsInteractable = true;
-                eventSystem.ActivateEventData(eventSystem.OnTriggerEnterEvents); 
+                eventSystem.ActivateEvents(eventSystem.OnTriggerEnterEvents); 
             }
         }
 
@@ -79,7 +79,7 @@ namespace Rescues
             if (eventSystem.IsInteractionLocked == false)
             {
                 eventSystem.IsInteractable = false;
-                eventSystem.ActivateEventData(eventSystem.OnTriggerExitEvents); 
+                eventSystem.ActivateEvents(eventSystem.OnTriggerExitEvents); 
             }
         }
 
