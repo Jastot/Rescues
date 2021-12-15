@@ -253,7 +253,7 @@ namespace Rescues
             {
                 List<IInteractable> tempCollection = _context.GetListInteractable();
                 string[] commandValues = VD.ToStringArray(data.extraVars[DialogueCommandValue.Command[DialogueCommands.
-                        ActivateObject]].ToString().ToLower());
+                        ActivateObject]].ToString());
                 for (int i = 0; i < commandValues.Length; i++)
                 {
                     foreach (InteractableObjectBehavior interactable in tempCollection)
@@ -275,7 +275,7 @@ namespace Rescues
                 List<EventSystemBehaviour> tempCollection = _context.GetTriggers<EventSystemBehaviour>
                     (InteractableObjectType.EventSystem);
                 string[] commandValues = VD.ToStringArray(data.extraVars[DialogueCommandValue.
-                            Command[DialogueCommands.ActivateEvent]].ToString().ToLower());
+                            Command[DialogueCommands.ActivateEvent]].ToString());
                 foreach (EventSystemBehaviour eventSystem in tempCollection)
                 {
                     eventSystem.LockEventsByIDs(commandValues);
@@ -293,7 +293,7 @@ namespace Rescues
                 string noCommand = DialogueCommandValue.Command[DialogueCommands.No];
                 foreach (ItemSlot itemSlot in _context.inventory.itemSlots)
                 {
-                    if (itemSlot.Item?.itemID.ToLower() == data.extraVars[command].ToString().ToLower())
+                    if (itemSlot.Item?.itemID== data.extraVars[command].ToString())
                     {
                         isItemContains = true;
                         break;
@@ -302,14 +302,14 @@ namespace Rescues
 
                 if (data.extraVars.ContainsKey(yesCommand) && isItemContains)
                 {
-                    string[] yesStrings = VD.ToStringArray(data.extraVars[yesCommand].ToString().ToLower());
+                    string[] yesStrings = VD.ToStringArray(data.extraVars[yesCommand].ToString());
                     _goNextTimeRemaining.RemoveSequentialTimeRemaining();
                     ChangeNode(yesStrings);
                 }
 
                 if (data.extraVars.ContainsKey(noCommand) && !isItemContains)
                 {
-                    string[] noStrings = VD.ToStringArray(data.extraVars[noCommand].ToString().ToLower());
+                    string[] noStrings = VD.ToStringArray(data.extraVars[noCommand].ToString());
                     _goNextTimeRemaining.RemoveSequentialTimeRemaining();
                     ChangeNode(noStrings);
                 }
@@ -426,7 +426,7 @@ namespace Rescues
             if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.GiveItem]))
             {
                 string[] commandValues = VD.ToStringArray(data.
-                        extraVars[DialogueCommandValue.Command[DialogueCommands.GiveItem]].ToString().ToLower());
+                        extraVars[DialogueCommandValue.Command[DialogueCommands.GiveItem]].ToString());
                 for (int i = 0; i < commandValues.Length; i++)
                 {
                     foreach (ItemBehaviour item in _items)
@@ -447,7 +447,7 @@ namespace Rescues
             if (data.extraVars.ContainsKey(DialogueCommandValue.Command[DialogueCommands.RemoveItem]))
             {
                 string[] commandValues = VD.ToStringArray(data.
-                        extraVars[DialogueCommandValue.Command[DialogueCommands.RemoveItem]].ToString().ToLower());
+                        extraVars[DialogueCommandValue.Command[DialogueCommands.RemoveItem]].ToString());
                 for (int i = 0; i < commandValues.Length; i++)
                 {
                     _context.inventory.RemoveItem(commandValues[i]);
