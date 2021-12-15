@@ -1914,6 +1914,28 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
     objectManipulations:
+      keys: 00000000
+      values:
+      - 133
+  - _isInteractionLocked: 1
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: 133
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+    objectManipulations:
+      keys: 00000000
+      values:
+      - 134
+  - _isInteractionLocked: 1
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: 134
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+    objectManipulations:
       keys: 
       values: []
   OnTriggerExitEvents:
@@ -1943,7 +1965,7 @@ MonoBehaviour:
   - _isInteractionLocked: 0
     IsRepeating: 0
     TimeBeforeInvoke: 0
-    _id: 
+    _id: 119
     Event:
       m_PersistentCalls:
         m_Calls:

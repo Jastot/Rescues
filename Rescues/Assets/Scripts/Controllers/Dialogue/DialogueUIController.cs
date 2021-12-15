@@ -276,9 +276,14 @@ namespace Rescues
                     (InteractableObjectType.EventSystem);
                 string[] commandValues = VD.ToStringArray(data.extraVars[DialogueCommandValue.
                             Command[DialogueCommands.ActivateEvent]].ToString());
+                int completeCommands = 0;
                 foreach (EventSystemBehaviour eventSystem in tempCollection)
                 {
-                    eventSystem.LockEventsByIDs(commandValues);
+                    completeCommands += eventSystem.LockEventsByIDs(commandValues);
+                    if (completeCommands == commandValues.Length)
+                    {
+                        break;
+                    }
                 }
             }
         }
