@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 
 namespace Rescues
 {
-    public class PianoPuzzle : Puzzle
+    public sealed class PianoPuzzle : Puzzle
     {
         #region Fields
 
         public Action<PiannoButton> OnPianoButtonDown;
-        public List<PiannoButton> WinCombination;       
+        public List<PiannoButton> WinCombination;
         public List<PiannoButton> PlayerCombination;
         public PiannoButton CurrentButton;
 
@@ -40,7 +39,7 @@ namespace Rescues
         #region Methods
 
         public void AddToPlayerCombination(PiannoButton button)
-        {         
+        {
             if (_currentIndexInCombination < WinCombination.Count && button == WinCombination[_currentIndexInCombination])
             {
                 _currentIndexInCombination += 1;

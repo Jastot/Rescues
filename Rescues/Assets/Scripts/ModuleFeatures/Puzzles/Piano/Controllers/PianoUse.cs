@@ -3,11 +3,11 @@
 
 namespace Rescues
 {
-    class PianoUse : IExecuteController
+    public class PianoUse : IExecuteController
     {
         #region Fields
 
-        private PianoPuzzle _pianoPuzzle;
+        private readonly PianoPuzzle _pianoPuzzle;
 
         #endregion
 
