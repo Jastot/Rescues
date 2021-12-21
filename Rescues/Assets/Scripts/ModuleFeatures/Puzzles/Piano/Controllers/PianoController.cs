@@ -52,8 +52,6 @@ namespace Rescues
             var pianoPuzzle = puzzle as PianoPuzzle;
             pianoPuzzle.OnPianoButtonDown -= pianoPuzzle.AddToPlayerCombination;
             pianoPuzzle.OnPianoButtonDown -= pianoPuzzle.SoundPlay;
-
-            puzzle.Close();
         }
 
         public void CheckComplete(Puzzle puzzle)
