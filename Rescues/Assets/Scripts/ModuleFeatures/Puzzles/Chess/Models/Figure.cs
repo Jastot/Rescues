@@ -1,55 +1,63 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Rescues
 {
-    public class Figure: MonoBehaviour
+    public class Figure: MonoBehaviour,IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
     {
         #region Fields
 
         [SerializeField] private FigureStruct _figureStruct;
-        public event Action<FigureStruct> OnPosition;
+
+        private Vector2 _inWhichCellItIs;
+        public event Action<Figure> OnBeginDragEvent;
+        public event Action<Figure> OnEndDragEvent;
+        public event Action<Figure> OnDragEvent;
+        public event Action<Figure> OnDropEvent;
 
         #endregion
-
-        #region UnityMethods
-
-        private void OnMouseDrag()
-        {
-            var cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            MoveFigure(cursorPosition);
-        }
-
-        private void OnMouseUp()
-        {
-            OnPosition.Invoke(_figureStruct);
-        }
         
-        #endregion
 
         #region Methods
 
-        public void MoveFigure(Vector2 newPosition)
+        public void OnDrop(PointerEventData eventData)
         {
-            transform.position = newPosition;
+            OnDropEvent?.Invoke(this);
         }
 
-        public new ChessPuzzleFiguresTypes GetType()
+        public void OnDrag(PointerEventData eventData)
         {
-            return _figureStruct.IndexOfFigure;
+            OnDragEvent?.Invoke(this);
         }
 
-        public void SetFigureCurrentPosition(
-            int CurrentPositionX,
-            int CurrentPositionY)
+        public void OnEndDrag(PointerEventData eventData)
         {
-            _figureStruct.CurrentPositionX = CurrentPositionX;
-            _figureStruct.CurrentPositionY = CurrentPositionY;
+            OnEndDragEvent?.Invoke(this);
         }
 
-        public Vector2 GetFigureCurrentPosition()
+        public void OnBeginDrag(PointerEventData eventData)
         {
-            return new Vector2(_figureStruct.CurrentPositionX, _figureStruct.CurrentPositionY);
+            OnBeginDragEvent?.Invoke(this);
+        }
+
+        public void SetCell(int x, int y)
+        {
+            _inWhichCellItIs = new Vector2(x, y);
+        }
+        public Vector2 GetCell()
+        {
+            return _inWhichCellItIs;
+        }
+
+        public FigureStruct GetFigureStruct()
+        {
+            return _figureStruct;
+        }
+        
+        public void SetFigurePosition(int x,int y)
+        {
+            gameObject.transform.localPosition = new Vector3(x, y, 0);
         }
         
         public void SetFigureStartInfo(
@@ -64,6 +72,7 @@ namespace Rescues
             _figureStruct.EndPositionX = CurrentPositionX;
             _figureStruct.EndPositionY = CurrentPositionY;
         }
+        
         #endregion
 
     }

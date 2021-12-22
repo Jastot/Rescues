@@ -50,7 +50,6 @@ namespace Rescues
                 _playersSequence += _figureStruct.UnicSequenceID + " ";
             else
                 _playersSequence += "-1 ";
-            Debug.Log(_playersSequence); 
             CheckComplete();
         }
 

@@ -44,11 +44,11 @@ namespace Rescues
                 firstActive=false;
             }
             var playersSequence = specificPuzzle._playersSequence;//.
-            //     Remove(specificPuzzle._playersSequence.Length-1).Split(' ');
-            if (specificPuzzle != null 
-               // &&  Sequence.Take(Sequence.Length).SequenceEqual(playersSequence))
-               && playersSequence.Contains(Sequence))
+            if (specificPuzzle != null
+                && playersSequence.Contains(Sequence))
                 Finish(specificPuzzle);
+            if (playersSequence.Length >= Sequence.Length)
+                ResetValues(specificPuzzle);
         }
 
         public void Finish(Puzzle puzzle)
