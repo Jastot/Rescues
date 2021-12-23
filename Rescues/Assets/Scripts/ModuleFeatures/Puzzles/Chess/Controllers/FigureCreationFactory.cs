@@ -12,6 +12,7 @@ namespace Rescues
 
         private Dictionary<ChessPuzzleFiguresTypes, GameObject> _availableGameObjectsDictionary;
         private readonly Transform _parent;
+        private const int _offsetParameter = 1;
         
         #endregion
         
@@ -22,13 +23,17 @@ namespace Rescues
         }
         
         
-        public Figure CreateAFigure(int id,ChessPuzzleFiguresTypes figure,Vector2 pos)
+        public Figure CreateAFigure(int id,ChessPuzzleFiguresTypes figure,
+            int posX,int posY, int endPosX, int endPosY)
         {
             var newFigure =Object.Instantiate(_availableGameObjectsDictionary[figure],_parent);
-            newFigure.gameObject.transform.localPosition = pos;
+            newFigure.gameObject.transform.localPosition = new Vector2(posX,posY);
             var parameters = newFigure.GetComponent<Figure>();
-            parameters.SetFigureStartInfo(id,Convert.ToInt32(pos.x),
-                Convert.ToInt32(pos.y));
+            parameters.SetFigureStartInfo(id,
+                posX+_offsetParameter,
+                posY+_offsetParameter,
+                endPosX+_offsetParameter,
+                endPosY+_offsetParameter);
             return parameters;
         }
     }

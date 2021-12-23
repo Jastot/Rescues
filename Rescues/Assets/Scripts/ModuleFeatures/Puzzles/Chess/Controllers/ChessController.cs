@@ -48,28 +48,28 @@ namespace Rescues
             var playersSequence = specificPuzzle._playersSequence;//.
             if (specificPuzzle != null
                 && CheckSequence(playersSequence))
-                Finish(specificPuzzle);
+                puzzle.Finish();
             if (playersSequence.Count > Sequence.Count)
                 ResetValues(specificPuzzle);
         }
 
         private bool CheckSequence(List<string> playersSequence)
         {
-            for (int j = 0; j < playersSequence.Count; j++)
+            var isOk = true;
+            for (int j = 0; j < Sequence.Count; j++)
             {
+                Debug.Log("isOk: "+isOk);
                 if (Sequence[j]!=playersSequence[j])
-                { 
+                {
+                    isOk = false;
                     break;
-                }//тут непонятно почему уходит в true
-                return true;
+                }
             }
-            return false;
+            return isOk;
         }
         
         public void Finish(Puzzle puzzle)
         {
-            //тут бесконечный цикл,который все ломает. лол.
-            puzzle.Finish();
         }
 
         public void ResetValues(Puzzle puzzle)

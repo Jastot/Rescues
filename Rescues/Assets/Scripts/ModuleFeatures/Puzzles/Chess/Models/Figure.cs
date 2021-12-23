@@ -58,19 +58,23 @@ namespace Rescues
         public void SetFigurePosition(int x,int y)
         {
             gameObject.transform.localPosition = new Vector3(x, y, 0);
+            _figureStruct.CurrentPositionX = x+1;
+            _figureStruct.CurrentPositionY = y+1;
         }
         
         public void SetFigureStartInfo(
             int ID,
          int CurrentPositionX,
-         int CurrentPositionY
+         int CurrentPositionY,
+            int EndPositionX,
+            int EndPositionY
         )
         {
             _figureStruct.UnicSequenceID = ID;
             _figureStruct.CurrentPositionX = CurrentPositionX;
             _figureStruct.CurrentPositionY = CurrentPositionY;
-            _figureStruct.EndPositionX = CurrentPositionX;
-            _figureStruct.EndPositionY = CurrentPositionY;
+            _figureStruct.EndPositionX = EndPositionX;
+            _figureStruct.EndPositionY = EndPositionY;
         }
         
         #endregion

@@ -106,7 +106,10 @@ namespace Rescues
                 _board[figureStruct.CurrentPositionX - _indexOfMassiveI, figureStruct.CurrentPositionY - _indexOfMassiveI]
                     .SetCellOccupied(true);
                 var currentFigure = _figureCreationFactory.CreateAFigure(figureStruct.UnicSequenceID,figureStruct.IndexOfFigure,
-                     new Vector2(figureStruct.CurrentPositionX-_indexOfMassiveI, figureStruct.CurrentPositionY-_indexOfMassiveI));
+                     figureStruct.CurrentPositionX-_indexOfMassiveI, 
+                     figureStruct.CurrentPositionY-_indexOfMassiveI,
+                     figureStruct.EndPositionX-_indexOfMassiveI,
+                     figureStruct.EndPositionY-_indexOfMassiveI);
                 currentFigure.OnDragEvent += OnDragFigure;
                 currentFigure.OnBeginDragEvent += OnBeginDragFigure;
                 currentFigure.OnEndDragEvent += OnEndDragFigure;
