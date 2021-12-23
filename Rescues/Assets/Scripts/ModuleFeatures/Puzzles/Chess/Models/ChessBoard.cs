@@ -76,9 +76,8 @@ namespace Rescues
                 figure.OnDropEvent -= OnDropFigure;
                 Destroy(figure.gameObject);
             }
-
-            if (_figureStructs.Count != 0)
-                _figureStructs.RemoveRange(0, _figureStructs.Count);
+            _figureStructs.Clear();
+            
             #endregion
         }
         
@@ -106,7 +105,6 @@ namespace Rescues
                     SetTypeOfCell(figureStruct.IndexOfFigure);
                 _board[figureStruct.CurrentPositionX - _indexOfMassiveI, figureStruct.CurrentPositionY - _indexOfMassiveI]
                     .SetCellOccupied(true);
-                Debug.Log((figureStruct.CurrentPositionX - _indexOfMassiveI)+" "+(figureStruct.CurrentPositionY - _indexOfMassiveI));
                 var currentFigure = _figureCreationFactory.CreateAFigure(figureStruct.UnicSequenceID,figureStruct.IndexOfFigure,
                      new Vector2(figureStruct.CurrentPositionX-_indexOfMassiveI, figureStruct.CurrentPositionY-_indexOfMassiveI));
                 currentFigure.OnDragEvent += OnDragFigure;
@@ -181,6 +179,11 @@ namespace Rescues
             }
             _pickedUpFigure = null;
             FigurePlacedOnNewPosition?.Invoke(obj.GetFigureStruct());
+        }
+
+        public Cell[,] GetBoard()
+        {
+            return _board;
         }
         
         #endregion

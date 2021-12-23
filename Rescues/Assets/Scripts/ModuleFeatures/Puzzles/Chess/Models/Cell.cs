@@ -13,12 +13,24 @@ namespace Rescues
         private int _idOfFigurePlacedOnCell = 0;
         private bool _isCellOccupied;
         private Vector2 CorrectiveVector = new Vector2(1, 1);
-
+        private Image _image;
+        private Color _color;
+        
         public int IndexX;
         public int IndexY;
         
         #endregion
 
+        #region UnityMethods
+
+        private void Awake()
+        {
+            _image = GetComponent<Image>();
+            _color = _image.color;
+        }
+
+        #endregion
+        
         #region Methods
 
         public void SetCellOccupied(bool x)
@@ -26,11 +38,11 @@ namespace Rescues
             _isCellOccupied = x;
             if (_isCellOccupied)
             {
-                this.GetComponent<Image>().color =Color.red;
+                _image.color = Color.red;
             }
             else
             {
-                this.GetComponent<Image>().color =Color.white;
+                _image.color = _color;
             }
         }
         public bool GetCellOccupied()

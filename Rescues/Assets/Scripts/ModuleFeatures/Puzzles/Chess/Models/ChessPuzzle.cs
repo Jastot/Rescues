@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Rescues;
 using UnityEngine;
 
@@ -12,14 +13,14 @@ namespace Rescues
         private ChessBoard _chessBoard;
         private bool _isPlayerRight;
         
-        public string _playersSequence;
+        public List<string> _playersSequence;
+        
         #endregion
         
         
         #region  Propeties
 
         public ChessBoard ChessBoard => _chessBoard;
-        
         
         #endregion
 
@@ -28,16 +29,29 @@ namespace Rescues
 
         private void Start()
         {
+            _playersSequence = new List<string>();
             _chessBoard = gameObject.GetComponentInChildren<ChessBoard>();
             _chessBoard._chessPuzzleData = _chessPuzzleData;
-            _chessBoard.Loaded += BoardLoading;
-            _chessBoard.FigurePlacedOnNewPosition += LookingAtSequence;
+            Initiate();
         }
 
         #endregion
 
         #region Methods
 
+        public void Initiate()
+        {
+            _chessBoard.Loaded += BoardLoading;
+            _chessBoard.FigurePlacedOnNewPosition += LookingAtSequence; 
+        }
+
+        public void CleanData()
+        {
+            _playersSequence.Clear();
+            _chessBoard.Loaded -= BoardLoading;
+            _chessBoard.FigurePlacedOnNewPosition -= LookingAtSequence;
+        }
+        
         private void BoardLoading()
         {
             _chessBoard.SetPuzzledFigures();
@@ -47,9 +61,10 @@ namespace Rescues
         {
             
             if (CheckFigurePosition(_figureStruct))
-                _playersSequence += _figureStruct.UnicSequenceID + " ";
+                _playersSequence.Add(_figureStruct.UnicSequenceID+"");
             else
-                _playersSequence += "-1 ";
+                _playersSequence.Add("-1");
+            Debug.Log(_playersSequence);
             CheckComplete();
         }
 
@@ -61,7 +76,7 @@ namespace Rescues
             else
                 return false;
         }
-        #endregion
         
+        #endregion
     }
 }
