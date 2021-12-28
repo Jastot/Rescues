@@ -18,23 +18,20 @@ namespace Rescues
 
         public void ActivateButtonInTriggerEvent()
         {
-            ActivateEventData(OnButtonInTriggerEvents);
+            ActivateEvents(OnButtonInTriggerEvents);
         }
 
-        public void ActivateEventData(List<EventData> data)
+        public void ActivateEvents(List<EventData> data)
         {
             for (int i = 0; i < data.Count; i++)
             {
-                if (data[i].IsInteractionLocked == false)
-                {
-                    ExecuteAdvancedOptions(data[i]);
-                    TimeRemainingExtensions.AddTimeRemaining(new TimeRemaining(data[i]));
-                }
+                ActivateEvent(data[i]);
             }
         }
 
-        public void LockEventsByIDs(string[] commandValues)
+        public int LockEventsByIDs(string[] commandValues)
         {
+            int completedCommands = 0;
             for (int j = 0; j < commandValues.Length; j++)
             {
                 for (int i = 0; i < OnTriggerEnterEvents.Count; i++)
@@ -42,6 +39,8 @@ namespace Rescues
                     if (OnTriggerEnterEvents[i].Id == commandValues[j])
                     {
                         OnTriggerEnterEvents[i].IsInteractionLocked = !OnTriggerEnterEvents[i].IsInteractionLocked;
+                        ActivateEvent(OnTriggerEnterEvents[i]);
+                        completedCommands++;
                         break;
                     }
                 }
@@ -51,6 +50,7 @@ namespace Rescues
                     if (OnTriggerExitEvents[i].Id == commandValues[j])
                     {
                         OnTriggerExitEvents[i].IsInteractionLocked = !OnTriggerExitEvents[i].IsInteractionLocked;
+                        completedCommands++;
                         break;
                     }
                 }
@@ -61,9 +61,21 @@ namespace Rescues
                     {
                         OnButtonInTriggerEvents[i].IsInteractionLocked = !OnButtonInTriggerEvents[i].
                             IsInteractionLocked;
+                        completedCommands++;
                         break;
                     }
                 }
+            }
+
+            return completedCommands;
+        }
+
+        private void ActivateEvent(EventData data)
+        {
+            if (data.IsInteractionLocked == false)
+            {
+                ExecuteAdvancedOptions(data);
+                TimeRemainingExtensions.AddTimeRemaining(new TimeRemaining(data));
             }
         }
 

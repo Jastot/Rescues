@@ -225,9 +225,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 8
-  <IsInteractionLocked>k__BackingField: 0
+  <IsInteractionLocked>k__BackingField: 1
   <Id>k__BackingField: -1
-  OnTriggerEnterEvents: []
+  OnTriggerEnterEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: 13
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7450674376957609035}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    objectManipulations:
+      keys: 
+      values: []
   OnTriggerExitEvents: []
   OnButtonInTriggerEvents: []
 --- !u!61 &8046546384543181364
@@ -838,7 +860,6 @@ GameObject:
   - component: {fileID: 8943093013662842161}
   - component: {fileID: 5987640759611793887}
   - component: {fileID: 1209689559631535290}
-  - component: {fileID: 6761233264120785481}
   m_Layer: 0
   m_Name: Key_Room
   m_TagString: Untagged
@@ -951,7 +972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 2
   <IsInteractionLocked>k__BackingField: 0
-  <Id>k__BackingField: 
+  <Id>k__BackingField: KeyRoom1
   ItemData: {fileID: 11400000, guid: 30095eaf594323b42beb2df57250c6d4, type: 2}
   PickUpTime: 0.5
 --- !u!114 &1209689559631535290
@@ -971,24 +992,6 @@ MonoBehaviour:
     _entryID: Q_Htl_01
     _bulletpointID: -1
     _action: 3
---- !u!114 &6761233264120785481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104346005935161961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 8
-  <IsInteractionLocked>k__BackingField: 0
-  <Id>k__BackingField: -1
-  OnTriggerEnterEvents: []
-  OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
 --- !u!1 &1118394703829469591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1890,7 +1893,51 @@ MonoBehaviour:
   _type: 8
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: -1
-  OnTriggerEnterEvents: []
+  OnTriggerEnterEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: 132
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8027965070901141121}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    objectManipulations:
+      keys: 00000000
+      values:
+      - 133
+  - _isInteractionLocked: 1
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: 133
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+    objectManipulations:
+      keys: 00000000
+      values:
+      - 134
+  - _isInteractionLocked: 1
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: 134
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+    objectManipulations:
+      keys: 
+      values: []
   OnTriggerExitEvents:
   - _isInteractionLocked: 0
     IsRepeating: 0
@@ -1918,18 +1965,7 @@ MonoBehaviour:
   - _isInteractionLocked: 0
     IsRepeating: 0
     TimeBeforeInvoke: 0
-    _id: 
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
-    objectManipulations:
-      keys: 00000000
-      values:
-      - 123, exitEvent
-  - _isInteractionLocked: 0
-    IsRepeating: 0
-    TimeBeforeInvoke: 0
-    _id: 123
+    _id: 119
     Event:
       m_PersistentCalls:
         m_Calls:
@@ -1943,11 +1979,12 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
+            m_BoolArgument: 0
           m_CallState: 2
     objectManipulations:
-      keys: 
-      values: []
+      keys: 00000000
+      values:
+      - 13
 --- !u!61 &820631205039520125
 BoxCollider2D:
   m_ObjectHideFlags: 0
