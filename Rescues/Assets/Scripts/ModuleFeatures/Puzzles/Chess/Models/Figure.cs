@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 namespace Rescues
 {
-    public class Figure: MonoBehaviour,IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
+    public class Figure: MonoBehaviour,IBeginDragHandler, IEndDragHandler, IDragHandler
     {
         #region Fields
 
@@ -14,17 +14,11 @@ namespace Rescues
         public event Action<Figure> OnBeginDragEvent;
         public event Action<Figure> OnEndDragEvent;
         public event Action<Figure> OnDragEvent;
-        public event Action<Figure> OnDropEvent;
 
         #endregion
         
 
         #region Methods
-
-        public void OnDrop(PointerEventData eventData)
-        {
-            OnDropEvent?.Invoke(this);
-        }
 
         public void OnDrag(PointerEventData eventData)
         {

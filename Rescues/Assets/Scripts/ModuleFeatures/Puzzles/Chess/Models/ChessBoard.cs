@@ -40,6 +40,7 @@ namespace Rescues
 
         #endregion
 
+        
         #region Methods
         
         private void MakeADictionary()
@@ -66,6 +67,7 @@ namespace Rescues
 
             #endregion
 
+            
             #region Clean a board and logic
 
             foreach (var figure in _figureStructs)
@@ -73,7 +75,6 @@ namespace Rescues
                 figure.OnDragEvent -= OnDragFigure;
                 figure.OnBeginDragEvent -= OnBeginDragFigure;
                 figure.OnEndDragEvent -= OnEndDragFigure;
-                figure.OnDropEvent -= OnDropFigure;
                 Destroy(figure.gameObject);
             }
             _figureStructs.Clear();
@@ -113,7 +114,6 @@ namespace Rescues
                 currentFigure.OnDragEvent += OnDragFigure;
                 currentFigure.OnBeginDragEvent += OnBeginDragFigure;
                 currentFigure.OnEndDragEvent += OnEndDragFigure;
-                currentFigure.OnDropEvent += OnDropFigure;
                 currentFigure.SetCell(
                     figureStruct.CurrentPositionX-_indexOfMassiveI,
                     figureStruct.CurrentPositionY-_indexOfMassiveI);
@@ -129,15 +129,7 @@ namespace Rescues
         {
             _pickedUpFigure = obj;
         }
-        
-        private void OnDropFigure(Figure obj)
-        {
-            if (_pickedUpFigure==null)
-                return;
-            //write to seq
-            
-        }
-        
+
         private void OnEndDragFigure(Figure obj)
         {
             bool needToStopIt;

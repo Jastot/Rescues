@@ -12,7 +12,6 @@ namespace Rescues
         private ChessPuzzleFiguresTypes _cellType = ChessPuzzleFiguresTypes.None;
         private int _idOfFigurePlacedOnCell = 0;
         private bool _isCellOccupied;
-        private Vector2 CorrectiveVector = new Vector2(1, 1);
         private Image _image;
         private Color _color;
         
@@ -21,6 +20,7 @@ namespace Rescues
         
         #endregion
 
+        
         #region UnityMethods
 
         private void Awake()
@@ -31,29 +31,14 @@ namespace Rescues
 
         #endregion
         
+        
         #region Methods
 
         public void SetCellOccupied(bool x)
         {
             _isCellOccupied = x;
-            if (_isCellOccupied)
-            {
-                _image.color = Color.red;
-            }
-            else
-            {
-                _image.color = _color;
-            }
         }
-        public bool GetCellOccupied()
-        {
-            return _isCellOccupied;
-        }
-        public ChessPuzzleFiguresTypes GetTypeOfCell()
-        {
-            return _cellType;
-        }
-        
+
         public void SetTypeOfCell(ChessPuzzleFiguresTypes type)
         {
             _cellType = type;
@@ -71,6 +56,5 @@ namespace Rescues
         }
 
         #endregion
-        
     }
 }

@@ -37,6 +37,7 @@ namespace Rescues
 
         #endregion
 
+        
         #region Methods
 
         public void Initiate()
