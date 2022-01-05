@@ -213,6 +213,18 @@ namespace Rescues
                             _cancelState += () => _isStateLocked = false;
                             puzzleObject.Puzzle.Finished += (Puzzle) => _cancelState.Invoke();
                         }
+
+                        var cameraTrigger = GetInteractableObject<CameraTrigger>(InteractableObjectType.CameraTrigger);
+                        if (cameraTrigger != null)
+                        {
+                            var focusID = Time.frameCount;
+                            _cameraServices.SetCameraFocusWithID(cameraTrigger.TargetPoint, focusID);
+                            TimeRemainingExtensions.AddTimeRemaining(new TimeRemaining(() =>
+                            {
+                                _cameraServices.ResetFocusWithID(focusID);
+                            },
+                            cameraTrigger.FocusTime));
+                        }
                     }
                     break;
 

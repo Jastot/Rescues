@@ -10,10 +10,13 @@ namespace Rescues
         private const int CAMERA_DEPTH = -45;
         public Camera CameraMain;
         public bool IsCameraFree = false;
+        public bool IsCameraFocused = false;
+        public Vector3 OverridePosition;
         private Vector3 _mouseOriginalClickPosition;
         private Vector3 _moveLimit;
         private float _cameraFreeMoveLimit;
         private int _cameraDragSpeed;
+        private int _currentFocusOverrideID = 0;
 
         #endregion
 
@@ -64,7 +67,33 @@ namespace Rescues
         {
             IsCameraFree = false;
         }    
-        
+
+        public void SetCameraFocus(Vector3 targetPoint)
+        {
+            IsCameraFocused = true;
+            OverridePosition = targetPoint;
+        }
+
+        public void ResetFocus()
+        {
+            IsCameraFocused = false;
+            _currentFocusOverrideID = 0;
+        }
+
+        public void SetCameraFocusWithID(Vector3 targetPoint, int id)
+        {
+            _currentFocusOverrideID = id;
+            SetCameraFocus(targetPoint);
+        }
+
+        public void ResetFocusWithID(int id)
+        {
+            if (id == _currentFocusOverrideID)
+            {
+                ResetFocus();
+            }
+        }
+
         #endregion
     }
 }
