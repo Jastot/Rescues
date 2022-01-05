@@ -261,77 +261,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents:
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7883021046808577619}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1271464431589895794}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - IsRepeating: 0
-    Time: 2
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &8132068309163158111
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -455,63 +390,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents:
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-          m_MethodName: CallDialogue
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: CellorDoorQuest
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-          m_MethodName: SetQuestion
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: "\u041F\u043E\u043F\u0430\u0441\u0442\u044C \u0432
-              \u043F\u043E\u0434\u0432\u0430\u043B"
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-          m_MethodName: SetValue
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 4
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-          m_MethodName: AddActiveGameObject
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 182850562994546640}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &5869637849212874610
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -553,8 +437,10 @@ MonoBehaviour:
   itemDependsEvents:
   - ItemData: {fileID: 11400000, guid: ed13e98ed621db241b8d45b2b83dc0d8, type: 2}
     Events:
-    - IsRepeating: 0
-      Time: 0
+    - _isInteractionLocked: 0
+      IsRepeating: 0
+      TimeBeforeInvoke: 0
+      _id: -1
       Event:
         m_PersistentCalls:
           m_Calls:
@@ -570,8 +456,13 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 1
             m_CallState: 2
-    - IsRepeating: 0
-      Time: 0
+      objectManipulations:
+        keys: 
+        values: []
+    - _isInteractionLocked: 0
+      IsRepeating: 0
+      TimeBeforeInvoke: 0
+      _id: -1
       Event:
         m_PersistentCalls:
           m_Calls:
@@ -599,6 +490,9 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+      objectManipulations:
+        keys: 
+        values: []
 --- !u!1 &1755213237983754616
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +691,71 @@ Transform:
   m_Father: {fileID: 6396838832741038242}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2496698148672375200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6927717322756806909}
+  - component: {fileID: 6729634910892578382}
+  - component: {fileID: 1884143660660591524}
+  m_Layer: 0
+  m_Name: TestCameraTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6927717322756806909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2496698148672375200}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.34, y: -15.43, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6396838832741038242}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &6729634910892578382
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2496698148672375200}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!114 &1884143660660591524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2496698148672375200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ce0dd6a73609548836f307d3cc448b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 9
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  TargetPoint: {x: 9.532316, y: 5.6819935, z: 0}
+  FocusTime: 3
 --- !u!1 &3143352265473106688
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,77 +852,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents:
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7883021046808577619}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 4512934652594739860}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - IsRepeating: 0
-    Time: 2
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &7218174430285529385
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1244,7 +1138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
-  _isInteractionLocked: 0
+  <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   ItemData: {fileID: 11400000, guid: ed13e98ed621db241b8d45b2b83dc0d8, type: 2}
   PickUpTime: 0.5
@@ -1260,31 +1154,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents:
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents:
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Rescues.DialogueBehaviour, Assembly-CSharp
-          m_MethodName: CallDialogue
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: StickDialogue
-            m_BoolArgument: 0
-          m_CallState: 2
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!1 &6099136941709437242
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,7 +1233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 6
-  _isInteractionLocked: 0
+  <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   StandWindow: {fileID: 4512934652594739860}
 --- !u!114 &8363147895211623692
@@ -1653,7 +1528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 6
-  _isInteractionLocked: 0
+  <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   StandWindow: {fileID: 5744476930202147897}
 --- !u!114 &5680359161039154596
@@ -2083,7 +1958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 2
-  _isInteractionLocked: 0
+  <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   ItemData: {fileID: 11400000, guid: ed13e98ed621db241b8d45b2b83dc0d8, type: 2}
   PickUpTime: 0.5
@@ -2099,14 +1974,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents:
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!1 &8298837107780560398
 GameObject:
   m_ObjectHideFlags: 0
@@ -2204,9 +2077,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &1972391280363948308
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2329,77 +2205,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents:
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7883021046808577619}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5744476930202147897}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - IsRepeating: 0
-    Time: 2
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - IsRepeating: 0
-    Time: 0
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &7889633565506763923
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2472,6 +2283,7 @@ Transform:
   - {fileID: 3319289005060329292}
   - {fileID: 7909661503559930095}
   - {fileID: 8656292303573335483}
+  - {fileID: 6927717322756806909}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2615,7 +2427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 6
-  _isInteractionLocked: 0
+  <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: 
   StandWindow: {fileID: 1271464431589895794}
 --- !u!114 &5882156966435119747
@@ -2737,9 +2549,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f5b25dccd8ac546be22b5e20bfdd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onTriggerEnterEvents: []
-  _onTriggerExitEvents: []
-  _onButtonInTriggerEvents: []
+  _type: 8
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents: []
 --- !u!61 &3686189452993432289
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3106,6 +2921,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01243d5917f8dd48afecb2b427b1ce6, type: 3}
+--- !u!224 &3829444046930480191 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3982195482189203848, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 173233155326281143}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2240437287109479503 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2121427922097555960, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 173233155326281143}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1271464431589895794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1423793387978271685, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 173233155326281143}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3565060634484721239 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3683611760846947296, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 173233155326281143}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1781501982319305941 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1936081914070884706, guid: f01243d5917f8dd48afecb2b427b1ce6,
@@ -3136,42 +2987,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 173233155326281143}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3565060634484721239 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3683611760846947296, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 173233155326281143}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1271464431589895794 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1423793387978271685, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 173233155326281143}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &3829444046930480191 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3982195482189203848, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 173233155326281143}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2240437287109479503 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2121427922097555960, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 173233155326281143}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &315306082885137248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3592,12 +3407,6 @@ Transform:
 --- !u!58 &7380231874133554053 stripped
 CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 4826721140499636313, guid: a92e6ec87f5ad4c038229934453c278f,
-    type: 3}
-  m_PrefabInstance: {fileID: 2634654729353270236}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &182850562994546640 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
     type: 3}
   m_PrefabInstance: {fileID: 2634654729353270236}
   m_PrefabAsset: {fileID: 0}
@@ -4903,6 +4712,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01243d5917f8dd48afecb2b427b1ce6, type: 3}
+--- !u!224 &7726407222125870708 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3982195482189203848, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6663691237479856124}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5744476930202147897 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1423793387978271685, guid: f01243d5917f8dd48afecb2b427b1ce6,
@@ -4957,9 +4772,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &7726407222125870708 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3982195482189203848, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 6663691237479856124}
-  m_PrefabAsset: {fileID: 0}
