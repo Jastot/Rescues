@@ -35,7 +35,7 @@ namespace Rescues
         {
             if (OnFilterHandler?.Invoke(other) == true)
             {
-                OnTriggerEnterHandler.Invoke(this);
+                OnTriggerEnterHandler?.Invoke(this);
             }
         }
 
@@ -43,7 +43,7 @@ namespace Rescues
         {
             if (OnFilterHandler?.Invoke(other) == true)
             {
-                OnTriggerExitHandler.Invoke(this);
+                OnTriggerExitHandler?.Invoke(this);
             }
         }
 

@@ -8,6 +8,7 @@
         Canvas    = 3,
         Levels    = 4,
         Puzzles = 5,
-        DialoguesComponents = 6
+        DialoguesComponents = 6,
+        BasicWritePattern = 7
     }
 }
