@@ -13,7 +13,7 @@
             Add(new MainPuzzleController(context, services));
             Add(new HidingPlaceController(context, services));
             Add(new EventSystemController(context));
-            Add(new DialogueUIController(context, services));
+            Add(new DialogueUIController(context));
             Add(new InputController(context, services));
             Add(new InventoryController(context));
             Add(new NotepadController(context));
