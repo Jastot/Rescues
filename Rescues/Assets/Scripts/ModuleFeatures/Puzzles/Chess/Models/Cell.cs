@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace Rescues
 {
@@ -10,84 +11,50 @@ namespace Rescues
 
         private ChessPuzzleFiguresTypes _cellType = ChessPuzzleFiguresTypes.None;
         private int _idOfFigurePlacedOnCell = 0;
-        private Collider2D _currentCollider;
-        private Figure _currentFigure;
-
-        private Vector2 CorrectiveVector = new Vector2(1, 1);
-        //небольшой костыль. хотя в теории норм решение,но...ну такое,но хз как заменить нормально.
-        private Figure _ifBlockedFigure;
-
+        private bool _isCellOccupied;
+        private Image _image;
+        private Color _color;
+        
         public int IndexX;
         public int IndexY;
         
         #endregion
 
-        #region UnityMethods
         
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            //нет отключения игрока.
-            if (!other.CompareTag("Player"))
-            {
-                if (_cellType == ChessPuzzleFiguresTypes.None&&
-                    (_idOfFigurePlacedOnCell==0||_idOfFigurePlacedOnCell==other.gameObject.GetInstanceID()))
-                {
-                    _currentFigure = other.gameObject.GetComponent<Figure>();
-                    _currentFigure.SetFigureCurrentPosition(IndexX,
-                        IndexY);
-                    _currentFigure.OnPosition += PlaceAFigureInCell;
-                    _currentCollider = other;
-                    _idOfFigurePlacedOnCell = other.gameObject.GetInstanceID();
-                }
-                else
-                {
-                    _ifBlockedFigure = other.gameObject.GetComponent<Figure>();
-                    _ifBlockedFigure.OnPosition += Back;
-                }
-            }
-        }
+        #region UnityMethods
 
-        private void OnTriggerExit2D(Collider2D other)
+        private void Awake()
         {
-            if (!other.CompareTag("Player"))
-            {
-                if (_idOfFigurePlacedOnCell==0||_idOfFigurePlacedOnCell==other.gameObject.GetInstanceID())
-                {
-                    _cellType = ChessPuzzleFiguresTypes.None;
-                    _idOfFigurePlacedOnCell = 0;
-                    other.gameObject.GetComponent<Figure>().OnPosition -= PlaceAFigureInCell;
-                }
-            }
+            _image = GetComponent<Image>();
+            _color = _image.color;
         }
 
         #endregion
-
+        
+        
         #region Methods
 
-        public ChessPuzzleFiguresTypes GetTypeOfCell()
+        public void SetCellOccupied(bool x)
         {
-            return _cellType;
+            _isCellOccupied = x;
         }
-        
+
         public void SetTypeOfCell(ChessPuzzleFiguresTypes type)
         {
             _cellType = type;
         }
 
-        private void Back(FigureStruct _figureStruct)
+        public int CalculateZone(float pointX, float pointY)
         {
-            _ifBlockedFigure.gameObject.transform.localPosition =
-                _ifBlockedFigure.GetFigureCurrentPosition()-CorrectiveVector;
-            _ifBlockedFigure.OnPosition -= Back;
+            if ((pointX >= IndexX-1.5f && pointX <= IndexX-0.5f) && (pointY >= IndexY-1.5f && pointY <= IndexY-0.5f))
+                if (!_isCellOccupied)
+                    return 0;
+                else
+                   return 1;
+            else
+                return 2;
         }
-        private void PlaceAFigureInCell(FigureStruct _figureStruct)
-        {
-            var gm = _currentCollider.gameObject;
-            gm.transform.localPosition = this.gameObject.transform.localPosition;
-            SetTypeOfCell(_currentFigure.GetType());
-        }
+
         #endregion
-        
-        
     }
 }

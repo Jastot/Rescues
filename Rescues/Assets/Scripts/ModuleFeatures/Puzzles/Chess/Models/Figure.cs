@@ -1,69 +1,76 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Rescues
 {
-    public class Figure: MonoBehaviour
+    public class Figure: MonoBehaviour,IBeginDragHandler, IEndDragHandler, IDragHandler
     {
         #region Fields
 
         [SerializeField] private FigureStruct _figureStruct;
-        public event Action<FigureStruct> OnPosition;
+
+        private Vector2 _inWhichCellItIs;
+        public event Action<Figure> OnBeginDragEvent;
+        public event Action<Figure> OnEndDragEvent;
+        public event Action<Figure> OnDragEvent;
 
         #endregion
-
-        #region UnityMethods
-
-        private void OnMouseDrag()
-        {
-            var cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            MoveFigure(cursorPosition);
-        }
-
-        private void OnMouseUp()
-        {
-            OnPosition.Invoke(_figureStruct);
-        }
         
-        #endregion
 
         #region Methods
 
-        public void MoveFigure(Vector2 newPosition)
+        public void OnDrag(PointerEventData eventData)
         {
-            transform.position = newPosition;
+            OnDragEvent?.Invoke(this);
         }
 
-        public new ChessPuzzleFiguresTypes GetType()
+        public void OnEndDrag(PointerEventData eventData)
         {
-            return _figureStruct.IndexOfFigure;
+            OnEndDragEvent?.Invoke(this);
         }
 
-        public void SetFigureCurrentPosition(
-            int CurrentPositionX,
-            int CurrentPositionY)
+        public void OnBeginDrag(PointerEventData eventData)
         {
-            _figureStruct.CurrentPositionX = CurrentPositionX;
-            _figureStruct.CurrentPositionY = CurrentPositionY;
+            OnBeginDragEvent?.Invoke(this);
         }
 
-        public Vector2 GetFigureCurrentPosition()
+        public void SetCell(int x, int y)
         {
-            return new Vector2(_figureStruct.CurrentPositionX, _figureStruct.CurrentPositionY);
+            _inWhichCellItIs = new Vector2(x, y);
+        }
+        public Vector2 GetCell()
+        {
+            return _inWhichCellItIs;
+        }
+
+        public FigureStruct GetFigureStruct()
+        {
+            return _figureStruct;
+        }
+        
+        public void SetFigurePosition(int x,int y)
+        {
+            gameObject.transform.localPosition = new Vector3(x, y, 0);
+            _figureStruct.CurrentPositionX = x+1;
+            _figureStruct.CurrentPositionY = y+1;
         }
         
         public void SetFigureStartInfo(
             int ID,
          int CurrentPositionX,
-         int CurrentPositionY
+         int CurrentPositionY,
+            int EndPositionX,
+            int EndPositionY
         )
         {
             _figureStruct.UnicSequenceID = ID;
             _figureStruct.CurrentPositionX = CurrentPositionX;
             _figureStruct.CurrentPositionY = CurrentPositionY;
-            _figureStruct.EndPositionX = CurrentPositionX;
-            _figureStruct.EndPositionY = CurrentPositionY;
+            _figureStruct.EndPositionX = EndPositionX;
+            _figureStruct.EndPositionY = EndPositionY;
         }
+        
         #endregion
 
     }
