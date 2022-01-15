@@ -10,6 +10,7 @@
         Puzzle = 5,
         Stand = 6,
         Dialogue = 7,
-        EventSystem = 8
+        EventSystem = 8,
+        CameraTrigger = 9
     }
 }

@@ -50,3 +50,6 @@ TagManager:
   - name: Character
     uniqueID: 293946615
     locked: 0
+  - name: Bootscreen
+    uniqueID: 2013923905
+    locked: 0
