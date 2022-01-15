@@ -6,8 +6,10 @@ namespace Rescues
     {
         #region Fields
 
-        public Vector3 TargetPoint;
-        [Min(1)] public float FocusTime;
+        public Vector2 TargetPoint;
+        public bool IsReturningOnTimer;
+        public float FocusTime;
+        private CameraServices _cameraServices;
 
         #endregion
 
@@ -17,6 +19,22 @@ namespace Rescues
         private void OnValidate()
         {
             Type = InteractableObjectType.CameraTrigger;
+        }
+
+        #endregion
+
+
+        #region Methods
+
+        public void Init(CameraServices cameraServices)
+        {
+            _cameraServices = cameraServices;
+        }
+
+
+        public void ResetCamera()
+        {
+            _cameraServices?.ResetFocus();
         }
 
         #endregion

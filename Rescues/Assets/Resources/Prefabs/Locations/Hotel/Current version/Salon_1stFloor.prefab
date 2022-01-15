@@ -754,7 +754,8 @@ MonoBehaviour:
   _type: 9
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: -1
-  TargetPoint: {x: 9.532316, y: 5.6819935, z: 0}
+  TargetPoint: {x: 9.532316, y: 5.6819935}
+  IsReturningOnTimer: 1
   FocusTime: 3
 --- !u!1 &3143352265473106688
 GameObject:

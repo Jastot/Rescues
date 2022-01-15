@@ -219,11 +219,15 @@ namespace Rescues
                         {
                             var focusID = Time.frameCount;
                             _cameraServices.SetCameraFocusWithID(cameraTrigger.TargetPoint, focusID);
-                            TimeRemainingExtensions.AddTimeRemaining(new TimeRemaining(() =>
+
+                            if (cameraTrigger.IsReturningOnTimer)
                             {
-                                _cameraServices.ResetFocusWithID(focusID);
-                            },
-                            cameraTrigger.FocusTime));
+                                TimeRemainingExtensions.AddTimeRemaining(new TimeRemaining(() =>
+                                {
+                                    _cameraServices.ResetFocusWithID(focusID);
+                                },
+                                cameraTrigger.FocusTime));
+                            }
                         }
                     }
                     break;

@@ -86,10 +86,13 @@ namespace Rescues
             var camTriggers = _context.GetTriggers(InteractableObjectType.CameraTrigger);
             foreach (var trigger in camTriggers)
             {
-                var doorTeleporterBehaviour = trigger as InteractableObjectBehavior;
-                doorTeleporterBehaviour.OnFilterHandler += OnFilterHandler;
-                doorTeleporterBehaviour.OnTriggerEnterHandler += OnTriggerEnterHandler;
-                doorTeleporterBehaviour.OnTriggerExitHandler += OnTriggerExitHandler;
+                var behavior = trigger as InteractableObjectBehavior;
+                behavior.OnFilterHandler += OnFilterHandler;
+                behavior.OnTriggerEnterHandler += OnTriggerEnterHandler;
+                behavior.OnTriggerExitHandler += OnTriggerExitHandler;
+
+                var cameraTrigger = trigger as CameraTrigger;
+                cameraTrigger.Init(_cameraServices);
             }
         }
 
@@ -103,10 +106,10 @@ namespace Rescues
             var camTriggers = _context.GetTriggers(InteractableObjectType.CameraTrigger);
             foreach (var trigger in camTriggers)
             {
-                var doorTeleporterBehaviour = trigger as InteractableObjectBehavior;
-                doorTeleporterBehaviour.OnFilterHandler -= OnFilterHandler;
-                doorTeleporterBehaviour.OnTriggerEnterHandler -= OnTriggerEnterHandler;
-                doorTeleporterBehaviour.OnTriggerExitHandler -= OnTriggerExitHandler;
+                var behavior = trigger as InteractableObjectBehavior;
+                behavior.OnFilterHandler -= OnFilterHandler;
+                behavior.OnTriggerEnterHandler -= OnTriggerEnterHandler;
+                behavior.OnTriggerExitHandler -= OnTriggerExitHandler;
             }
         }
 

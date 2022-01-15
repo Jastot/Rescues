@@ -11,6 +11,7 @@ namespace Rescues
 
         CameraTrigger _cameraTrigger;
         SerializedProperty _targetPoint;
+        SerializedProperty _isReturningOnTimer;
         SerializedProperty _focusTime;
 
         #endregion
@@ -22,6 +23,7 @@ namespace Rescues
         {
             _cameraTrigger = (CameraTrigger)target;
             _targetPoint = serializedObject.FindProperty("TargetPoint");
+            _isReturningOnTimer = serializedObject.FindProperty("IsReturningOnTimer");
             _focusTime = serializedObject.FindProperty("FocusTime");
         }
 
@@ -44,6 +46,7 @@ namespace Rescues
             serializedObject.Update();
             
             EditorGUILayout.PropertyField(_targetPoint);
+            EditorGUILayout.PropertyField(_isReturningOnTimer);
             EditorGUILayout.PropertyField(_focusTime);
 
             serializedObject.ApplyModifiedProperties();
