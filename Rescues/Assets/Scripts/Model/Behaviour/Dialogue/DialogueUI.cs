@@ -17,10 +17,6 @@ namespace Rescues
         public Color npcLabelColor;
         public Image npcImage;
         public Color npcImageNormalColor;
-        [Range(1, 10)]
-        public int writeStep;
-        [Range(1, 10)]
-        public int writeSpeed;
         public float timeBeforeNextNode;
         public Image npcBackGround;
 
@@ -36,6 +32,7 @@ namespace Rescues
 
         [Space(10)]
         [Header("Other")]
+        public WritePattern writePattern;
         public GameObject dialogContainer;
         public Image background;
         public NodeSoundContainer nodeSoundContainer;

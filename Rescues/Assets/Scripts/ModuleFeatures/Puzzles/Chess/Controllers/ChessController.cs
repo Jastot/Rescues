@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -7,13 +8,17 @@ namespace Rescues
     {
         #region Fields
 
-        private string Sequence;
+        private List<string> Sequence;
         private bool firstActive=true;
+        
         #endregion
         
+        
         #region IPuzzleController
+        
         public void Initialize(Puzzle puzzle)
         {
+            Sequence = new List<string>();
             puzzle.Activated += Activate;
             puzzle.Closed += Close;
             puzzle.Finished += Finish;
@@ -30,39 +35,61 @@ namespace Rescues
             puzzle.gameObject.SetActive(true);
         }
 
-        public void Close(Puzzle puzzle)
-        {
-            
-        }
+        public void Close(Puzzle puzzle) { }
 
         public void CheckComplete(Puzzle puzzle)
         {
             var specificPuzzle = puzzle as ChessPuzzle;
             if (firstActive)
             {
-                Sequence = specificPuzzle.ChessBoard._chessPuzzleData.Sequence;
-                firstActive=false;
+                Sequence.AddRange(specificPuzzle.ChessBoard._chessPuzzleData.Sequence.Split(' '));
+                firstActive = false;
             }
-            var playersSequence = specificPuzzle._playersSequence;//.
-            //     Remove(specificPuzzle._playersSequence.Length-1).Split(' ');
-            if (specificPuzzle != null 
-               // &&  Sequence.Take(Sequence.Length).SequenceEqual(playersSequence))
-               && playersSequence.Contains(Sequence))
-                Finish(specificPuzzle);
+
+            var playersSequence = specificPuzzle._playersSequence; //.
+            if (specificPuzzle != null)
+                if (playersSequence.Count >= Sequence.Count)
+                {
+                    var check = CheckSequence(playersSequence);
+                    if (check)
+                    {
+                        puzzle.Finish();
+                    }
+                }
         }
 
-        public void Finish(Puzzle puzzle)
+        private bool CheckSequence(List<string> playersSequence)
         {
-            puzzle.Finish();
+            var isOk = true;
+            for (int j = Sequence.Count; j > 0; j--)
+            {
+                if (Sequence[j-1]!=playersSequence[playersSequence.Count -(Sequence.Count- j)-1])
+                {
+                    isOk = false;
+                    break;
+                }
+            }
+            return isOk;
         }
+        
+        public void Finish(Puzzle puzzle){ }
 
         public void ResetValues(Puzzle puzzle)
         {
             var specificPuzzle = puzzle as ChessPuzzle;
             if (specificPuzzle != null)
             {
+                specificPuzzle.CleanData();
+                specificPuzzle.Initiate();
                 specificPuzzle.ChessBoard.SetNullableBoard();
-                specificPuzzle._playersSequence = "";
+                var board = specificPuzzle.ChessBoard.GetBoard();
+                for (int i = 0; i <= 7; i++)
+                {
+                    for (int j = 0; j <= 7; j++)
+                    {
+                        board[i, j].SetCellOccupied(false);
+                    }
+                }
                 specificPuzzle.ChessBoard.SetPuzzledFigures();
             }
         }

@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using VIDE_Data;
 
@@ -14,15 +15,12 @@ namespace Rescues
         private const string OVERRIDE_COMMAND = "override";
         private const string GOTO_COMMAND = "goto";
         private const float DIMMING_FACTOR = 0.7f;
+        private const int MIN_LENGTH_STRING_TO_CUT = 2;
 
         private readonly GameContext _context;
-        private readonly UnityTimeServices _timeServices;
 
         private DialogueUI _dialogueUI;
-        private float _timeForWriteChar;
         private float _timeBeforeNextNode;
-        private int _writeStep;
-        private List<ITimeRemaining> _sequence;
         private List<ITimeRemaining> _goNextTimeRemaining;
         private List<IInteractable> _items;
         private List<IInteractable> _dialogues;
@@ -32,10 +30,9 @@ namespace Rescues
 
         #region ClassLifeCycles
 
-        public DialogueUIController(GameContext context, Services services)
+        public DialogueUIController(GameContext context)
         {
             _context = context;
-            _timeServices = services.UnityTimeServices;
         }
 
         #endregion
@@ -59,11 +56,8 @@ namespace Rescues
             _dialogueUI.dialogContainer.SetActive(false);
             _dialogueUI.npcImage.color = _dialogueUI.npcImageNormalColor;
             _dialogueUI.playerImage.color = _dialogueUI.playerImageNormalColor;
-            //Возможно расширение возможности и добавление команды в ExtraVars для дополнительного вызова
+            //Возможно расширение возможности и добавление в качестве команды в ExtraVars
             SetNameColor();
-            _timeForWriteChar = _timeServices.DeltaTime() * 10 / _dialogueUI.writeSpeed;
-            _writeStep = _dialogueUI.writeStep;
-            _sequence = new List<ITimeRemaining>();
             _context.dialogueUIController = this;
 
             VD.LoadDialogues();
@@ -95,8 +89,7 @@ namespace Rescues
         {
             if (VD.isActive)
             {
-                if (Input.GetButtonUp("Fire1") && _sequence.ContainsSequentialTimeRemaining() &&
-                    _dialogueUI.npcText.text != "")
+                if (Input.GetButtonUp("Fire1") && _dialogueUI.npcText.text.Length > MIN_LENGTH_STRING_TO_CUT)
                 {
                     CutTextAnimation();
                 }
@@ -202,7 +195,7 @@ namespace Rescues
                     choise.Disable();
                 }
 
-                DrawText(data.comments[data.commentIndex], _timeForWriteChar);
+                DrawText(data.comments[data.commentIndex], _dialogueUI.npcText);
                 AddAutoSkip();
             }
         }
@@ -225,7 +218,7 @@ namespace Rescues
         {
             if (VD.nodeData.isPlayer == false)
             {
-                _sequence.RemoveSequentialTimeRemaining();
+                _dialogueUI.writePattern.ClearText(_dialogueUI.npcText);
                 _dialogueUI.npcText.text = VD.nodeData.comments[VD.nodeData.commentIndex];
             }
         }
@@ -298,7 +291,7 @@ namespace Rescues
                 string noCommand = DialogueCommandValue.Command[DialogueCommands.No];
                 foreach (ItemSlot itemSlot in _context.inventory.itemSlots)
                 {
-                    if (itemSlot.Item?.itemID== data.extraVars[command].ToString())
+                    if (itemSlot.Item?.itemID == data.extraVars[command].ToString())
                     {
                         isItemContains = true;
                         break;
@@ -334,7 +327,7 @@ namespace Rescues
                     {
                         int.TryParse(data[1], out int nodeID);
                         _timeBeforeNextNode = _dialogueUI.timeBeforeNextNode;
-                        foreach (var node in VD.saved[VD.currentDiag].playerNodes)
+                        foreach (DialogueNode node in VD.saved[VD.currentDiag].playerNodes)
                         {
                             if (node.ID == nodeID && node.isPlayer)
                             {
@@ -507,30 +500,10 @@ namespace Rescues
             }
         }
 
-        private void DrawText(string text, float time)
+        private void DrawText(string inputText, TextMeshProUGUI outputText)
         {
-            _sequence.Clear();
-            _dialogueUI.npcText.text = "";
-            int start = 0;
-            int tempStep = _writeStep;
-            while (start < text.Length)
-            {
-                if ((start + tempStep) >= text.Length)
-                {
-                    tempStep = text.Length - start;
-                }
-
-                string tempSubstring = text.Substring(start, tempStep);
-                _sequence.Add(new TimeRemaining(() =>
-                {
-                    _dialogueUI.npcText.text += tempSubstring;
-                },
-                time));
-
-                start += tempStep;
-            }
-
-            _sequence.AddSequentialTimeRemaining();
+            _dialogueUI.writePattern.ClearText(outputText);
+            _dialogueUI.writePattern.DrawText(inputText, outputText);
         }
 
         private void AddAutoSkip()

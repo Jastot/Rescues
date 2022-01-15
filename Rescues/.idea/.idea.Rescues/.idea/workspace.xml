@@ -70,19 +70,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34dae543-2f34-47cc-94c2-3245ae1fc3b4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SavingPath/111.def" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ByteConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ByteConverter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/FileContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/FileContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ItemListData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/ItemListData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/LevelProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/LevelProgress.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PlayersProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PlayersProgress.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PuzzleListData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/PuzzleListData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/QuestListData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/QuestListData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/Serialization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Model/Serialization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Controllers/LevelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Controllers/LevelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/SaveLoadingPanelFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/SaveLoadingPanelFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/ChessController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/ChessController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/FigureCreationFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/FigureCreationFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Cell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Cell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessBoard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessPuzzle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessPuzzle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Figure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Figure.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +123,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IInteractable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Interface/IGate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../UnityNew/2020.2.1f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IExecuteController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enum/InteractableObjectType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/ITearDownController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -151,11 +147,13 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Helper/Manageres/LayerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/GameControllers/Behaviours/GameController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/GameControllers/MainLateControllers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42B54FCB-6FD8-447F-B109-F4CB5A51A068/60/9ec06b08/IDragHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Helper/CustomDebug.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/GameControllers/MainControllers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/3a/9d1ada7d/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/GameControllers/GameStateController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/GameControllers/GameSystemsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E414E10B-FE5F-4572-9FF1-22F3359DE21B/d0/d276e224/Debug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/Behaviour/TrapBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Model/Behaviour/WayPointBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/TimeRemaining/ITimeRemaining.cs" root0="FORCE_HIGHLIGHTING" />
@@ -180,14 +178,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/NPC/Models/NPCStruct.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/NPC/Models/NPCWayPoints.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/NPC/Models/BaseNPC.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/NPC/WhiteLady/Models/WhiteLady.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/NPC/Controllers/NPCCatch.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/NPC/Controllers/NPCLevelController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/NPC/Controllers/NPCMoveController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/NPC/Controllers/NPCPatrolling.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/NPC/Controllers/NPCUsingCurways.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/NPC/Controllers/NPCVisionController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enum/NPCState.cs" />
@@ -231,6 +221,14 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/Screen/SaveLoadMenu/SaveLoadingPanelFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Controllers/LevelController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Inventory/InventoryController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Interface/IFigureFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/FigureCreationFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Cell.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessBoard.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Figure.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessPuzzle.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/ChessController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1V9bGpai1gZ6Kn1FGeYyMAj5KRa" />
@@ -244,7 +242,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.29206565" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.29239765" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
@@ -270,10 +268,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14176">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="14176" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -336,6 +334,9 @@
       <workItem from="1636114161713" duration="10261000" />
       <workItem from="1636358771085" duration="2409000" />
       <workItem from="1636361805591" duration="298000" />
+      <workItem from="1640160970736" duration="20020000" />
+      <workItem from="1640206714581" duration="2784000" />
+      <workItem from="1640265685849" duration="2912000" />
     </task>
     <servers />
   </component>
