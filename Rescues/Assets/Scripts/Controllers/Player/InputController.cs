@@ -208,9 +208,26 @@ namespace Rescues
                         if (puzzleObject != null && !puzzleObject.Puzzle.IsFinished && !puzzleObject.IsInteractionLocked)
                         {
                             puzzleObject.Puzzle.Activate();
-                            //Intercept control
                             LockState();
                             _cancelState += puzzleObject.Puzzle.Close;
+                            _cancelState += () => _isStateLocked = false;
+                            puzzleObject.Puzzle.Finished += (Puzzle) => _cancelState.Invoke();
+                        }
+
+                        var cameraTrigger = GetInteractableObject<CameraTrigger>(InteractableObjectType.CameraTrigger);
+                        if (cameraTrigger != null)
+                        {
+                            var focusID = Time.frameCount;
+                            _cameraServices.SetCameraFocusWithID(cameraTrigger.TargetPoint, focusID);
+
+                            if (cameraTrigger.IsReturningOnTimer)
+                            {
+                                TimeRemainingExtensions.AddTimeRemaining(new TimeRemaining(() =>
+                                {
+                                    _cameraServices.ResetFocusWithID(focusID);
+                                },
+                                cameraTrigger.FocusTime));
+                            }
                         }
                     }
                     break;

@@ -14,7 +14,8 @@ namespace Rescues
             { GameObjectType.Canvas, "Prefabs/UI/Prefabs_UI_Canvas" },
             { GameObjectType.Levels, "Data/Levels" },
             { GameObjectType.Puzzles, "Prefabs/Puzzles/"},
-            { GameObjectType.DialoguesComponents, "Prefabs/DialoguesComponents/"}
+            { GameObjectType.DialoguesComponents, "Prefabs/DialoguesComponents/"},
+            { GameObjectType.BasicWritePattern, "Data/WritePatterns/BasicWrite"},
         };
 
         public static readonly Dictionary<ScreenType, string> Screens = new Dictionary<ScreenType, string>()

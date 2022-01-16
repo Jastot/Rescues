@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 namespace Rescues
 {
-    public class ItemSlot : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler, IPointerEnterHandler, IPointerExitHandler
+    public class ItemSlot : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler,
+        IPointerEnterHandler, IPointerExitHandler
     {
         #region Fields
 
