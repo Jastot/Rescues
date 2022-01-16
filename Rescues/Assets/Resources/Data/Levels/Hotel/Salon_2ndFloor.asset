@@ -18,12 +18,14 @@ MonoBehaviour:
   _backgroundColor: {r: 0, g: 0, b: 0, a: 0}
   _cameraData:
     CameraMode: 2
-    CameraSize: 12
-    Position_Y_Offset: 8
-    Position_X_Offset: 0
-    MoveLeftXLimit: -18
-    MoveRightXLimit: 18.5
+    CameraSize: 16
     CameraFreeMoveLimit: 50
     CameraDragSpeed: 50
+    Position_Y_Offset: 6
+    Position_X_Offset: 11
+    MoveLeftXLimit: -18
+    MoveRightXLimit: 18.5
+    CameraAccelerateStep: 20
+    DeadZone: 2
   _customBootScreen: {fileID: 5293078557666880198, guid: 350dbdcc61ef74de087b99c5df45793d,
     type: 3}
