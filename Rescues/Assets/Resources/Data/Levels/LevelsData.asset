@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LevelsData
   m_EditorClassIdentifier: 
   _defaultLevelName: Hotel
-  _defaultLocationName: Reception
+  _defaultLocationName: Light_Reception
   _defaultGateId: 1
   _loadFromLastLevel: 0
   _lastLevelName: Hotel

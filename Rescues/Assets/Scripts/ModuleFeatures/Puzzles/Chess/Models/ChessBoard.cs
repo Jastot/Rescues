@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Rescues
@@ -11,14 +12,16 @@ namespace Rescues
         [SerializeField] private GameObject[] _availableFigures;
         [SerializeField] private Transform _parentBoard;
         private Dictionary<ChessPuzzleFiguresTypes, GameObject> _availablePrefabsDictionary;
-        private Cell[,] Board = new Cell[9, 9];
+        private Cell[,] _board;
         private FigureCreationFactory _figureCreationFactory;
         private List<Figure> _figureStructs;
-        private const int _indexOfMassive = 1;
+        private Figure _pickedUpFigure;
+        private const int _indexOfMassiveI = 1;
         public event Action Loaded;
         public event Action<FigureStruct> FigurePlacedOnNewPosition;
         
         public ChessPuzzleData _chessPuzzleData;
+        
         #endregion
         
         #region UnityMethods
@@ -37,9 +40,9 @@ namespace Rescues
 
         #endregion
 
+        
         #region Methods
         
-        // делаю велосипед.
         private void MakeADictionary()
         {
             var index = 1;
@@ -54,41 +57,43 @@ namespace Rescues
         {
             #region Set all Cells NONE
 
-            for (int i = 1; i <= 8; i++)
+            for (int i = 0; i <= 7; i++)
             {
-                for (int j = 1; j <= 8; j++)
+                for (int j = 0; j <= 7; j++)
                 {
-                    //TODO: очистка стола и очистка логики
-                    Board[i,j].SetTypeOfCell(ChessPuzzleFiguresTypes.None);
+                    _board[i,j].SetTypeOfCell(ChessPuzzleFiguresTypes.None);
                 }
             }
 
             #endregion
 
+            
             #region Clean a board and logic
 
             foreach (var figure in _figureStructs)
             {
-                figure.OnPosition -= newPosAlert;
+                figure.OnDragEvent -= OnDragFigure;
+                figure.OnBeginDragEvent -= OnBeginDragFigure;
+                figure.OnEndDragEvent -= OnEndDragFigure;
                 Destroy(figure.gameObject);
             }
-
-            if (_figureStructs.Count != 0)
-                _figureStructs.RemoveRange(0, _figureStructs.Count);
+            _figureStructs.Clear();
+            
             #endregion
         }
         
         private void BoardInitialization()
         {
             var realBoard = gameObject.GetComponentsInChildren<Cell>();
-            for (int i = 1; i <= 8; i++)
+            _board = new Cell[8, 8];
+            for (int i = 0; i <= 7; i++)
             {
-                for (int j = 1; j <= 8; j++)
+                for (int j = 0; j <= 7; j++)
                 {
-                    var indexOfCell = (i - _indexOfMassive) * 8 + (j - _indexOfMassive);
-                    Board[i,j] = realBoard[indexOfCell];
-                    realBoard[indexOfCell].IndexX = j;
-                    realBoard[indexOfCell].IndexY = i;
+                    var indexOfCell = i * 8 + j;
+                    _board[j,i] = realBoard[indexOfCell];
+                    realBoard[indexOfCell].IndexX = j+_indexOfMassiveI;
+                    realBoard[indexOfCell].IndexY = i+_indexOfMassiveI;
                 }
             }
         }
@@ -97,21 +102,85 @@ namespace Rescues
         {
             foreach (var figureStruct in _chessPuzzleData.ElemntsOnBoard)
             {
-                Board[figureStruct.CurrentPositionX, figureStruct.CurrentPositionY].
+                _board[figureStruct.CurrentPositionX-_indexOfMassiveI,figureStruct.CurrentPositionY-_indexOfMassiveI].
                     SetTypeOfCell(figureStruct.IndexOfFigure);
-                
+                _board[figureStruct.CurrentPositionX - _indexOfMassiveI, figureStruct.CurrentPositionY - _indexOfMassiveI]
+                    .SetCellOccupied(true);
                 var currentFigure = _figureCreationFactory.CreateAFigure(figureStruct.UnicSequenceID,figureStruct.IndexOfFigure,
-                     new Vector2(figureStruct.CurrentPositionX-_indexOfMassive, figureStruct.CurrentPositionY-_indexOfMassive));
-                currentFigure.OnPosition += newPosAlert;
+                     figureStruct.CurrentPositionX-_indexOfMassiveI, 
+                     figureStruct.CurrentPositionY-_indexOfMassiveI,
+                     figureStruct.EndPositionX-_indexOfMassiveI,
+                     figureStruct.EndPositionY-_indexOfMassiveI);
+                currentFigure.OnDragEvent += OnDragFigure;
+                currentFigure.OnBeginDragEvent += OnBeginDragFigure;
+                currentFigure.OnEndDragEvent += OnEndDragFigure;
+                currentFigure.SetCell(
+                    figureStruct.CurrentPositionX-_indexOfMassiveI,
+                    figureStruct.CurrentPositionY-_indexOfMassiveI);
                 _figureStructs.Add(currentFigure);
             }
         }
-
-        private void newPosAlert(FigureStruct _figureStruct)
+        
+        private void OnDragFigure(Figure obj)
         {
-            FigurePlacedOnNewPosition.Invoke(_figureStruct);
+            obj.gameObject.transform.position = Input.mousePosition;
+        }
+        private void OnBeginDragFigure(Figure obj)
+        {
+            _pickedUpFigure = obj;
         }
 
+        private void OnEndDragFigure(Figure obj)
+        {
+            bool needToStopIt;
+            Vector2 cellsCoordinates;
+            Cell back;
+            for (int i = 0; i <= 7; i++)
+            {
+                for (int j = 0; j <= 7; j++)
+                {
+                    needToStopIt = false;
+                    switch (_board[i,j].CalculateZone(
+                            obj.gameObject.transform.localPosition.x,
+                            obj.gameObject.transform.localPosition.y))
+                        {
+                            case 0:
+                                obj.SetFigurePosition(
+                                    _board[i,j].IndexX-_indexOfMassiveI,
+                                    _board[i,j].IndexY-_indexOfMassiveI);
+                                cellsCoordinates = obj.GetCell();
+                                var from = _board[Convert.ToInt32(cellsCoordinates.x),
+                                    Convert.ToInt32(cellsCoordinates.y)];
+                                from.SetCellOccupied(false);
+                                obj.SetCell(i, j);
+                                _board[i,j].SetCellOccupied(true);
+                                needToStopIt = true;
+                                break;
+                            case 1:
+                                cellsCoordinates = obj.GetCell();
+                                back = _board[
+                                    Convert.ToInt32(cellsCoordinates.x),
+                                    Convert.ToInt32(cellsCoordinates.y)];
+                                obj.SetFigurePosition(
+                                    back.IndexX-_indexOfMassiveI,
+                                    back.IndexY-_indexOfMassiveI);
+                                break;
+                            case 2:
+                                break;
+                        }
+                    if (needToStopIt)
+                        break;
+                }
+            }
+            _pickedUpFigure = null;
+            FigurePlacedOnNewPosition?.Invoke(obj.GetFigureStruct());
+        }
+
+        public Cell[,] GetBoard()
+        {
+            return _board;
+        }
+        
         #endregion
     }
 }

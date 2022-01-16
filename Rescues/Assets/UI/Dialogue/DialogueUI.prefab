@@ -56,8 +56,6 @@ MonoBehaviour:
   npcLabelColor: {r: 1, g: 1, b: 1, a: 1}
   npcImage: {fileID: 6922458634924794771}
   npcImageNormalColor: {r: 1, g: 1, b: 1, a: 1}
-  writeStep: 1
-  writeSpeed: 10
   timeBeforeNextNode: 1
   npcBackGround: {fileID: 6825417031651572134}
   playerContainer: {fileID: 6922458634595190574}
@@ -72,6 +70,7 @@ MonoBehaviour:
   playerImage: {fileID: 6922458634737973066}
   playerImageNormalColor: {r: 1, g: 1, b: 1, a: 1}
   playerBackground: {fileID: 2112213319289632132}
+  writePattern: {fileID: 11400000, guid: 651a754bbf75f0f4689629dd9d3f6c04, type: 2}
   dialogContainer: {fileID: 6922458634530015296}
   background: {fileID: 6922458634530015302}
   nodeSoundContainer: {fileID: 3369686602103522160}

@@ -16,7 +16,7 @@ TagManager:
   - First Floor
   - Second Floor
   - Player
-  - 
+  - Volume
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: Character
     uniqueID: 293946615
+    locked: 0
+  - name: Bootscreen
+    uniqueID: 2013923905
     locked: 0

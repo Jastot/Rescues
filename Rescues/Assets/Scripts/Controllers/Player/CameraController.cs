@@ -3,7 +3,7 @@
 
 namespace Rescues
 {
-    public sealed class CameraController : IExecuteController
+    public sealed class CameraController : IExecuteController, IInitializeController, ITearDownController
     {
         #region Fields
 
@@ -15,9 +15,12 @@ namespace Rescues
         private float _deadZone;
         private float _cameraAccelerateStep;
         private float _cameraAcceleration;
-        private float _characterPositionX;
+        private float _targetPositionX;
+        private float _targetPositionY;
         private bool _isMoveableCameraMode;
         private int _activeLocationHash;
+        private bool _isFocusedCameraMode;
+        private float _lastCharacterPositionX;
 
         #endregion
 
@@ -42,14 +45,71 @@ namespace Rescues
                 SetCamera();
             }
 
-            if (_isMoveableCameraMode)
+            if (_cameraServices.IsCameraFocused && !_isFocusedCameraMode)
+            {
+                _isFocusedCameraMode = true;
+                _lastCharacterPositionX = _context.character.Transform.position.x;
+            }
+
+            if (!_cameraServices.IsCameraFocused && _isFocusedCameraMode)
+            {
+                _isFocusedCameraMode = false;
+            }
+
+            if (_isFocusedCameraMode && _context.character.IsMoving)
+            {
+                _cameraServices.ResetFocus();
+            }
+
+            if (_isMoveableCameraMode && !_isFocusedCameraMode)
             {
                 MoveCameraToCharacter();
+            }
+
+            if (_isFocusedCameraMode)
+            {
+                MoveCameraToTarget();
             }
 
             if (_cameraServices.IsCameraFree)
             {
                 _cameraServices.MoveCameraWithMouse();
+            }
+        }
+
+        #endregion
+
+        #region IInitializeController
+
+        public void Initialize()
+        {
+            var camTriggers = _context.GetTriggers(InteractableObjectType.CameraTrigger);
+            foreach (var trigger in camTriggers)
+            {
+                var behavior = trigger as InteractableObjectBehavior;
+                behavior.OnFilterHandler += OnFilterHandler;
+                behavior.OnTriggerEnterHandler += OnTriggerEnterHandler;
+                behavior.OnTriggerExitHandler += OnTriggerExitHandler;
+
+                var cameraTrigger = trigger as CameraTrigger;
+                cameraTrigger.Init(_cameraServices);
+            }
+        }
+
+        #endregion
+
+
+        #region ITearDownController
+
+        public void TearDown()
+        {
+            var camTriggers = _context.GetTriggers(InteractableObjectType.CameraTrigger);
+            foreach (var trigger in camTriggers)
+            {
+                var behavior = trigger as InteractableObjectBehavior;
+                behavior.OnFilterHandler -= OnFilterHandler;
+                behavior.OnTriggerEnterHandler -= OnTriggerEnterHandler;
+                behavior.OnTriggerExitHandler -= OnTriggerExitHandler;
             }
         }
 
@@ -95,8 +155,8 @@ namespace Rescues
             _cameraAcceleration = 1f;
             _deadZone = _activeCamera.DeadZone;
 
-            _characterPositionX = _context.character.Transform.position.x + _activeCamera.Position_X_Offset;
-            var x = Mathf.Clamp(_characterPositionX, _activeCamera.MoveLeftXLimit, _activeCamera.MoveRightXLimit);
+            _targetPositionX = _context.character.Transform.position.x + _activeCamera.Position_X_Offset;
+            var x = Mathf.Clamp(_targetPositionX, _activeCamera.MoveLeftXLimit, _activeCamera.MoveRightXLimit);
             _cameraServices.CameraMain.transform.position = new Vector3(x, _activeCamera.Position_Y_Offset,
                 _cameraServices.CameraDepthConst);
 
@@ -105,18 +165,39 @@ namespace Rescues
 
         private void MoveCameraToCharacter()
         {
-            _characterPositionX = _context.character.Transform.position.x + _activeCamera.Position_X_Offset;
-            var cameraPositionX = _cameraServices.CameraMain.transform.position.x;
+            _targetPositionX = _context.character.Transform.position.x + _activeCamera.Position_X_Offset;
+            _targetPositionY = _activeCamera.Position_Y_Offset;
+
             if (_context.character.IsMoving == false)
             {
                 _deadZone = _activeCamera.DeadZone;
             }
 
-            if (Mathf.Abs(_cameraServices.CameraMain.transform.position.x - _characterPositionX) > _deadZone)
+            MoveCamera();
+        }
+
+        
+
+        private void MoveCameraToTarget()
+        {
+            _targetPositionX = _cameraServices.OverridePosition.x + _activeCamera.Position_X_Offset;
+            _targetPositionY = _cameraServices.OverridePosition.y;
+
+            MoveCamera();
+        }
+
+        private void MoveCamera()
+        {
+            var cameraPositionX = _cameraServices.CameraMain.transform.position.x;
+            var cameraPositionY = _cameraServices.CameraMain.transform.position.y;
+
+            if (Mathf.Abs(_cameraServices.CameraMain.transform.position.x - _targetPositionX) > _deadZone ||
+                !Mathf.Approximately(cameraPositionY, _activeCamera.Position_Y_Offset))
             {
                 _deadZone = 0;
                 _cameraAcceleration = Mathf.Clamp(_cameraAcceleration, 0f, 1f);
-                cameraPositionX = Mathf.Lerp(cameraPositionX, _characterPositionX, _cameraAcceleration);
+                cameraPositionX = Mathf.Lerp(cameraPositionX, _targetPositionX, _cameraAcceleration);
+                cameraPositionY = Mathf.Lerp(cameraPositionY, _targetPositionY, _cameraAcceleration);
                 if (cameraPositionX >= _activeCamera.MoveLeftXLimit && cameraPositionX <= _activeCamera.MoveRightXLimit)
                 {
                     _cameraAcceleration = _cameraAccelerateStep * Time.deltaTime;
@@ -129,8 +210,23 @@ namespace Rescues
                 }
             }
 
-            _cameraServices.CameraMain.transform.position = new Vector3(cameraPositionX, _activeCamera.Position_Y_Offset,
+            _cameraServices.CameraMain.transform.position = new Vector3(cameraPositionX, cameraPositionY,
                 _cameraServices.CameraDepthConst);
+        }
+
+        private bool OnFilterHandler(Collider2D obj)
+        {
+            return obj.CompareTag(TagManager.PLAYER);
+        }
+
+        private void OnTriggerEnterHandler(ITrigger enteredObject)
+        {
+            enteredObject.IsInteractable = true;
+        }
+
+        private void OnTriggerExitHandler(ITrigger enteredObject)
+        {
+            enteredObject.IsInteractable = false;
         }
 
         #endregion
