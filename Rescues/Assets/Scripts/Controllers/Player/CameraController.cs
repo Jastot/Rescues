@@ -198,15 +198,13 @@ namespace Rescues
                 _cameraAcceleration = Mathf.Clamp(_cameraAcceleration, 0f, 1f);
                 cameraPositionX = Mathf.Lerp(cameraPositionX, _targetPositionX, _cameraAcceleration);
                 cameraPositionY = Mathf.Lerp(cameraPositionY, _targetPositionY, _cameraAcceleration);
-                if (cameraPositionX >= _activeCamera.MoveLeftXLimit && cameraPositionX <= _activeCamera.MoveRightXLimit)
-                {
-                    _cameraAcceleration = _cameraAccelerateStep * Time.deltaTime;
-                }
-                else
+
+                _cameraAcceleration = _cameraAccelerateStep * Time.deltaTime;
+
+                if (cameraPositionX < _activeCamera.MoveLeftXLimit || cameraPositionX > _activeCamera.MoveRightXLimit)
                 {
                     cameraPositionX = Mathf.Clamp(cameraPositionX, _activeCamera.MoveLeftXLimit, _activeCamera.
                         MoveRightXLimit);
-                    _cameraAcceleration = _cameraAccelerateStep;
                 }
             }
 
