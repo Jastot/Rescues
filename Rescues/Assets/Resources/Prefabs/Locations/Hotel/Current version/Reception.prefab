@@ -3594,6 +3594,7 @@ MonoBehaviour:
   diags:
   - 123
   - 1stDialHoz
+  - 1stDialHoz 1
   - Charlie
   - CrazyCap
   - DEMO_Condition
@@ -3611,9 +3612,9 @@ MonoBehaviour:
   - Test_1
   - Witch
   - WorkRing
-  assignedIndex: 1
-  assignedID: 79672
-  assignedDialogue: 1stDialHoz
+  assignedIndex: 2
+  assignedID: 32246
+  assignedDialogue: 1stDialHoz 1
   interactionCount: 0
   alias: "\u0425\u043E\u0437\u044F\u0438\u043D \u043E\u0442\u0435\u043B\u044F"
   overrideStartNode: -1
