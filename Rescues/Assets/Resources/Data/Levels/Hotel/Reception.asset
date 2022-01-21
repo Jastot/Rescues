@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Reception
   m_EditorClassIdentifier: 
   _locationName: Reception
-  _locationPrefab: {fileID: 1489210437266686043, guid: 47ea27868a88cda47bab6436c4823edf,
+  _locationPrefab: {fileID: 1489210437266686043, guid: e393a2398a0ac4e4da2abf65c1bf6d6d,
     type: 3}
   _backgroundColor: {r: 0.098039225, g: 0.098039225, b: 0.098039225, a: 0}
   _cameraData:
