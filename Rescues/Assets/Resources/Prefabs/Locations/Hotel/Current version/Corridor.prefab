@@ -704,6 +704,72 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 62b49687607b9ae42a62c668f005aeef, type: 2}
+--- !u!1 &1403564141917727144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8973935453654009823}
+  - component: {fileID: 603292913037757759}
+  - component: {fileID: 8290691018245416975}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8973935453654009823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403564141917727144}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1836330889997717938}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &603292913037757759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403564141917727144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &8290691018245416975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403564141917727144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
 --- !u!1 &1438771620670309825
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,6 +1018,7 @@ Transform:
   - {fileID: 8988875024612784007}
   - {fileID: 6009370511790842399}
   - {fileID: 2135092226183721625}
+  - {fileID: 8973935453654009823}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1502,7 +1569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5283169074386098067
 Transform:
   m_ObjectHideFlags: 0
@@ -1784,6 +1851,8 @@ GameObject:
   - component: {fileID: 3842413757406169437}
   - component: {fileID: 3810802165273387070}
   - component: {fileID: 6372317328546537640}
+  - component: {fileID: 9138083048037657488}
+  - component: {fileID: 1978921770189994667}
   m_Layer: 0
   m_Name: Room2
   m_TagString: EditorOnly
@@ -1900,6 +1969,72 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20, y: 20}
   m_EdgeRadius: 0
+--- !u!114 &9138083048037657488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2849961382134372419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8b99d8a12e39e4b94d2d7162c7c978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diags:
+  - 123
+  - 1stDialHoz
+  - 1stDialHoz 1
+  - Charlie
+  - CrazyCap
+  - DEMO_Condition
+  - demo_Narration
+  - Item_LookUp
+  - Laura
+  - LowDI
+  - MrCube
+  - MyTestDialogue
+  - NPCOnly
+  - QuestChartDemo
+  - ReedDi
+  - RingQuest
+  - RustKnife
+  - Test_1
+  - Witch
+  - WorkRing
+  assignedIndex: -1
+  assignedID: 0
+  assignedDialogue: 
+  interactionCount: 0
+  alias: "\u0410\u043D\u043D\u0430"
+  overrideStartNode: -1
+  defaultNPCSprite: {fileID: 21300000, guid: 79c3e12e622c30e479d43666c2401ef8, type: 3}
+  defaultPlayerSprite: {fileID: 21300000, guid: 267b3798ce610bc449478556cda80e82,
+    type: 3}
+  targetManager: {fileID: 0}
+  preload: 0
+  notuptodate: 0
+  startp: 0
+  loadtag: 
+  langs: []
+  S_playerDiags: []
+  S_actionNodes: []
+--- !u!114 &1978921770189994667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2849961382134372419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7474e83aabceed745ac79fec3fc3aa40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 7
+  <IsInteractionLocked>k__BackingField: 0
+  <Id>k__BackingField: -1
+  assignDialog: {fileID: 9138083048037657488}
 --- !u!1 &2980162402304337558
 GameObject:
   m_ObjectHideFlags: 0
@@ -5194,7 +5329,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &640379880581155236
 Transform:
   m_ObjectHideFlags: 0
@@ -5998,7 +6133,12 @@ PrefabInstance:
     - target: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: m_Name
-      value: 1 to Hotel_Salon_4
+      value: 1 to Hotel_Salon_2ndFloor_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826721140499636313, guid: a92e6ec87f5ad4c038229934453c278f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -6013,7 +6153,7 @@ PrefabInstance:
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: _goToLocationName
-      value: Salon
+      value: Salon_2ndFloor
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -6173,7 +6313,7 @@ PrefabInstance:
     - target: {fileID: 4826721140499636313, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}

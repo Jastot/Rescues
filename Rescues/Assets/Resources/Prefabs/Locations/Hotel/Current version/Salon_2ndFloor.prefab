@@ -4436,7 +4436,7 @@ MonoBehaviour:
   _type: 9
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: -1
-  TargetPoint: {x: 9.67554, y: 1.5732594}
+  TargetPoint: {x: -1.9065297, y: 4.504524}
   IsReturningOnTimer: 0
   FocusTime: 0
 --- !u!1 &4698289775453276191
@@ -5117,7 +5117,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19, y: -229}
+  m_AnchoredPosition: {x: -46, y: -229}
   m_SizeDelta: {x: 513.81, y: 136.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2224912044887238973
@@ -7753,7 +7753,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 498, y: -231}
+  m_AnchoredPosition: {x: 534, y: -231}
   m_SizeDelta: {x: 513.81, y: 136.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5924954274476229550

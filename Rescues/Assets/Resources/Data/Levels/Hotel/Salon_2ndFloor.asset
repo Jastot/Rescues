@@ -23,8 +23,10 @@ MonoBehaviour:
     CameraDragSpeed: 50
     Position_Y_Offset: 8
     Position_X_Offset: 11
-    MoveLeftXLimit: -18
-    MoveRightXLimit: 18.5
+    MoveLeftXLimit: -15
+    MoveRightXLimit: 15
+    MoveUpYLimit: 11.5
+    MoveDownYLimit: -12.5
     CameraAccelerateStep: 20
     DeadZone: 2
   _customBootScreen: {fileID: 5293078557666880198, guid: 350dbdcc61ef74de087b99c5df45793d,
