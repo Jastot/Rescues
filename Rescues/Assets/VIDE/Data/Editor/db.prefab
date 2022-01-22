@@ -43,24 +43,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268dc70b105993846a123be43345df63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileIndex: 1
+  fileIndex: 9
   skinIndex: 3
   loadTag: 
   startID: 0
   curFocusID: 0
-  currentID: 79672
+  currentID: 84520
   autosave: 0
   previewPanning: 0
-  currentDiag: 1
+  currentDiag: 9
   locEdit: 0
   pNodeID: 18
   aNodeID: 2
   S_playerDiags:
   - commentCount: 1
     s_comment:
-    - text: "\u0414\u043E\u0431\u0440\u044B\u0439 \u0432\u0435\u0447\u0435\u0440!
-        \u0412\u044B \u0447\u0442\u043E-\u0442\u043E \u0445\u043E\u0442\u0435\u043B\u0438?"
-      extraData: 
+    - text: "[\u0421\u043D\u0438\u0437\u0443 \u0434\u043E\u043D\u043E\u0441\u044F\u0442\u0441\u044F
+        \u0433\u043E\u043B\u043E\u0441\u0430, \u0435\u0441\u043B\u0438 \u043F\u0440\u0438\u0441\u043B\u0443\u0448\u0430\u0442\u044C\u0441\u044F,
+        \u043C\u043E\u0436\u043D\u043E \u043F\u043E\u043D\u044F\u0442\u044C \u043E
+        \u0447\u0435\u043C \u043E\u043D\u0438 \u0433\u043E\u0432\u043E\u0440\u044F\u0442]"
+      extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: 1
       outActionIndex: -1
@@ -70,35 +72,29 @@ MonoBehaviour:
         x: 301
         y: 63
         width: 30
-        height: 33
+        height: 48
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     ID: 0
     rect:
       serializedVersion: 2
-      x: 0
-      y: 240
+      x: -210
+      y: 180
       width: 348
-      height: 283
+      height: 274
     pTag: 
     expand: 1
     sprite: {fileID: 0}
     vars:
-    - "\u0413\u0435\u043D\u0440\u0438"
-    - 10 56679
+    - 
     varKeys:
-    - SetPlayerName
-    - SetStartNode
-    isPlayer: 0
-  - commentCount: 4
+    - SwitchNpcContainerState
+    isPlayer: 1
+  - commentCount: 2
     s_comment:
-    - text: "\u0414\u043E\u0431\u0440\u044B\u0439 \u0432\u0435\u0447\u0435\u0440!
-        \u041C\u044B \u043E\u043A\u0430\u0437\u0430\u043B\u0438\u0441\u044C \u043F\u0440\u043E\u0435\u0437\u0434\u043E\u043C
-        \u0432 \u0432\u0430\u0448\u0435\u043C \u0433\u043E\u0440\u043E\u0434\u0435,
-        \u0438 \u0445\u043E\u0442\u0435\u043B\u0438 \u0431\u044B \u0441\u043D\u044F\u0442\u044C
-        \u043A\u043E\u043C\u043D\u0430\u0442\u0443 \u043D\u0430 \u043D\u043E\u0447\u044C."
-      extraData: 
+    - text: "\u041F\u043E\u0434\u0441\u043B\u0443\u0448\u0430\u0442\u044C \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440."
+      extraData: ExtraData
       inputSetIndex: 1
       outputNodeIndex: 2
       outActionIndex: -1
@@ -108,600 +104,15 @@ MonoBehaviour:
         x: 301
         y: 63
         width: 30
-        height: 63
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: "\u0425\u043E\u0442\u0435\u043B, \u043D\u043E \u0443\u0432\u0438\u0434\u0435\u0432
-        \u0432 \u043A\u0430\u043A\u043E\u043C \u0437\u0434\u0435\u0441\u044C \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0438
-        \u0432\u0441\u0451 \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F,
-        \u0443\u0436\u0435 \u0434\u0430\u0436\u0435 \u043D\u0435 \u0437\u043D\u0430\u044E..."
-      extraData: 
-      inputSetIndex: 1
-      outputNodeIndex: 10
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 300
-        y: 127
-        width: 30
-        height: 48
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: "\u0410 \u0443 \u0432\u0430\u0441 \u0442\u0443\u0442 \u0432\u0441\u0435\u0433\u0434\u0430
-        \u0442\u0430\u043A\u043E\u0435 \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u0435
-        \u043A \u043A\u043B\u0438\u0435\u043D\u0430\u0442\u0430\u043C?"
-      extraData: ExtraData
-      inputSetIndex: 1
-      outputNodeIndex: 12
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 300
-        y: 176
-        width: 30
-        height: 33
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: "\u0414\u0443\u043C\u0430\u044E \u043C\u044B \u043F\u0435\u0440\u0435\u043D\u043E\u0447\u0443\u0435\u043C
-        \u0432 \u0434\u0440\u0443\u0433\u043E\u043C \u043C\u0435\u0441\u0442\u0435."
-      extraData: ExtraData
-      inputSetIndex: 1
-      outputNodeIndex: 14
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 300
-        y: 210
-        width: 30
-        height: 33
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 1
-    rect:
-      serializedVersion: 2
-      x: 400
-      y: 150
-      width: 348
-      height: 430
-    pTag: 
-    expand: 1
-    sprite: {fileID: 0}
-    vars:
-    - "\u0425\u043E\u0437\u044F\u0438\u043D \u043E\u0442\u0435\u043B\u044F"
-    - 10 56679
-    varKeys:
-    - SetNpcName
-    - SetStartNode
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: "\u0414\u0430, \u043A\u043E\u043D\u0435\u0447\u043D\u043E, \u0432 \u044D\u0442\u043E
-        \u0432\u0440\u0435\u043C\u044F \u0433\u043E\u0434\u0430 \u0443 \u043D\u0430\u0441
-        \u043D\u0435 \u0442\u0430\u043A \u043C\u043D\u043E\u0433\u043E \u0433\u043E\u0441\u0442\u0435\u0439,
-        \u0442\u0430\u043A \u0447\u0442\u043E \u0441\u0432\u043E\u0431\u043E\u0434\u043D\u044B\u0435
-        \u043A\u043E\u043C\u043D\u0430\u0442\u044B \u0435\u0441\u0442\u044C."
-      extraData: ExtraData
-      inputSetIndex: 2
-      outputNodeIndex: 3
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
-        height: 48
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 2
-    rect:
-      serializedVersion: 2
-      x: 790
-      y: -70
-      width: 348
-      height: 274
-    pTag: 
-    expand: 1
-    sprite: {fileID: 0}
-    vars:
-    - 10 56679
-    varKeys:
-    - SetStartNode
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: "\u041E\u0442\u043B\u0438\u0447\u043D\u043E. \u0421\u043E \u043C\u043D\u043E\u0439
-        \u0436\u0435\u043D\u0430 \u0438 \u0441\u044B\u043D, \u043E\u043D\u0438 \u0432
-        \u043C\u0430\u0448\u0438\u043D\u0435, \u0442\u0430\u043A \u0447\u0442\u043E
-        \u043D\u0430\u043C \u0445\u0432\u0430\u0442\u0438\u0442 \u043E\u0434\u043D\u043E\u0433\u043E
-        \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u043E\u0433\u043E
-        \u043D\u043E\u043C\u0435\u0440\u0430."
-      extraData: ExtraData
-      inputSetIndex: 3
-      outputNodeIndex: 4
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
-        height: 63
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 3
-    rect:
-      serializedVersion: 2
-      x: 1260
-      y: 40
-      width: 348
-      height: 169
-    pTag: 
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: "\u041F\u0440\u043E\u0448\u0443 \u043F\u0440\u043E\u0449\u0435\u043D\u0438\u044F,
-        \u043D\u043E \u0443 \u043D\u0430\u0441 \u043D\u0435\u0442 \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u044B\u0445
-        \u043D\u043E\u043C\u0435\u0440\u043E\u0432. \u041D\u043E \u043C\u043E\u0433\u0443
-        \u0432\u0430\u043C \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0438\u0442\u044C
-        \u0434\u0432\u0430 \u0441\u043C\u0435\u0436\u043D\u044B\u0445 \u043E\u0434\u043D\u043E\u043C\u0435\u0441\u0442\u043D\u044B\u0445.
-        \u0412\u0430\u0441 \u044D\u0442\u043E \u0443\u0441\u0442\u0440\u043E\u0438\u0442?"
-      extraData: ExtraData
-      inputSetIndex: 4
-      outputNodeIndex: 5
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
-        height: 63
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 4
-    rect:
-      serializedVersion: 2
-      x: 1770
-      y: 40
-      width: 348
-      height: 169
-    pTag: 
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 2
-    s_comment:
-    - text: "\u041D\u0443 \u043F\u043E\u043B\u0430\u0433\u0430\u044E, \u0447\u0442\u043E
-        \u0434\u0430."
-      extraData: ExtraData
-      inputSetIndex: 5
-      outputNodeIndex: 6
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
         height: 23
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    - text: "\u042D\u0442\u043E \u043D\u0435 \u0441\u043E\u0432\u0441\u0435\u043C
-        \u0443\u0434\u043E\u0431\u043D\u043E. \u0422\u043E\u0447\u043D\u043E \u0434\u0440\u0443\u0433\u0438\u0445
-        \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u043E\u0432 \u043D\u0435\u0442?"
+    - text: "\u041F\u043E\u0434\u0441\u043B\u0443\u0448\u0438\u0432\u0430\u0442\u044C
+        \u043D\u0435\u043A\u0440\u0430\u0441\u0438\u0432\u043E, \u0438 \u0443 \u043C\u0435\u043D\u044F
+        \u0434\u0440\u0443\u0433\u0438\u0445 \u0437\u0430\u0431\u043E\u0442 \u043F\u043E\u043B\u043D\u043E."
       extraData: ExtraData
-      inputSetIndex: 5
-      outputNodeIndex: 7
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 300
-        y: 87
-        width: 30
-        height: 33
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 5
-    rect:
-      serializedVersion: 2
-      x: 2220
-      y: 40
-      width: 348
-      height: 163
-    pTag: 
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: "\u0422\u043E\u0433\u0434\u0430 \u0441\u0435\u0439\u0447\u0430\u0441
-        \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043B\u044E \u043A\u043B\u044E\u0447\u0438."
-      extraData: ExtraData
-      inputSetIndex: 6
-      outputNodeIndex: 9
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
-        height: 33
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 6
-    rect:
-      serializedVersion: 2
-      x: 3050
-      y: -40
-      width: 348
-      height: 259
-    pTag: 
-    expand: 1
-    sprite: {fileID: 0}
-    vars:
-    - Hoz1Act
-    varKeys:
-    - ActivateEvent
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: "\u0423\u0432\u044B \u043D\u0435\u0442. \u0418 \u043A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E,
-        \u044D\u0442\u043E \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
-        \u043E\u0442\u0435\u043B\u044C \u0432 \u043D\u0430\u0448\u0435\u043C \u0433\u043E\u0440\u043E\u0434\u0435."
-      extraData: ExtraData
-      inputSetIndex: 7
-      outputNodeIndex: 8
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
-        height: 48
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 7
-    rect:
-      serializedVersion: 2
-      x: 2370
-      y: 290
-      width: 348
-      height: 154
-    pTag: 
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: "\u0422\u043E\u0433\u0434\u0430 \u043C\u044B \u0432\u043E\u0437\u044C\u043C\u0451\u043C
-        \u044D\u0442\u0438 \u0434\u0432\u0430 \u043D\u043E\u043C\u0435\u0440\u0430."
-      extraData: ExtraData
-      inputSetIndex: 8
-      outputNodeIndex: 6
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
-        height: 33
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 8
-    rect:
-      serializedVersion: 2
-      x: 2730
-      y: 290
-      width: 348
-      height: 139
-    pTag: 
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: "\u0411\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044E \u0432\u0430\u0441."
-      extraData: ExtraData
-      inputSetIndex: 9
-      outputNodeIndex: -1
-      outActionIndex: 0
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
-        height: 23
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 9
-    rect:
-      serializedVersion: 2
-      x: 3420
-      y: -40
-      width: 348
-      height: 297
-    pTag: 
-    expand: 1
-    sprite: {fileID: 0}
-    vars:
-    - KeyRoom1
-    - GateR3S1
-    - RustKnife
-    varKeys:
-    - GiveItem
-    - ActivateObject
-    - RemoveItem
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: "\u041F\u0443\u0441\u0442\u044C \u0432\u0430\u0441 \u043D\u0435 \u0441\u043C\u0443\u0449\u0430\u0435\u0442
-        \u0432\u043D\u0435\u0448\u043D\u0438\u0439 \u0432\u0438\u0434! \u0423\u0432\u0435\u0440\u044F\u044E,
-        \u0432\u044B \u0431\u0443\u0434\u0435\u0442\u0435 \u0434\u043E\u0432\u043E\u043B\u044C\u043D\u044B
-        \u043D\u043E\u043C\u0435\u0440\u043E\u043C \u0438 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435\u043C.\n\u0414\u0430
-        \u0438 \u043A \u0442\u043E\u043C\u0443 \u0436\u0435, \u044D\u0442\u043E \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
-        \u043E\u0442\u0435\u043B\u044C \u0432 \u0433\u043E\u0440\u043E\u0434\u0435."
-      extraData: ExtraData
-      inputSetIndex: 10
-      outputNodeIndex: 11
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
-        height: 93
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 10
-    rect:
-      serializedVersion: 2
-      x: 850
-      y: 210
-      width: 348
-      height: 199
-    pTag: 
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: "\u041D\u0443 \u0437\u043D\u0430\u0447\u0438\u0442 \u0432\u044B\u0431\u043E\u0440
-        \u043D\u0435\u0432\u0435\u043B\u0438\u043A. \u0425\u043E\u0440\u043E\u0448\u043E,
-        \u0441\u043E \u043C\u043D\u043E\u0439 \u0436\u0435\u043D\u0430 \u0438 \u0441\u044B\u043D,
-        \u0442\u0430\u043A \u0447\u0442\u043E \u043C\u044B \u0432\u043E\u0437\u044C\u043C\u0435\u043C
-        \u043E\u0434\u0438\u043D \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u044B\u0439
-        \u043D\u043E\u043C\u0435\u0440."
-      extraData: ExtraData
-      inputSetIndex: 11
-      outputNodeIndex: 4
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
-        height: 63
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 11
-    rect:
-      serializedVersion: 2
-      x: 1770
-      y: 240
-      width: 348
-      height: 169
-    pTag: 
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: "\u041F\u0440\u043E\u0448\u0443 \u043F\u0440\u043E\u0449\u0435\u043D\u0438\u044F!
-        \u041F\u0440\u043E\u0441\u0442\u043E \u0441\u0435\u0439\u0447\u0430\u0441
-        \u043D\u0435 \u0441\u0435\u0437\u043E\u043D \u0438 \u0432 \u044D\u0442\u043E\u043C
-        \u0432\u0440\u0435\u043C\u044F \u0433\u043E\u0434\u0430 \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432
-        \u043F\u0440\u0430\u043A\u0442\u0438\u0447\u0435\u0441\u043A\u0438 \u043D\u0435\u0442.
-        \u0422\u0430\u043A \u0447\u0442\u043E \u044F \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E
-        \u0440\u0430\u0441\u0441\u043B\u0430\u0431\u0438\u043B\u0441\u044F. \u041D\u043E
-        \u044F \u0431\u0443\u0434\u0443 \u0440\u0430\u0434 \u0437\u0430\u0433\u043B\u0430\u0434\u0438\u0442\u044C
-        \u0441\u0432\u043E\u044E \u0432\u0438\u043D\u0443 \u0438 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0438\u0442\u044C
-        \u0432\u0430\u043C \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0439
-        \u0437\u0430\u0432\u0442\u0440\u0430\u043A."
-      extraData: ExtraData
-      inputSetIndex: 12
-      outputNodeIndex: 13
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
-        height: 123
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 12
-    rect:
-      serializedVersion: 2
-      x: 820
-      y: 460
-      width: 348
-      height: 229
-    pTag: 
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 2
-    s_comment:
-    - text: "\u0427\u0442\u043E-\u0436, \u0437\u0432\u0443\u0447\u0438\u0442 \u0437\u0430\u043C\u0430\u043D\u0447\u0438\u0432\u043E.
-        \u0422\u043E\u0433\u0434\u0430 \u044F \u0431\u044B \u0445\u043E\u0442\u0435\u043B
-        \u0441\u043D\u044F\u0442\u044C \u043E\u0434\u0438\u043D \u0434\u0432\u0443\u0445\u043C\u0435\u0441\u0442\u043D\u044B\u0439
-        \u043D\u043E\u043C\u0435\u0440. \u0421\u043E \u043C\u043D\u043E\u0439 \u0436\u0435\u043D\u0430
-        \u0438 \u0441\u044B\u043D, \u043E\u043D\u0438 \u0441\u0435\u0439\u0447\u0430\u0441
-        \u0432 \u043C\u0430\u0448\u0438\u043D\u0435. "
-      extraData: ExtraData
-      inputSetIndex: 13
-      outputNodeIndex: 4
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
-        height: 78
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: "\u041E\u0441\u0442\u0430\u0432\u044C\u0442\u0435 \u0432\u0430\u0448\u0438
-        \u0436\u0430\u043B\u043A\u0438\u0435 \u043F\u043E\u0434\u0430\u0447\u043A\u0438
-        \u0441\u0435\u0431\u0435! \u042F \u043B\u0443\u0447\u044C\u0448\u0435 \u043F\u043E\u0438\u0449\u0443
-        \u0434\u0440\u0443\u0433\u043E\u0439 \u043E\u0442\u0435\u043B\u044C, \u0441
-        \u0431\u043E\u043B\u0435\u0435 \u043A\u043E\u043C\u043F\u0435\u0442\u0435\u043D\u0442\u043D\u044B\u043C
-        \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u043E\u043C. "
-      extraData: ExtraData
-      inputSetIndex: 13
-      outputNodeIndex: 14
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 300
-        y: 142
-        width: 30
-        height: 63
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 13
-    rect:
-      serializedVersion: 2
-      x: 1220
-      y: 390
-      width: 348
-      height: 248
-    pTag: 
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
-  - commentCount: 1
-    s_comment:
-    - text: "\u0416\u0430\u043B\u044C \u0432\u0430\u0441 \u0440\u0430\u0437\u043E\u0447\u0430\u0440\u043E\u0432\u044B\u0432\u0430\u0442\u044C,
-        \u043D\u043E \u044D\u0442\u043E \u0435\u0434\u0438\u043D\u0442\u0441\u0432\u0435\u043D\u043D\u044B\u0439
-        \u043E\u0442\u0435\u043B\u044C \u0432 \u0433\u043E\u0440\u043E\u0434\u0435.
-        \u0414\u043E \u0434\u0440\u0443\u0433\u043E\u0433\u043E \u0431\u043B\u0438\u0436\u0430\u0439\u0448\u0435\u0433\u043E
-        \u043E\u043A\u043E\u043B\u043E \u0434\u0432\u0443\u0445 \u0441\u043E\u0442\u0435\u043D
-        \u043A\u0438\u043B\u043E\u043C\u0435\u0442\u0440\u043E\u0432. "
-      extraData: ExtraData
-      inputSetIndex: 14
-      outputNodeIndex: 11
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
-        height: 63
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 14
-    rect:
-      serializedVersion: 2
-      x: 1560
-      y: 700
-      width: 348
-      height: 169
-    pTag: 
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: "\u042F \u0443\u0436\u0435 \u0432\u044B\u0434\u0430\u043B \u0432\u0430\u043C
-        \u043A\u043B\u044E\u0447. \u0414\u043E\u0431\u0440\u043E\u0439 \u043D\u043E\u0447\u0438!"
-      extraData: ExtraData
-      inputSetIndex: 15
-      outputNodeIndex: 16
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 301
-        y: 63
-        width: 30
-        height: 33
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 17
-    rect:
-      serializedVersion: 2
-      x: 4080
-      y: -20
-      width: 348
-      height: 139
-    pTag: 
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: "\u0414\u043E\u0431\u0440\u043E\u0439 \u043D\u043E\u0447\u0438"
-      extraData: ExtraData
-      inputSetIndex: 16
+      inputSetIndex: 1
       outputNodeIndex: -1
       outActionIndex: -1
       showmore: 0
@@ -714,62 +125,87 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    ID: 18
+    ID: 1
     rect:
       serializedVersion: 2
-      x: 4470
-      y: -20
+      x: 220
+      y: 180
       width: 348
-      height: 129
+      height: 163
     pTag: 
     expand: 0
     sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 1
-  S_actionNodes:
-  - pauseHere: 0
-    gameObjectName: '[No object]'
-    methodName: '[No method]'
-    nameIndex: 0
-    methodIndex: 0
-    paramIndex: -1
-    opts:
-    - '[No method]'
-    nameOpts:
-    - '[No object]'
-    - CurveWay
-    - 1 to Hotel_Reception_1
-    - 3 to Hotel_Salon_1stFloor_1
-    - Trash_Pulse
-    - Door_in_Salun
-    - Trash_1
-    - Stand
-    - Hoz
-    - Exit_Pulse
-    - Door_Pulse
-    - Reception
-    - Exit
-    - Door
-    - Key_AD
-    - Key_E
-    - Door (1)
-    - Stand
-    - WoodNoise
-    param_bool: 0
-    param_string: 
-    param_int: 0
-    param_float: 0
+  - commentCount: 1
+    s_comment:
+    - text: "[\u0412\u044B \u0437\u0430\u043C\u0438\u0440\u0430\u0435\u0442\u0435
+        \u0438 \u043F\u0440\u0438\u0441\u043B\u0443\u0448\u0438\u0432\u0430\u0435\u0442\u0435\u0441\u044C]"
+      extraData: ExtraData
+      inputSetIndex: 2
+      outputNodeIndex: 3
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 2
     rect:
       serializedVersion: 2
-      x: 3800
-      y: -50
-      width: 200
-      height: 166
-    ID: 16
-    outPlayerIndex: -1
-    outActionIndex: -1
-    more: 1
-    ovrStartNode: 17
-    renameDialogue: 
+      x: 610
+      y: 180
+      width: 348
+      height: 283
+    pTag: 
+    expand: 1
+    sprite: {fileID: 0}
+    vars:
+    - LowDI
+    - EnterE0
+    varKeys:
+    - ActivateObject
+    - ActivateEvent
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: ...
+      extraData: ExtraData
+      inputSetIndex: 3
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 3
+    rect:
+      serializedVersion: 2
+      x: 1010
+      y: 170
+      width: 348
+      height: 273
+    pTag: 
+    expand: 1
+    sprite: {fileID: 0}
+    vars:
+    - LowDI
+    - EnterE0
+    varKeys:
+    - ActivateObject
+    - ActivateEvent
+    isPlayer: 1
+  S_actionNodes: []
   S_selNodes: []
