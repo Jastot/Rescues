@@ -9,6 +9,7 @@ namespace Rescues
         #region Fields
 
         [SerializeField] private InteractableObjectType _type;
+        [SerializeField] private InteractionPrompt _interactionPrompt;
 
         #endregion
 
@@ -25,6 +26,7 @@ namespace Rescues
         [field: SerializeField] public bool IsInteractionLocked { get; set; }
         public string Description { get; set; }
         [field: SerializeField] public string Id { get; set; } = "-1";
+        public InteractionPrompt InteractionPrompt => _interactionPrompt;
 
         #endregion
 
