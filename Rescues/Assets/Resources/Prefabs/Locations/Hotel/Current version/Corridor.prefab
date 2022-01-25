@@ -734,7 +734,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1836330889997717938}
-  m_RootOrder: 11
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &603292913037757759
 MonoBehaviour:
@@ -873,7 +873,7 @@ Transform:
   - {fileID: 3024790351511343916}
   - {fileID: 1156354385455055051}
   m_Father: {fileID: 1836330889997717938}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1757609103212263885
 GameObject:
@@ -1012,13 +1012,13 @@ Transform:
   - {fileID: 1836330890541033972}
   - {fileID: 8810144301545254290}
   - {fileID: 8810144300306398654}
+  - {fileID: 8973935453654009823}
   - {fileID: 3891473765384442852}
   - {fileID: 5684417250801043653}
   - {fileID: 3353555517687852777}
   - {fileID: 8988875024612784007}
   - {fileID: 6009370511790842399}
   - {fileID: 2135092226183721625}
-  - {fileID: 8973935453654009823}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1985,6 +1985,7 @@ MonoBehaviour:
   - 123
   - 1stDialHoz
   - 1stDialHoz 1
+  - 2ndDoorDiA
   - Charlie
   - CrazyCap
   - DEMO_Condition
@@ -2002,9 +2003,9 @@ MonoBehaviour:
   - Test_1
   - Witch
   - WorkRing
-  assignedIndex: -1
-  assignedID: 0
-  assignedDialogue: 
+  assignedIndex: 3
+  assignedID: 63389
+  assignedDialogue: 2ndDoorDiA
   interactionCount: 0
   alias: "\u0410\u043D\u043D\u0430"
   overrideStartNode: -1
@@ -2548,7 +2549,7 @@ Transform:
   - {fileID: 6104497231258462839}
   - {fileID: 5283169074386098067}
   m_Father: {fileID: 1836330889997717938}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3973625820892771132
 GameObject:
@@ -2919,7 +2920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6104497231258462839
 Transform:
   m_ObjectHideFlags: 0
@@ -3074,7 +3075,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1836330889997717938}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5316661360852863990
 GameObject:
@@ -4045,7 +4046,7 @@ Transform:
   - {fileID: 2989269762281635531}
   - {fileID: 3916446429343023680}
   m_Father: {fileID: 1836330889997717938}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6807861529440272800
 GameObject:
@@ -4345,7 +4346,7 @@ RectTransform:
   - {fileID: 8146846540442857136}
   - {fileID: 8152725250483198599}
   m_Father: {fileID: 1836330889997717938}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4934,7 +4935,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1836330889997717938}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8499374583357251220
 GameObject:
@@ -5329,7 +5330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &640379880581155236
 Transform:
   m_ObjectHideFlags: 0
@@ -6138,7 +6139,7 @@ PrefabInstance:
     - target: {fileID: 4826721140499636313, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -6392,15 +6393,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a92e6ec87f5ad4c038229934453c278f, type: 3}
---- !u!4 &8810144301545254290 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7149498112034572307, guid: a92e6ec87f5ad4c038229934453c278f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1836330891059455361}
-  m_PrefabAsset: {fileID: 0}
 --- !u!58 &6593270381458851288 stripped
 CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 4826721140499636313, guid: a92e6ec87f5ad4c038229934453c278f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1836330891059455361}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8810144301545254290 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7149498112034572307, guid: a92e6ec87f5ad4c038229934453c278f,
     type: 3}
   m_PrefabInstance: {fileID: 1836330891059455361}
   m_PrefabAsset: {fileID: 0}

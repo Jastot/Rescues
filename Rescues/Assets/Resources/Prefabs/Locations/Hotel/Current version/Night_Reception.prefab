@@ -5362,7 +5362,7 @@ GameObject:
   - component: {fileID: 2132265067942336059}
   - component: {fileID: 1489210437266686043}
   m_Layer: 0
-  m_Name: Reception
+  m_Name: Night_Reception
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7744,7 +7744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &232626406692992852
 Transform:
   m_ObjectHideFlags: 0
@@ -7862,7 +7862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5812814201435304880
 Transform:
   m_ObjectHideFlags: 0
@@ -9770,7 +9770,7 @@ PrefabInstance:
     - target: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: m_Name
-      value: 3 to Hotel_Salon_1stFloor_1
+      value: 3 to Hotel_Night_Salon_1stFloor_1
       objectReference: {fileID: 0}
     - target: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -9810,7 +9810,7 @@ PrefabInstance:
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: _goToLocationName
-      value: Salon_1stFloor
+      value: Night_Salon_1stFloor
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -10451,7 +10451,7 @@ PrefabInstance:
     - target: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4826721140499636313, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
