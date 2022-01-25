@@ -20,7 +20,6 @@ namespace Rescues
         private bool _isMoveableCameraMode;
         private int _activeLocationHash;
         private bool _isFocusedCameraMode;
-        private float _lastCharacterPositionX;
 
         #endregion
 
@@ -48,7 +47,6 @@ namespace Rescues
             if (_cameraServices.IsCameraFocused && !_isFocusedCameraMode)
             {
                 _isFocusedCameraMode = true;
-                _lastCharacterPositionX = _context.character.Transform.position.x;
             }
 
             if (!_cameraServices.IsCameraFocused && _isFocusedCameraMode)
@@ -194,16 +192,15 @@ namespace Rescues
             if (Mathf.Abs(_cameraServices.CameraMain.transform.position.x - _targetPositionX) > _deadZone ||
                 !Mathf.Approximately(cameraPositionY, _activeCamera.Position_Y_Offset))
             {
+                _cameraAcceleration = _cameraAccelerateStep * Time.deltaTime;
                 _deadZone = 0;
                 _cameraAcceleration = Mathf.Clamp(_cameraAcceleration, 0f, 1f);
                 cameraPositionX = Mathf.Lerp(cameraPositionX, _targetPositionX, _cameraAcceleration);
                 cameraPositionY = Mathf.Lerp(cameraPositionY, _targetPositionY, _cameraAcceleration);
-
-                _cameraAcceleration = _cameraAccelerateStep * Time.deltaTime;
-
-                cameraPositionX = Mathf.Clamp(cameraPositionX, _activeCamera.MoveLeftXLimit, _activeCamera.MoveRightXLimit);
-                cameraPositionY = Mathf.Clamp(cameraPositionY, _activeCamera.MoveDownYLimit, _activeCamera.MoveUpYLimit);
             }
+
+            cameraPositionX = Mathf.Clamp(cameraPositionX, _activeCamera.MoveLeftXLimit, _activeCamera.MoveRightXLimit);
+            cameraPositionY = Mathf.Clamp(cameraPositionY, _activeCamera.MoveDownYLimit, _activeCamera.MoveUpYLimit);
 
             _cameraServices.CameraMain.transform.position = new Vector3(cameraPositionX, cameraPositionY,
                 _cameraServices.CameraDepthConst);

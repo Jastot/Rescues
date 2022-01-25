@@ -10,6 +10,7 @@ namespace Rescues
 
         [SerializeField] private InteractableObjectType _type;
         [SerializeField] private InteractionPrompt _interactionPrompt;
+        [SerializeField] private Vector2 _promptOffset;
 
         #endregion
 
@@ -27,6 +28,7 @@ namespace Rescues
         public string Description { get; set; }
         [field: SerializeField] public string Id { get; set; } = "-1";
         public InteractionPrompt InteractionPrompt => _interactionPrompt;
+        public Vector2 PromptOffset => _promptOffset;
 
         #endregion
 

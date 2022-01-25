@@ -7,11 +7,9 @@ namespace Rescues
         Inventory = 2,
         Notepad = 3,
         PickUp = 4,
-        HorizontalAxis = 5,
-        HorizontalAxisPositive = 6,
-        HorizontalAxisNegative = 7,
-        VerticalAxis = 8,
-        VerticalAxisPositive = 9,
-        VerticalAxisNegative = 10
+        HorizontalAxisPositive = 5,
+        HorizontalAxisNegative = 6,
+        VerticalAxisPositive = 7,
+        VerticalAxisNegative = 8
     }
 }

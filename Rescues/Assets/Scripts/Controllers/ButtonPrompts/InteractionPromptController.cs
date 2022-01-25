@@ -10,17 +10,15 @@ namespace Rescues
         private readonly GameContext _context;
         private readonly InputServices _inputService;
 
-        private readonly Dictionary<InteractionPrompt, KeyCode> _prompts = new Dictionary<InteractionPrompt, KeyCode>();
+        private readonly Dictionary<InteractionPrompt, InputButton> _prompts = new Dictionary<InteractionPrompt, InputButton>();
 
         private Canvas _canvas;
         private Dictionary<InteractableObjectBehavior, InputPromptView> _activePrompts = new Dictionary<InteractableObjectBehavior, InputPromptView>();
         private Stack<InputPromptView> _availablePrompts = new Stack<InputPromptView>();
 
         private InputPromptView _promptPrefab;
-        private string _promptPrefabPath = "Prefabs/UI/InputPrompts/InputPrompt";
-        private string _promptCanvasPrefabPath = "Prefabs/UI/InputPrompts/PromptCanvas";
-
-        private Vector3 _offset = Vector3.up;
+        private const string PROMPT_PREFAB_PATH = "Prefabs/UI/InputPrompts/InputPrompt";
+        private const string PROMPT_CANVAS_PREFAB = "Prefabs/UI/InputPrompts/PromptCanvas";
 
         #endregion
 
@@ -34,7 +32,7 @@ namespace Rescues
 
             FillPrompts();
 
-            _promptPrefab = Resources.Load<InputPromptView>(_promptPrefabPath);
+            _promptPrefab = Resources.Load<InputPromptView>(PROMPT_PREFAB_PATH);
         }
 
         #endregion
@@ -83,14 +81,14 @@ namespace Rescues
 
         private void FillPrompts()
         {
-            _prompts.Add(InteractionPrompt.Use, _inputService.UseButton.Key);
-            _prompts.Add(InteractionPrompt.Inventory, _inputService.InventoryButton.Key);
-            _prompts.Add(InteractionPrompt.Notepad, _inputService.NotepadButton.Key);
-            _prompts.Add(InteractionPrompt.PickUp, _inputService.PickUpButton.Key);
-            _prompts.Add(InteractionPrompt.HorizontalAxisPositive, _inputService.HorizontalAxis.Positive.Key);
-            _prompts.Add(InteractionPrompt.HorizontalAxisNegative, _inputService.HorizontalAxis.Negative.Key);
-            _prompts.Add(InteractionPrompt.VerticalAxisPositive, _inputService.VerticalAxis.Positive.Key);
-            _prompts.Add(InteractionPrompt.VerticalAxisNegative, _inputService.VerticalAxis.Negative.Key);
+            _prompts.Add(InteractionPrompt.Use, _inputService.UseButton);
+            _prompts.Add(InteractionPrompt.Inventory, _inputService.InventoryButton);
+            _prompts.Add(InteractionPrompt.Notepad, _inputService.NotepadButton);
+            _prompts.Add(InteractionPrompt.PickUp, _inputService.PickUpButton);
+            _prompts.Add(InteractionPrompt.HorizontalAxisPositive, _inputService.HorizontalAxis.Positive);
+            _prompts.Add(InteractionPrompt.HorizontalAxisNegative, _inputService.HorizontalAxis.Negative);
+            _prompts.Add(InteractionPrompt.VerticalAxisPositive, _inputService.VerticalAxis.Positive);
+            _prompts.Add(InteractionPrompt.VerticalAxisNegative, _inputService.VerticalAxis.Negative);
         }
 
         private void OnTriggerEnterHandler(ITrigger enteredObject)
@@ -116,7 +114,7 @@ namespace Rescues
 
             if (_canvas == null)
             {
-                _canvas = Object.Instantiate(Resources.Load<Canvas>(_promptCanvasPrefabPath).gameObject).GetComponent<Canvas>();
+                _canvas = Object.Instantiate(Resources.Load<Canvas>(PROMPT_CANVAS_PREFAB).gameObject).GetComponent<Canvas>();
             }
 
             if (_availablePrompts.Count == 0)
@@ -127,8 +125,9 @@ namespace Rescues
             if (!_prompts.ContainsKey(interactable.InteractionPrompt))
                 return;
 
-            prompt.SetText(_prompts[interactable.InteractionPrompt].ToString());
-            prompt.transform.position = interactable.transform.position + _offset;
+            prompt.SetText(_prompts[interactable.InteractionPrompt].Key.ToString());
+            prompt.transform.position = interactable.transform.position + 
+                new Vector3(interactable.PromptOffset.x, interactable.PromptOffset.y, 0);
             prompt.gameObject.SetActive(true);
 
             _activePrompts.Add(interactable, prompt);
