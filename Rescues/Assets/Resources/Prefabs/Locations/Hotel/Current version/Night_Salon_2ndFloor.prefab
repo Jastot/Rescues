@@ -403,7 +403,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2119,7 +2119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4472337662345755855
 Transform:
   m_ObjectHideFlags: 0
@@ -5490,7 +5490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3952673899537974993
 Transform:
   m_ObjectHideFlags: 0
@@ -8606,7 +8606,7 @@ GameObject:
   - component: {fileID: 6396838832741038242}
   - component: {fileID: 5907541622321360578}
   m_Layer: 0
-  m_Name: Salon_2ndFloor
+  m_Name: Night_Salon_2ndFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9250,7 +9250,7 @@ PrefabInstance:
     - target: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: m_Name
-      value: 4 to Hotel_Corridor_1
+      value: 4 to Hotel_Night_Corridor_1
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -9265,7 +9265,7 @@ PrefabInstance:
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: _goToLocationName
-      value: Corridor
+      value: Night_Corridor
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -9345,7 +9345,7 @@ PrefabInstance:
     - target: {fileID: 2745420174002926604, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: m_Name
-      value: 3 to Hotel_Salon_1stFloor_2
+      value: 3 to Hotel_Night_Salon_1stFloor_2
       objectReference: {fileID: 0}
     - target: {fileID: 4826721140499636313, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
@@ -9365,7 +9365,7 @@ PrefabInstance:
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
       propertyPath: _goToLocationName
-      value: Salon_1stFloor
+      value: Night_Salon_1stFloor
       objectReference: {fileID: 0}
     - target: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
         type: 3}
