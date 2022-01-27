@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -45,7 +46,6 @@ namespace Rescues
             _defaultBootScreen.name = "DefaultBootScreen";
             _defaultBootScreen.gameObject.SetActive(false);
             _audioController.LoadMainMusicTheme(_levelParent.transform);
-            //_context.WorldGameData.RestartLevel += RestartLevel;
             LoadLevel(_levelsData.GetGate);
         }
 
@@ -53,7 +53,7 @@ namespace Rescues
 
         #region Methods
 
-        public void LoadLevel(IGate gate)
+        public void LoadLevel(IGate gate, TweenCallback AfterTransfer = null)
         {
             if (_locationController == null || _locationController.LevelName != gate.GoToLevelName)
             {
@@ -61,24 +61,16 @@ namespace Rescues
             }
 
             LocationData bootLocation = _locationController.Locations.Find(l => l.LocationName == gate.GoToLocationName);
-            if (!bootLocation)
+            if (bootLocation == false)
             {
                 throw new Exception(_locationController.LevelName + " не содержит локации с именем " + gate.GoToLocationName);
             }
 
             _customBootScreen = bootLocation.CustomBootScreenInstance;
+            BootScreen bootScreen = _customBootScreen == null ? _defaultBootScreen : _customBootScreen;
+            bootScreen.ShowBootScreen(_services, LoadLocation, AfterTransfer);
 
-            if (gate.ThisLevelName != gate.GoToLevelName || gate.ThisLocationName != gate.GoToLocationName)
-            {
-                BootScreen bootScreen = _customBootScreen == null ? _defaultBootScreen : _customBootScreen;
-                bootScreen.ShowBootScreen(_services, LoadLevelPart);
-            }
-            else
-            {
-                gate.LoadWithTransferTime(LoadLevelPart);
-            }
-
-            void LoadLevelPart()
+            void LoadLocation()
             {
                 LocationData activeLocation = _locationController.Locations.Find(l => l.LocationActiveSelf);
                 if (activeLocation)
@@ -112,11 +104,6 @@ namespace Rescues
                     _context.WorldGameData.LookForLevelByNameInt(bootLocation.LocationName));
                 _context.WorldGameData.SavePlayersPosition(_context.character.Transform.position);
             }
-        }
-
-        private void RestartLevel()
-        {
-            LoadLevel(_context.WorldGameData.GetLastGate());
         }
 
         private void LoadAndUnloadPrefabs(string loadLevelName)

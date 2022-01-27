@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -27,12 +28,12 @@ namespace Rescues
             Context = context;
             LevelName = levelName;
             LevelController = levelController;
-            var path = Path.Combine(AssetsPathGameObject.Object[GameObjectType.Levels], levelName);
-            var locationsData = Resources.LoadAll<LocationData>(path);
+            string path = Path.Combine(AssetsPathGameObject.Object[GameObjectType.Levels], levelName);
+            LocationData[] locationsData = Resources.LoadAll<LocationData>(path);
 
-            foreach (var location in locationsData)
+            foreach (LocationData location in locationsData)
             {
-                var locationInstance = Object.Instantiate(location.LocationPrefab, levelParent);
+                Location locationInstance = Object.Instantiate(location.LocationPrefab, levelParent);
                 locationInstance.name = location.LocationName;
                 location.Gates = locationInstance.transform.GetComponentsInChildren<Gate>().ToList();
                 location.LocationInstance = locationInstance;
@@ -45,15 +46,15 @@ namespace Rescues
                     location.CustomBootScreenInstance.gameObject.SetActive(false);
                 }
 
-                foreach (var gate in location.Gates)
+                foreach (Gate gate in location.Gates)
                 {
                     gate.GoAction += LoadLocation;
                     gate.ThisLocationName = location.LocationName;
                     gate.ThisLevelName = levelName;
                 }
 
-                var triggers = location.LocationInstance.transform.GetComponentsInChildren<InteractableObjectBehavior>(true);
-                foreach (var trigger in triggers)
+                InteractableObjectBehavior[] triggers = location.LocationInstance.transform.GetComponentsInChildren<InteractableObjectBehavior>(true);
+                foreach (InteractableObjectBehavior trigger in triggers)
                 {
                     Context.AddTriggers(trigger.Type, trigger);
                 }
@@ -68,12 +69,17 @@ namespace Rescues
 
         #region Methods
 
-        private void LoadLocation(Gate gate) => LevelController.LoadLevel(gate);
-
         public void UnloadData()
         {
-            foreach (var location in Locations)
+            foreach (LocationData location in Locations)
+            {
                 location.Destroy();
+            }
+        }
+
+        private void LoadLocation(Gate gate, TweenCallback AfterTransfer)
+        {
+            LevelController.LoadLevel(gate, AfterTransfer);
         }
 
         #endregion
