@@ -225,33 +225,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 8
-  <IsInteractionLocked>k__BackingField: 1
+  <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: -1
-  OnTriggerEnterEvents:
+  OnTriggerEnterEvents: []
+  OnTriggerExitEvents: []
+  OnButtonInTriggerEvents:
   - _isInteractionLocked: 0
     IsRepeating: 0
     TimeBeforeInvoke: 0
-    _id: 13
+    _id: 
     Event:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7450674376957609035}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 6458910568452362957}
+          m_TargetAssemblyTypeName: Rescues.Gate, Assembly-CSharp
+          m_MethodName: set_GoToLocationName
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
+            m_StringArgument: Reception
+            m_BoolArgument: 0
           m_CallState: 2
     objectManipulations:
       keys: 
       values: []
-  OnTriggerExitEvents: []
-  OnButtonInTriggerEvents: []
 --- !u!61 &8046546384543181364
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1662,11 +1662,33 @@ MonoBehaviour:
   <IsInteractionLocked>k__BackingField: 0
   <Id>k__BackingField: -1
   OnTriggerEnterEvents: []
-  OnTriggerExitEvents: []
+  OnTriggerExitEvents:
+  - _isInteractionLocked: 0
+    IsRepeating: 0
+    TimeBeforeInvoke: 0
+    _id: 
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2015205661988018227}
+          m_TargetAssemblyTypeName: Rescues.MessageBehaviour, Assembly-CSharp
+          m_MethodName: Show
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    objectManipulations:
+      keys: 
+      values: []
   OnButtonInTriggerEvents:
   - _isInteractionLocked: 0
     IsRepeating: 0
-    TimeBeforeInvoke: 2
+    TimeBeforeInvoke: 0
     _id: 
     Event:
       m_PersistentCalls:
@@ -1682,28 +1704,6 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
-    objectManipulations:
-      keys: 
-      values: []
-  - _isInteractionLocked: 0
-    IsRepeating: 0
-    TimeBeforeInvoke: 2
-    _id: 
-    Event:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2967403143006911732}
-          m_TargetAssemblyTypeName: Rescues.MessageBehaviour, Assembly-CSharp
-          m_MethodName: set_IsLocked
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
           m_CallState: 2
     objectManipulations:
       keys: 
@@ -1978,23 +1978,24 @@ MonoBehaviour:
   diags:
   - 123
   - 1stDialHoz
+  - 1stDialHoz 1
+  - 2ndDoorDiA
   - Charlie
-  - CommentModifier
   - CrazyCap
   - DEMO_Condition
   - demo_Narration
-  - Example3Dialogue
-  - Example4_dialogue
   - Item_LookUp
   - Laura
+  - LightQuest_bed
+  - LowDI
   - MrCube
   - MyTestDialogue
   - NPCOnly
   - QuestChartDemo
   - ReedDi
   - RingQuest
+  - RustKnife
   - Test_1
-  - TriggeredDude
   - Witch
   - WorkRing
   assignedIndex: 1
@@ -2089,7 +2090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputText: "\u0417\u0430\u043F\u0435\u0440\u0442\u043E. \u0413\u0434\u0435-\u0442\u043E
     \u0436\u0435 \u0434\u043E\u043B\u0436\u0435\u043D \u0431\u044B\u0442\u044C \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B? "
-  writePattern: {fileID: 11400000, guid: 651a754bbf75f0f4689629dd9d3f6c04, type: 2}
+  writePattern: {fileID: 11400000, guid: 886d0a2ca6b539744a1fc19a06da05fb, type: 2}
   outputTextContainer: {fileID: 1178322764993610996}
   <IsLocked>k__BackingField: 0
 --- !u!114 &1178322764993610996
@@ -3306,14 +3307,14 @@ GameObject:
   m_Component:
   - component: {fileID: 7727658464298734539}
   - component: {fileID: 2330266637510668071}
-  - component: {fileID: 154047115868937677}
+  - component: {fileID: 2015205661988018227}
   m_Layer: 5
   m_Name: Text_Stand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7727658464298734539
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3321,17 +3322,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5231153321012499600}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.000137, y: 1.000137, z: 1.000137}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2760280429252672861}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63.799984, y: -290.26}
-  m_SizeDelta: {x: 378, y: 44.51}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2330266637510668071
 CanvasRenderer:
@@ -3341,7 +3342,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5231153321012499600}
   m_CullTransparentMesh: 1
---- !u!114 &154047115868937677
+--- !u!114 &2015205661988018227
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3350,33 +3351,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5231153321012499600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 11500000, guid: 76f8ed03ee41eb44b9e90315af654bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.8490566, b: 0.50273037, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 60f60c545d593964181d7e0fbde82790, type: 3}
-    m_FontSize: 16
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 1
-    m_MaxSize: 50
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "\u0421\u0442\u0435\u043D\u0434 \u0441 \u0431\u0443\u043A\u043B\u0435\u0442\u0430\u043C\u0438.
+  inputText: "\u0421\u0442\u0435\u043D\u0434 \u0441 \u0431\u0443\u043A\u043B\u0435\u0442\u0430\u043C\u0438.
     \u0418\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E, \u043A\u0430\u043A \u0442\u0443\u0442
     \u043C\u0435\u0441\u0442\u043D\u044B\u0435 \u0440\u0430\u0437\u0432\u043B\u0435\u043A\u0430\u044E\u0442\u0441\u044F?"
+  writePattern: {fileID: 11400000, guid: 886d0a2ca6b539744a1fc19a06da05fb, type: 2}
+  outputTextContainer: {fileID: 1178322764993610996}
+  <IsLocked>k__BackingField: 0
 --- !u!1 &5268019815865968080
 GameObject:
   m_ObjectHideFlags: 0
@@ -6210,6 +6193,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a92e6ec87f5ad4c038229934453c278f, type: 3}
+--- !u!114 &6458910568452362957 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5863545070883353567, guid: a92e6ec87f5ad4c038229934453c278f,
+    type: 3}
+  m_PrefabInstance: {fileID: 647911261419348242}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12671e5468464ffb931aedbf36e82e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7765834663608035585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7149498112034572307, guid: a92e6ec87f5ad4c038229934453c278f,
@@ -6390,18 +6385,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &592498292535014297 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1936081914070884706, guid: f01243d5917f8dd48afecb2b427b1ce6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1361954268274479867}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1123209695992716035 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2121427922097555960, guid: f01243d5917f8dd48afecb2b427b1ce6,
@@ -6420,6 +6403,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1361954268274479867}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &592498292535014297 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1936081914070884706, guid: f01243d5917f8dd48afecb2b427b1ce6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1361954268274479867}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afede7f54c952f4ca8005770a3b5739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &82461972379826494 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1423793387978271685, guid: f01243d5917f8dd48afecb2b427b1ce6,

@@ -165,7 +165,7 @@ namespace Rescues
                     {
                         _cancelState = () => { };
 
-                        var dialogue = GetInteractableObject<DialogueBehaviour>(InteractableObjectType.Dialogue);
+                        DialogueBehaviour dialogue = GetInteractableObject<DialogueBehaviour>(InteractableObjectType.Dialogue);
                         if (dialogue != null && !dialogue.IsInteractionLocked)
                         {
                             _context.dialogueUIController.Begin(dialogue.assignDialog);
@@ -178,10 +178,10 @@ namespace Rescues
                             LockState();
                         }
 
-                        var eventSystems = GetInteractableObjects<EventSystemBehaviour>(InteractableObjectType.EventSystem);
+                        List<EventSystemBehaviour> eventSystems = GetInteractableObjects<EventSystemBehaviour>(InteractableObjectType.EventSystem);
                         if (eventSystems != null)
                         {
-                            foreach (var es in eventSystems)
+                            foreach (EventSystemBehaviour es in eventSystems)
                             {
                                 if (!es.IsInteractionLocked)
                                 {
@@ -190,13 +190,13 @@ namespace Rescues
                             }
                         }
 
-                        var item = GetInteractableObject<ItemBehaviour>(InteractableObjectType.Item);
+                        ItemBehaviour item = GetInteractableObject<ItemBehaviour>(InteractableObjectType.Item);
                         if (item != null && !item.IsInteractionLocked)
                         {
                             LockState();
                             _context.character.SetPickUp(item.PickUpTime);
                             TimeRemainingExtensions.AddTimeRemaining(new TimeRemaining(() =>
-                            {                               
+                            {
                                 item.gameObject.SetActive(false);
                                 _context.inventory.AddItem(item.ItemData);
                                 _isStateLocked = false;
@@ -204,7 +204,7 @@ namespace Rescues
                             item.PickUpTime));
                         }
 
-                        var puzzleObject = GetInteractableObject<PuzzleBehaviour>(InteractableObjectType.Puzzle);
+                        PuzzleBehaviour puzzleObject = GetInteractableObject<PuzzleBehaviour>(InteractableObjectType.Puzzle);
                         if (puzzleObject != null && !puzzleObject.Puzzle.IsFinished && !puzzleObject.IsInteractionLocked)
                         {
                             puzzleObject.Puzzle.Activate();
@@ -214,10 +214,10 @@ namespace Rescues
                             puzzleObject.Puzzle.Finished += (Puzzle) => _cancelState.Invoke();
                         }
 
-                        var cameraTrigger = GetInteractableObject<CameraTrigger>(InteractableObjectType.CameraTrigger);
+                        CameraTrigger cameraTrigger = GetInteractableObject<CameraTrigger>(InteractableObjectType.CameraTrigger);
                         if (cameraTrigger != null)
                         {
-                            var focusID = Time.frameCount;
+                            int focusID = Time.frameCount;
                             _cameraServices.SetCameraFocusWithID(cameraTrigger.TargetPoint, focusID);
 
                             if (cameraTrigger.IsReturningOnTimer)
@@ -234,7 +234,7 @@ namespace Rescues
 
                 case PlayerStates.PickUp:
                     {
-                        var trap = GetInteractableObject<TrapBehaviour>(InteractableObjectType.Trap);
+                        TrapBehaviour trap = GetInteractableObject<TrapBehaviour>(InteractableObjectType.Trap);
                         if (trap != null && !trap.IsInteractionLocked)
                         {
                             if (_context.inventory.Contains(trap.TrapInfo.RequiredTrapItem))
@@ -257,17 +257,11 @@ namespace Rescues
 
                 case PlayerStates.GoByGateWay:
                     {
-                        var gate = GetInteractableObject<Gate>(InteractableObjectType.Gate);
+                        Gate gate = GetInteractableObject<Gate>(InteractableObjectType.Gate);
                         if (gate != null && !gate.IsInteractionLocked)
                         {
                             LockState();
-                            //TODO Need animation for this
-                            TimeRemainingExtensions.AddTimeRemaining(new TimeRemaining(() =>
-                            {
-                                gate.GoByGateWay();
-                                _isStateLocked = false;
-                            },
-                            gate.LocalTransferTime));
+                            gate.GoByGateWay(() => _isStateLocked = false);
                         }
 
                         _cancelState = () => { };
@@ -285,14 +279,14 @@ namespace Rescues
                     case PlayerStates.Use:
                         {
                             //TODO not implemented
-                            var hidingPlace = GetInteractableObject<HidingPlaceBehaviour>(InteractableObjectType.HidingPlace);
+                            HidingPlaceBehaviour hidingPlace = GetInteractableObject<HidingPlaceBehaviour>(InteractableObjectType.HidingPlace);
                             if (hidingPlace != null && !hidingPlace.IsInteractionLocked)
                             {
                                 _context.character.StartHiding(hidingPlace);
                             }
 
                             //TODO not working yet
-                            var stand = GetInteractableObject<StandBehaviour>(InteractableObjectType.Stand);
+                            StandBehaviour stand = GetInteractableObject<StandBehaviour>(InteractableObjectType.Stand);
                             if (stand != null && !stand.IsInteractionLocked)
                             {
                                 stand.StandWindow.SetActive(true);
