@@ -1,8 +1,6 @@
+using DG.Tweening;
 using System;
-using System.Collections;
-using NaughtyAttributes;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.GameCenter;
 
 
 namespace Rescues
@@ -10,10 +8,8 @@ namespace Rescues
     public class Gate : InteractableObjectBehavior, IGate
     {
         #region Fileds
-        [SerializeField, Tooltip("Задержка на локальные перемещения")] public float _localTransferTime = 2f;
-        private ITrigger _triggerImplementation;
-        
-        [NonSerialized] public Action<Gate> GoAction;
+
+        [NonSerialized] public Action<Gate, TweenCallback> GoAction;
 
         [Header("This Gate")]
         private string _thisLevelName;
@@ -26,11 +22,11 @@ namespace Rescues
         [SerializeField] private int _goToGateId;
 
         [SerializeField] private CircleCollider2D _circleCollider;
-        
+
 
         #endregion
 
-        
+
         #region Private
 
         public Gate(string levelName, string locationName, int id)
@@ -41,9 +37,19 @@ namespace Rescues
         }
 
         #endregion
-        
-        
+
+
         #region Properties
+
+        public int GoToGateId
+        {
+            get => _goToGateId;
+            set => _goToGateId = value;
+        }
+
+        public int ThisGateId => _thisGateId;
+
+        public bool RestartGate => _restartGate;
 
         public string ThisLevelName
         {
@@ -57,34 +63,26 @@ namespace Rescues
             set => _thisLocationName = value;
         }
 
-        public float LocalTransferTime => _localTransferTime;
-        public int ThisGateId => _thisGateId;
-        public string GoToLevelName => _goToLevelName;
-        public string GoToLocationName => _goToLocationName;
-        public int GoToGateId => _goToGateId;
+        public string GoToLevelName
+        {
+            get => _goToLevelName;
+            set => _goToLevelName = value;
+        }
 
-        public bool RestartGate => _restartGate;
+        public string GoToLocationName
+        {
+            get => _goToLocationName;
+            set => _goToLocationName = value;
+        }
+
         #endregion
-        
+
 
         #region Methods
 
-        [Button("Go by gate way")]
-        public void GoByGateWay()
+        public void GoByGateWay(TweenCallback AfterTransfer)
         {
-            GoAction?.Invoke(this);
-        }
-
-        public void LoadWithTransferTime(Action onLoadComplete)
-        {
-            StartCoroutine(Transfer(onLoadComplete));
-        }
-
-        private IEnumerator Transfer(Action onLoadComplete)
-        {
-            yield return new WaitForSeconds(_localTransferTime);
-            onLoadComplete.Invoke();
-            
+            GoAction?.Invoke(this, AfterTransfer);
         }
 
         #endregion
@@ -95,7 +93,10 @@ namespace Rescues
         private void OnValidate()
         {
             if (gameObject.activeInHierarchy)
+            {
                 name = _thisGateId + " to " + _goToLevelName + "_" + _goToLocationName + "_" + _goToGateId;
+            }
+
             Type = InteractableObjectType.Gate;
         }
 
