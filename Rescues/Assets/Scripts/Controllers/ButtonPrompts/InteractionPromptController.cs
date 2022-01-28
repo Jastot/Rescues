@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Rescues
 {
-    public sealed class InteractionPromptController : Controllers, IInitializeController
+    public sealed class InteractionPromptController : IInitializeController, ITearDownController
     {
         #region Fields
 
@@ -40,7 +40,7 @@ namespace Rescues
 
         #region IInitializeController
 
-        public override void Initialize()
+        public void Initialize()
         {
             var interactables = _context.GetListInteractable();
             foreach (var interactable in interactables)
@@ -60,7 +60,7 @@ namespace Rescues
 
         #region ITearDownController
 
-        public override void TearDown()
+        public void TearDown()
         {
             var interactables = _context.GetListInteractable();
             foreach (var interactable in interactables)
