@@ -34,6 +34,7 @@ namespace Rescues
            var canvas = GetComponent<Canvas>();
            canvas.worldCamera = Camera.main;
            canvas.planeDistance = 45;
+           canvas.sortingOrder = 36;
            
            var connectors = gameObject.GetComponentsInChildren<MamaConnector>();
            foreach (var connector in connectors)
