@@ -96,7 +96,11 @@ namespace Rescues
                 Positive.RebindFromString(newBinds[0]);
                 Negative.RebindFromString(newBinds[1]);
             }
-            catch { }
+            catch (System.Exception e)
+            {
+                Debug.Log(typeof(InputAxis) + "  |  " + e.Message + "\n" +
+                    "Incorrect input string. Axis was not rebound");
+            }
         }
 
         #endregion

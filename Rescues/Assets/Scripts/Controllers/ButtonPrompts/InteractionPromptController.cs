@@ -35,7 +35,7 @@ namespace Rescues
 
             FillPrompts();
 
-            _inputPromptsPrefabData = Resources.Load<InputPromptsPrefabData>(AssetsPathGameObject.INPUT_PROMPTS_PREFAB_DATA);
+            _inputPromptsPrefabData = Resources.Load<InputPromptsPrefabData>(AssetsPathGameObject.InputData[InputDataType.InputPromptsPrefabData]);
         }
 
         #endregion

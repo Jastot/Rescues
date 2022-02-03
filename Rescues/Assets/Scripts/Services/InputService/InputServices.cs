@@ -32,7 +32,7 @@ namespace Rescues
 
         public InputServices(Contexts contexts) : base(contexts)
         {
-            _defaultInputsData = Resources.Load<DefaultInputsData>(AssetsPathGameObject.DEFAULT_INPUT_DATA);
+            _defaultInputsData = Resources.Load<DefaultInputsData>(AssetsPathGameObject.InputData[InputDataType.DefaultInputsData]);
 
             SetDefaultInputs();
 
@@ -90,13 +90,19 @@ namespace Rescues
                 var newBinds = inputString.Split(';');
 
                 if (newBinds.Length != _inputs.Count)
+                    return;
 
                 for (int i = 0; i < _inputs.Count; i++)
                 {
+                        Debug.Log(newBinds[i]);
                         _inputs[i].RebindFromString(newBinds[i]);
                 }
             }
-            catch { }
+            catch (System.Exception e)
+            {
+                Debug.Log(typeof(InputServices) + "  |  " + e.Message + "\n" +
+                    "Incorrect input string. Controls were not rebound");
+            }
         }
 
         #endregion

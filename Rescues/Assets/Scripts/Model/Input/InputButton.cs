@@ -151,7 +151,10 @@ namespace Rescues
 
                 Rebind(newKey, newGamepad);
             }
-            catch { }
+            catch (System.Exception e)
+            {
+                Debug.Log(typeof(InputButton) + "  |  " + e.Message);
+            }
         }
 
         #endregion
