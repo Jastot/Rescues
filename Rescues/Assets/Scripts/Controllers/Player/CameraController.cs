@@ -53,6 +53,7 @@ namespace Rescues
 
         #endregion
 
+
         #region IInitializeController
 
         public void Initialize()

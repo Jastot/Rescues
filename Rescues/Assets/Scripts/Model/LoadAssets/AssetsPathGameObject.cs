@@ -32,6 +32,9 @@ namespace Rescues
             {AudioDataType.HotelMusicTheme, "Prefabs/Locations/Hotel/Current version/HotelMusicTheme"},
         };
 
+        public static string INPUT_PROMPTS_PREFAB_DATA = "Data/Input/InputPromptsPrefabData";
+        public static string DEFAULT_INPUT_DATA = "Data/Input/DefaultInputsData";
+
         #endregion
     }
 }

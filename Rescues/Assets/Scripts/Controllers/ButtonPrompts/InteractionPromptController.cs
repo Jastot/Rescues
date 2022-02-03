@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Rescues
 {
-    public sealed class InteractionPromptController : IInitializeController, ITearDownController
+    public sealed class InteractionPromptController : IInitializeController, ITearDownController, IExecuteController
     {
         #region Fields
 
@@ -16,9 +17,11 @@ namespace Rescues
         private Dictionary<InteractableObjectBehavior, InputPromptView> _activePrompts = new Dictionary<InteractableObjectBehavior, InputPromptView>();
         private Stack<InputPromptView> _availablePrompts = new Stack<InputPromptView>();
 
-        private InputPromptView _promptPrefab;
-        private const string PROMPT_PREFAB_PATH = "Prefabs/UI/InputPrompts/InputPrompt";
-        private const string PROMPT_CANVAS_PREFAB = "Prefabs/UI/InputPrompts/PromptCanvas";
+        private InputPromptsPrefabData _inputPromptsPrefabData;
+
+        private InputDevice _activeDevice;
+        private InputDevice _lastActiveDevice;
+        private bool _wasDeviceChanged;
 
         #endregion
 
@@ -32,7 +35,7 @@ namespace Rescues
 
             FillPrompts();
 
-            _promptPrefab = Resources.Load<InputPromptView>(PROMPT_PREFAB_PATH);
+            _inputPromptsPrefabData = Resources.Load<InputPromptsPrefabData>(AssetsPathGameObject.INPUT_PROMPTS_PREFAB_DATA);
         }
 
         #endregion
@@ -77,6 +80,19 @@ namespace Rescues
         #endregion
 
 
+        # region IExecuteController
+
+        public void Execute()
+        {
+            GetActiveDevice();
+
+            if (_wasDeviceChanged)
+                UpdatePrompts();
+        }
+
+        #endregion
+
+
         #region Methods
 
         private void FillPrompts()
@@ -114,7 +130,7 @@ namespace Rescues
 
             if (_canvas == null)
             {
-                _canvas = Object.Instantiate(Resources.Load<Canvas>(PROMPT_CANVAS_PREFAB).gameObject).GetComponent<Canvas>();
+                _canvas = Object.Instantiate(_inputPromptsPrefabData.InputPromptCanvas.gameObject).GetComponent<Canvas>();
             }
 
             if (_availablePrompts.Count == 0)
@@ -125,12 +141,63 @@ namespace Rescues
             if (!_prompts.ContainsKey(interactable.InteractionPrompt))
                 return;
 
-            prompt.SetText(_prompts[interactable.InteractionPrompt].Key.ToString());
+            UpdatePrompts();
+
             prompt.transform.position = interactable.transform.position + 
                 new Vector3(interactable.PromptOffset.x, interactable.PromptOffset.y, 0);
             prompt.gameObject.SetActive(true);
 
             _activePrompts.Add(interactable, prompt);
+        }
+
+        private void UpdatePrompts()
+        {
+            foreach (var kvp in _activePrompts)
+            {
+                var prompt = kvp.Value;
+                var interactable = kvp.Key;
+
+                string promptText;
+
+                if (_activeDevice != null && (_activeDevice is Gamepad))
+                {
+                    promptText = "";
+
+                    var icons = GetIconsDictionary();
+
+                    prompt.SetSprite(icons[_prompts[interactable.InteractionPrompt].GamepadBind]);
+                }
+                else
+                {
+                    promptText = _prompts[interactable.InteractionPrompt].KeyboardBind.ToString();
+                    prompt.SetSprite(_inputPromptsPrefabData.BlankKey);
+                }
+
+                prompt.SetText(promptText);
+            }
+        }
+
+        private void GetActiveDevice()
+        {
+            foreach (var device in InputSystem.devices)
+                if (device.IsPressed() && _lastActiveDevice != device &&  ((device is Gamepad) || (device is Keyboard)))
+                {
+                    _lastActiveDevice = _activeDevice;
+                    _activeDevice = device;
+                    _wasDeviceChanged = true;
+                    return;
+                }
+        }
+
+        private GamepadInputSpriteDictionary GetIconsDictionary()
+        {
+            if (_activeDevice is UnityEngine.InputSystem.Switch.SwitchProControllerHID)
+                return _inputPromptsPrefabData.SwitchIcons;
+
+            if (_activeDevice is UnityEngine.InputSystem.DualShock.DualShockGamepad)
+                return _inputPromptsPrefabData.PlayStationIcons;
+
+            return _inputPromptsPrefabData.XBoxIcons;
         }
 
         private void HidePrompt(InteractableObjectBehavior interactable)
@@ -147,7 +214,7 @@ namespace Rescues
 
         private void CreateNewPrompt()
         {
-            var prompt = Object.Instantiate(_promptPrefab.gameObject, _canvas.transform).GetComponent<InputPromptView>();
+            var prompt = Object.Instantiate(_inputPromptsPrefabData.InputPromptView.gameObject, _canvas.transform).GetComponent<InputPromptView>();
             prompt.gameObject.SetActive(false);
             _availablePrompts.Push(prompt);
         }
