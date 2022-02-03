@@ -15,9 +15,14 @@ namespace Rescues
             if (_backgroundImage.drawMode == SpriteDrawMode.Sliced)
             {
                 var size = _backgroundImage.size;
-                size.x = text.Length;
+                size.x = Mathf.Max( text.Length, 1);
                 _backgroundImage.size = size;
             }
+        }
+
+        public void SetSprite(Sprite sprite)
+        {
+            _backgroundImage.sprite = sprite;
         }
     }
 }

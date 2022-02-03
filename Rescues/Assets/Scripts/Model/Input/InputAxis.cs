@@ -1,3 +1,4 @@
+using System.Text;
 using UnityEngine;
 
 namespace Rescues
@@ -8,42 +9,46 @@ namespace Rescues
 
         public InputButton Positive{ get; private set; }
         public InputButton Negative { get; private set; }
-        public float Value { get; private set; }
-        public bool IsReceivingInput { get; private set; }
-        public bool IsReleased { get; private set; }
+
+        public bool IsReceivingInput 
+        {
+            get 
+            {
+                return Positive.IsHeld || Negative.IsHeld;
+            }
+        }
+
+        public bool IsReleased 
+        {
+            get 
+            {
+                return Positive.IsUp && !Negative.IsHeld ||
+                    Negative.IsUp && !Positive.IsHeld;
+            }
+        }
+
+        public float Value 
+        { 
+            get 
+            {
+                if (Positive.IsHeld == Negative.IsHeld)
+                    return 0f;
+                else if (Positive.IsHeld)
+                    return 1f;
+                else
+                    return -1f;
+            }
+        }
 
         #endregion
 
 
         #region ClassLifeCycles
 
-        public InputAxis(KeyCode positive, KeyCode negative)
+        public InputAxis(KeyCode positiveKey, KeyCode negativeKey, GamepadInputs gamepadPositive, GamepadInputs gamepadNegative)
         {
-            Positive = new InputButton(positive);
-            Negative = new InputButton(negative);
-        }
-
-        #endregion
-
-
-        #region IInput
-
-        public void UpdateInputValues()
-        {
-            Positive.UpdateInputValues();
-            Negative.UpdateInputValues();
-
-            if (Positive.IsHeld == Negative.IsHeld)
-                Value = 0f;
-            else if (Positive.IsHeld)
-                Value = 1f;
-            else
-                Value = -1f;
-
-            IsReceivingInput = Positive.IsHeld || Negative.IsHeld;
-
-            IsReleased = Positive.IsUp && !Negative.IsHeld ||
-                Negative.IsUp && !Positive.IsHeld;
+            Positive = new InputButton(positiveKey, gamepadPositive);
+            Negative = new InputButton(negativeKey, gamepadNegative);
         }
 
         #endregion
@@ -51,10 +56,58 @@ namespace Rescues
 
         #region Methods
 
-        public void SetNewKeys(KeyCode positive, KeyCode negative)
+        public void Rebind(KeyCode positiveKey, KeyCode negativeKey, GamepadInputs gamepadPositive, GamepadInputs gamepadNegative)
         {
-            Positive = new InputButton(positive);
-            Negative = new InputButton(negative);
+            RebindPositive(positiveKey, gamepadPositive);
+            RebindNegative(negativeKey, gamepadNegative);
+        }
+
+        public void RebindPositive(KeyCode positiveKey, GamepadInputs gamepadPositive)
+        {
+            Positive.Rebind(positiveKey, gamepadPositive);
+        }
+
+        public void RebindNegative(KeyCode negativeKey, GamepadInputs gamepadNegative)
+        {
+            Negative.Rebind(negativeKey, gamepadNegative);
+        }
+
+        #endregion
+
+
+        #region IInput
+
+        public string GetSaveString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(Positive.GetSaveString());
+            sb.Append(":");
+            sb.Append(Negative.GetSaveString());
+
+            return sb.ToString();
+        }
+
+        public void RebindFromString(string rebindString)
+        {
+            try
+            {
+                var newBinds = rebindString.Split(':');
+
+                Positive.RebindFromString(newBinds[0]);
+                Negative.RebindFromString(newBinds[1]);
+            }
+            catch { }
+        }
+
+        #endregion
+
+
+        #region IDisposable
+
+        public void Dispose()
+        {
+            Positive.Dispose();
+            Negative.Dispose();
         }
 
         #endregion

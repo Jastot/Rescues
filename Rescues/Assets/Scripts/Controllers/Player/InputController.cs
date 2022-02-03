@@ -42,8 +42,6 @@ namespace Rescues
 
         public void Execute()
         {
-            _inputService.UpdateInputs();
-
             if (_inputService.CancelButton.IsUp)
             {
                 if (_lastState != PlayerStates.Idle && _lastState != PlayerStates.Moving)

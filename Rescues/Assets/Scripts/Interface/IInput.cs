@@ -1,7 +1,10 @@
+using System;
+
 namespace Rescues
 {
-    public interface IInput
+    public interface IInput : IDisposable
     {
-        void UpdateInputValues();
+        string GetSaveString();
+        void RebindFromString(string rebindString);
     }
 }

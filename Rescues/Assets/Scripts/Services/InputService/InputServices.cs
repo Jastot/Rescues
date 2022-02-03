@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 namespace Rescues
@@ -7,16 +8,22 @@ namespace Rescues
     {
         #region Fields
 
-        public readonly InputAxis HorizontalAxis;
-        public readonly InputAxis VerticalAxis;
-        public readonly InputButton CancelButton;
-        public readonly InputButton PickUpButton;
-        public readonly InputButton InventoryButton;
-        public readonly InputButton NotepadButton;
-        public readonly InputButton MouseScrollButton;
-        public readonly InputButton UseButton;
-
         private List<IInput> _inputs;
+        private DefaultInputsData _defaultInputsData;
+
+        #endregion
+
+
+        #region Properties
+
+        public InputAxis HorizontalAxis { get; private set; }
+        public InputAxis VerticalAxis { get; private set; }
+        public InputButton CancelButton { get; private set; }
+        public InputButton PickUpButton { get; private set; }
+        public InputButton InventoryButton { get; private set; }
+        public InputButton NotepadButton { get; private set; }
+        public InputButton MouseScrollButton { get; private set; }
+        public InputButton UseButton { get; private set; }
 
         #endregion
 
@@ -25,14 +32,9 @@ namespace Rescues
 
         public InputServices(Contexts contexts) : base(contexts)
         {
-            HorizontalAxis = new InputAxis(KeyCode.D, KeyCode.A);
-            VerticalAxis = new InputAxis(KeyCode.W, KeyCode.S);
-            CancelButton = new InputButton(KeyCode.Escape);
-            PickUpButton = new InputButton(KeyCode.Space);
-            InventoryButton = new InputButton(KeyCode.I);
-            NotepadButton = new InputButton(KeyCode.J);
-            MouseScrollButton = new InputButton(KeyCode.Mouse2);
-            UseButton = new InputButton(KeyCode.E);
+            _defaultInputsData = Resources.Load<DefaultInputsData>(AssetsPathGameObject.DEFAULT_INPUT_DATA);
+
+            SetDefaultInputs();
 
             _inputs = new List<IInput>(8);
             _inputs.Add(HorizontalAxis);
@@ -50,10 +52,51 @@ namespace Rescues
 
         #region Methods
 
-        public void UpdateInputs()
+        public void SetDefaultInputs()
         {
-            foreach (var input in _inputs)
-                input.UpdateInputValues();
+            HorizontalAxis = new InputAxis(_defaultInputsData.HorizontalAxis.Positive.Key, _defaultInputsData.HorizontalAxis.Negative.Key,
+                _defaultInputsData.HorizontalAxis.Positive.GamepadInput, _defaultInputsData.HorizontalAxis.Negative.GamepadInput);
+
+            VerticalAxis = new InputAxis(_defaultInputsData.VerticalAxis.Positive.Key, _defaultInputsData.VerticalAxis.Negative.Key,
+                _defaultInputsData.VerticalAxis.Positive.GamepadInput, _defaultInputsData.VerticalAxis.Negative.GamepadInput);
+
+            CancelButton = new InputButton(_defaultInputsData.CancelButton.Key, _defaultInputsData.CancelButton.GamepadInput);
+            PickUpButton = new InputButton(_defaultInputsData.PickUpButton.Key, _defaultInputsData.PickUpButton.GamepadInput);
+            InventoryButton = new InputButton(_defaultInputsData.InventoryButton.Key, _defaultInputsData.InventoryButton.GamepadInput);
+            NotepadButton = new InputButton(_defaultInputsData.NotepadButton.Key, _defaultInputsData.NotepadButton.GamepadInput);
+            MouseScrollButton = new InputButton(_defaultInputsData.MouseScrollButton.Key, _defaultInputsData.MouseScrollButton.GamepadInput);
+            UseButton = new InputButton(_defaultInputsData.UseButton.Key, _defaultInputsData.UseButton.GamepadInput);
+        }
+
+        public string GetSaveString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < _inputs.Count; i++)
+            {
+                sb.Append(_inputs[i].GetSaveString());
+
+                if (i != _inputs.Count -1)
+                    sb.Append(";");
+            }
+
+            return sb.ToString();
+        }
+
+        public void LoadInputsFromString(string inputString)
+        {
+            try
+            {
+                var newBinds = inputString.Split(';');
+
+                if (newBinds.Length != _inputs.Count)
+
+                for (int i = 0; i < _inputs.Count; i++)
+                {
+                        _inputs[i].RebindFromString(newBinds[i]);
+                }
+            }
+            catch { }
         }
 
         #endregion
