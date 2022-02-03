@@ -42,5 +42,5 @@ MonoBehaviour:
     Key: 325
     GamepadInput: 26
   UseButton:
-    Key: 114
-    GamepadInput: 7
+    Key: 101
+    GamepadInput: 3

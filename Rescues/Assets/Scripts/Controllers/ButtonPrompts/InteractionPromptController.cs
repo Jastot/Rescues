@@ -128,6 +128,9 @@ namespace Rescues
             if (interactable.IsInteractionLocked)
                 return;
 
+            if (!_prompts.ContainsKey(interactable.InteractionPrompt))
+                return;
+
             if (_canvas == null)
             {
                 _canvas = Object.Instantiate(_inputPromptsPrefabData.InputPromptCanvas.gameObject).GetComponent<Canvas>();
@@ -138,16 +141,13 @@ namespace Rescues
 
             var prompt = _availablePrompts.Pop();
 
-            if (!_prompts.ContainsKey(interactable.InteractionPrompt))
-                return;
-
-            UpdatePrompts();
-
             prompt.transform.position = interactable.transform.position + 
                 new Vector3(interactable.PromptOffset.x, interactable.PromptOffset.y, 0);
             prompt.gameObject.SetActive(true);
 
             _activePrompts.Add(interactable, prompt);
+
+            UpdatePrompts();
         }
 
         private void UpdatePrompts()
