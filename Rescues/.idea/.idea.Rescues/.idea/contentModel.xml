@@ -4,7 +4,9 @@
     <e p="C:\Users\Jasto\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Jasto\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_Rescues.-295436741.00" t="ExcludeRecursive" />
     <e p="D:\Unity-Storage\Rescues_Jastot\Rescues\Rescues" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="CustomButton.cs" t="Include" />
@@ -305,6 +307,14 @@
             </e>
           </e>
         </e>
+        <e p="Plugins" t="Include">
+          <e p="SerializableDictionary" t="Include">
+            <e p="Editor" t="Include">
+              <e p="SerializableDictionaryPropertyDrawer.cs" t="Include" />
+            </e>
+            <e p="SerializableDictionary.cs" t="Include" />
+          </e>
+        </e>
         <e p="Samples" t="Include">
           <e p="2D Animation" t="Include">
             <e p="4.2.2" t="Include">
@@ -345,6 +355,9 @@
               <e p="IEffectsVolumeSetter.cs" t="Include" />
               <e p="IMusicVolumeSetter.cs" t="Include" />
               <e p="IVoiceVolumeSetter.cs" t="Include" />
+            </e>
+            <e p="ButtonPrompts" t="Include">
+              <e p="InteractionPromptController.cs" t="Include" />
             </e>
             <e p="Dialogue" t="Include">
               <e p="DialogueUIController.cs" t="Include" />
@@ -396,6 +409,7 @@
             <e p="EnemyData.cs" t="Include" />
             <e p="EventData.cs" t="Include" />
             <e p="HidingPlaceData.cs" t="Include" />
+            <e p="InputPromptsPrefabData.cs" t="Include" />
             <e p="ItemData.cs" t="Include" />
             <e p="ItemEventsData.cs" t="Include" />
             <e p="ItemRecipe.cs" t="Include" />
@@ -406,6 +420,12 @@
             <e p="RouteData.cs" t="Include" />
             <e p="StandItemData.cs" t="Include" />
             <e p="WayPointInfo.cs" t="Include" />
+            <e p="WritePattern" t="Include">
+              <e p="BasicWrite.cs" t="Include" />
+              <e p="FadeoutGradualWrite.cs" t="Include" />
+              <e p="GradualWrite.cs" t="Include" />
+              <e p="WritePattern.cs" t="Include" />
+            </e>
           </e>
           <e p="DataSavingSystem" t="Include">
             <e p="Data" t="Include">
@@ -434,6 +454,7 @@
             <e p="DialogueCommands.cs" t="Include" />
             <e p="EventSystemCommands.cs" t="Include" />
             <e p="InteractableObjectType.cs" t="Include" />
+            <e p="InteractionPrompt.cs" t="Include" />
             <e p="NPCState.cs" t="Include" />
             <e p="PlayerStates.cs" t="Include" />
             <e p="ReactiveType.cs" t="Include" />
@@ -448,6 +469,13 @@
             <e p="Extensions" t="Include">
               <e p="DateTimeExtension.cs" t="Include" />
             </e>
+            <e p="Input" t="Include">
+              <e p="Editor" t="Include">
+                <e p="AnySerializableDictionaryPropertyDrawer.cs" t="Include" />
+              </e>
+              <e p="GamepadControllPaths.cs" t="Include" />
+              <e p="GamepadInputSpriteDictionary.cs" t="Include" />
+            </e>
             <e p="Manageres" t="Include">
               <e p="LayerManager.cs" t="Include" />
               <e p="TagManager.cs" t="Include" />
@@ -455,24 +483,20 @@
             <e p="SerializableDictionary.cs" t="Include" />
           </e>
           <e p="Interface" t="Include">
+            <e p="GamepadInputs.cs" t="Include" />
             <e p="ICleanupController.cs" t="Include" />
             <e p="IController.cs" t="Include" />
             <e p="IExecuteController.cs" t="Include" />
             <e p="IInitializeController.cs" t="Include" />
+            <e p="IInput.cs" t="Include" />
             <e p="IInteractable.cs" t="Include" />
             <e p="IReactiveController.cs" t="Include" />
             <e p="ITearDownController.cs" t="Include" />
             <e p="ITrigger.cs" t="Include" />
           </e>
-          <e p="LoadAssets" t="Include">
-            <e p="AssetsPathGameObject.cs" t="Include" />
-            <e p="Type" t="Include">
-              <e p="AudioDataType.cs" t="Include" />
-              <e p="GameObjectType.cs" t="Include" />
-            </e>
-          </e>
           <e p="Model" t="Include">
             <e p="Behaviour" t="Include">
+              <e p="CameraTrigger.cs" t="Include" />
               <e p="Dialogue" t="Include">
                 <e p="DialogueBehaviour.cs" t="Include" />
                 <e p="DialogueUI.cs" t="Include" />
@@ -480,6 +504,9 @@
                 <e p="PossibleAnswer.cs" t="Include" />
               </e>
               <e p="DoorTeleporterBehaviour.cs" t="Include" />
+              <e p="Editor" t="Include">
+                <e p="CameraTriggerEditor.cs" t="Include" />
+              </e>
               <e p="EnemyBehaviour.cs" t="Include" />
               <e p="EventSystem" t="Include">
                 <e p="EventSystemBehaviour.cs" t="Include" />
@@ -493,6 +520,9 @@
               </e>
               <e p="InventoryDependsBehaviour.cs" t="Include" />
               <e p="ItemBehaviour.cs" t="Include" />
+              <e p="Message" t="Include">
+                <e p="MessageBehaviour.cs" t="Include" />
+              </e>
               <e p="PlayerBehaviour.cs" t="Include" />
               <e p="RaycastTestBehaviour.cs" t="Include" />
               <e p="StandBehaviour.cs" t="Include" />
@@ -500,8 +530,28 @@
               <e p="TrapInfo.cs" t="Include" />
               <e p="WayPointBehaviour.cs" t="Include" />
             </e>
+            <e p="CameraStates" t="Include">
+              <e p="CameraState.cs" t="Include" />
+              <e p="MovableCameraState.cs" t="Include" />
+              <e p="StaticCameraState.cs" t="Include" />
+            </e>
             <e p="CharacterModel.cs" t="Include" />
             <e p="DialogueCommandValue.cs" t="Include" />
+            <e p="Input" t="Include">
+              <e p="AxisBinds.cs" t="Include" />
+              <e p="ButtonBinds.cs" t="Include" />
+              <e p="DefaultInputsData.cs" t="Include" />
+              <e p="InputAxis.cs" t="Include" />
+              <e p="InputButton.cs" t="Include" />
+            </e>
+            <e p="LoadAssets" t="Include">
+              <e p="AssetsPathGameObject.cs" t="Include" />
+              <e p="Type" t="Include">
+                <e p="AudioDataType.cs" t="Include" />
+                <e p="GameObjectType.cs" t="Include" />
+                <e p="InputDataType.cs" t="Include" />
+              </e>
+            </e>
             <e p="SequentialTimeRemainingsContainer.cs" t="Include" />
             <e p="Stand" t="Include">
               <e p="StandItem.cs" t="Include" />
@@ -647,6 +697,9 @@
             <e p="CameraService" t="Include">
               <e p="CameraServices.cs" t="Include" />
             </e>
+            <e p="InputService" t="Include">
+              <e p="InputServices.cs" t="Include" />
+            </e>
             <e p="PhysicsServices" t="Include">
               <e p="PhysicalServices.cs" t="Include" />
             </e>
@@ -659,6 +712,7 @@
           </e>
           <e p="UI" t="Include">
             <e p="BaseUi.cs" t="Include" />
+            <e p="InputPromptView.cs" t="Include" />
             <e p="Interfaces" t="Include">
               <e p="IListenerScreen.cs" t="Include" />
               <e p="IPartUI.cs" t="Include" />

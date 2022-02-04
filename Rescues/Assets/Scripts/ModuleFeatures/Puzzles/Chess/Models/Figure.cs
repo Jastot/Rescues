@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -60,15 +61,14 @@ namespace Rescues
             int ID,
          int CurrentPositionX,
          int CurrentPositionY,
-            int EndPositionX,
-            int EndPositionY
+            List<EndPosition> endPositions
         )
         {
             _figureStruct.UnicSequenceID = ID;
             _figureStruct.CurrentPositionX = CurrentPositionX;
             _figureStruct.CurrentPositionY = CurrentPositionY;
-            _figureStruct.EndPositionX = EndPositionX;
-            _figureStruct.EndPositionY = EndPositionY;
+            _figureStruct.indexOfCurrentPosition = 0;
+            _figureStruct.EndPositions = endPositions;
         }
         
         #endregion

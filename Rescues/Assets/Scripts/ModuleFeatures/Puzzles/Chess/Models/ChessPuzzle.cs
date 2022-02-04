@@ -70,9 +70,12 @@ namespace Rescues
 
         private bool CheckFigurePosition(FigureStruct figureStruct)
         {
-            if (figureStruct.EndPositionX == figureStruct.CurrentPositionX
-                && figureStruct.EndPositionY == figureStruct.CurrentPositionY)
+            if (figureStruct.EndPositions[figureStruct.indexOfCurrentPosition].EndPositionX == figureStruct.CurrentPositionX
+                && figureStruct.EndPositions[figureStruct.indexOfCurrentPosition].EndPositionY == figureStruct.CurrentPositionY)
+            {
+                figureStruct.indexOfCurrentPosition++;
                 return true;
+            }
             else
                 return false;
         }

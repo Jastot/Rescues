@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6787876198937181798}
   - component: {fileID: 1097550011609057590}
   m_Layer: 0
-  m_Name: BBishop
+  m_Name: BRook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _figureStruct:
     UnicSequenceID: 0
-    IndexOfFigure: 3
+    IndexOfFigure: 4
     CurrentPositionX: 0
     CurrentPositionY: 0
     EndPositionX: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5459243795042555613, guid: d61aea86631e49645bcfdb58877a8b21,
+  m_Sprite: {fileID: 1989908382352494840, guid: d61aea86631e49645bcfdb58877a8b21,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
