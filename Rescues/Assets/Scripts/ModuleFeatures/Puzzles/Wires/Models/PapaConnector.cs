@@ -1,24 +1,22 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 
 namespace Rescues
 {
-    public class PapaConnector : MonoBehaviour,IBeginDragHandler, IEndDragHandler, IDragHandler
+    [RequireComponent(typeof(BoxCollider2D))]
+    [RequireComponent(typeof(SpriteRenderer))]
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class PapaConnector : MonoBehaviour
     {
         #region Fileds
+
+        private const int SORTING_ORDER = 3;
 
         [SerializeField] private Sprite _connectorSprite;
         private Wire _wire;
         private bool _isMoving = false;
-        private Image _image;
-        
-        public List<MamaConnector> mamaZonePositions = new List<MamaConnector>();
-        public event Action<MamaConnector,PapaConnector> InMamaConnectorZone;
-        
+        [SerializeField] private BoxCollider2D _dragbleBounds;
+        private SpriteRenderer _spriteRenderer;
         #endregion
 
         
@@ -35,64 +33,52 @@ namespace Rescues
         private void Awake()
         {
             _wire = GetComponentInParent<Wire>();
-            _image = GetComponent<Image>();
+            _dragbleBounds.enabled = false;
+
+            var rigibody = GetComponent<Rigidbody2D>();
+            rigibody.simulated = true;
+            rigibody.isKinematic = true;
+
+            var boxCollider = GetComponent<BoxCollider2D>();
+            boxCollider.isTrigger = true;
+
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _spriteRenderer.sortingOrder = SORTING_ORDER;
+
             if (_connectorSprite)
-                _image.sprite = _connectorSprite;
+                _spriteRenderer.sprite = _connectorSprite;
         }
-        
-        #endregion
 
-        
-        #region IDrag
-
-        public void OnBeginDrag(PointerEventData eventData)
+        private void OnMouseDown()
         {
             _isMoving = true;
+            _dragbleBounds.enabled = true;
             _wire.SetEndPointRemeber();
         }
 
-        public void OnEndDrag(PointerEventData eventData)
+        private void OnMouseDrag()
         {
-            var mamaConnector = IsThisPapaConnectorInMamaConnectorZone();
-            _isMoving = false;
-            if (mamaConnector)
-                InMamaConnectorZone.Invoke(mamaConnector,this);
-        }
-
-        public void OnDrag(PointerEventData eventData)
-        {
-            var mamaConnector = IsThisPapaConnectorInMamaConnectorZone();
-            if (mamaConnector)
-                InMamaConnectorZone.Invoke(mamaConnector,this);
             var cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            MoveWire(cursorPosition);
+
+            if (_dragbleBounds.OverlapPoint(cursorPosition))
+                MoveWire(cursorPosition);
         }
 
+        private void OnMouseUp()
+        {
+            _isMoving = false;
+            _dragbleBounds.enabled = false;
+        }
+        
         #endregion
 
-        
+
         #region Methods
         
         public void MoveWire(Vector2 newPosition) => _wire.MoveWire(newPosition);
 
-        public void SetSpriteConnector(bool value) => _image.enabled = value;
-
-        private MamaConnector IsThisPapaConnectorInMamaConnectorZone()
-        {
-            var position = transform.position;
-          
-            foreach (var mamaConnector in mamaZonePositions)
-            {
-                var mamaPosition = mamaConnector.transform.position;
-                double d = Math.Sqrt(Math.Pow(position.x - mamaPosition.x, 2) 
-                                     + Math.Pow(position.y - mamaPosition.y, 2));
-                if (d <= mamaConnector.Radius)
-                    return mamaConnector;
-            }
-            return null;
-        }
+        public void SetSpriteConnector(bool value) => _spriteRenderer.enabled = value;
 
         #endregion
-        
     }
 }

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Dynamic;
 using System.Linq;
 using UnityEngine;
 
@@ -33,16 +35,15 @@ namespace Rescues
         }
 
         public void Finish(Puzzle puzzle)
-        { }
+        {
+            puzzle.Finish();
+        }
 
         public void CheckComplete(Puzzle puzzle)
         {
             var specificPuzzle = puzzle as WiresPuzzle;
             if (specificPuzzle != null && specificPuzzle.Connectors.All(s => s.IsCorrectWire))
-            {
-                specificPuzzle.OnFinish();
-                specificPuzzle.Finish();
-            }
+                Finish(specificPuzzle);
         }
         
         public void ResetValues(Puzzle puzzle)
