@@ -58,13 +58,11 @@ namespace Rescues
         }
         
         public void SetFigureStartInfo(
-            int ID,
-         int CurrentPositionX,
+            int CurrentPositionX,
          int CurrentPositionY,
             List<EndPosition> endPositions
         )
         {
-            _figureStruct.UnicSequenceID = ID;
             _figureStruct.CurrentPositionX = CurrentPositionX;
             _figureStruct.CurrentPositionY = CurrentPositionY;
             _figureStruct.indexOfCurrentPosition = 0;

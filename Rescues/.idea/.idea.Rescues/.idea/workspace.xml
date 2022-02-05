@@ -70,80 +70,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34dae543-2f34-47cc-94c2-3245ae1fc3b4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BlackFigure.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BlackFigure/BBishop.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BlackFigure/BBishop.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BlackFigure/BKnight.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BlackFigure/BKnight.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BlackFigure/BPawn.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BlackFigure/BPawn.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BlackFigure/BQueen.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BlackFigure/BQueen.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BlackFigure/BRook.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BlackFigure/BRook.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/ChessPuzzleView.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/ChessPuzzleView.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WhiteFigure.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WhiteFigure/WBishop.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WhiteFigure/WBishop.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WhiteFigure/WKnight.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WhiteFigure/WKnight.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WhiteFigure/WPawn.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WhiteFigure/WPawn.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WhiteFigure/WQueen.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WhiteFigure/WQueen.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WhiteFigure/WRook.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WhiteFigure/WRook.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/ChessPuzzleDataEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/ChessPuzzleDataEditor.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rescues/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/Puzzels/ChessPuzzlesData/ChessPuzzle.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/Puzzels/ChessPuzzlesData/ChessPuzzle.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BBishop.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BBishop.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BKing.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BKing.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BKnight.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BKnight.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BPawn.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BPawn.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BQueen.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BQueen.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BRook.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/BRook.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Bishop.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Bishop.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/ChessPuzzlePrefab.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/ChessPuzzlePrefab.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/ChessTest.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/ChessTest.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/King.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/King.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Knight.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Knight.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Pawn.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Pawn.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Queen.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Queen.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Rook.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/Rook.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WBishop.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WBishop.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WKing.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WKing.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WKnight.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WKnight.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WPawn.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WPawn.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WQueen.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WQueen.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WRook.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Puzzles/ChessPuzzle/WRook.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/ChessPuzzleData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ChessPuzzleData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/FigureCreationFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/FigureCreationFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Interface/IFigureFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Interface/IFigureFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessBoard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessPuzzle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessPuzzle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Figure.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Figure.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/FigureStruct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/FigureStruct.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,6 +154,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Model/Location.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/GameControllers/MainControllers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/GameControllers/Controllers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A8EB1BE6-8ACB-4659-AF00-824C7808E2C0/57/878093f6/GUIStyle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Model/Gate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Helper/Manageres/LayerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Model/BootScreen.cs" root0="FORCE_HIGHLIGHTING" />
@@ -233,7 +173,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enum/NPCState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/CurveWay/Controllers/CurveWayController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Data/LocationData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Data/NPCPatrollingData.cs" />
@@ -275,15 +214,16 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/SceneArchitecture/Controllers/LevelController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DataSavingSystem/Data/WorldGameData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Inventory/InventoryController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Interface/IFigureFactory.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/FigureCreationFactory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Cell.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessBoard.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/ChessController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Data/ChessPuzzleData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/FigureStruct.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/Figure.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessBoard.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Controllers/FigureCreationFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Interface/IFigureFactory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/FigureStruct.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ModuleFeatures/Puzzles/Chess/Models/ChessPuzzle.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Editor/ChessPuzzleDataEditor.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1V9bGpai1gZ6Kn1FGeYyMAj5KRa" />
@@ -297,7 +237,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.29278794" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.29259259" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
@@ -322,10 +262,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="20212">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="2820">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="20212" />
+      <option name="pid" value="2820" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -392,6 +332,8 @@
       <workItem from="1640265685849" duration="2912000" />
       <workItem from="1643980074205" duration="5385000" />
       <workItem from="1643995547553" duration="6672000" />
+      <workItem from="1644044438643" duration="8493000" />
+      <workItem from="1644054888919" duration="4347000" />
     </task>
     <servers />
   </component>
@@ -425,5 +367,10 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
+        <watch expression="_board" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

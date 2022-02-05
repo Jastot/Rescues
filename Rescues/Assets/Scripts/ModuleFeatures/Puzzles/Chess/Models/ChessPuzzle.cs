@@ -62,7 +62,7 @@ namespace Rescues
         {
             
             if (CheckFigurePosition(_figureStruct))
-                _playersSequence.Add(_figureStruct.UnicSequenceID+"");
+                _playersSequence.Add(_figureStruct.EndPositions[_figureStruct.indexOfCurrentPosition].UnicSequenceID+"");
             else
                 _playersSequence.Add("-1");
             CheckComplete();

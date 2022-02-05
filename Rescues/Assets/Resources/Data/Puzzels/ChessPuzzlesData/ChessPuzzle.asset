@@ -14,27 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sequence: 2 0 1
   ElemntsOnBoard:
-  - UnicSequenceID: -1
-    IndexOfFigure: 2
-    CurrentPositionX: 4
-    CurrentPositionY: 5
-    EndPositionX: 3
-    EndPositionY: 5
-  - UnicSequenceID: 2
-    IndexOfFigure: 3
+  - IndexOfFigure: 2
+    CurrentPositionX: 6
+    CurrentPositionY: 2
+    EndPositions:
+    - UnicSequenceID: -1
+      EndPositionX: 3
+      EndPositionY: 4
+    Color: 1
+  - IndexOfFigure: 3
     CurrentPositionX: 5
     CurrentPositionY: 7
-    EndPositionX: 5
-    EndPositionY: 6
-  - UnicSequenceID: 1
-    IndexOfFigure: 3
+    EndPositions: []
+    Color: 0
+  - IndexOfFigure: 3
     CurrentPositionX: 3
     CurrentPositionY: 2
-    EndPositionX: 3
-    EndPositionY: 4
-  - UnicSequenceID: 0
-    IndexOfFigure: 5
+    EndPositions: []
+    Color: 0
+  - IndexOfFigure: 5
     CurrentPositionX: 8
     CurrentPositionY: 8
-    EndPositionX: 6
-    EndPositionY: 7
+    EndPositions:
+    - UnicSequenceID: -1
+      EndPositionX: 1
+      EndPositionY: 2
+    Color: 0

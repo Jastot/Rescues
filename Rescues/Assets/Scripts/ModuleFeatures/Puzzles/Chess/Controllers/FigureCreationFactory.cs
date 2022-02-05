@@ -26,17 +26,17 @@ namespace Rescues
                 }
                 
                 
-                public Figure CreateAFigure(int id,ChessPuzzleFiguresTypes figure,
-                    int posX,int posY, int endPosX, int endPosY)
+                public Figure CreateAFigure(ChessPuzzleFiguresTypes figure,
+                    int posX,int posY, List<EndPosition> endPositions)
                 {
                     var newFigure =Object.Instantiate(_availableGameObjectsDictionary[figure],_parent);
                     newFigure.gameObject.transform.localPosition = new Vector2(posX,posY);
                     var parameters = newFigure.GetComponent<Figure>();
-                    parameters.SetFigureStartInfo(id,
+                    
+                    parameters.SetFigureStartInfo(
                         posX+_offsetParameter,
                         posY+_offsetParameter,
-                        endPosX+_offsetParameter,
-                        endPosY+_offsetParameter);
+                        endPositions);
                     return parameters;
                 }
 
